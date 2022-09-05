@@ -1,0 +1,179 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ajustes generales
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Ruta en la que pondremos las imágenes para el documento
+\graphicspath{{imagenes/}}
+
+% Encabezados y pies de página
+% posiciones [] indica cada a la izquierda (par), {} a la derecha (impar). Si es una cara, se aplica derecha
+\newpagestyle{long}
+{
+	\sethead[\sectiontitle][][\chaptername\ \thechapter:\ \chaptertitle]{\chaptername\ \thechapter:\ \chaptertitle}{}{\sectiontitle}
+    \headrule % para que haya barra en el encabezado
+	\setfoot[\thepage][][]{}{}{\thepage}
+}
+\newpagestyle{short}
+{
+	\setfoot[\thepage][][]{}{}{\thepage}
+}
+
+% Para que salga el número a un lado en la primera página de un capítulo
+\patchcmd{\chapter}{plain}{short}{}{} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Nuevos comandos
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Definimos el comando de página en blanco
+\newcommand{\paginablanco}
+{   
+    \null
+    \thispagestyle{empty}
+    \newpage
+    \addtocounter{page}{-1}
+}
+
+%mayor ancuhura en las fracciones
+\newcommand{\ddfrac[2]}
+{
+    \frac{\displaystyle #1}{\displaystyle #2}
+}
+
+%comando escribir TFG
+\newcommand{\tfg}{Trabajo Fin de Grado}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Redefinición de comandos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Redifinimos el nombre que asigna babel spanish a las tablas (cuadro) a tabla
+\renewcommand{\spanishtablename}{Tabla}
+\renewcommand{\spanishlisttablename}{Índice de tablas}
+\renewcommand{\spanishcontentsname}{Índice}
+\renewcommand{\appendixname}{Anexos}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixpagename}{Anexos}
+
+%mayor anchura en las tablas
+\renewcommand{\arraystretch}{1.5}
+
+%indice de codigo
+\renewcommand*{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Índice de código}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Colores
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{darkgreen}{rgb}{0.0, 0.4, 0.0}
+\definecolor{darkorange}{rgb}{1.0, 0.55, 0.0}
+\definecolor{eclipseStrings}{RGB}{42,0.0,255}
+\definecolor{eclipseKeywords}{RGB}{127,0,85}
+\colorlet{numb}{magenta!60!black}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ajustes del código
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Basado en el estilo de Javier Alonso (@javinator9889)
+\lstset
+{ 
+  backgroundcolor=\color{white},        % Indica el color de fondo; necesita que se añada \usepackage{color} o \usepackage{xcolor}
+  breakatwhitespace=false,              % Activarlo para que los saltos automáticos solo se apliquen en los espacios en blanco
+  inputencoding=utf8,                   % Codificación de entrada
+  captionpos=b,                         % Establece la posición de la leyenda del cuadro de código
+  commentstyle=\color{darkgreen},       % Color de los comentarios
+  extendedchars=true,                   % Permite utilizar caracteres extendidos no-ASCII; solo funciona para codificaciones de 8-bits; para UTF-8 no funciona. En xelatex necesita estar a true para que funcione.
+  keepspaces=true,                      % Mantiene los espacios en el texto. Es útil para mantener la indentación del código(puede necesitar columns=flexible).
+  columns=flexible,                     % Columnas a diferente ancho
+  keywordstyle=\color{darkorange},      % Estilo de las palabras reservadas
+  rulecolor=\color{black},              % Si no se activa, el color del marco puede cambiar en los saltos de línea entre textos que sea de otro color, por ejemplo, los comentarios, que están en verde en este ejemplo
+  showspaces=false,                     % Si se activa, muestra los espacios con guiones bajos; sustituye a 'showstringspaces'
+  showstringspaces=false,               % Subraya solamente los espacios que estén en una cadena de esto
+  showtabs=false,                       % Muestra las tabulaciones que existan en cadenas de texto con guión bajo
+  stringstyle=\color{darkgreen},        % Color de las cadenas de texto
+  identifierstyle=\color{blue},         % Color del código en general
+  tabsize=4,	                        % Establece el salto de las tabulaciones
+  breaklines=true,                      % Romper lineas para que no se salga del folio
+  basicstyle=\footnotesize\ttfamily,    % Fija el tamaño del tipo de letra utilizado para el código
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}, % Marca de la ruptura de la línea
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 % Mapeo de acentos
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\EUR}}1 {£}{{\pounds}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lenguajes de código custom
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Basado en la de https://github.com/cansik/kotlin-latex-listing, sin sobrrescribir colores
+\lstdefinelanguage{Kotlin}
+{
+  comment=[l]{//},
+  emph={filter, first, firstOrNull, forEach, lazy, map, mapNotNull, println},
+  emphstyle={\color{OrangeRed}},
+  keywords={!in, !is, abstract, actual, annotation,  break, catch, class, const, constructor, continue, crossinline, do, dynamic, else, enum, expect, external, false, field, file, final, finally, for, fun, if, import,infix, inline, inner, interface, internal,lateinit, noinline, object, open, operator, override, package, param, private, property, protected, public, receiveris, reified, return, return@, sealed, setparam, suspend, tailrec, throw, true, try, typealias, typeof, val, var, vararg, when, where, while},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]",
+  morestring=[s]{"""*}{*"""},
+  ndkeywords={?,@Deprecated, @JvmField, @JvmName, @JvmOverloads, @JvmStatic, @JvmSynthetic, Array, Byte, Double, Float, Int, Integer, Iterable, Long, Runnable, Short, String, Any, Unit, Nothing, as, as?, by, companion, data, delegate, get, in, init, is, it, lazy, let, null, out, this, set, super},
+  ndkeywordstyle={\color{OrangeRed}\bfseries},
+  sensitive=true,
+}
+
+\lstdefinelanguage{json}
+{
+    basicstyle=\small\ttfamily,
+    commentstyle=\color{eclipseStrings}, % style of comment
+    stringstyle=\color{eclipseKeywords}, % style of strings
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    frame=single,
+    string=[s]{"}{"},
+    comment=[l]{:\ "},
+    morecomment=[l]{:"}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Estilo anexos (mismo para todos)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lstdefinestyle{PythonAnexos}
+{
+    language=Python,
+    numbers=left,                       % Posición de los números de línea (none, left, right).
+    numbersep=5pt,                      % Distancia de los números de línea al código
+    numberstyle=\small\color{gray},     % Estilo para los números de línea
+    frame=single	                    % Añade un marco al código
+}
+
+\lstdefinestyle{KotlinAnexos}
+{
+    language=Kotlin,
+    numbers=left,                    
+    numbersep=5pt,                   
+    numberstyle=\small\color{gray}, 
+    frame=single
+}
+
+\lstdefinestyle{jsonAnexos}
+{
+    language=json,
+    numbers=left,                   
+    numbersep=5pt,                   
+    numberstyle=\small\color{gray}, 
+    frame=single
+}

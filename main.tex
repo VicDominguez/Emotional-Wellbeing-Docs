@@ -1,344 +1,151 @@
-%Definimos la clase del documento y cargamos las librerías
-\documentclass[a4paper]{report}
+% Para impresión, poner twoside. Para PDF, poner oneside.
+\documentclass[a4paper,oneside,12pt,titlepage]{report}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Importación de librerías                        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
-%paquetes para la portada azul
-\usepackage{afterpage}
-\usepackage{xcolor}
-%Para tener los elementos de texto en español. El flag noshorthands arregla el bug de Argument of \language@active@arg" has an extra }.
-%http://algunostutoriales.blogspot.com/2014/03/arreglar-un-extrano-error-de-latex.html
-\usepackage[spanish,es-noshorthands]{babel}
-%Hipervinculos para todo lo útil
+% Para tener los elementos de texto en español. El flag noshorthands arregla el bug de Argument of \language@active@arg" has an extra }.
+% http://algunostutoriales.blogspot.com/2014/03/arreglar-un-extrano-error-de-latex.html
+\usepackage[english,spanish,es-noshorthands]{babel}
+% Hipervinculos para todo lo útil
 \usepackage{hyperref}
-%evitamos que rompa las palabras
+% Evitamos que rompa las palabras
 \usepackage[htt]{hyphenat}
-%soporte para anexos
+% Soporte para anexos
 \usepackage{appendix}
-%paquetes para figuras
+% Paquetes para figuras
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{lscape}
-%extracto codigo en memoria
+% Insertar codigo en memoria
 \usepackage{listings}
-%posicionamiento
+% Posicionamiento
 \usepackage{float}
-%tablas
+% Tablas
 \usepackage{xltabular}
-%bibiografia
+% Tablas de más de una página
+\usepackage{longtable} 
+% Metadatos
+\usepackage{metainfo}
+% Condicionales (para tener distintas versiones del documento)
+\usepackage{etoolbox}
+% Fracciones
+\usepackage{xfrac}
+% Márgenes reducidos
+\usepackage[pdftex,scale={.8,.8}]{geometry}
+
+
+% Bibiografia
 \usepackage[style=ieee]{biblatex}
+\bibliography{contenido/tfm.bib}
+
 \usepackage{csquotes}
-\bibliography{./secciones/bibliografia.bib}
-
-% formato de javi
-\lstset{ %
-  backgroundcolor=\color{white},   % Indica el color de fondo; necesita que se añada \usepackage{color} o \usepackage{xcolor}
-  breakatwhitespace=false,         % Activarlo para que los saltos automáticos solo se apliquen en los espacios en blanco
-  inputencoding=utf8,
-  captionpos=b,                    % Establece la posición de la leyenda del cuadro de código
-  commentstyle=\color{darkgreen},    % Estilo de los comentarios
-  extendedchars=true,              % Permite utilizar caracteres extendidos no-ASCII; solo funciona para codificaciones de 8-bits; para UTF-8 no funciona. En xelatex necesita estar a true para que funcione.
-  keepspaces=true,                 % Mantiene los espacios en el texto. Es útil para mantener la indentación del código(puede necesitar columns=flexible).
-  columns=flexible,
-  keywordstyle=\color{darkorange},       % estilo de las palabras clave
-  rulecolor=\color{black},         % Si no se activa, el color del marco puede cambiar en los saltos de línea entre textos que sea de otro color, por ejemplo, los comentarios, que están en verde en este ejemplo
-  showspaces=false,                % Si se activa, muestra los espacios con guiones bajos; sustituye a 'showstringspaces'
-  showstringspaces=false,          % subraya solamente los espacios que estén en una cadena de esto
-  showtabs=false,                  % muestra las tabulaciones que existan en cadenas de texto con guión bajo
-  stringstyle=\color{darkgreen},     % Estilo de las cadenas de texto
-  identifierstyle=\color{blue},
-  tabsize=4,	                   % Establece el salto de las tabulaciones a 2 espacios
-  breaklines=true,
-  basicstyle=\footnotesize\ttfamily,        % Fija el tamaño del tipo de letra utilizado para el código
-  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
-  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
-  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
-  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
-  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
-  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
-  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
-  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
-  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
-  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
-  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
-  {€}{{\EUR}}1 {£}{{\pounds}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1
-}
-\lstdefinestyle{CAnexos}{
-    language=C,
-    otherkeywords={inline, \#ifdef, \#endif, \#ifndef},
-    numbers=left,                    % Posición de los números de línea (none, left, right).
-    numbersep=5pt,                   % Distancia de los números de línea al código
-    numberstyle=\small\color{gray}, % Estilo para los números de línea
-    frame=single	                   % Añade un marco al código
-}
-
-\lstdefinestyle{PythonAnexos}{
-    language=Python,
-    numbers=left,                    % Posición de los números de línea (none, left, right).
-    numbersep=5pt,                   % Distancia de los números de línea al código
-    numberstyle=\small\color{gray}, % Estilo para los números de línea
-    frame=single	                   % Añade un marco al código
-}
-
-\lstdefinestyle{cppAnexos}{
-    language=C++,
-    numbers=left,                    % Posición de los números de línea (none, left, right).
-    numbersep=5pt,                   % Distancia de los números de línea al código
-    numberstyle=\small\color{gray}, % Estilo para los números de línea
-    frame=single
-}
-
-\lstdefinestyle{bashAnexos}{
-    language=bash,
-    numbers=left,                    % Posición de los números de línea (none, left, right).
-    numbersep=5pt,                   % Distancia de los números de línea al código
-    numberstyle=\small\color{gray}, % Estilo para los números de línea
-    frame=single
-}
-
-\lstdefinestyle{txtAnexos}{
-    numbers=left,                    % Posición de los números de línea (none, left, right).
-    numbersep=5pt,                   % Distancia de los números de línea al código
-    numberstyle=\small\color{gray}, % Estilo para los números de línea
-    frame=single
-}
-
-\lstdefinestyle{C}{
-    language=C,
-    otherkeywords={inline, \#ifdef, \#endif, \#ifndef}
-}
-
-\lstdefinestyle{Python}{
-    language=Python
-}
-
-\lstdefinestyle{C++}{
-    language=C++,
-    otherkeywords={inline, \#ifdef, \#endif, \#ifndef}
-}
-
-\lstdefinelanguage{json}{
-    basicstyle=\small\ttfamily,
-    commentstyle=\color{eclipseStrings}, % style of comment
-    stringstyle=\color{eclipseKeywords}, % style of strings
-    numbers=left,
-    numberstyle=\scriptsize,
-    stepnumber=1,
-    numbersep=8pt,
-    showstringspaces=false,
-    frame=single,
-    string=[s]{"}{"},
-    comment=[l]{:\ "},
-    morecomment=[l]{:"}
-}
-
-\lstdefinestyle{jsonAnexos}{
-    language=json,
-    numbers=left,                    % Posición de los números de línea (none, left, right).
-    numbersep=5pt,                   % Distancia de los números de línea al código
-    numberstyle=\small\color{gray}, % Estilo para los números de línea
-    frame=single
-}
-
-\usepackage{xcolor}
-\definecolor{pblue}{rgb}{0.13,0.13,1}
-\definecolor{pgreen}{rgb}{0,0.5,0}
-\definecolor{pred}{rgb}{0.9,0,0}
-\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
-\definecolor{darkgreen}{rgb}{0.0, 0.4, 0.0}
-\definecolor{darkorange}{rgb}{1.0, 0.55, 0.0}
-\definecolor{eclipseStrings}{RGB}{42,0.0,255}
-\definecolor{eclipseKeywords}{RGB}{127,0,85}
-\colorlet{numb}{magenta!60!black}
-
-%paquete para poner la bibliografia en la table of contents
-\usepackage[nottoc,notlot,notlof]{tocbibind}
-
-%Cambiamos el espacio en blanco enorme que por defecto hay en las páginas inicio de capítulo
-%\usepackage{titlesec}
-%\titleformat{\chapter}[display]   
-%{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
-%\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
-
-%para crear subsubsubsection pero que no salgan los numeros de paragraph
-%\setcounter{secnumdepth}{2}
-%\titleformat{\paragraph}
-%{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
-%\titlespacing*{\paragraph}
-%{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-
-%definimos el azul de la portada
-\definecolor{AzulPortada}{RGB}{135, 206, 250}
-
-%Ruta en la que pondremos las imágenes para el documento
-\graphicspath{ {imagenes/} }
-%Redifinimos el nombre que asigna babel spanish a las tablas (cuadro) a tabla
-\renewcommand{\spanishtablename}{Tabla}
-\renewcommand{\spanishlisttablename}{Índice de tablas}
-\renewcommand{\spanishcontentsname}{Índice}
-\renewcommand{\appendixname}{Anexos}
-\renewcommand{\appendixtocname}{Anexos}
-\renewcommand{\appendixpagename}{Anexos}
-
-% Definimos el comando de página en blanco
-\newcommand\paginablanco{%
-    \null
-    \thispagestyle{empty}%
-    \newpage}
-
-% Definimos el comando de página en blanco sin avanzar numeracion
-\newcommand\paginablancosin{%
-    \paginablanco{}
-    \addtocounter{page}{-1}}
-
-%mayor anchura en las tablas
-\renewcommand{\arraystretch}{1.5}
-%mayor ancuhura en las fracciones
-\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
-%coamdno escribir TFG
-\newcommand{\tfg}{Trabajo Fin de Grado }
-
-%indice de codigo
-\renewcommand*{\lstlistingname}{Código}
-\renewcommand{\lstlistlistingname}{Índice de código}
-
-%javi margenes
-\usepackage[pdftex,scale={.8,.8}]{geometry} %%The pack­age pro­vides an easy and flex­i­ble user in­ter­face to cus­tomize page lay­out, im­ple­ment­ing auto-cen­ter­ing and auto-bal­anc­ing mech­a­nisms so that the users have only to give the least de­scrip­tion for the page lay­out. For ex­am­ple, if you want to set each mar­gin 2cm with­out header space, what you need is just \usep­a­ck­age[mar­gin=2cm,no­head]{ge­om­e­try}.
-
-%repetir imagenes
-\usepackage{caption}
-
-\newcommand{\repeatcaption}[2]{%
-  \renewcommand{\thefigure}{\ref{#1}}%
-  \captionsetup{list=no}%
-  \caption{#2 (Figura repetida, original en la página \pageref{#1})}%
-  \addtocounter{figure}{-1}% So that next figure after the repeat gets the right number.
-}
-
+\usepackage[dvipsnames]{xcolor}
 \usepackage{titlesec}
-%Encabezados bonitos
-\newpagestyle{long}{%
-	\sethead[\sectiontitle][][\chaptername\ \thechapter:\ \chaptertitle]
-    {\chaptername\ \thechapter:\ \chaptertitle}{}{\sectiontitle}
-    \headrule
-	\setfoot[\thepage][][]{}{}{\thepage}
-}
-\newpagestyle{short}{
-	\setfoot[\thepage][][]{}{}{\thepage}
-}
-\patchcmd{\chapter}{plain}{short}{}{} %$ <-- the header on chapter 1
 
-\input{esquema/metadata}
+
+% Importamos ajustes y metadatos
+\input{contenido/varios/ajustes.tex}
+\input{contenido/varios/metadata.tex}
+
 
 % Comenzamos el documento
 \begin{document}
-% Hacemos la portada
+    
+    % Hacemos la portada
+    \input{contenido/varios/portada.tex}
 
-\input{esquema/portada}
+    % Para comenzar la numeracion de paginas en numeros romanos
+    \pagenumbering{Roman} 
 
-\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
+    % Agradecimientos
+    \input{contenido/inicio/agradecimientos.tex}
 
-% Agradecimientos
-\chapter*{}
-\thispagestyle{empty}
-\addcontentsline{toc}{section}{Agradecimientos} % si queremos que aparezca en el índice
-\begin{flushright}
-\textit{Tus agradecimientos aquí.}
+    % Hacemos los índices
+    \tableofcontents
+    \newpage
+    \listoftables
+    \newpage
+    \listoffigures
+    \newpage
+    \lstlistoflistings
+    \newpage
 
-\end{flushright}
+    % Después de los índices ya podemos poner el espacio entre párrafos igual al interlineado
+    \setlength{\parskip}{\baselineskip} 
+    \pagestyle{long}
 
-\thispagestyle{empty}
-\chapter*{Resumen} % si no queremos que añada la palabra "Capitulo"
-\addcontentsline{toc}{section}{Resumen} % si queremos que aparezca en el índice
+    % contenido adicionales antes del inicio
+    \chapter*{Glosario}
+    \input{contenido/inicio/glosario.tex}
+    \newpage
+    \chapter*{Resumen}
+    \input{contenido/inicio/resumen.tex}
+    \chapter*{Abstract}
+    \input{contenido/inicio/abstract.tex}
+    
+    % Ya tenemos las páginas de puro contenido, pasamos al formato normal
+    
+    \pagenumbering{arabic}
 
-Tu resumen aquí. \newline
+    %Importamos los capítulos
+    \chapter{Introducción}
+    \input{contenido/introduccion.tex}
+    \newpage
 
+    \chapter{Contexto}
+    \input{contenido/contexto.tex}
+    \newpage
 
-\textbf{Palabras clave}: Palabras clave
+    \chapter{Marco teórico}
+    \input{contenido/teorico.tex}
+    \newpage
 
+    \chapter{Especificación de requisitos}
+    \input{contenido/requisitos.tex}
+    \newpage
 
-\thispagestyle{empty}
-\chapter*{Abstract} % si no queremos que añada la palabra "Capitulo"
-\addcontentsline{toc}{section}{Abstract} % si queremos que aparezca en el índice
+    \chapter{Diseño del sistema}
+    \input{contenido/diseno.tex}
+    \newpage
 
-Your abstract here. \newline
+    \chapter{Implementación del sistema}
+    \input{contenido/implementacion.tex}
+    \newpage
 
-\textbf{Keywords}: Keywords
+    \chapter{Pruebas del sistema}
+    \input{contenido/pruebas.tex}
+    \newpage
 
-\pagestyle{short}
-\tableofcontents
-\newpage
-\listoftables %ver si hay alguna tabla al final
-\newpage
-\listoffigures
-\newpage
-\lstlistoflistings
-\newpage
+    \chapter{Resultados}
+    \input{contenido/resultados.tex}
+    \newpage
 
-\paginablanco{}
+    \chapter{Gestión del proyecto}
+    \input{contenido/gestion.tex}
+    \newpage
 
-\pagenumbering{arabic}
-\pagestyle{long}
+    \chapter{Conclusiones}
+    \input{contenido/conclusiones.tex}
+    \newpage
 
-\chapter{Introducción}
-\input{secciones/introduccion}
-\newpage
+    \chapter{Lineas futuras}
+    \input{contenido/futuras.tex}
+    \newpage
 
-\chapter{Objetivos}
-\input{secciones/objetivos}
-\newpage
+    % Bibilografía
+    \printbibliography[heading=bibintoc]
 
-\chapter{Metodologia}
-\input{secciones/metodologia}
-\newpage
+    % Anexos
+    \appendix
+    \clearpage
 
-\chapter{Especificación de requisitos}
-\input{secciones/requisitos}
-\newpage
-
-\chapter{Diseño del sistema}
-\input{secciones/diseno}
-\newpage
-
-\chapter{Implementación del sistema}
-\input{secciones/implementacion}
-\newpage
-
-\chapter{Pruebas del sistema}
-\input{secciones/pruebas}
-\newpage
-
-\chapter{Resultados}
-\input{secciones/resultados}
-\newpage
-
-\chapter{Impacto social y medioambiental}
-\input{secciones/impacto}
-\newpage
-
-\chapter{Presupuesto}
-\input{secciones/presupuesto}
-\newpage
-
-\chapter{Conclusiones}
-\input{secciones/conclusiones}
-\newpage
-
-\chapter{Lineas futuras}
-\input{secciones/futuras}
-\newpage
-
-%\chapter*{Bibliografía}
-%\addcontentsline{toc}{chapter}{Bibliografía}
-\printbibliography[heading=bibintoc]
-
-\appendix
-\clearpage
-\addappheadtotoc
-\appendixpage
-
-\chapter{Código fuente del proyecto} %uno o dos anexos??
-\input{anexos/codigo}
-\newpage
-\paginablanco{}
+    % Anexo de código
+    \chapter{Código fuente del proyecto} 
+    \input{contenido/anexos/codigo.tex}
+    \newpage
 
 \end{document}
