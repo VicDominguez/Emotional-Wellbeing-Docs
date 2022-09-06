@@ -1,0 +1,31 @@
+% Basada en las de Javier Alonso (@javinator9889) y Bernard (tex.stackexchange)
+% https://github.com/Javinator9889/VIMS-Memory/blob/main/base/vtimeline.tex
+% https://tex.stackexchange.com/a/196808
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Importación paquetes
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{environ}
+\usepackage{fourier, heuristica}
+\usepackage{array, booktabs}
+%\usepackage[x11names,table]{xcolor} % Si no se importa xcolor en main, si se importa hay que añadir estos paquetes
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Timeline
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{SteelBlue4}{HTML}{36648B}
+\newcommand{\foo}{\color{SteelBlue4}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
+\DeclareCaptionFont{blue}{\color{SteelBlue4}}
+\environbodyname\envbody
+
+\NewEnviron{vtimeline}[2][.9]
+{
+    \captionsetup{singlelinecheck=false, font=blue, labelfont=sc, labelsep=quad} %
+    \renewcommand\arraystretch{1.4}\arrayrulecolor{SteelBlue4} % Pone la toprule en el color del caption
+    \begin{longtable}{@{\,}r <{\hskip 2pt} !{\foo} p{#1\linewidth}}%
+        \caption{#2} \\ %
+        \toprule
+        \addlinespace[1.5ex]
+        \envbody
+    \end{longtable} %
+}

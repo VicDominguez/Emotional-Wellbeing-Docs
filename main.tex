@@ -22,6 +22,8 @@
 \usepackage{lscape}
 % Insertar codigo en memoria
 \usepackage{listings}
+\usepackage[dvipsnames,x11names,table]{xcolor} % Importa los colores para el codigo y la timeline
+
 % Posicionamiento
 \usepackage{float}
 % Tablas
@@ -43,13 +45,12 @@
 \bibliography{contenido/tfm.bib}
 
 \usepackage{csquotes}
-\usepackage[dvipsnames]{xcolor}
 \usepackage{titlesec}
-
 
 % Importamos ajustes y metadatos
 \input{contenido/varios/ajustes.tex}
 \input{contenido/varios/metadata.tex}
+\input{contenido/varios/tl.tex}
 
 
 % Comenzamos el documento
