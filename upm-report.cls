@@ -470,6 +470,8 @@
     %\usepackage[spanish]{babel}
     % Espacios entre titulos y tablas
     \usepackage{setspace}
+    \newcommand{\chapquote}[2]{\begin{flushright} \textit{#1} \\  #2 \end{flushright} }
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Secciones para agradecimientos, resumen y eso
 %
@@ -525,7 +527,7 @@
             \textbf{\ifthenelse{\equal{\authorsex}{m}}{Autores}{Autora}}: \theauthor\\*[1em]
             \textbf{\ifthenelse{\equal{\directorsex}{m}}{Directores}{Directoras}}: \@director\\*[1em]
             Madrid, %\monthname
-            Enero de \xspace\the\year
+            Julio de \the\year
         }
     \end{adjustwidth}
     \normalfont
