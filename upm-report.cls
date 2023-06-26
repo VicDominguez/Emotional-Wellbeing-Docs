@@ -254,7 +254,7 @@
 % Referencias y bibliografía
 %
 \RequirePackage[backend=biber,style=ieee]{biblatex}
-\addbibresource{references.bib}
+\addbibresource{TFM.bib}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Para bloques de texto más molones
@@ -470,7 +470,7 @@
     %\usepackage[spanish]{babel}
     % Espacios entre titulos y tablas
     \usepackage{setspace}
-    \newcommand{\chapquote}[2]{\begin{flushright} \textit{#1} \\  #2 \end{flushright} }
+    \newcommand{\chapquote}[2]{\begin{center} \textit{#1} \\  #2 \end{center} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Secciones para agradecimientos, resumen y eso
