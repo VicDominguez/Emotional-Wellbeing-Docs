@@ -33,15 +33,106 @@
 
     \subsection{Gestión del proyecto}
         \subsubsection{Notion}
+            Notion es una plataforma online parcialmente gratuita, utilizada para el seguimiento de proyectos y de 
+            equipos. Esta herramienta es fácilmente personalizable a partir de una serie de elementos predefinidos, 
+            entre los que se encuentran bases de datos embebidas (y vistas visuales como las mismas, como tableros 
+            Kanban o diagramas Gantt), soporte para imágenes, vídeo y audio, integración con otras plataformas como 
+            Slack, Zoom, Twitter... \newline
+                
+            En esta herramienta se pueden construir páginas, las cuales pueden contener texto formateado con el 
+            lenguaje de marcado Markdown o cualquiera de los bloques anteriores, por lo que fue elegida para conformar 
+            el centro neurálgico del seguimiento y documentación del proyecto, como se expondrá en la sección de 
+            Metodología. \todo{meter aqui la ref}
+            
         \subsubsection{Microsoft Teams}
+            Microsoft Teams es una herramienta de comunicación y colaboración para equipos propiedad de Microsoft. 
+            Es principalmente utilizada para alojar canales de comunicación y videollamadas. \newline
+                
+            Para este proyecto lo hemos seleccionado por dos de sus funcionalidades: desplegar un sistema de archivos 
+            en la nube para cada canal de comunicación y registro de turnos de trabajo. \newline
+            
+            En cuanto a la primera de ellas, la hemos elegido por delante de otras opciones de alojamiento ya 
+            que por ser usuarios de la UPM, disponemos de 1 TB de almacenamiento, por lo que podemos alojar todo 
+            tipo de contenido multimedia prácticamente sin restricciones y de forma fácil y sencilla. \newline
+            
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=0.75\textwidth]{figures/archivos teams.PNG}
+                \caption{Extracto de los documentos alojados en Teams}
+                \label{fig:teams:documentos}
+            \end{figure}
+            
+            Asimismo, la funcionalidad de registro de turnos es cómoda de usar y nos genera automáticamente un documento
+            Excel con las horas registradas por parte de todos los miembros del equipo, ideal si queremos registrar el 
+            total de horas empleadas en el proyecto. \newline
+
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=0.75\textwidth]{figures/Teams excel.PNG}
+                \caption{Extracto del registro de horas}
+                \label{fig:teams:excel}
+            \end{figure}
+        
+
         \subsubsection{Zotero}
-        \subsubsection{\LaTeX y Overleaf}
+            Zotero es una plataforma open-source (bajo la licencia AGPL) de gestión de referencias y citas 
+            bibliográficas, que permite recopilar y almacenar referencias de libros, artículos, sitios web y otros 
+            documentos cómodamente. Una vez registradas, permite exportar dichas citas de acuerdo a diferentes estilos 
+            de citación. \newline
+                
+            En este proyecto ha sido seleccionada por su facilidad de uso, por ser open-source y disponer de una gran 
+            cantidad de plugins, como \textit{Zotero Connector}, que nos permite agregar referencias desde el navegador.
+            
         
 
     \subsection{Ingeniería del Software}
+        En esta sección vamos a describir brevemente algunos de los elementos de Ingeniería del Software más 
+        importantes que se usarán a lo largo del proyecto.
+
         \subsubsection{Inyección de dependencias}
-        \subsubsection{Integración continua}
+            La Inyección de Dependencias
+
+        \subsubsection{Integración y entrega continua}
+            
+            CI/CD es un concepto de Ingeniería de Software, relacionado estrechamente con la filosofía \textit{DevOps} y 
+            con las metodologías ágiles; en el que se implementan flujos de trabajo que permitan distribuir las 
+            aplicaciones a los clientes de forma rápida, continua y fiable, a través de la automatización de ciertas 
+            etapas del desarrollo software.  \newline
+            
+            El nombre es una combinación de dos siglas, las cuales tienen diferentes significados: 
+            CI hace referencia a \textit{Continuous Integration} (integración continua), mientras que 
+            CD puede indicar dos procesos distintos: bien \textit{Continuous Delivery} (entrega continua) o 
+            \textit{Continuous Deployment} (despliegue continuo), los cuales en ocasiones se utilizan indistintamente
+            \cite{redhat_que_2022}. \newline
+            
+            Ahondando en dichos conceptos, la integración continua es un proceso por el cual se
+            establece un único repositorio central, el cual contiene tanto el código del producto software como sus pruebas 
+            unitarias y de integración. Tras ello se establece una capa de automatización que permite realizar la 
+            integración, construcción y pruebas del software en cada actualización del repositorio.  \newline
+            
+            Por otra parte, la entrega y despliegue continuo tienen en común la automatización de las etapas de puesta 
+            en marcha del nuevo software. No obstante, la entrega continua aboga por un despliegue manual de los 
+            artefactos al no necesitarse o no ser beneficioso cambios frecuentes en el entorno de producción, mientras 
+            que el despliegue continuo automatiza dicho despliegue. Por tanto, el uso de un proceso u otro reside en las 
+            necesidades del proyecto. \newline
+            
+            La implementación de una infraestructura CI/CD permite a los desarrolladores entregar cambios de forma rápida 
+            al reducir enormemente el tiempo de integración y despliegue, incrementando la eficiencia y eficacia en la 
+            implementación de software \cite{beservices_integracion_nodate}. \newline
+            
+            Asimismo, permite a los miembros del equipo trabajar de forma simultánea en distintas partes del software, 
+            sin tener que parar para la integración de todos los cambios y resolver los conflictos que puedan aparecer.
+    
+
         \subsubsection{Control de versiones}
+            Un sistema de control de versiones es una herramienta utilizada para controlar y gestionar el código fuente
+            de un proyecto, si bien estos sistemas se pueden utilizar casi para cualquier tipo de fichero. Estos 
+            sistemas se encargan de monitorizar las modificaciones de los archivos de una carpeta, llamada repositorio,
+            permitiendo guardar \"instantáneas\" de dicha carpeta; a las cuales se pueden volver en cualquier momento.
+            \newline
+
+            Con estas herramientas se protegen los archivos ante accidentes
+            
 
     \subsection{Aplicación móvil}
 
@@ -133,12 +224,20 @@
             Google \textit{I/O} de 2017 fue anunciado el soporte oficial y completo 
             de Kotlin dentro de Android. \newline
 
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.66\textwidth]{figures/Kotlin logo.png}
+                \caption[Logo de Kotlin.]
+                {Logo de Kotlin. Imagen extraída de \cite{noauthor_kotlin_nodate-1}}
+                \label{figure:kotlin:logo}
+            \end{figure}
+
             Kotlin es un lenguaje de programación desarrollado por JetBrains\footnote{JetBrains es una
             empresa muy reconocida dentro de la industria por crear una serie de entornos de desarrollo muy populares,
             como PHPStorm, CLion o Intellij IDEA. Sobre este último está construido Android Studio, el entorno de 
             desarrollo oficial dentro de Android.} y publicada su primera versión estable el 15 de febrero de 2016.
             El objetivo de este lenguaje fue tan sencillo como ambicioso: crear un lenguaje conciso (permitiendo reducir
-            la cantidad de código inútil), con soporte de nuevas funcionalidades; pero sin renunciar a la rapidez de
+            la cantidad de código \textit{boilerplate}), con soporte de nuevas funcionalidades; pero sin renunciar a la rapidez de
             compilación de Java ni al todo el código escrito en él 
             \cite{rao_k_history_nodate}. \newline
 
@@ -268,9 +367,9 @@
             En la conferencia \textit{I/O} (sí, otra vez) de 2022 se anunció \textit{Health Connect} (o Salud Conectada
             en castellano), una aplicación creada por Google (junto con Samsung \cite{wilk_introducing_2022}) 
             que aglutinará todos los datos relacionados con salud dentro del ecosistema
-            Android. La aplicación (desde el 11 de noviembre de 2022 en estado beta) es compatible con Android 9 o 
+            Android. La aplicación (en beta desde noviembre de 2022) es compatible con Android 9 o 
             superior, mientras que está previsto que para Android 14 venga
-            incorporada aplicación de fábrica o preinstalada\footnote{Recordar aquí que esta aplicación será
+            incorporada aplicación de fábrica o preinstalada\footnote{Recordar aquí que esta aplicación es
             parte de los servicios de Google y no del sistema operativo propiamente dicho o AOSP.} 
             \cite{pandey_health_2023}. \newline
 
@@ -283,45 +382,181 @@
             \end{figure}
 
             Esta herramienta viene a solucionar una probelmática importante y es la ausencia del reaprovechamiento de 
-            los datos, ya que hasta ese momento, la posición casi unánime dentro la industria se basaba en
-            que los datos recoletados por sus dispositivos \textit{wearables} o aplicación se quedaran en su
-            ecosistema \cite{ramirez_android_2022} \cite{rahman_android_2023}. \newline
+            los datos relacionados con la salud. Hasta ese momento, la posición casi unánime dentro la 
+            industria se basaba en aislar los datos recoletados por sus dispositivos \textit{wearables} o aplicación 
+            dentro de su ecosistema \cite{ramirez_android_2022} \cite{rahman_android_2023}. \newline
             
             La única manera utilizar dichos datos 
             en otras aplicaciones estaba restringuida a sistemas propietarios como Google Fit, cuyos datos se 
             almacenaban enla nube con los problemas de privacidad asociados, o proyectos \textit{open source} como 
-            Gadget Bridge \cite{freeyourgadget_gadgetbridge_nodate}; que accedían a datos mediante ingeniería inversa 
-            de pulseras como las Xiaomi Mi Band. \newline
+            Gadget Bridge \cite{freeyourgadget_gadgetbridge_nodate}; que accedían a datos mediante ingeniería inversa.
+            \newline
 
             A fecha de mayo de 2023, se estima que más de 100 aplicaciones han integrado Salud Conectada, incluyendo
             las aplicaciones de las pulseras Fitbit y Samsung, Peloton, Oura \cite{malik_googles_2023}... \newline
 
             Centrándonos en Salud Conectada, se trata tanto de una plataforma como una API para los desarrolladores.
             La plataforma puede registrar datos como la actividad física, el sueño, la nutrición o incluso el ciclo
-            menstrual, siendo un intermediario entre las aplicaciones que generan o escriben dichos datos y las 
-            que quieren acceder a esos datos. \newline
+            menstrual\footnote{La lista completa de los datos que puede registrar Salud Conectada se encuentra 
+            disponible en \cite{noauthor_lista_nodate}}, siendo un intermediario entre las aplicaciones que generan 
+            o escriben dichos datos y las que quieren acceder a esos datos. \newline
 
             \begin{figure}[h]
                 \centering
                 \includegraphics[width=0.33\textwidth]{figures/Arquitectura básica de Health Connect.png}
                 \caption[Arquitectura básica de Salud Conectada.]
                 {Arquitectura básica de  Salud Conectada. Imagen extraída de \cite{wilk_introducing_2022}}
-                \label{figure:health_connect:logo}
+                \label{figure:health_connect:arquitectura}
+            \end{figure}
+
+            Esta API estandariza el acceso a todas las fuentes de datos, independientemente de su procedencia; lo que
+            simplifica enormemente tanto la lectura como escritura de los datos. Además, el sistema permite consultar
+            datos agregados, pudiendo ser una agregación acumulativa (como el total de distancia caminada en un 
+            intervalo de tiempo) o estadística (las pulsaciones mínimas, máximas o promedio en un intervalo de tiempo).
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.33\textwidth]{figures/Health Connect lectura datos.jpg}
+                \caption[Visualización de datos de distancia.]
+                {Visualización de datos de distancia. Elaboración propia.}
+                \label{figure:health_connect:visualizacion_datos}
             \end{figure}
             
-            Asimismo, está diseñada con la privacidad en mente: los datos se almacenan localmente, mientras que el 
+            Por otra parte, está diseñada con la privacidad en mente: los datos se almacenan localmente, mientras que el 
             acceso a los mismos esta fuertemente granularizado: en la que el usuario puede
             decidir qué aplicaciones tienen acceso (tanto lectura como escritura) a cada tipo de registro 
-            \cite{saez_google_2022}.
+            \cite{saez_google_2022}. \newline 
+            
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.33\textwidth]{figures/Health Connect acceso reciente.jpg}
+                \caption[Visualización del acceso a los datos.]
+                {Visualización del acceso a los datos. Elaboración propia.}
+                \label{figure:health_connect:acceso_reciente}
+            \end{figure}
 
             
+            Asimismo, las aplicaciones solo pueden leer datos con una antigüedad de 
+            hasta 30 días previos a su instalación. \cite{noauthor_preguntas_nodate}, registrándose además todas las 
+            lecturas y escrituras en el sistema, las cuales puede visualizar el usuario. \newline
 
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.33\textwidth]{figures/Health connect permisos fitbit.jpg}
+                \caption[Granularidad de los permisos.]
+                {Granularidad de los permisos. Elaboración propia.}
+                \label{figure:health_connect:granularidad_permisos}
+            \end{figure}
+
+            En definitiva, si bien está aún en desarrollo, esta plataforma nos permite abstraernos del hardware de
+            recolección de datos biométricos, reduciendo la complejidad de nuestro desarrollo; y además permite al 
+            usuario un mayor control sobre sus datos sensibles.
+            
         \subsubsection{Room}
+            Uno de los servicios que provee Android es SQLite, un sistema de gestión de base de datos relacionales de 
+            bajo nivel. Este sistema es usado por la aplicación que lo utiliza, ahorrando configuración y complejidad
+            \cite{recio_persistencia_2019}. \newline
+            
+            No obstante para muchas aplicaciones es un modelo demasiado rígido. Para simplificar el uso de SQLite
+            Google creó en 2017 esta librería, la cual hace de intermediario entre el propio SQLite y nuestra 
+            aplicación \cite{leiva_room_2020}. Técnicamente hablando se trata de una capa de abstracción sobre dicho
+            sistema gestor, la cual permite reducir la complejidad de los usos comunes de la base de datos; sin perder
+            el acceso a SQLite. Asimismo, esta librería brinda otras ventajas, como la verificación de las consultas
+            SQL en tiempo de compilación \cite{noauthor_como_nodate}.
+
+            Los elementos básicos de esta plataforma son los siguientes:
+            \begin{itemize}
+                \item \textit{Data Access Objects}, también conocido como DAO. En este elemento (implementado como
+                una interfaz con la anotación @Dao) creamos nuestras
+                operaciones sobre la base de datos: consultas, inserciones...
+                \item Entidades, las cuales se corresponden con una clase en Kotlin (anotada como @Entity)
+                y normalmente con una tabla de base de datos.
+                Con esta estructura creamos las tablas de la base de datos, mientras que en nuestra aplicación 
+                disponemos de objetos que mapean dichos registros. Los atributos de dicha clase serán los campos de
+                la tabla en cuestión, sobre los cuales podemos utilizar anotaciones para establecer claves, índices, etc
+                \item Clase base de datos, donde especificamos las entidades a utilizar y cómo se instancia dicha base
+                de datos (aquí podemos ajustar si estará cifrada o no por ejemplo). Se corresponde con una clase 
+                abstracta que hereda de \textit{RoomDatabase} y que usa ciertas anotaciones para que se genere 
+                automáticamente el código \textit{boilerplate}
+            \end{itemize}
+            
 
     
     \subsection{Servidor}
         \subsubsection{Python}
+            Python es un lenguaje de programación interpretado creado por Guido Van Rossum en 1991, con un marcado enfoque 
+            de construir código de la manera más clara y legible posible. Es uno de los lenguajes más populares de la 
+            escena, gracias a su facilidad de uso y a su enorme comunidad de desarrolladores. Estos últimos han creado un 
+            enorme ecosistema de librerías que facilita la creación de nuevos proyectos, especialmente para prototipos.
+            \newline
 
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.75\textwidth]{figures/Python logo.png}
+                \caption[Logo de Python.]
+                {Logo de Python. Imagen extraída de \cite{noauthor_python_nodate}}
+                \label{figure:python:logo}
+            \end{figure}
+
+            Actualmente es utilizado para todo tipo de tareas, tales como desarrollo web, aplicaciones científicas… 
+            pasando por inteligencia artificial o análisis de datos; casi siempre apoyándose en potentes librerías 
+            que mejoran notablemente el propio lenguaje. \newline
+
+            Sus principales características son las siguientes:
+            \begin{itemize}
+                \item Soporte mutiparadigma: como Kotlin, se puede utilizar programación imperativa, orientada a objetos o 
+                funcional en cualquier momento.
+                \item Gran biblioteca estándar que facilita muchas operaciones mundanas, como la lectura de archivos JSON.
+                \item Soporte multiplataforma gracias a la compatibilidad de su intérprete con todos los sistemas 
+                operativos principales. Llega hasta tal punto que un subconjunto del lenguaje (MicroPython) es compatible 
+                con algunos microcontroladores.
+                \item Sistema de tipos fuertemente tipado y dinámico, lo que permite que una variable pueda cambiar de 
+                tipo fácilmente.
+                \item Facilidad de instalación de librerías gracias a la herramienta pip.
+            \end{itemize}
+        
         \subsubsection{Flask}
 
+            Flask es un popular entorno ligero o \textit{microframework} de Python utilizado para construir aplicaciones 
+            web, tanto como páginas como API. Diseñado para ser ligero y fácil de usar, Flask proporciona las herramientas 
+            necesarias para crear dichas aplicaciones web de una manera minimalista, rápida y eficiente, en sintonía con 
+            la propia filosofía del lenguaje. \newline
+
+            A diferencia de otros entornos más completos como Django, Flask se enfoca en brindar solo lo esencial, lo que 
+            permite crear prototipos lo más fácilmente posible, si bien puede quedarse corto para aplicaciones 
+            relativamente complejas \cite{rodriguez_flask_2014}. Su sistema de enrutamento HTTP es sencillo y claro, mientras que posee extensiones 
+            para autentificación de usuarios, manejo de base de datos, etc. \newline
+
+            Gracias a esta simplicidad se usará en este proyecto para prototipar la parte del servidor. Asimismo, debido a 
+            su enfoque modular y a su sistema de plantillas podría expandirse su funcionalidad con más elementos web sin 
+            ninguna adaptación del código ya existente.
+
+
         \subsubsection{MongoDB}
+            MongoDB es un sistema gestor de base de datos no relacional orientado a documentos, diseñado para manejar 
+            grandes volúmenes de datos de manera eficiente y escalable. A diferencia de las bases de datos relacionales 
+            tradicionales, no hay registros sino documentos, unos ficheros con una extensión muy similar a JSON: BSON 
+            (JSON Binarios) \cite{noauthor_json_nodate}. \newline
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.75\textwidth]{figures/MongoDB logo.png}
+                \caption[Logo de MongoDB.]
+                {Logo de MongoDB. Imagen extraída de \cite{noauthor_mongodb_nodate}}
+                \label{figure:mongodb:logo}
+            \end{figure}
+
+
+            Este enfoque no relacional le permite ofrecer un modelo de datos flexible, sin un esquema. Esto se traduce
+            en una mayor libertad para almacenar datos y cambiar el modelo de los mismos, ya que para cambiar cualquier
+            atributo no es necesario reconstruir el modelo; muy útil para prototipos o modelos de datos dinámicos.
+            \newline
+
+            Por otra parte, el modelo de consultas ofrece posibilidades similares a las de SQL, por lo que no supone
+            una desventaja. También implementa conceptos presentes en las base de datos relacionales, como los índices. 
+            Además, al disponer de una gran comunidad detrás, existen numerosos módulos que lo permiten
+            intregrar con lenguajes de programación, como pymongo para Python. \newline
+
+            Asimismo, posee otras dos grandes fortalezas: un núcleo distribuido, lo que permite una alta disponibilidad
+            y escalabilidad; y una licencia de uso gratuito desde octubre de 2018, bajo la licencia AGPL 
+            \cite{noauthor_que_nodate}.
