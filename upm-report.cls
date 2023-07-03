@@ -472,6 +472,9 @@
     \usepackage{setspace}
     \newcommand{\chapquote}[2]{\begin{center} \textit{#1} \\  #2 \end{center} }
 
+    %\maxsecnumdepth{subsection} % chapters, sections, and subsections are numbered
+    %\maxtocdepth{subsection} % chapters, sections, and subsections are in the Table of Contents
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Estilos de Víctor
 %
