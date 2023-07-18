@@ -304,8 +304,10 @@
     linktoc=all,
     plainpages=false,
     unicode=true,
-    colorlinks=true,
-    linkcolor={linkcolor},
+    % Cambios de Víctor
+    colorlinks=false,
+    %linkcolor={linkcolor},
+    %citecolor={linkcolor}
 }
 \makeatother
 
@@ -445,7 +447,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Glosario
 %
-\RequirePackage[acronym,noredefwarn]{glossaries}
+%\RequirePackage[acronym,noredefwarn]{glossaries}
+\RequirePackage{glossaries}
+\input{Glosario}
 \makeglossaries
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -622,7 +626,7 @@
             \textbf{\ifthenelse{\equal{\authorsex}{m}}{Autores}{Autora}}: \theauthor\\*[1em]
             \textbf{\ifthenelse{\equal{\directorsex}{m}}{Directores}{Directoras}}: \@director\\*[1em]
             Madrid, %\monthname
-            Julio de \the\year
+            Octubre de \the\year
         }
     \end{adjustwidth}
     \normalfont
