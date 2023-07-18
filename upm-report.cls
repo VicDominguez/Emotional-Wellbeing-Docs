@@ -312,6 +312,16 @@
 \makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Glosario de Víctor
+%
+
+\usepackage[toc,shortcuts,xindy,nonumberlist,noredefwarn]{glossaries}
+\setacronymstyle{long-short}
+\input{Glosario}
+\makeglossaries
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fuentes
 %
 \RequirePackage{microtype}
@@ -445,14 +455,6 @@
 \RequirePackage{fancyvrb}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Glosario
-%
-%\RequirePackage[acronym,noredefwarn]{glossaries}
-\RequirePackage{glossaries}
-\input{Glosario}
-\makeglossaries
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Para tener los números de mes
 %
 \let\ordinal\relax
@@ -464,20 +466,26 @@
 \usepackage{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Paquetes de Víctor
+% Paquetes y cosas de Víctor
 %
-    \usepackage{enumitem}
-    \setlist[itemize]{topsep=-0.2cm}
-    % Para poder tener tablas multipagina
-    \usepackage{ltablex}
-    % Poner cosas en español
-    %\usepackage[spanish]{babel}
-    % Espacios entre titulos y tablas
-    \usepackage{setspace}
-    \newcommand{\chapquote}[2]{\begin{center} \textit{#1} \\  #2 \end{center} }
+\usepackage{silence}
+\WarningFilter{latex}{`h' float specifier changed to `ht'}
 
-    %\maxsecnumdepth{subsection} % chapters, sections, and subsections are numbered
-    %\maxtocdepth{subsection} % chapters, sections, and subsections are in the Table of Contents
+\usepackage{enumitem}
+\setlist[itemize]{topsep=-0.2cm}
+% Para poder tener tablas multipagina
+\usepackage{ltablex}
+% Espacios entre titulos y tablas
+\usepackage{setspace}
+\newcommand{\chapquote}[2]{\begin{center} \textit{#1} \\  #2 \end{center} }
+
+\usepackage{todonotes}
+\addbibresource{references.bib}
+
+%\maxsecnumdepth{subsection} % chapters, sections, and subsections are numbered
+%\maxtocdepth{subsection} % chapters, sections, and subsections are in the Table of Contents
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Estilos de Víctor
@@ -726,7 +734,11 @@
 \AtEndDocument{
     % Glosario
     % TODO Añadirlo sólo si existe alguna entrada en el glosario
-    \printglossary
+
+    %\printglossaries
+    %\printglossary[]
+    %\printglossary[title=Acrónimos, toctitle=Acrónimos, type=\acronymtype]
+
 
     % Índice
     % TODO Añadirlo sólo si existe alguna entrada en el índice
