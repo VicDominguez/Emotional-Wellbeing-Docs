@@ -731,11 +731,9 @@
 \AtEndDocument{
     % Glosario
     % TODO Añadirlo sólo si existe alguna entrada en el glosario
-
     %\printglossaries
     %\printglossary[]
     %\printglossary[title=Acrónimos, toctitle=Acrónimos, type=\acronymtype]
-
 
     % Índice
     % TODO Añadirlo sólo si existe alguna entrada en el índice
