@@ -254,7 +254,7 @@
 % Referencias y bibliografía
 %
 \RequirePackage[backend=biber,style=ieee]{biblatex}
-\addbibresource{TFM.bib}
+\addbibresource{references.bib}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Para bloques de texto más molones
@@ -304,10 +304,8 @@
     linktoc=all,
     plainpages=false,
     unicode=true,
-    % Cambios de Víctor
-    colorlinks=false,
-    %linkcolor={linkcolor},
-    %citecolor={linkcolor}
+    colorlinks=true,
+    linkcolor={linkcolor},
 }
 \makeatother
 
@@ -317,9 +315,8 @@
 
 \usepackage[toc,shortcuts,xindy,nonumberlist,noredefwarn]{glossaries}
 \setacronymstyle{long-short}
-\input{Glosario}
+\input{chapters/Glosario}
 \makeglossaries
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fuentes
@@ -634,7 +631,7 @@
             \textbf{\ifthenelse{\equal{\authorsex}{m}}{Autores}{Autora}}: \theauthor\\*[1em]
             \textbf{\ifthenelse{\equal{\directorsex}{m}}{Directores}{Directoras}}: \@director\\*[1em]
             Madrid, %\monthname
-            Octubre de \the\year
+            Julio de \the\year
         }
     \end{adjustwidth}
     \normalfont
@@ -649,8 +646,8 @@
 	\setlength{\parskip}{\baselineskip}
 	\theauthor
 	\par{
-		\textit{\@title}\\
-		\selectlanguage{spanish}
+        \selectlanguage{spanish}
+        \textit{\@title}\\
 		\reporttype, \today\\
 		\textbf{\ifthenelse{\equal{\directorsex}{m}}{Directores}{Directoras}}: \@director
 	}

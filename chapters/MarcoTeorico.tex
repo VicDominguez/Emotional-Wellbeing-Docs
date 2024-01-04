@@ -46,27 +46,20 @@
             
         \subsubsection{Microsoft Teams}
             Microsoft Teams es una herramienta de comunicación y colaboración para equipos propiedad de Microsoft. 
-            Es principalmente utilizada para alojar canales de comunicación y videollamadas. 
+            Es principalmente utilizada para alojar canales de comunicación y videollamadas.
                 
             Para este proyecto lo hemos seleccionado por dos de sus funcionalidades: desplegar un sistema de archivos 
             en la nube para cada canal de comunicación y registro de turnos de trabajo. 
             
             En cuanto a la primera de ellas, la hemos elegido por delante de otras opciones de alojamiento ya 
             que por ser usuarios de la UPM, disponemos de 1 TB de almacenamiento, por lo que podemos alojar todo 
-            tipo de contenido multimedia prácticamente sin restricciones y de forma fácil y sencilla. 
-            
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.75\textwidth]{figures/archivos teams.PNG}
-                \caption{Extracto de los documentos alojados en Teams}
-                \label{fig:teams:documentos}
-            \end{figure}
+            tipo de contenido multimedia prácticamente sin restricciones y de forma fácil y sencilla.
             
             Asimismo, la funcionalidad de registro de turnos es cómoda de usar y nos genera automáticamente un documento
-            Excel con las horas registradas por parte de todos los miembros del equipo, ideal si queremos registrar el 
+            Excel (ver figura \ref{fig:teams:excel}) con las horas registradas por parte de todos los miembros del equipo, ideal si queremos registrar el 
             total de horas empleadas en el proyecto. 
 
-            \begin{figure}[h]
+            \begin{figure}[h!]
                 \centering
                 \includegraphics[width=0.75\textwidth]{figures/Teams excel.PNG}
                 \caption{Extracto del registro de horas}
@@ -78,7 +71,7 @@
             Zotero es una plataforma open-source (bajo la licencia AGPL) de gestión de referencias y citas 
             bibliográficas, que permite recopilar y almacenar referencias de libros, artículos, sitios web y otros 
             documentos cómodamente. Una vez registradas, permite exportar dichas citas de acuerdo a diferentes estilos 
-            de citación. 
+            de citación.
                 
             En este proyecto ha sido seleccionada por su facilidad de uso, por ser open-source y disponer de una gran 
             cantidad de plugins, como \textit{Zotero Connector}, que nos permite agregar referencias desde el navegador.
@@ -123,14 +116,6 @@
             un enfoque más amplio y es compatible con más dispositivos: tabletas, relojes inteligentes, televisores, 
             pantallas de automóviles... aunque, excepto en el caso de las tabletas, se trata de versiones basadas en
             Android con su propia idionsincrasia. 
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.25\textwidth]{figures/Android logo.png}
-                \caption[Logo actual de Android.]
-                {Logo actual de Android. Imagen extraída de \cite{vulcansphere_english_2019}}
-                \label{figure:android:logo}
-            \end{figure}
 
             Normalmente cuando nos referimos a Android, no nos referimos únicamente al sistema operativo, sino a la
             plataforma creada entorno al mismo; como haremos a lo largo de este proyecto. Dicha plataforma o 
@@ -202,14 +187,6 @@
             Machine}) se abrió la puerta para  utilizar otros lenguajes que utilizasen la JVM. En la conferencia de 
             Google \textit{I/O} de 2017 fue anunciado el soporte oficial y completo 
             de Kotlin dentro de Android. 
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.66\textwidth]{figures/Kotlin logo.png}
-                \caption[Logo de Kotlin.]
-                {Logo de Kotlin. Imagen extraída de \cite{noauthor_kotlin_nodate-1}}
-                \label{figure:kotlin:logo}
-            \end{figure}
 
             Kotlin es un lenguaje de programación desarrollado por JetBrains\footnote{JetBrains es una
             empresa muy reconocida dentro de la industria por crear una serie de entornos de desarrollo muy populares,
@@ -285,11 +262,11 @@
             como respuesta a la creciente ubiquidad de Android: móviles con pantallas
             plegables, \textit{smartwatch}, televisores \cite{ramirez_que_2022}... 
             Su primera implementación estable para Jetpack Compose fue lanzada el 
-            24 de octubre de 2022 \cite{singh_material_2022}. 
+            24 de octubre de 2022 \cite{singh_material_2022}.
             
             Al ser utilizado por Google para la creación de elementos 
             gráficos tanto en sus aplicaciones como en el sistema operativo, es la guía de diseño de facto dentro del
-            ecosistema Android. 
+            ecosistema Android.
 
             Sus principales características son las siguientes \cite{noauthor_material_nodate}:
             \begin{itemize}
@@ -359,14 +336,6 @@
             parte de los servicios de Google y no del sistema operativo propiamente dicho o AOSP.} 
             \cite{pandey_health_2023}. 
 
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.25\textwidth]{figures/Health connect logo.png}
-                \caption[Logo de Salud Conectada.]
-                {Logo de Salud Conectada. Imagen extraída de \cite{noauthor_health_nodate}}
-                \label{figure:health_connect:logo}
-            \end{figure}
-
             Esta herramienta viene a solucionar una probelmática importante y es la ausencia del reaprovechamiento de 
             los datos relacionados con la salud. Hasta ese momento, la posición casi unánime dentro la 
             industria se basaba en aislar los datos recoletados por sus dispositivos \textit{wearables} o aplicación 
@@ -404,7 +373,7 @@
                 \centering
                 \includegraphics[width=0.33\textwidth]{figures/Health Connect lectura datos.jpg}
                 \caption[Visualización de datos de distancia.]
-                {Visualización de datos de distancia. Elaboración propia.}
+                {Visualización de datos de distancia.}
                 \label{figure:health_connect:visualizacion_datos}
             \end{figure}
             
@@ -693,6 +662,7 @@
                 
     
     \subsection{Servidor}
+    
         \subsubsection{Python}
             Python es un lenguaje de programación interpretado creado por Guido Van Rossum en 1991, con un marcado enfoque 
             de construir código de la manera más clara y legible posible. Es uno de los lenguajes más populares de la 
@@ -747,15 +717,6 @@
             grandes volúmenes de datos de manera eficiente y escalable. A diferencia de las bases de datos relacionales 
             tradicionales, no hay registros sino documentos, unos ficheros con una extensión muy similar a JSON: BSON 
             (JSON Binarios) \cite{noauthor_json_nodate}. 
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.75\textwidth]{figures/MongoDB logo.png}
-                \caption[Logo de MongoDB.]
-                {Logo de MongoDB. Imagen extraída de \cite{noauthor_mongodb_nodate}}
-                \label{figure:mongodb:logo}
-            \end{figure}
-
 
             Este enfoque no relacional le permite ofrecer un modelo de datos flexible, sin un esquema. Esto se traduce
             en una mayor libertad para almacenar datos y cambiar el modelo de los mismos, ya que para cambiar cualquier
