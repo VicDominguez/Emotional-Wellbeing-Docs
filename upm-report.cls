@@ -16,7 +16,7 @@
 % Para los colores y fondos
 %
 \RequirePackage{graphicx}
-\RequirePackage{xcolor}
+\RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{eso-pic}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -254,7 +254,7 @@
 % Referencias y bibliografía
 %
 \RequirePackage[backend=biber,style=ieee]{biblatex}
-\addbibresource{TFM.bib}
+\addbibresource{references.bib}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Para bloques de texto más molones
@@ -308,6 +308,15 @@
     linkcolor={linkcolor},
 }
 \makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Glosario de Víctor
+%
+
+\usepackage[toc,shortcuts,xindy,nonumberlist,noredefwarn]{glossaries}
+\setacronymstyle{long-short}
+\input{chapters/Glosario}
+\makeglossaries
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fuentes
@@ -443,12 +452,6 @@
 \RequirePackage{fancyvrb}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Glosario
-%
-\RequirePackage[acronym,noredefwarn]{glossaries}
-\makeglossaries
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Para tener los números de mes
 %
 \let\ordinal\relax
@@ -460,17 +463,118 @@
 \usepackage{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Paquetes de Víctor
+% Paquetes y cosas de Víctor
 %
-    \usepackage{enumitem}
-    \setlist[itemize]{topsep=-0.2cm}
-    % Para poder tener tablas multipagina
-    \usepackage{ltablex}
-    % Poner cosas en español
-    %\usepackage[spanish]{babel}
-    % Espacios entre titulos y tablas
-    \usepackage{setspace}
-    \newcommand{\chapquote}[2]{\begin{center} \textit{#1} \\  #2 \end{center} }
+\usepackage{silence}
+\WarningFilter{latex}{`h' float specifier changed to `ht'}
+
+\usepackage{enumitem}
+\setlist[itemize]{topsep=-0.2cm}
+% Para poder tener tablas multipagina
+\usepackage{ltablex}
+% Espacios entre titulos y tablas
+\usepackage{setspace}
+\newcommand{\chapquote}[2]{\begin{center} \textit{#1} \\  #2 \end{center} }
+
+\usepackage{todonotes}
+\addbibresource{references.bib}
+
+%\maxsecnumdepth{subsection} % chapters, sections, and subsections are numbered
+%\maxtocdepth{subsection} % chapters, sections, and subsections are in the Table of Contents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Estilos de Víctor
+%
+
+%Colores
+\usepackage{xcolor}
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+\definecolor{darkgreen}{rgb}{0.0, 0.4, 0.0}
+\definecolor{darkorange}{rgb}{1.0, 0.55, 0.0}
+\definecolor{eclipseStrings}{RGB}{42,0.0,255}
+\definecolor{eclipseKeywords}{RGB}{127,0,85}
+\colorlet{numb}{magenta!60!black}
+
+
+% formato de javi
+\lstset{ %
+  backgroundcolor=\color{white},   % Indica el color de fondo; necesita que se añada \usepackage{color} o \usepackage{xcolor}
+  breakatwhitespace=false,         % Activarlo para que los saltos automáticos solo se apliquen en los espacios en blanco
+  inputencoding=utf8,
+  captionpos=b,                    % Establece la posición de la leyenda del cuadro de código
+  commentstyle={\color{gray}\ttfamily},    % Estilo de los comentarios
+  extendedchars=true,              % Permite utilizar caracteres extendidos no-ASCII; solo funciona para codificaciones de 8-bits; para UTF-8 no funciona. En xelatex necesita estar a true para que funcione.
+  keepspaces=true,                 % Mantiene los espacios en el texto. Es útil para mantener la indentación del código(puede necesitar columns=flexible).
+  columns=flexible,
+  keywordstyle={\color{NavyBlue}\bfseries},  % estilo de las palabras clave
+  rulecolor=\color{black},         % Si no se activa, el color del marco puede cambiar en los saltos de línea entre textos que sea de otro color, por ejemplo, los comentarios, que están en verde en este ejemplo
+  showspaces=false,                % Si se activa, muestra los espacios con guiones bajos; sustituye a 'showstringspaces'
+  showstringspaces=false,          % subraya solamente los espacios que estén en una cadena de esto
+  showtabs=false,                  % muestra las tabulaciones que existan en cadenas de texto con guión bajo
+  stringstyle={\color{ForestGreen}\ttfamily},     % Estilo de las cadenas de texto
+  identifierstyle=\color{black},
+  tabsize=4,	                   % Establece el salto de las tabulaciones a 2 espacios
+  breaklines=true,
+  basicstyle=\footnotesize\ttfamily,        % Fija el tamaño del tipo de letra utilizado para el código
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\EUR}}1 {£}{{\pounds}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1
+}
+
+\lstdefinestyle{Python}{
+    language=Python,
+    ndkeywords={@app, None, @staticmethod},
+    ndkeywordstyle={\color{BurntOrange}\bfseries},
+}
+
+\lstdefinestyle{PythonAnexos}{
+    language=Python,
+    ndkeywords={@app, None, @staticmethod},
+    ndkeywordstyle={\color{BurntOrange}\bfseries},
+    numbers=left,                    % Posición de los números de línea (none, left, right).
+    numbersep=5pt,                   % Distancia de los números de línea al código
+    numberstyle=\small\color{gray}, % Estilo para los números de línea
+    frame=single	                   % Añade un marco al código
+}
+
+\lstdefinelanguage{Kotlin}{
+  comment=[l]{//},
+  emph={@AndroidEntryPoint, @HiltAndroidApp, @Inject, @Composable, @Preview, BienestarEmocionalApp, CoroutineScope, filter, first, firstOrNull, forEach, launch, lazy, map, mapNotNull, println, remember},
+  emphstyle={\color{OrangeRed}},
+  keywords={!in, !is, abstract, actual, annotation, as, as?, break, by, catch, class, companion, const, constructor, continue, crossinline, data, delegate, do, dynamic, else, enum, expect, external, false, field, file, final, finally, for, fun, get, if, import, in, infix, init, inline, inner, interface, internal, is, lateinit, noinline, null, object, open, operator, out, override, package, param, private, property, protected, public, receiveris, reified, return, return@, sealed, set, setparam, super, suspend, tailrec, this, throw, true, try, typealias, typeof, val, var, vararg, when, where, while},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]",
+  morestring=[s]{"""*}{*"""},
+  ndkeywords={@Deprecated, @JvmField, @JvmName, @JvmOverloads, @JvmStatic, @JvmSynthetic, Array, Boolean, Byte, Double, Float, Int, Integer, Iterable, Long, Runnable, Short, String, Any, Unit, Nothing},
+  ndkeywordstyle={\color{BurntOrange}\bfseries},
+  sensitive=true,
+}
+
+\lstdefinestyle{Kotlin}{
+    language=Kotlin,
+}
+
+\lstdefinestyle{KotlinAnexos}{
+    language=Kotlin,
+    numbers=left,                    % Posición de los números de línea (none, left, right).
+    numbersep=5pt,                   % Distancia de los números de línea al código
+    numberstyle=\small\color{gray}, % Estilo para los números de línea
+    frame=single	                   % Añade un marco al código
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Secciones para agradecimientos, resumen y eso
@@ -542,8 +646,8 @@
 	\setlength{\parskip}{\baselineskip}
 	\theauthor
 	\par{
-		\textit{\@title}\\
-		\selectlanguage{spanish}
+        \selectlanguage{spanish}
+        \textit{\@title}\\
 		\reporttype, \today\\
 		\textbf{\ifthenelse{\equal{\directorsex}{m}}{Directores}{Directoras}}: \@director
 	}
@@ -627,7 +731,9 @@
 \AtEndDocument{
     % Glosario
     % TODO Añadirlo sólo si existe alguna entrada en el glosario
-    \printglossary
+    %\printglossaries
+    %\printglossary[]
+    %\printglossary[title=Acrónimos, toctitle=Acrónimos, type=\acronymtype]
 
     % Índice
     % TODO Añadirlo sólo si existe alguna entrada en el índice
