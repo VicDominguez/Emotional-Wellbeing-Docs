@@ -6,10 +6,28 @@
 \section{Introducción}
 
     \subsection{Propósito}
-        TBD
+        El propósito de este capítulo consiste en la Especificación de Requisitos Software (ERS) correspondiente al proyecto desarrollado en este Trabajo Fin de Máster (TFM). Para la elaboración de la misma se ha tomado como base el estándar IEEE 830.
+
+        Esta especificación recoge todas las características, objetivos, restricciones y suposiciones para el desarrollo del proyecto, definiendo claramente el sistema a desarrollar y sirviendo asimismo de referencia para la verificación y validación de la solución implantada.
+
+        Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparente, en especial al tratar datos sensibles; el público objetivo de esta especificación de requisitos es cualquier persona que por cualquier razón desee conocer las características del sistema y sobre qué criterios, restricciones o supuestos ha sido diseñado, ya que consideramos que esta transparencia es vital para que el conjunto de la sociedad pueda confiar en este proyecto.
         
     \subsection{Alcance}
-        TBD
+        Como ya se mencionó en la sección \ref{sec:objetivos}, el objetivo principal de este Trabajo Fin de Master es la creación de un prototipo de un sistema que permita la detección precoz y la mejora de los trastornos de salud mental en la comunidad universitaria. 
+
+        Este proyecto se fundamenta en la alarmante situación psicológica que atraviesa nuestra sociedad, partiendo de la premisa de que en numerosas ocasiones las personas desconocen factores, conductas o síntomas relacionados con problemas de salud mental, pero que mejorando la conciencia de los mismos se podría reducir el número y la gravedad de los casos.
+
+        Para ello, este sistema se encargará de monitorizar las medidas de estrés, soledad y depresión y suicidio, en base a cuestionarios que la persona rellene diariamente. Asimismo, la aplicación recopilará los datos de su dispositivo \textit{wearable} a los que el usuario haya dado acceso, con la finalidad de construir en el marco de la escuela un conjunto de datos anonimizado con el que se pueda desarrollar en el futuro un modelo predictivo de esas medidas, con el que se pueda dar un apoyo más integral al usuario.
+
+        Asimismo, este sistema no está planteado como un reemplazo de los profesionales de la Psicología y Psiquiatría, sino como un complemento para mejorar la sensibilidad de los usuarios sobre la evolución de su salud mental, aportando consejos y remitiendo a un profesional cuando la situación del usuario sea delicada; quedando fuera del proyecto cuestiones como el asesoramiento médico profesional o una atención psicológica personalizada.
+
+        \todo[inline]{Tenemos que hablar aqui de la comunidad}
+
+        Dichos consejos estarán personalizados para el nivel de gravedad (o ausencia de la misma) de cada medida, permitiendo además que el usuario pueda ver claramente cómo se ha sentido durante los últimos días, semanas o meses para cada variable.
+
+        En cuanto a la obtención de los datos de los dispositivos, se utilizará un \textit{framework} ya desarrollado por la industria, por lo que la compatibilidad del sistema estará limitada por este factor. La extracción de datos por otros canales queda fuera del alcance, ya que los cauces legales están fuertemente restringidos. Asimismo, el sistema accederá a esos datos únicamente en modo lectura.
+
+        \todo[inline]{Hablamos aquí de que hemos tenido la colaboración/asesoría de dos psicólogas?}
         
     \subsection{Definiciones, Acrónimos y Abreviaturas}
         TBD
@@ -20,31 +38,117 @@
 \section{Descripción general del producto}
 
     \subsection{Perspectiva del producto}
-        TBD
+        Bienestar Emocional se constituye bajo dos componentes fundamentales. En primer lugar, una aplicación Android construida desde cero que haga uso del \textit{framework} Salud Conectada, el cual es desde la última versión de Android parte del propio sistema operativo. Este componente nos permite la abstracción de los componentes hardware, delegando a los fabricantes la conexión de sus dispositivos con este sistema.
+
+        En segundo lugar, se desplegará en un servidor de la Universidad un componente que permita tanto la subida de los datos del usuario como la obtención de diversas estadísticas sobre la evolución de las medidas en el resto de la comunidad universitaria.
+
+        Como se comentó anteriormente, este proyecto está planteado como un prototipo, sirviendo como punto de partida para proyectos de futuros alumnos, los cuales puedan ampliar las funcionalidades de esta aplicación sin necesidad de rehacer gran parte del trabajo. Asimismo, se busca que este sistema sea un marco para la investigación en el campo de la Psicología, permitiendo la realización de experimentos que necesiten acceso a datos de salud o cuestionarios.
+
+
+    \subsection{Características de los usuarios finales}
+
+    \todo[inline]{Por revisar}
+
+    Los usuarios finales de este sistema serán los miembros de la comunidad universitaria que deseen monitorizar su salud mental. No obstante, deberán de cumplir ciertas pautas.
+    
+    \begin{enumerate}
+        \item Los usuarios dispondrán de un teléfono con sistema operativo Android, en su versión 8 o superior.
+        \item Los teléfonos dispondrán de conexión a Internet.
+        \item El usuario realizará de forma habitual los cuestionarios ofrecidos por la aplicación.
+        \item El usuario estará dispuesto a que sus respuestas a los cuestionarios sean subidas a un servidor de la universidad, con un identificador de usuario anónimo.
+        \item Opcionalmente, el usuario dispondrá de un dispositivo \textit{wearable} de los fabricantes Fitbit o Samsung, con la aplicación del fabricante correspondiente instalada y el dispositvo conectado a su teléfono.
+        
+    \end{enumerate}
         
     \subsection{Restricciones generales}
         TBD
-        \begin{enumerate}[label=R\arabic*]
-            \item First item
-            \item Second item
+        \begin{enumerate}[label=\textbf{RG-\arabic*}]
+            \item El lenguaje para la aplicación Android será Kotlin.
+            \item El lenguaje para la programación del lado servidor será Python.
+            \item La base de datos del lado servidor será MongoDB.
         \end{enumerate}
     
     \subsection{Suposiciones}
         TBD
+
+        \begin{enumerate}[label=\textbf{SUP-\arabic*}]
+            \item 
+        \end{enumerate}
         
     \subsection{Dependencias}
-        TBD
+        \begin{enumerate}[label=\textbf{DEP-\arabic*}]
+                \item\label{dep:salud_conectada} Para la lectura de datos de salud, se utilizará el componente de Android \textit{Salud Conectada}.
+        \end{enumerate}
 
 \section{Requisitos específicos}
 
     \subsection{Requisitos de usuario}
         TBD
+
+        \begin{enumerate}[label=\textbf{\texttt{RU-\arabic*}}]
+            \item Como usuario, 
+        \end{enumerate}
     
-    \subsection{Requisitos funciones}
+    \subsection{Requisitos funcionales}
         TBD
+
+        \subsubsection{Aplicación móvil}
+
+        \begin{enumerate}[label=\textbf{\texttt{RF-\arabic*}}]
+            \item Hola
+            \item Mundo
+        \end{enumerate}
+
+        \subsubsection{Componente servidor}
     
     \subsection{Requisitos no funcionales}
         TBD
+
+        \begin{enumerate}[label=\textbf{\texttt{RNF-\arabic*}}]
+            \item Hola
+            \item Mundo
+        \end{enumerate}
+
+        \subsubsection{Acurracy}
+            TBD
+        \subsubsection{Availability}
+            TBD
+        \subsubsection{Capacity}
+            TBD
+        \subsubsection{Efficiency}
+            TBD
+        \subsubsection{Extensibility}
+            TBD
+        \subsubsection{Interoperabilty}
+            TBD
+        \subsubsection{Maintainability / Supportability/ Modificability}
+            TBD
+            Se desarrollará el código software siguiendo los principios S.O.L.I.D
+
+        \subsubsection{Manageability}
+            TBD
+        \subsubsection{Performance}
+            TBD
+        \subsubsection{Portability}
+            TBD
+        \subsubsection{Recoverability}
+            TBD
+        \subsubsection{Reliability}
+            TBD
+        \subsubsection{Reusability}
+            TBD
+        \subsubsection{Robustness}
+            TBD
+        \subsubsection{Safety}
+            TBD
+        \subsubsection{Scalability}
+            TBD
+        \subsubsection{Security / Integrity}
+            TBD
+        \subsubsection{Usability}
+            TBD
+        \subsubsection{Verificability}
+            TBD
 
 \section{Requisitos de Interfaces Externas}
 
@@ -57,4 +161,68 @@
     \subsection{Interfaces de comunicaciones}
         TBD
 
+\section{Buffer}
+\begin{enumerate}
+    \item El usuario podrá permitir o no las notificaciones (impuesto por Android)
+    \item La aplicación dispondrá de un canal general de notificaciones
+    \item La aplicación dispondrá de un canal exclusivo de notificaciones de cuestionarios.
+    \item Cuando un cuestionario sea creado, deberá notificarse al usuario.
+    \item La ronda de cuestionarios de mañana deberá ser creada diariamente a las 9:00 horas.
+    \item La ronda de cuestionarios de noche deberá ser creada diariamente a las 21:00 horas.
+    \item La ronda de cuestionarios puntuales deberá ser creada cada dos semanas a las 15:00 horas.
+    \item La aplicación dispondrá de una ventana de créditos.
+    \item El ID de usuario será generado aleatoriamente por la aplicación y será distinto en cada instalación.
+    \item La base de datos estará cifrada con el algoritmo AES, usando el modo de cifrado GCM.
+    \item Los datos de los cuestionarios serán guardados en una base de datos relacional.
+    \item Los ajustes de preferencias serán guardados en memoria persistente.
+    \item La medida depresión dispondrá de un cuestionario diario.
+    \item La medida depresión dispondrá de un cuestionario puntual, que será el PHQ-9.
+    \item La medida depresión será opcional para el usuario.
+    \item La medida depresión estará calibrada en tres umbrales: baja, moderada y alta.
+    \item Para cada umbral de la medida depresión se dispondrá de al menos un mensaje o recomendación.
+    \item La medida estrés dispondrá de un cuestionario diario.
+    \item La medida estrés dispondrá de un cuestionario puntual, que será el PSS-14.
+    \item La medida estrés será obligatoria para el usuario.
+    \item La medida estrés estará calibrada en tres umbrales: baja, moderada y alta.
+    \item Para cada umbral de la medida estrés se dispondrá de al menos un mensaje o recomendación.
+    \item La medida soledad dispondrá de un cuestionario diario.
+    \item La medida soledad dispondrá de un cuestionario puntual, que será el UCLA-20.
+    \item La medida soledad será opcional para el usuario.
+    \item La medida soledad estará calibrada en tres umbrales: baja, moderada y alta.
+    \item Para cada umbral de la medida soledad se dispondrá de al menos un mensaje o recomendación.
+    \item La aplicación dispondrá de un cuestionario diario sobre suicidio. Dicho cuestionario será creado en la ronda de noche.
+    \item La medida de riesgo de suicidio estará calibrada en tres umbrales: bajo, moderado y alto.
+    \item Para cada umbral de la medida riesgo de suicidio  se dispondrá de al menos un mensaje o recomendación.
+    \item La aplicación dispondrá de un cuestionario diario denominado "¿Cómo has estado hoy?". Dicho cuestionario será creado en la ronda de noche.
+    \item El usuario podrá dar permiso de lectura a cada dato de salud independientemente.
+    \item Si el usuario lo permite, la aplicación podrá acceder a los datos de distancia recorrida.
+    \item Si el usuario lo permite, la aplicación podrá acceder a los datos de desnivel ganado.
+    \item Si el usuario lo permite, la aplicación podrá acceder a los datos de las sesiones de ejercicio.
+    \item Si el usuario lo permite, la aplicación podrá acceder a los datos de plantas subidas.
+    \item Si el usuario lo permite, la aplicación podrá acceder a los datos de pulsaciones.
+    \item Si el usuario lo permite, la aplicación podrá acceder a los datos de sueño.
+    \item Si el usuario lo permite, la aplicación podrá acceder a los datos de pasos.
+    \item Si el usuario lo permite, la aplicación podrá acceder a los datos de calorías quemadas.
+    \item Si el usuario lo permite, la aplicación podrá acceder a los datos de peso.
+    \item La aplicación estará disponible en el idioma español.
+    \item La aplicación estará disponible en el idioma inglés.
+    \item Por defecto la aplicación estará en el idioma del dispositivo. Si el dispositivo está en un tercer idioma, se elegirá por defecto el idioma español.
+    \item El usuario podrá elegir que idioma desea mediante un ajuste.
+    \item La aplicación dispondrá de un modo claro.
+    \item La aplicación dispondrá de un modo oscuro.
+    \item Por defecto, la aplicación usará el modo establecido en el sistema.
+    \item El usuario podrá elegir entre el modo claro, oscuro o el general del sistema mediante un ajuste.
+    \item La aplicación subirá al servidor los datos de salud a los que tenga permiso cada 8 horas si hay conexión a Internet. Si no se dispone de conexión a Internet, la subida será pospuesta para realizarse en cuanto se disponga de conexión.
+    \item La aplicación subirá al servidor los datos de los cuestionarios diarios terminados cada 8 horas si hay conexión a Internet. Si no se dispone de conexión a Internet, la subida será pospuesta para realizarse en cuanto se disponga de conexión.
+    \item La aplicación subirá al servidor los datos de los cuestionarios puntuales terminados cada 8 horas si hay conexión a Internet. Si no se dispone de conexión a Internet, la subida será pospuesta para realizarse en cuanto se disponga de conexión.
+    \item Si hay cuestionarios sin terminar, la aplicación mostrará un aviso al usuario.
+    \item La aplicación guardará el estado de los cuestionarios no finalizados.
+    \item La aplicación recibirá del servidor la media de los cuestionarios de depresión, soledad y depresión del día anterior.
+    \item La aplicación recibirá del servidor la media de los cuestionarios de depresión, soledad y depresión de los últimos siete días.
+    \item La aplicación recibirá del servidor la media de los cuestionarios de depresión, soledad y depresión de cada día de la semana actual. 
+    \item En relación con \ref{dep:salud_conectada}, al no estar \textit{Salud Conectada} preinstalada en las versiones de Android comprendidas entre 8 y 13, se notificará al usuario que debe instalarla manualmente.
+
+    
+    
+\end{enumerate}
 %\section {Análisis de Stakeholders}
