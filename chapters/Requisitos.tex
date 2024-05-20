@@ -47,46 +47,81 @@
 
     \subsection{Características de los usuarios finales}
 
-    \todo[inline]{Por revisar}
+    TBD
 
-    Los usuarios finales de este sistema serán los miembros de la comunidad universitaria que deseen monitorizar su salud mental. No obstante, deberán de cumplir ciertas pautas.
+    %Los usuarios finales de este sistema serán los miembros de la comunidad universitaria que deseen monitorizar su salud mental. No obstante, deberán de cumplir ciertas pautas.
     
-    \begin{enumerate}
-        \item Los usuarios dispondrán de un teléfono con sistema operativo Android, en su versión 8 o superior.
-        \item Los teléfonos dispondrán de conexión a Internet.
-        \item El usuario realizará de forma habitual los cuestionarios ofrecidos por la aplicación.
-        \item El usuario estará dispuesto a que sus respuestas a los cuestionarios sean subidas a un servidor de la universidad, con un identificador de usuario anónimo.
-        \item Opcionalmente, el usuario dispondrá de un dispositivo \textit{wearable} de los fabricantes Fitbit o Samsung, con la aplicación del fabricante correspondiente instalada y el dispositvo conectado a su teléfono.
+    %\begin{enumerate}
+    %    \item Los usuarios dispondrán de un teléfono con sistema operativo Android, en su versión 8 o superior.
+    %    \item Los teléfonos dispondrán de conexión a Internet.
+    %    \item El usuario realizará de forma habitual los cuestionarios ofrecidos por la aplicación.
+    %    \item El usuario estará dispuesto a que sus respuestas a los cuestionarios sean subidas a un servidor de la universidad, con un identificador de usuario anónimo.
+    %    \item Opcionalmente, el usuario dispondrá de un dispositivo \textit{wearable} de los fabricantes Fitbit o Samsung, con la aplicación del fabricante correspondiente instalada y el dispositvo conectado a su teléfono.
         
-    \end{enumerate}
+    %\end{enumerate}
         
     \subsection{Restricciones generales}
-        TBD
         \begin{enumerate}[label=\textbf{RG-\arabic*}]
-            \item El lenguaje para la aplicación Android será Kotlin.
-            \item El lenguaje para la programación del lado servidor será Python.
-            \item La base de datos del lado servidor será MongoDB.
+            \item La aplicación móvil se ejecutará sobre el sistema operativo Android. Concretamente, se tomará Android 14 como referencia.
+            \item La aplicación móvil especificará Android 9 como versión mínima, pudiéndose ejecutar la aplicación en cualquier versión entre la mínima y la referente.
+            \item La comunicación con los dispositivos wearables se realizará mediante el \textit{framework} de Android \textit{Health Connect}.
+            \item La aplicación móvil será implementada utilizando el lenguaje de programación Kotlin.
+            \item El componente servidor será implementado mediante el lenguaje de programación Python.
+            \item Se utilizará como dispositivo \textit{wearable} la pulsera Fitbit Inspire 2.
         \end{enumerate}
     
     \subsection{Suposiciones}
-        TBD
 
         \begin{enumerate}[label=\textbf{SUP-\arabic*}]
-            \item 
+            \item Se supone que el usuario de la aplicación dispone de conexión a Internet.
+            \item Se supone que el usuario de la aplicación es el mismo que utiliza el dispositivo \textit{wearable}.
+            \item Se supone que las respuestas del usuario a los cuestionarios son veraces y verídicas.
+            \item Se supone que el usuario rellena frecuentemente los cuestionarios.
+            \item Se supone que el usuario utiliza con cierta asiduidad el dispositivo \textit{wearable}.
+            \item Se supone que el servidor donde se aloja el componente homónimo está disponible.
+            \item Se supone que el usuario desactiva la optimización de batería de la aplicación móvil.
+            \item Se supone que habrá más de un usuario utilizando la aplicación diariamente.
         \end{enumerate}
         
     \subsection{Dependencias}
+        \todo[inline]{Alguna más quizá?}
         \begin{enumerate}[label=\textbf{DEP-\arabic*}]
-                \item\label{dep:salud_conectada} Para la lectura de datos de salud, se utilizará el componente de Android \textit{Salud Conectada}.
+            \item Para la lectura de los datos del dispositivo \textit{wearable}, el fabricante debe integrar su aplicación móvil con el \textit{framework} \textit{Health Connect}, asegurando la escritura de los datos recogidos.
+            \item Para la ejecución de las tareas recurrentes, es necesario que el sistema operativo otorgue recursos de ejecución a la aplicación móvil.
         \end{enumerate}
 
 \section{Requisitos específicos}
 
     \subsection{Requisitos de usuario}
-        TBD
 
         \begin{enumerate}[label=\textbf{\texttt{RU-\arabic*}}]
-            \item Como usuario, 
+            \item Como usuario, quiero realizar un seguimiento del estrés.
+            \item Como usuario, quiero realizar un seguimiento de la depresión.
+            \item Como usuario, quiero realizar un seguimiento de la soledad no deseada.
+            \item Como usuario, quiero visualizar el resultado de la última medición del estrés.
+            \item Como usuario, quiero visualizar el resultado de la última medición de la depresión.
+            \item Como usuario, quiero visualizar el resultado de la última medición de soledad.
+            \item Como usuario, quiero disponer de al menos un consejo para cada nivel categórico de estrés.
+            \item Como usuario, quiero disponer de al menos un consejo para cada nivel categórico de depresión.
+            \item Como usuario, quiero disponer de al menos un consejo para cada nivel categórico de soledad.
+            \item Como usuario, quiero visualizar la evolución de mis registros de estrés.
+            \item Como usuario, quiero visualizar la evolución de mis registros de depresión.
+            \item Como usuario, quiero visualizar la evolución de mis registros de soledad.
+            \item Como usuario, quiero visualizar la media de estrés del resto de usuarios del día anterior.
+            \item Como usuario, quiero visualizar la media de depresión del resto de usuarios del día anterior.
+            \item Como usuario, quiero visualizar la media de soledad del resto de usuarios del día anterior.
+            \item Como usuario, quiero visualizar la media de estrés del resto de usuarios de los últimos siete días naturales.
+            \item Como usuario, quiero visualizar la media de depresión del resto de usuarios de los últimos siete días naturales.
+            \item Como usuario, quiero visualizar la media de soledad del resto de usuarios de los últimos siete días naturales.
+            \item Como usuario, quiero visualizar, dentro de la semana en curso, la evolución de la media de estrés diario del resto de usuarios.
+            \item Como usuario, quiero visualizar, dentro de la semana en curso, la evolución de la media de depresión diaria del resto de usuarios.
+            \item Como usuario, quiero visualizar, dentro de la semana en curso, la evolución de la media de soledad diaria del resto de usuarios.
+            \item Como usuario, quiero visualizar los datos de actividad física recogidos por la aplicación.
+            \item Como usuario, quiero utilizar la aplicación sin necesidad de disponer de Internet en todo momento, por consiguiente estarán disponibles todas las funciones relativas al usuario.
+            \item Como analista de datos, quiero poder recibir los datos anonimazados de estrés recogidos por la aplicación móvil.
+            \item Como analista de datos, quiero poder recibir los datos anonimazados de depresión recogidos por la aplicación móvil.
+            \item Como analista de datos, quiero poder recibir los datos anonimazados de soledad recogidos por la aplicación móvil.
+            \item Como analista de datos, quiero poder recibir los datos anonimazados de actividad física recogidos por la aplicación móvil.
         \end{enumerate}
     
     \subsection{Requisitos funcionales}
@@ -122,8 +157,9 @@
         \subsubsection{Interoperabilty}
             TBD
         \subsubsection{Maintainability / Supportability/ Modificability}
-            TBD
-            Se desarrollará el código software siguiendo los principios S.O.L.I.D
+            \begin{enumerate}[label=\textbf{\texttt{RX-\arabic*}}]
+                \item Se desarrollará el código software siguiendo los principios S.O.L.I.D
+            \end{enumerate}
 
         \subsubsection{Manageability}
             TBD
@@ -151,6 +187,19 @@
             TBD
 
 \section{Requisitos de Interfaces Externas}
+
+    \subsection{Interfaces de usuario}
+        \begin{enumerate}[label=\textbf{\texttt{RIU-\arabic*}}]
+            \item La interfaz de usuario deberá adaptarse al tamaño de la pantalla del dispositivo móvil.
+            \item El diseño de la interfaz de usuario contemplará dos ajustes de colores principales: modo claro y oscuro.
+            \item La aplicación móvil tomará por defecto el modo de colores general del sistema.
+            \item El usuario podrá cambiar el modo de colores de la aplicación en todo momento. 
+            \item La aplicación móvil ofrecerá la posibilidad, en los dispositivos móviles que lo soporten, la posibilidad de usar un esquema de colores basado en el fondo de pantalla del dispositivo.
+            \todo[inline]{Estos requisitos pertenecen a otra categoría?}
+            \item La aplicación móvil estará disponible en el idioma español, siendo el idioma por defecto.
+            \item La aplicación móvil estará disponible en el idioma inglés.
+            \item El usuario podrá cambiar el modo de colores de la aplicación en todo momento.
+        \end{enumerate}
 
     \subsection{Interfaces Hardware}
         TBD
