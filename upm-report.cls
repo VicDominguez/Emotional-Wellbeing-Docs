@@ -18,7 +18,10 @@
 \RequirePackage{graphicx}
 \RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{eso-pic}
-
+\setsecnumdepth{subsection}
+\maxsecnumdepth{subsection}
+% Indice con Subsection
+\maxtocdepth{subsection}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Constantes
 %
