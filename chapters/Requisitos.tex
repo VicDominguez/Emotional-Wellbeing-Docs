@@ -6,47 +6,61 @@
 \section{Introducción}
 
     \subsection{Propósito}
-        El propósito de este capítulo consiste en la Especificación de Requisitos Software (ERS) correspondiente al proyecto desarrollado en este Trabajo Fin de Máster (TFM). Para la elaboración de la misma se ha tomado como base el estándar IEEE 830.
+        El propósito de este capítulo consiste en la \gls{ers} correspondiente al proyecto desarrollado en este \gls{tfm}. Para la elaboración de la misma se ha tomado como base el estándar IEEE 830.
 
-        Esta especificación recoge todas las características, objetivos, restricciones y suposiciones para el desarrollo del proyecto, definiendo claramente el sistema a desarrollar y sirviendo asimismo de referencia para la verificación y validación de la solución implantada.
+        Esta especificación recoge todas las características, objetivos, restricciones y suposiciones para el desarrollo del proyecto, definiendo claramente el sistema a desarrollar y sirviendo asimismo de referencia para la verificación y validación de la solución implementada. Para dicha definición en primer lugar serán documentadas qué restricciones, suposiciones y dependencias son asumidas para posteriormente determinar los requisitos de usuario, los requisitos no funcionales y por último los requisitos de interfaces externas.
 
-        Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparente, en especial al tratar datos sensibles; el público objetivo de esta especificación de requisitos es cualquier persona que por cualquier razón desee conocer las características del sistema y sobre qué criterios, restricciones o supuestos ha sido diseñado, ya que consideramos que esta transparencia es vital para que el conjunto de la sociedad pueda confiar en este proyecto.
+        \todo[inline]{Si se han definido restricciones de entorno físicas, añadirlas al párrafo anterior}
+
+        Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparente, en especial al tratar datos sensibles; el público objetivo de esta especificación de requisitos es cualquier persona que desee conocer las características del sistema y sobre qué criterios, restricciones o supuestos ha sido diseñado, incrementando la confianza social en el proyecto.
         
     \subsection{Alcance}
-        Como ya se mencionó en la sección \ref{sec:objetivos}, el objetivo principal de este Trabajo Fin de Master es la creación de un prototipo de un sistema que permita la detección precoz y la mejora de los trastornos de salud mental en la comunidad universitaria. 
+        Como ya se mencionó en la sección \ref{sec:objetivos}, el objetivo principal de este \gls{tfm} es la creación de un prototipo de un sistema que permita la detección precoz y la mejora de los trastornos de salud mental en la comunidad universitaria. 
 
         Este proyecto se fundamenta en la alarmante situación psicológica que atraviesa nuestra sociedad, partiendo de la premisa de que en numerosas ocasiones las personas desconocen factores, conductas o síntomas relacionados con problemas de salud mental, pero que mejorando la conciencia de los mismos se podría reducir el número y la gravedad de los casos.
 
-        Para ello, este sistema se encargará de monitorizar las medidas de estrés, soledad y depresión y suicidio, en base a cuestionarios que la persona rellene diariamente. Asimismo, la aplicación recopilará los datos de su dispositivo \textit{wearable} a los que el usuario haya dado acceso, con la finalidad de construir en el marco de la escuela un conjunto de datos anonimizado con el que se pueda desarrollar en el futuro un modelo predictivo de esas medidas, con el que se pueda dar un apoyo más integral al usuario.
-
-        Asimismo, este sistema no está planteado como un reemplazo de los profesionales de la Psicología y Psiquiatría, sino como un complemento para mejorar la sensibilidad de los usuarios sobre la evolución de su salud mental, aportando consejos y remitiendo a un profesional cuando la situación del usuario sea delicada; quedando fuera del proyecto cuestiones como el asesoramiento médico profesional o una atención psicológica personalizada.
-
-        \todo[inline]{Tenemos que hablar aqui de la comunidad}
+        Para ello, este sistema se encargará de monitorizar y visualizar las medidas de estrés, soledad y depresión y suicidio, en base a cuestionarios que la persona rellene diariamente; planteándose un complemento para mejorar la sensibilidad de los usuarios sobre la evolución de su salud mental. Para ello, aportará consejos y remitiendo a un profesional cuando la situación del usuario sea delicada; quedando fuera del proyecto cuestiones como el asesoramiento médico profesional o una atención psicológica personalizada.
 
         Dichos consejos estarán personalizados para el nivel de gravedad (o ausencia de la misma) de cada medida, permitiendo además que el usuario pueda ver claramente cómo se ha sentido durante los últimos días, semanas o meses para cada variable.
+        
+        \todo[inline]{Revisar cómo hablamos de la comunidad}
 
-        En cuanto a la obtención de los datos de los dispositivos, se utilizará un \textit{framework} ya desarrollado por la industria, por lo que la compatibilidad del sistema estará limitada por este factor. La extracción de datos por otros canales queda fuera del alcance, ya que los cauces legales están fuertemente restringidos. Asimismo, el sistema accederá a esos datos únicamente en modo lectura.
+        Por otra parte, para reducir la estigmatización que aún hoy se percibe de la Salud Mental, el sistema presentará al usuario una visualización de una serie de datos sobre estrés, soledad y depresión del resto de usuarios.
+
+        Asimismo, la aplicación recopilará los datos de su dispositivo \gls{wearable} a los que el usuario haya dado acceso, con la finalidad de construir un conjunto de datos anonimizado con el que se pueda desarrollar un modelo predictivo de esas medidas, permitiendo un apoyo más integral al usuario. La obtención de dichos datos se realizará mediante un \gls{framework} ya desarrollado por la industria, por lo que la compatibilidad del sistema estará limitada por este factor. La extracción de datos por otros canales queda fuera del alcance, ya que los cauces legales están fuertemente restringidos. 
+
+        Finalmente, tanto la información de los datos de las medidas del usuario como sus datos sanitarios, serán enviados a un servidor alojado en la universidad para su guardado únicamente en el caso de los datos sanitarios. En cuanto a las medidas de los usuarios, serán guardadas y procesadas para presentar al usuario las tendencias del resto de usuarios.
 
         \todo[inline]{Hablamos aquí de que hemos tenido la colaboración/asesoría de dos psicólogas?}
         
-    \subsection{Definiciones, Acrónimos y Abreviaturas}
-        TBD
-        
-    \subsection{Estructura del documento}
-        TBD
-        
-\section{Descripción general del producto}
+    \subsection{Estructura de la sección}
+        \todo[inline]{No me gusta el nombre "estructura del documento", ya que es solo una parte...}
 
-    \subsection{Perspectiva del producto}
-        Bienestar Emocional se constituye bajo dos componentes fundamentales. En primer lugar, una aplicación Android construida desde cero que haga uso del \textit{framework} Salud Conectada, el cual es desde la última versión de Android parte del propio sistema operativo. Este componente nos permite la abstracción de los componentes hardware, delegando a los fabricantes la conexión de sus dispositivos con este sistema.
+        Esta \gls{ers} se estructura de la siguiente forma:
+
+        \begin{enumerate}
+            \item En la sección \ref{req:descripcion} se especifica la descripción general del producto a desarrollar. Para ello, se pone al usuario en contexto (apartado \ref{req:descripcion:perspectiva}), para continuar especificando los usuarios del producto (sección \ref{req:descripcion:usuarios}). Tras ello se detallarán las restricciones generales del producto, sus suposiciones y dependencias en las secciones 
+            \ref{req:descripcion:restricciones}, \ref{req:descripcion:suposiciones} y \ref{req:descripcion:dependencias} respectivamente.
+            \item Posteriormente, en el apartado \ref{req:especificos} se detalla la especificación formal de los requisitos del proyecto propiamente dicha. Primeramente se definirán los requisitos de los usuarios finales (sección \ref{req:especificos:usuarios}), que especifican las necesidades de los mismos, los cuales serán refinados en los requisitos funcionales (sección \ref{req:especificos:funcionales}) y no funcionales (sección \ref{req:especificos:no_funcionales}).
+            \item Por último, en la sección \ref{req:interfaces} se detallarán los requisitos de interfaces que caracterizan las conexiones entre componentes, en cuatro tipos: usuario, hardware , software y comunicaciones; en las secciones \ref{req:interfaces:usuario}, \ref{req:interfaces:hardware}, \ref{req:interfaces:software} y \ref{req:interfaces:comnicaciones} respectivamente.
+        \end{enumerate}
+        
+\section{Descripción general del producto - WIP}
+    \label{req:descripcion}
+
+    \subsection{Perspectiva del producto - WIP}
+        \label{req:descripcion:perspectiva}
+        
+        Bienestar Emocional se constituye bajo dos componentes fundamentales. En primer lugar, una aplicación Android construida desde cero que haga uso del \gls{framework} Salud Conectada, el cual es desde la última versión de Android parte del propio sistema operativo. Este componente nos permite la abstracción de los componentes hardware, delegando a los fabricantes la conexión de sus dispositivos con este sistema.
 
         En segundo lugar, se desplegará en un servidor de la Universidad un componente que permita tanto la subida de los datos del usuario como la obtención de diversas estadísticas sobre la evolución de las medidas en el resto de la comunidad universitaria.
 
         Como se comentó anteriormente, este proyecto está planteado como un prototipo, sirviendo como punto de partida para proyectos de futuros alumnos, los cuales puedan ampliar las funcionalidades de esta aplicación sin necesidad de rehacer gran parte del trabajo. Asimismo, se busca que este sistema sea un marco para la investigación en el campo de la Psicología, permitiendo la realización de experimentos que necesiten acceso a datos de salud o cuestionarios.
 
 
-    \subsection{Características de los usuarios finales}
-
+    \subsection{Características de los usuarios finales - WIP}
+        \label{req:descripcion:usuarios}
+        
     TBD
 
     %Los usuarios finales de este sistema serán los miembros de la comunidad universitaria que deseen monitorizar su salud mental. No obstante, deberán de cumplir ciertas pautas.
@@ -56,43 +70,49 @@
     %    \item Los teléfonos dispondrán de conexión a Internet.
     %    \item El usuario realizará de forma habitual los cuestionarios ofrecidos por la aplicación.
     %    \item El usuario estará dispuesto a que sus respuestas a los cuestionarios sean subidas a un servidor de la universidad, con un identificador de usuario anónimo.
-    %    \item Opcionalmente, el usuario dispondrá de un dispositivo \textit{wearable} de los fabricantes Fitbit o Samsung, con la aplicación del fabricante correspondiente instalada y el dispositvo conectado a su teléfono.
+    %    \item Opcionalmente, el usuario dispondrá de un dispositivo \gls{wearable} de los fabricantes Fitbit o Samsung, con la aplicación del fabricante correspondiente instalada y el dispositvo conectado a su teléfono.
         
     %\end{enumerate}
         
-    \subsection{Restricciones generales}
+    \subsection{Restricciones generales - WIP}
+        \label{req:descripcion:restricciones}
         \begin{enumerate}[label=\textbf{RG-\arabic*}]
-            \item La aplicación móvil se ejecutará sobre el sistema operativo Android. Concretamente, se tomará Android 14 como referencia.
-            \item La aplicación móvil especificará Android 9 como versión mínima, pudiéndose ejecutar la aplicación en cualquier versión entre la mínima y la referente.
-            \item La comunicación con los dispositivos wearables se realizará mediante el \textit{framework} de Android \textit{Health Connect}.
+            \item \label{req:restriccion:android_referencia} La aplicación móvil se ejecutará sobre el sistema operativo Android. Concretamente, se tomará Android 14 como referencia.
+            \item \label{req:restriccion:android_minimo} La aplicación móvil especificará Android 9 como versión mínima, pudiéndose ejecutar la aplicación en cualquier versión entre la mínima y la referente.
+            \item La comunicación con los dispositivos \glspl{wearable} se realizará mediante el \gls{framework} de Android \textit{Health Connect}.
             \item La aplicación móvil será implementada utilizando el lenguaje de programación Kotlin.
             \item El componente servidor será implementado mediante el lenguaje de programación Python.
-            \item Se utilizará como dispositivo \textit{wearable} la pulsera Fitbit Inspire 2.
+            \item Se utilizará como dispositivo \gls{wearable} la pulsera Fitbit Inspire 2.
         \end{enumerate}
     
-    \subsection{Suposiciones}
+    \subsection{Suposiciones - WIP}
+        \label{req:descripcion:suposiciones}
 
         \begin{enumerate}[label=\textbf{SUP-\arabic*}]
             \item Se supone que el usuario de la aplicación dispone de conexión a Internet.
-            \item Se supone que el usuario de la aplicación es el mismo que utiliza el dispositivo \textit{wearable}.
+            \item Se supone que el usuario de la aplicación es el mismo que utiliza el dispositivo \gls{wearable}.
             \item Se supone que las respuestas del usuario a los cuestionarios son veraces y verídicas.
             \item Se supone que el usuario rellena frecuentemente los cuestionarios.
-            \item Se supone que el usuario utiliza con cierta asiduidad el dispositivo \textit{wearable}.
+            \item Se supone que el usuario utiliza con cierta asiduidad el dispositivo \gls{wearable}.
             \item Se supone que el servidor donde se aloja el componente homónimo está disponible.
             \item Se supone que el usuario desactiva la optimización de batería de la aplicación móvil.
             \item Se supone que habrá más de un usuario utilizando la aplicación diariamente.
         \end{enumerate}
         
-    \subsection{Dependencias}
+    \subsection{Dependencias - WIP}
+        \label{req:descripcion:dependencias}
+        
         \todo[inline]{Alguna más quizá?}
         \begin{enumerate}[label=\textbf{DEP-\arabic*}]
-            \item Para la lectura de los datos del dispositivo \textit{wearable}, el fabricante debe integrar su aplicación móvil con el \textit{framework} \textit{Health Connect}, asegurando la escritura de los datos recogidos.
+            \item Para la lectura de los datos del dispositivo \gls{wearable}, el fabricante debe integrar su aplicación móvil con el \gls{framework} \textit{Health Connect}, asegurando la escritura de los datos recogidos.
             \item Para la ejecución de las tareas recurrentes, es necesario que el sistema operativo otorgue recursos de ejecución a la aplicación móvil.
         \end{enumerate}
 
-\section{Requisitos específicos}
-
-    \subsection{Requisitos de usuario}
+\section{Requisitos específicos - WIP}
+    \label{req:especificos}
+    
+    \subsection{Requisitos de usuario - WIP}
+        \label{req:especificos:usuarios}
 
         \begin{enumerate}[label=\textbf{\texttt{RU-\arabic*}}]
             \item Como usuario, quiero realizar un seguimiento del estrés.
@@ -124,7 +144,9 @@
             \item Como analista de datos, quiero poder recibir los datos anonimazados de actividad física recogidos por la aplicación móvil.
         \end{enumerate}
     
-    \subsection{Requisitos funcionales}
+    \subsection{Requisitos funcionales - WIP}
+        \label{req:especificos:funcionales}
+        
         TBD
 
         \subsubsection{Aplicación móvil}
@@ -174,18 +196,23 @@
 
             \item La aplicación móvil notificará al usuario si necesita instalar el componente \textit{Health Connect} para los dispositivos con versiones de Android inferiores a la 14.
 
+            \todo[inline]{Aqui no queria poner Android 13 pero me es indiferente. En Android 13 es donde el usuario puede rechazar las notificaciones}
+            \item El usuario podrá autorizar o denegar el envío de notificaciones, en las versiones de Android que implementen esa solicitud.
+            \item La aplicación segmentará las notificaciones en dos canales: uno general y otro exclusivo para las notificaciones de cuestionarios.
+
         \end{enumerate}
 
         \subsubsection{Componente servidor}
     
-    \subsection{Requisitos no funcionales}
+    \subsection{Requisitos no funcionales - WIP}
+        \label{req:especificos:no_funcionales}
         TBD
         \subsubsection{Acurracy}
             \todo[inline]{Tiene sentido hablar de precisión en esta app?}
         \subsubsection{Availability}
             \todo[inline]{Brindis al sol de la disponibilidad del servidor?}
         \subsubsection{Eficiencia (Efficiency)}
-            \todo[inline]{Queda claro que es necesario pero no suficiente?}
+            \todo[inline]{Queda claro que el tener internet es necesario pero no suficiente?}
             \begin{enumerate}[label=\textbf{\texttt{RNF-\arabic*}}]
                 \item La aplicación móvil sólo intentará enviar datos al servidor cuando se disponga de conexión a Internet.
                 \item Si en el momento de envío de datos el dispositivo no dispone de conexión a Internet, se aplazará la subida de los mismos para para realizarse en cuanto se disponga de conexión.
@@ -208,14 +235,14 @@
                 \item Los cuestionarios diarios de mañana serán creados a las 9:00 horas.
                 \item Los cuestionarios diarios de noche serán creados a las 21:00 horas.
                 \item Los cuestionarios puntuales serán creados a las 15:00 horas.
-                \item La aplicación subirá al servidor los datos de salud a los que tenga permiso cada 8 horas.
+                \item La aplicación subirá al servidor los datos de salud cada 8 horas.
                 \item La aplicación subirá al servidor los datos de los cuestionarios diarios terminados cada 8 horas.
                 \item La aplicación subirá al servidor los datos de los cuestionarios puntuales terminados cada 8 horas.
-    
             \end{enumerate}
-        \subsubsection{Portability}
+        \subsubsection{Portabilidad (Portability)}
             \begin{enumerate}[resume, label=\textbf{\texttt{RNF-\arabic*}}]
-                \item La aplicación deberá poder leer los datos de cualquier dispositivo \textit{wearable} que haya integrado el fabricante del mismo con \textit{Health Connect}.
+                \item La aplicación deberá funcionar en cualquier dispositivo móvil o tableta Android, que cumpla las restricciones \ref{req:restriccion:android_referencia} y \ref{req:restriccion:android_minimo}.
+                \item La aplicación deberá poder leer los datos de cualquier dispositivo \gls{wearable} que haya integrado el fabricante del mismo con \textit{Health Connect}.
             \end{enumerate}
         \subsubsection{Recoverability}
             \todo[inline]{Tiene sentido en esta app?}
@@ -223,46 +250,51 @@
             \todo[inline]{Que podemos hablar aqui? Que los datos se mantendrán entre versiones de la app al definirse una migración? Tolerancia de errores? Tiene sentido en esta app?}
         \subsubsection{Robustness}
             \todo[inline]{Tolerancia de errores? Tiene sentido en esta app?}
-        \subsubsection{Safety}
+        \subsubsection{Seguridad (Safety)}
+            \todo[inline]{Dónde meteríamos los requisitos de privacidad, como el de dar permisos? Los he metido en funcionales ya que es una función explícita que tiene que implementar nuestro sistema como requirimiento de Android}
             \begin{enumerate}[resume, label=\textbf{\texttt{RNF-\arabic*}}]
                 \item El ID de usuario será generado aleatoriamente por la aplicación y será distinto en cada instalación.
                 \item La base de datos de la aplicación estará cifrada con el algoritmo AES, usando el modo de cifrado GCM.
+                \item La aplicación garantizará la inmutabilidad de los datos de los cuestionarios completados.
+                \todo[inline]{Los siguientes son un brindis al sol?}
+                \item El acceso a los datos anonimizados de los usuarios solo estará permitido para propósitos científicos.
+                \item El servidor que aloje los datos anonimizados deberá estar protegido antes ataques de denegación de servicio y accesos no autorizados.
             \end{enumerate}
         \subsubsection{Scalability}
-            \begin{enumerate}[resume, label=\textbf{\texttt{RNF-\arabic*}}]
-                \item Hola
-                \item Mundo
-            \end{enumerate}
+            \todo[inline]{Deberiamos hablar aqui de la api? Usar docker para permitir que sea escalable?}
         \subsubsection{Security / Integrity}
-            \begin{enumerate}[resume, label=\textbf{\texttt{RNF-\arabic*}}]
-                \item Hola
-                \item Mundo
-            \end{enumerate}
+            \todo[inline]{Deberiamos decir que los datos se mandan cifrados aunque nuestra app no usa https porque no tenemos certificado en el servidor?}
+            \todo[inline]{Deberiamos nombrar el RGPD y las restricciones de seguridad de Health Connect sobre tratamiento de datos}
         \subsubsection{Usability}
             \begin{enumerate}[resume, label=\textbf{\texttt{RNF-\arabic*}}]
-                \item Hola
-                \item Mundo
+                \item La aplicación móvil deberá contar con una sección de bienvenida para introducir al usuario los aspectos más relevantes de la aplicación.
+                \item El usuario podrá visualizar la sección de bienvenida en cualquier momento.
+                \todo[inline]{Estos requisitos pertenecen a otra categoría?}
+                \item La aplicación móvil estará disponible en el idioma español, siendo el idioma por defecto.
+                \item La aplicación móvil estará disponible en el idioma inglés.
+                \item El usuario podrá cambiar el modo de colores de la aplicación en todo momento.
             \end{enumerate}
 
-\section{Requisitos de Interfaces Externas}
+\section{Requisitos de Interfaces Externas - WIP}
+    \label{req:interfaces}
 
-    \subsection{Interfaces de usuario}
+    \subsection{Interfaces de usuario - WIP}
+    \label{req:interfaces:usuario}
         \begin{enumerate}[label=\textbf{\texttt{RIU-\arabic*}}]
             \item La interfaz de usuario deberá adaptarse al tamaño de la pantalla del dispositivo móvil.
             \item El diseño de la interfaz de usuario contemplará dos ajustes de colores principales: modo claro y oscuro.
             \item La aplicación móvil tomará por defecto el modo de colores general del sistema.
             \item El usuario podrá cambiar el modo de colores de la aplicación en todo momento. 
             \item La aplicación móvil ofrecerá la posibilidad, en los dispositivos móviles que lo soporten, la posibilidad de usar un esquema de colores basado en el fondo de pantalla del dispositivo.
-            \todo[inline]{Estos requisitos pertenecen a otra categoría?}
-            \item La aplicación móvil estará disponible en el idioma español, siendo el idioma por defecto.
-            \item La aplicación móvil estará disponible en el idioma inglés.
-            \item El usuario podrá cambiar el modo de colores de la aplicación en todo momento.
+            \todo[inline]{Deberiamos hablar aqui de las ventanas que tenemos que implementar? Ajustes, visualización de mi info?}
         \end{enumerate}
 
-    \subsection{Interfaces Hardware}
+    \subsection{Interfaces Hardware - WIP}
+        \label{req:interfaces:hardware}
         \todo[inline]{Aqui en todo caso hablariamos de que usamos wifi, datos móviles y bluetooth? De verdad hablamos de bluetooth si lo usa health connect y no nosotros?}
     
-    \subsection{Interfaces Software}
+    \subsection{Interfaces Software - WIP}
+        \label{req:interfaces:software}
         \begin{enumerate}[label=\textbf{\texttt{RIS-\arabic*}}]
             \item La comunicación entre aplicación móvil y servidor se implementará mediante una API REST.
             \item La base de datos en el componente servidor será implementada mediante MongoDB.
@@ -273,22 +305,37 @@
     
         \end{enumerate}
     
-    \subsection{Interfaces de comunicaciones}
+    \subsection{Interfaces de comunicaciones - WIP}
+        \label{req:interfaces:comnicaciones}
         \todo[inline]{Pondríamos aqui los tipos de mensajes que enviamos y recibimos? Lo que tenemos en la api vaya}
     
     \todo[inline]{Restricciones de entorno fisico no aplica verdad?}
 
 \section{Buffer}
-\begin{enumerate}
-    \item El usuario podrá permitir o no las notificaciones (impuesto por Android)
-    \item La aplicación dispondrá de un canal general de notificaciones
-    \item La aplicación dispondrá de un canal exclusivo de notificaciones de cuestionarios.
-
-    \item La aplicación dispondrá de una ventana de créditos.
+    \begin{enumerate}
+        \item La aplicación dispondrá de una ventana de créditos.
+        
+        \item Los datos de los cuestionarios serán guardados en una base de datos relacional.
+        \item Los ajustes de preferencias serán guardados en memoria persistente.
+    	
+        \item El usuario podrá dar permiso de lectura a cada dato de salud independientemente.
     
-    \item Los datos de los cuestionarios serán guardados en una base de datos relacional.
-    \item Los ajustes de preferencias serán guardados en memoria persistente.
-	
-    \item El usuario podrá dar permiso de lectura a cada dato de salud independientemente.
-\end{enumerate}
+        \item el instante de creación, el instante de la última modificación, si está completado o no, la puntuación, la categoría de dicha puntuación, 
+        \item ultima subida: marca de tiempo de la última subida y tipo de dato: cada tipo de dato de salud, cada tipo cuestionarios diarios y cada tipo de cuestionarios puntuales
+        \item para cada bd cuestionario depresión soledad y estres (tanto diario como no): id,el instante de creación, el instante de la última modificación, si está completado o no, la puntuación, la categoría de dicha puntuación y la opción marcada en cada respuesta
+        \item para cada bd cuestionario depresión soledad y estres: Los campos de puntuación, nivel de puntuación y cada respuesta podrán ser nulos.
+    
+        \item para cuestionario suicidio: id, el instante de creación, el instante de la última modificación, si está completado o no, y la opción marcada en cada respuesta
+        \item para cuestionario suicidio el campo de cada respuesta podrá ser nulo.
+    
+        \item para cuestionario sintomas: id, el instante de creación, el instante de la última modificación, si está completado o no, y la opción marcada en cada respuesta
+        \item para cuestionario sintomas el campo de cada respuesta podrá ser nulo.
+    
+        \item concepto ronda diaria en bd que guardará:id, el instante de creación, el instante de la última modificación, el momento del dia (mañana o noche), y los id de los cuestionarios que la componen (posibles: depresion, estres, soledad, suicidio y sintomas)
+    
+        \item concepto ronda upuntual en bd que guardará:id, el instante de creación, el instante de la última modificación, y los id de los cuestionarios que la componen (posibles: depresion, estres, soledad)
+    
+        \item Se deberá garantizar un contraste entre los elementos gráficos de 3:1 $\frac{cd}{m^{2}}$ o nits, en concordancia con la guía de accesibilidad \gls{wcag} 2.0 del consorcio \gls{w3c}\cite{w3c_web_2008}.
+        
+    \end{enumerate}
 %\section {Análisis de Stakeholders}

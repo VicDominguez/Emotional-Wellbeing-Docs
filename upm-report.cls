@@ -316,8 +316,9 @@
 % Glosario de Víctor
 %
 
-\usepackage[toc,shortcuts,xindy,nonumberlist,noredefwarn]{glossaries}
+\usepackage[toc,shortcuts,xindy,noredefwarn]{glossaries}
 \setacronymstyle{long-short}
+\setglossarystyle{listgroup} 
 \input{chapters/Glosario}
 \makeglossaries
 
@@ -481,6 +482,9 @@
 
 \usepackage{todonotes}
 \addbibresource{references.bib}
+
+% Para rotar fotos
+\usepackage{rotating}
 
 %\maxsecnumdepth{subsection} % chapters, sections, and subsections are numbered
 %\maxtocdepth{subsection} % chapters, sections, and subsections are in the Table of Contents
