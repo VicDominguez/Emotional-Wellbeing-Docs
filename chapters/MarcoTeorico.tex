@@ -30,156 +30,79 @@
     En esta sección se describirán las tecnologías y herramientas más relevantes que se utilizarán a lo
     largo del desarrollo proyecto. El uso de las mismas se describirá en la sección \ref{chapter:desarrollo}.
     \todo[inline]{referenciar seccion correspondiente}
+       
+    \subsection{Android}
 
-    \subsection{Gestión del proyecto}
-        \subsubsection{Notion}
-            Notion es una plataforma online parcialmente gratuita, utilizada para el seguimiento de proyectos y de 
-            equipos. Esta herramienta es fácilmente personalizable a partir de una serie de elementos predefinidos, 
-            entre los que se encuentran bases de datos embebidas (y vistas visuales como las mismas, como tableros 
-            Kanban o diagramas Gantt), soporte para imágenes, vídeo y audio, integración con otras plataformas como 
-            Slack, Zoom, Twitter... 
-                
-            En esta herramienta se pueden construir páginas, las cuales pueden contener texto formateado con el 
-            lenguaje de marcado Markdown o cualquiera de los bloques anteriores, por lo que fue elegida para conformar 
-            el centro neurálgico del seguimiento y documentación del proyecto, como se expondrá en la sección de 
-            Metodología. \todo[inline]{meter aqui la ref}
-            
-        \subsubsection{Microsoft Teams}
-            Microsoft Teams es una herramienta de comunicación y colaboración para equipos propiedad de Microsoft. 
-            Es principalmente utilizada para alojar canales de comunicación y videollamadas.
-                
-            Para este proyecto lo hemos seleccionado por dos de sus funcionalidades: desplegar un sistema de archivos 
-            en la nube para cada canal de comunicación y registro de turnos de trabajo. 
-            
-            En cuanto a la primera de ellas, la hemos elegido por delante de otras opciones de alojamiento ya 
-            que por ser usuarios de la UPM, disponemos de 1 TB de almacenamiento, por lo que podemos alojar todo 
-            tipo de contenido multimedia prácticamente sin restricciones y de forma fácil y sencilla.
-            
-            Asimismo, la funcionalidad de registro de turnos es cómoda de usar y nos genera automáticamente un documento
-            Excel (ver figura \ref{fig:teams:excel}) con las horas registradas por parte de todos los miembros del equipo, ideal si queremos registrar el 
-            total de horas empleadas en el proyecto. 
+        A grandes rasgos, Android es un Sistema Operativo orientado a dispositivos móviles basado en el núcleo 
+        Linux, diseñado para ser independente de la arquitectura hardware de dichos dispositivos. 
+        Si bien originalmente fue planteado para teléfonos móviles, con el avance de la industria ha adopado 
+        un enfoque más amplio y es compatible con más dispositivos: tabletas, relojes inteligentes, televisores, 
+        pantallas de automóviles... aunque, excepto en el caso de las tabletas, se trata de versiones basadas en
+        Android con su propia idionsincrasia. 
 
-            \begin{figure}[h!]
-                \centering
-                \includegraphics[width=0.75\textwidth]{figures/Teams excel.PNG}
-                \caption{Extracto del registro de horas}
-                \label{fig:teams:excel}
-            \end{figure}
+        Normalmente cuando nos referimos a Android, no nos referimos únicamente al sistema operativo, sino a la
+        plataforma creada entorno al mismo; como haremos a lo largo de este proyecto. Dicha plataforma o 
+        \gls{framework} consta de numerosas capas, siendo el sistema operativo una parte de ellas. El sistema 
+        operativo como tal es denominado AOSP o \textit{Android Open Source Project}, siendo su código fuente 
+        público. Cualquier persona puede acceder a él, descargarlo y modificiarlo \cite{collado_que_2022}.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.66\textwidth]{figures/Android capas.jpg}
+            \caption[Capas de Android.]
+            {Capas de Android. Imagen extraída de \cite{perez_aosp_2019}}
+            \label{figure:android:capas}
+        \end{figure}
+
+        No obstante, en la inmensa mayoría de los teléfonos móviles el sistema operativo es complementado con,
+        entre otros, los GMS (\textit{Google Mobile Services}, o servicios de Google), los cuales solo están 
+        disponibles bajo licencia; otorgada a los fabricantes que cumplen con una serie de requisitos. Los GMS 
+        se utilizan para tareas como la gestión de notificaciones, servicios de geolocalización... además de para 
+        acceder a las herramientas de Google, como la tienda de aplicaciones Play Store. Los fabricantes también 
+        pueden personalizar y añadir funciones al sistema operativo, lo que explica que dos terminales con la misma 
+        versión puedan verse tan diferentes entre sí. 
         
 
-        \subsubsection{Zotero}
-            Zotero es una plataforma open-source (bajo la licencia AGPL) de gestión de referencias y citas 
-            bibliográficas, que permite recopilar y almacenar referencias de libros, artículos, sitios web y otros 
-            documentos cómodamente. Una vez registradas, permite exportar dichas citas de acuerdo a diferentes estilos 
-            de citación.
-                
-            En este proyecto ha sido seleccionada por su facilidad de uso, por ser open-source y disponer de una gran 
-            cantidad de plugins, como \textit{Zotero Connector}, que nos permite agregar referencias desde el navegador.
+        Por otra parte, Android fue inicialmente desarrollado por la empresa homónima, si bien fue comprada en 2005
+        por Google por 50 millones de dólares. La salida del sistema operativo se produciría dos años después, el 5 
+        de noviembre de 2007, si bien el primer terminal que lo utilizaba (HTC Dream, también conocido como 
+        T-Mobile G1) fue comercializado el 23 de septiembre de 2008 \cite{adeva_android_2023} \cite{marquez_asi_2022}.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.5\textwidth]{figures/HTC Dream.jpg}
+            \caption[HTC Dream en funcionamiento.]{HTC Dream en funcionamiento. Imagen extraída de \cite{oryl_t-mobile_2008}}
+            \label{figure:android:htc_dream}
+        \end{figure}
+
+        Desde entonces, numerosas versiones de Android han sido lanzadas, siendo la última versión estable Android 
+        13; estableciéndose por parte de Google la \textit{costumbre} de lanzar cada año una nueva versión principal. 
+        En cada una de ellas se introducen nuevas características, pero esto no significa que todos los dispositivos 
+        puedan actualizar. Los fabricantes no están obligados a actualizar sus terminales, lo que en la práctica 
+        supone que las nuevas versiones no son utilizadas masivamente y que los programadores deben de tener en 
+        cuenta las versiones antiguas en sus aplicaciones. 
         
-        \subsection{Git, GitHub y GitHub Actions}
-            Git es un extremadamente popular y utilizado sistema de control de versiones distribuido libre y gratuito,
-            creado por Linus Torvalds, creador de Linux. Es utilizado para guardar diferentes versiones
-            de un conjunto de archivos, conocido como repositorio; pudiéndose recuperar en cualquier momento
-            cualquier versión del mismo, a la vez que se guarda un registro de cuándo, quién y qué cambios se han 
-            realizado entre versiones \cite{atlassian_software_nodate}.
 
-            Asimismo, Git, como otros sistemas de control de versiones, dispone de herramientas para la integración de
-            cambios de varios usuarios, algo muy útil en el desarollo de software. Por otra parte, al ser distribuido,
-            se dispone una copia de todo el repositorio en cada máquina, por lo que no dependemos de un nodo central
-            para poder trabajar; si bien se define normalmente un nodo remoto que hace las veces de \textit{punto de
-            encuentro} entre los distintos nodos. 
+        Debido a que Google dejó de publicar oficialmente las estadísticas de uso de su sistema operativo, no es
+        posible conocer con plena exactitud dichas cifras. La comunidad se ha encargado de estimar dicha 
+        información \cite{belinski_android_nodate}; relevando que a fecha de mayo de 2023 sólo el 20\% de los 
+        dispositivos tienen la última versión, mientras que las versiones 12,11 y 10 están presentes en el 
+        20,8\%, 21,1\% y 16,6\% respectivamente. 
 
-            Por otra parte, GitHub es una plataforma web, propiedad de Microsoft, donde los usuarios pueden alojar
-            repositorios Git tanto públicos como privados; facilitando los procesos de compartir código y de 
-            colaboración en proyectos de otros programadores. GitHub no es la única plataforma para este proceso: Gitlab
-            y Bitbucket son algunas de las alternativas \cite{noauthor_git_2021}. 
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=1\textwidth]{figures/Android usage.PNG}
+            \caption[Estadísiticas acumulativas de las versiones de Android]
+            {Estadísiticas acumulativas de las versiones de Android. Imagen extraída de \cite{belinski_android_nodate}}
+            \label{figure:android:usage}
+        \end{figure}
 
-            El potencial de GitHub no acaba ahí: gracias a su extensión Acciones (o Actions en inglés) permite que en
-            los repositorio se puedan automatizar y ejecutar flujos de trabajo, lo que abre las puertas a la ejecución
-            de flujos de integración y despliegue (o entrega) continuo, conocidos como CI/CD.
+        Por último, a fecha de marzo de 2023, Android dispone de una cuota de mercado del 71\% en el segmento de sistemas 
+        operativos para dispositivos móviles, teniendo su mayor rival,el sistema operativo iOS (propiedad de Apple) 
+        un 28\%. Entre ambos acaparan el mercado, con un 99\% de cuota de mercado. En cuanto a España, el 
+        porcentaje de Android asciende hasta el 77,73\% por el 21,81 de iOS \cite{press_asi_2023}.
 
-            En este proyecto se ha elegido Git para la gestión del código software como el del presente documento,
-            mientras que el uso de GitHub se debe tanto para almancenar una copia de seguridad del código adicional, 
-            para la mejora de la visibilidad del proyecto y por último para poder configurar y ejecutar flujos de CI/CD
-            para nuestro software.
-
-            
-        \subsection{GitHub Actions}
-
-    \subsection{Aplicación móvil}
-
-        \subsubsection{Android}
-
-            A grandes rasgos, Android es un Sistema Operativo orientado a dispositivos móviles basado en el núcleo 
-            Linux, diseñado para ser independente de la arquitectura hardware de dichos dispositivos. 
-            Si bien originalmente fue planteado para teléfonos móviles, con el avance de la industria ha adopado 
-            un enfoque más amplio y es compatible con más dispositivos: tabletas, relojes inteligentes, televisores, 
-            pantallas de automóviles... aunque, excepto en el caso de las tabletas, se trata de versiones basadas en
-            Android con su propia idionsincrasia. 
-
-            Normalmente cuando nos referimos a Android, no nos referimos únicamente al sistema operativo, sino a la
-            plataforma creada entorno al mismo; como haremos a lo largo de este proyecto. Dicha plataforma o 
-            \gls{framework} consta de numerosas capas, siendo el sistema operativo una parte de ellas. El sistema 
-            operativo como tal es denominado AOSP o \textit{Android Open Source Project}, siendo su código fuente 
-            público. Cualquier persona puede acceder a él, descargarlo y modificiarlo \cite{collado_que_2022}.
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.66\textwidth]{figures/Android capas.jpg}
-                \caption[Capas de Android.]
-                {Capas de Android. Imagen extraída de \cite{perez_aosp_2019}}
-                \label{figure:android:capas}
-            \end{figure}
-
-            No obstante, en la inmensa mayoría de los teléfonos móviles el sistema operativo es complementado con,
-            entre otros, los GMS (\textit{Google Mobile Services}, o servicios de Google), los cuales solo están 
-            disponibles bajo licencia; otorgada a los fabricantes que cumplen con una serie de requisitos. Los GMS 
-            se utilizan para tareas como la gestión de notificaciones, servicios de geolocalización... además de para 
-            acceder a las herramientas de Google, como la tienda de aplicaciones Play Store. Los fabricantes también 
-            pueden personalizar y añadir funciones al sistema operativo, lo que explica que dos terminales con la misma 
-            versión puedan verse tan diferentes entre sí. 
-            
-
-            Por otra parte, Android fue inicialmente desarrollado por la empresa homónima, si bien fue comprada en 2005
-            por Google por 50 millones de dólares. La salida del sistema operativo se produciría dos años después, el 5 
-            de noviembre de 2007, si bien el primer terminal que lo utilizaba (HTC Dream, también conocido como 
-            T-Mobile G1) fue comercializado el 23 de septiembre de 2008 \cite{adeva_android_2023} \cite{marquez_asi_2022}.
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.5\textwidth]{figures/HTC Dream.jpg}
-                \caption[HTC Dream en funcionamiento.]{HTC Dream en funcionamiento. Imagen extraída de \cite{oryl_t-mobile_2008}}
-                \label{figure:android:htc_dream}
-            \end{figure}
-
-            Desde entonces, numerosas versiones de Android han sido lanzadas, siendo la última versión estable Android 
-            13; estableciéndose por parte de Google la \textit{costumbre} de lanzar cada año una nueva versión principal. 
-            En cada una de ellas se introducen nuevas características, pero esto no significa que todos los dispositivos 
-            puedan actualizar. Los fabricantes no están obligados a actualizar sus terminales, lo que en la práctica 
-            supone que las nuevas versiones no son utilizadas masivamente y que los programadores deben de tener en 
-            cuenta las versiones antiguas en sus aplicaciones. 
-            
-
-            Debido a que Google dejó de publicar oficialmente las estadísticas de uso de su sistema operativo, no es
-            posible conocer con plena exactitud dichas cifras. La comunidad se ha encargado de estimar dicha 
-            información \cite{belinski_android_nodate}; relevando que a fecha de mayo de 2023 sólo el 20\% de los 
-            dispositivos tienen la última versión, mientras que las versiones 12,11 y 10 están presentes en el 
-            20,8\%, 21,1\% y 16,6\% respectivamente. 
-
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=1\textwidth]{figures/Android usage.PNG}
-                \caption[Estadísiticas acumulativas de las versiones de Android]
-                {Estadísiticas acumulativas de las versiones de Android. Imagen extraída de \cite{belinski_android_nodate}}
-                \label{figure:android:usage}
-            \end{figure}
-
-            Por último, a fecha de marzo de 2023, Android dispone de una cuota de mercado del 71\% en el segmento de sistemas 
-            operativos para dispositivos móviles, teniendo su mayor rival,el sistema operativo iOS (propiedad de Apple) 
-            un 28\%. Entre ambos acaparan el mercado, con un 99\% de cuota de mercado. En cuanto a España, el 
-            porcentaje de Android asciende hasta el 77,73\% por el 21,81 de iOS \cite{press_asi_2023}.
-
-        \subsubsection{Kotlin}
+    \subsection{Kotlin}
 
             Durante el diseño de Android se estableció que el lenguaje principal para desarrollar aplicaciones sería 
             Java, si bien incorpora soporte para utilizar código C y C++ \cite{android_developers_como_nodate}. No
@@ -216,7 +139,7 @@
             bien es interoperable con Java, está recomendado que los nuevos desarrollos lo utilicen 
             \cite{lardinois_kotlin_2019}, como se ha realizado en este proyecto.
             
-        \subsubsection{Jetpack Compose}
+        \subsection{Jetpack Compose}
 
             Jetpack Compose es un conjunto de herramientas \textit{modernas} de Android para el desarrollo de 
             interfaces gráficas, lanzado en su primera versión estable el 28 de julio de 2021 por Google
@@ -256,7 +179,7 @@
             por su nombre, sin el prefijo Jetpack; siendo la única que lo incorpora Compose. En este documento 
             seguiremos ese enfoque para mejorar la legibilidad.
         
-        \subsubsection{Material Design 3}
+        \subsection{Material Design 3}
             Material Design 3 (también conocido como \textit{Material You}) es la tercera iteración del 
             conjunto de principios y directrices de diseño de Google, 
             como respuesta a la creciente ubiquidad de Android: móviles con pantallas
@@ -325,7 +248,7 @@
             atractivo y completo; alejándose de lo puramente funcional, mejorando la accesibilidad y explorando 
             el mundo de la personalización para el usuario.
 
-        \subsubsection{Salud Conectada}
+        \subsection{Salud Conectada}
             \label{section:salud_conectada}
             En la conferencia \textit{I/O} (sí, otra vez) de 2022 se anunció \textit{Health Connect} (o Salud Conectada
             en castellano), una aplicación creada por Google (junto con Samsung \cite{wilk_introducing_2022}) 
@@ -407,7 +330,7 @@
             recolección de datos biométricos, reduciendo la complejidad de nuestro desarrollo; y además permite al 
             usuario un mayor control sobre sus datos sensibles.
             
-        \subsubsection{Room}
+        \subsection{Room}
             Uno de los servicios que provee Android es SQLite, un sistema de gestión de base de datos relacionales de 
             bajo nivel. Este sistema es usado por la aplicación que lo utiliza, ahorrando configuración y complejidad
             \cite{recio_persistencia_2019}. 
@@ -459,48 +382,6 @@
             En resumen se trata de una tecnología auxiliar que nos permite realizar una inyección de dependencias
             eficaz sin demasiada complejidad de uso.
 
-        \subsection{SQLCipher}
-            SQLCipher es una capa de encriptación sobre SQLite, la cual proporciona un cifrado de nuestra base de datos
-            con el algoritmo AES-256. Para realizar ese cifrado, debemos generar aleatoriamente una contraseña para 
-            cada dispositivo. Para este procedimiento SQLCipher soporta el uso de dos herramientas de Android: 
-            \textit{KeyGenerator} como generador de claves y \textit{KeyStore} como sistema de almacenamiento seguro.
-            
-            Para la generación de dicha contraseña, acudimos a \textit{KeyGenerator} y le indicamos las características
-            de la contraseña, como para qué algoritmo se usará o el modo de cifrado .
-            que usará la clave.\footnote{
-                Una lista exahustiva de los modos disponibles se puede encontrar en \cite{noauthor_keyproperties_nodate}
-            } 
-            En este caso, generamos una clave para AES-256. El modo de cifrado es libre, utilizando en este caso el 
-            sistema GCM gracias a su seguridad, su relativamente bajo coste 
-            computacional y su facilidad para ser paralelizado \cite{kariyawasam_selecting_2021}.
-            
-            Por otra parte, necesitamos almacenar de manera segura dicha contraseña. \textit{KeyStore} se encarga de
-            dificultar la extracción de información, garantizando que una aplicación solo puede acceder a su propia
-            información \cite{sena_using_2019}. 
-
-            Tras ello, para implementar dicho cifrado en nuestra base de datos con Room, es necesario indicar que en el 
-            proceso de creación de la base de datos se utilice la factoría de esta capa, con la contraseña generada 
-            anteriormente. Con la implementación de este cifrado, nuestra base de datos podrá ser leída 
-            únicamente por nuestra aplicación.
-            
-            Una descripción detallada del funcionamiento de esta capa puede encontrarse en \cite{ferry_protect_2020}.
-
-        \subsection{Compose Destination}
-
-            Debido a las limitaciones de Jetpack Compose, entre otras circustancias, el paso de parámetros entre 
-            ventanas está implementado con un procedmiento bastante rígido y poco pontente comparado con el disponible
-            en la programación de Android \textit{tradicional}. En particular, se realiza de  muy similar a como 
-            se realiza en la navegación web  \cite{noauthor_navigating_nodate}; siendo 
-            necesario definir rutas simbólicas, a las cuales se le añaden parámetros. Dichos argumentos están limitados
-            a unos pocos tipos \cite{noauthor_pass_nodate}, lo que complica aún más el proceso. Además, el paso de
-            dichos argumentos no es seguro respecto a tipos.
-
-            Para solventar toda esta ristra de desventajas, se utiliza la librería Compose Destination. Esta se encarga
-            de proporcionarnos un paso de argumentos seguro respecto a tipos, de la misma manera como pasamos parámetros
-            a funciones comunes. Para cubrir ese hueco, utiliza el \textit{procesamiento de símbolos de Kotlin} (KSP o 
-            \textit{Kotlin Symbol Processing}) para generar código automáticamente que implemente el paso de argumentos
-            de Jetpack Compose a la vez que nos proporciona una interfaz simple y segura mediante anotaciones.
-
         \subsection{Work Manager}
             Work Manager es el componente oficial de Android para la planificación de subtareas dentro de nuestra 
             aplicación. Esta librería está diseñada para simplificar el uso del amalgama de librerías para esta
@@ -546,56 +427,6 @@
                 \item Una función que construya una instancia de la interfaz anterior, donde se le indica la url base de
                 la API en cuestión y configuración adicional, como el serializador a utilizar.
             \end{itemize}
-
-        \subsection{DataStore}
-
-            Datastore es una solución oficial de almacenamiento de datos para Android que busca corregir ciertos
-            defectos del procedimiento anterior (\textit{SharedPreferences}) \cite{marosfalvi_new_2021} 
-            \cite{noauthor_arquitectura_nodate-1}. Este mecanismo permite guardar en 
-            un fichero el dispositivo pares claves-valor o objetos que implementen el \textit{protocol buffer} 
-            \cite{keepcoding_usar_2022}.
-
-            Asimismo, está diseñado para almacenar cantidades pequeñas de datos (usualmente configuraciones, variables
-            que se necesita que sean persistentes...), tomando Room el testigo para
-            cantidades mayores \cite{sakunia_preference_2022}. Datastore nos proporciona un enfoque transaccional
-            y consistente al almacenar la información, mientras que apuesta fuertemente por la asincronía, haciendo
-            uso extensivo de las técnicas asíncronas de Kotlin, como las corrutinas y los flujos.
-            
-            En este proyecto utilizaremos el subcomponente orientado a pares clave valor, denominado \textit{Preference
-            DataStore}.
-
-        \subsection{Recursos y Lingver}
-            La localización básica de una aplicación en Android comienza por traducir el contenido de la interfaz 
-            gráfica. Para realizarlo nos apoyaremos en el concepto de recurso, que se puede definir como cualquier 
-            elemento estático que necesitarse la aplicación que no sea código: imágenes, textos, sonidos, etc 
-            \cite{noauthor_como_nodate-2}. Una 
-            aplicación puede proveer varios conjuntos de recursos, cada uno adaptado a una configuración diferente;
-            mientras que el sistema escogerá el conjunto que más adecuado. Si bien aquí nos centramos en la 
-            localización, el sistema de recursos es más potente; ya que permite, por
-            ejemplo, disponer de configuraciones diferentes según la densidad de resolución de la pantalla 
-            \cite{noauthor_descripcion_nodate}.
-
-            Una práctica recomendada es escribir los textos de la aplicación en un fichero XML. Este archivo es creado
-            automáticamente por Android, denominado \textit{strings.xml}, dentro de la carpeta \textit{res/values}. 
-            Cada elemento de ese fichero tiene asociado
-            un nombre o clave y un valor, y desde el código puede invocarse a ese recurso por la clave correspondiente.
-
-            Por tanto, la localización básica consiste en traducir los valores de ese archivo a otro idioma. Para que
-            el sistema pueda reconocer que es una variante del fichero strings.xml, se le guarda en 
-            \textit{res/values-X}, siendo X el código del idioma (es para español, en para inglés..). No obstante, 
-            dentro de esas carpetas values podemos crear más recursos de texto. Esto es útil si queremos
-            evitar un monolito con todos los textos de la aplicación.
-
-            Al mantener las claves, este procedimiento es transparente tanto para el programador como para el usuario,
-            ya que el sistema lo resuelve en tiempo de ejecución. No obstante, este sistema tiene una limitación
-            relativamente importante, y es que al resolverlo automáticamente según la configuración en ejecución nos 
-            impide sobreescribir esa configuración para nuestra aplicación. Para la inmensa mayoría de situaciones 
-            no supone ningún problema, pero nos impide tener la aplicación en un idioma distinto al sistema operativo.
-
-            Para resolver este caso límite hay una librería, conocida como Lingver \cite{berezanskyi_lingver_2023}. A 
-            grandes rasgos se encarga de guardar el idioma que queremos en nuestra aplicación y de sobreescribir la 
-            configuración del idioma dentro de la app, lidiando con las particularidades de las distintas versiones
-            de Android; ya que el sistema no fue diseñado originalmente para incorporar esta funcionalidad.
             
         \subsection{Lottie}
             Lottie es una biblioteca creada por Airbnb que busca facilitar la creación y uso de animaciones en entornos
@@ -659,24 +490,12 @@
 
             Por último, dispone de una aplicación demo que permite ver rápidamente las posibilidades que ofrece la 
             librería.
-                
     
-    \subsection{Servidor}
-    
-        \subsubsection{Python}
+        \subsection{Python}
             Python es un lenguaje de programación interpretado creado por Guido Van Rossum en 1991, con un marcado enfoque 
             de construir código de la manera más clara y legible posible. Es uno de los lenguajes más populares de la 
             escena, gracias a su facilidad de uso y a su enorme comunidad de desarrolladores. Estos últimos han creado un 
             enorme ecosistema de librerías que facilita la creación de nuevos proyectos, especialmente para prototipos.
-            
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.75\textwidth]{figures/Python logo.png}
-                \caption[Logo de Python.]
-                {Logo de Python. Imagen extraída de \cite{noauthor_python_nodate}}
-                \label{figure:python:logo}
-            \end{figure}
 
             Actualmente es utilizado para todo tipo de tareas, tales como desarrollo web, aplicaciones científicas… 
             pasando por inteligencia artificial o análisis de datos; casi siempre apoyándose en potentes librerías 
@@ -695,7 +514,7 @@
                 \item Facilidad de instalación de librerías gracias a la herramienta pip.
             \end{itemize}
         
-        \subsubsection{Flask}
+        \subsection{Flask}
 
             Flask es un popular entorno ligero o \textit{microframework} de Python utilizado para construir aplicaciones 
             web, tanto como páginas como API. Diseñado para ser ligero y fácil de usar, Flask proporciona las herramientas 
@@ -712,7 +531,7 @@
             ninguna adaptación del código ya existente.
 
 
-        \subsubsection{MongoDB}
+        \subsection{MongoDB}
             MongoDB es un sistema gestor de base de datos no relacional orientado a documentos, diseñado para manejar 
             grandes volúmenes de datos de manera eficiente y escalable. A diferencia de las bases de datos relacionales 
             tradicionales, no hay registros sino documentos, unos ficheros con una extensión muy similar a JSON: BSON 
@@ -731,3 +550,29 @@
             Asimismo, posee otras dos grandes fortalezas: un núcleo distribuido, lo que permite una alta disponibilidad
             y escalabilidad; y una licencia de uso gratuito desde octubre de 2018, bajo la licencia AGPL 
             \cite{noauthor_que_nodate}.
+    \subsection{Git, GitHub y GitHub Actions}
+        Git es un extremadamente popular y utilizado sistema de control de versiones distribuido libre y gratuito,
+        creado por Linus Torvalds, creador de Linux. Es utilizado para guardar diferentes versiones
+        de un conjunto de archivos, conocido como repositorio; pudiéndose recuperar en cualquier momento
+        cualquier versión del mismo, a la vez que se guarda un registro de cuándo, quién y qué cambios se han 
+        realizado entre versiones \cite{atlassian_software_nodate}.
+
+        Asimismo, Git, como otros sistemas de control de versiones, dispone de herramientas para la integración de
+        cambios de varios usuarios, algo muy útil en el desarollo de software. Por otra parte, al ser distribuido,
+        se dispone una copia de todo el repositorio en cada máquina, por lo que no dependemos de un nodo central
+        para poder trabajar; si bien se define normalmente un nodo remoto que hace las veces de \textit{punto de
+        encuentro} entre los distintos nodos. 
+
+        Por otra parte, GitHub es una plataforma web, propiedad de Microsoft, donde los usuarios pueden alojar
+        repositorios Git tanto públicos como privados; facilitando los procesos de compartir código y de 
+        colaboración en proyectos de otros programadores. GitHub no es la única plataforma para este proceso: Gitlab
+        y Bitbucket son algunas de las alternativas \cite{noauthor_git_2021}. 
+
+        El potencial de GitHub no acaba ahí: gracias a su extensión Acciones (o Actions en inglés) permite que en
+        los repositorio se puedan automatizar y ejecutar flujos de trabajo, lo que abre las puertas a la ejecución
+        de flujos de integración y despliegue (o entrega) continuo, conocidos como CI/CD.
+
+        En este proyecto se ha elegido Git para la gestión del código software como el del presente documento,
+        mientras que el uso de GitHub se debe tanto para almancenar una copia de seguridad del código adicional, 
+        para la mejora de la visibilidad del proyecto y por último para poder configurar y ejecutar flujos de CI/CD
+        para nuestro software.
