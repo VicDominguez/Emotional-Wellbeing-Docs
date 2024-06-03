@@ -472,6 +472,7 @@
 \usepackage{silence}
 \WarningFilter{latex}{`h' float specifier changed to `ht'}
 
+% Para la numeración de los itemize
 \usepackage{enumitem}
 \setlist[itemize]{topsep=-0.2cm}
 % Para poder tener tablas multipagina
@@ -486,10 +487,8 @@
 % Para rotar fotos
 \usepackage{rotating}
 
-%\maxsecnumdepth{subsection} % chapters, sections, and subsections are numbered
-%\maxtocdepth{subsection} % chapters, sections, and subsections are in the Table of Contents
-
-
+% Multi fila y columna
+\usepackage{multirow}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Estilos de Víctor
