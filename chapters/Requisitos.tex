@@ -65,8 +65,6 @@
 
     \subsection{Características de los usuarios finales}
         \label{req:descripcion:usuarios}
-
-        \todo[inline]{Algo que se te ocurra aqui Sandra?}
         
         Los usuarios finales de este sistema serán los miembros de la comunidad universitaria que deseen monitorizar su salud mental, sin necesidad de conocimientos específicos. No obstante, deberán de cumplir con las siguientes pautas:
     
@@ -81,15 +79,12 @@
     \subsection{Restricciones generales}
         \label{req:descripcion:restricciones}
         Debido funcionalmente a los componentes en los que se apoya el proyecto para ser implementable, es necesario definir ciertas restricciones generales.
-        \todo[inline]{Alguna más que hayamos metido en las específicas?}
         \begin{enumerate}[label=\textbf{RG-\arabic*}]
             \item \label{req:restriccion:android_referencia} La aplicación se ejecutará sobre el sistema operativo Android. Concretamente, se tomará Android 14 como referencia.
             \item \label{req:restriccion:android_minimo} La aplicación especificará Android 9 como versión mínima, pudiéndose ejecutar la aplicación en cualquier versión entre la mínima y la referente.
         \end{enumerate}
     
     \subsection{Suposiciones}
-        \todo[inline]{Algo que se te ocurra aqui Sandra?}
-        
         \label{req:descripcion:suposiciones}
 
         \begin{enumerate}[label=\textbf{SUP-\arabic*}]
@@ -106,8 +101,7 @@
         
     \subsection{Dependencias}
         \label{req:descripcion:dependencias}
-        
-        \todo[inline]{Alguna más quizá?}
+    
         \begin{enumerate}[label=\textbf{DEP-\arabic*}]
             \item \label{req:dependencias:integracion_correcta} Para la lectura de los datos del dispositivo \gls{wearable}, el fabricante debe integrar su aplicación móvil correcta y completamente con el \gls{framework} \textit{Salud Conectada}.
             \item En relación con \ref{req:dependencias:integracion_correcta}, el \gls{wearable} del usuario escribirá en \textit{Salud Conectada} los datos recogidos.
@@ -120,8 +114,7 @@
     \subsection{Requisitos funcionales}
         \label{req:especificos:funcionales}
 
-        \todo[inline]{No he añadido nada sobre el cuestionario de síntomas ya que no hacemos nada con él, fue "idea" de las psicólogas}
-        \todo[inline]{El permiso de notificaciones solo se ha detallado una vez, ya que se reusa por toda la app.}
+        \todo[inline]{El permiso de notificaciones solo se ha detallado una vez, ya que se reusa por toda la app}
 
         \newlist{req-usuario}{enumerate}{1}
         \newlist{req-funcionales}{enumerate}{1}
@@ -140,6 +133,7 @@
                 \item La aplicación mostrará al usuario si dispone de cuestionarios de estrés por completar para su finalización.
                 \item Al finalizar un cuestionario de estrés, se le presentará al usuario el resultado numérico del mismo.
                 \item Al finalizar un cuestionario de estrés, se le presentará al usuario el resultado categórico del mismo.
+                \item Al finalizar un cuestionario de estrés, se le presentará al usuario un consejo o recomendación según su nivel de estrés.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
@@ -157,6 +151,7 @@
                 \item La aplicación mostrará al usuario si dispone de cuestionarios de depresión por completar para su finalización.
                 \item Al finalizar un cuestionario de depresión, se le presentará al usuario el resultado numérico del mismo.
                 \item Al finalizar un cuestionario de depresión, se le presentará al usuario el resultado categórico del mismo.
+                \item Al finalizar un cuestionario de depresión, se le presentará al usuario un consejo o recomendación según su nivel de depresión.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
@@ -173,19 +168,21 @@
                 \item La aplicación mostrará al usuario si dispone de cuestionarios de soledad por completar para su finalización.
                 \item Al finalizar un cuestionario de soledad, se le presentará al usuario el resultado numérico del mismo.
                 \item Al finalizar un cuestionario de soledad, se le presentará al usuario el resultado categórico del mismo.
+                \item Al finalizar un cuestionario de soledad, se le presentará al usuario un consejo o recomendación según su nivel de soledad.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item Como usuario, quiero realizar un seguimiento del riesgo de suicidio para controlar mi nivel del mismo.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                \item El seguimiento del riesgo de suicidio se realizará mediante un cuestionario vespertino diario, diseñado a tal efecto.
+                \item El seguimiento del riesgo de suicidio se realizará mediante cuestionarios diarios.
+                \item Se realizará un cuestionario matutino diario de riesgo de suicidio, diseñado a tal efecto.
+                \item Se realizará un cuestionario vespertino diario de riesgo de suicidio, diseñado a tal efecto.
                 \item La medida de riesgo de suicidio estará calibrada en tres umbrales: bajo, moderado y alto.
                 \item Para cada umbral de la medida riesgo de suicidio se dispondrá de al menos un mensaje o recomendación.
                 \item La creación de cada cuestionario de riesgo de suicidio será notificada al usuario.
                 \item El usuario podrá terminar un cuestionario en curso en otro momento.
                 \item La aplicación mostrará al usuario si dispone de cuestionarios de riesgo de suicidio por completar para su finalización.
-                \item Al finalizar un cuestionario de riesgo de suicidio, se le presentará al usuario el resultado numérico del mismo.
-                \item Al finalizar un cuestionario de riesgo de suicidio, se le presentará al usuario el resultado categórico del mismo.
+                \item Al finalizar un cuestionario de estrés, se le presentará al usuario un consejo o recomendación según su nivel de estrés.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
@@ -211,7 +208,7 @@
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item Como usuario, quiero disponer de al menos un consejo para cada nivel de estrés para saber cómo reducirlo en cada momento.
-            \todo[inline]{Estos niveles serían categóricos, no numéricos, matizar?}
+            \todo[inline]{Estos niveles serían categóricos, no numéricos, queda claro o hay que matizar?}
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
                 \item La aplicación mostrará un consejo sobre el nivel de estrés registrado al terminar un cuestionario.
                 \item En la visualización de la última medición de estrés se podrá consultar un consejo sobre el mismo. 
@@ -298,7 +295,6 @@
             \end{enumerate}
         \end{enumerate}
         
-        \todo[inline]{Este orden nos fuerza a poner permiso extracción y visualización, y en el de analista decir que se envian y poco más. Tiene sentido que hablando de visualización digamos permiso y extracción?}
         \todo[inline]{Desnivel ganado es la traducción oficial de elevation gained pero suena horrible, mejor traducción?}
         \todo[inline]{Plantas subidas es la traducción oficial de floors climbed pero suena horrible, mejor traducción?} 
             
@@ -337,13 +333,13 @@
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item Como usuario, me gustaría utilizar la aplicación sin necesidad de disponer de Internet para garantizar el uso de la misma en todo momento.
             %\begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                \todo[inline]{Deriva únicamente en requisitos no funcionales? Tiene sentido tener un requisito de usuario que no deriva en funcionales?}
+                \todo[inline]{Deriva únicamente en requisitos no funcionales? Tiene sentido tener un requisito de usuario que no deriva en funcionales verdad?}
             %\end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item Como usuario, me gustaría disponer de una interfaz que me permita usar fácilmente la aplicación en cualquier dispositivo.
             %\begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                 \todo[inline]{Deriva únicamente en requisitos no funcionales? Tiene sentido tener un requisito de usuario que no deriva en funcionales?}
+                 \todo[inline]{Deriva únicamente en requisitos no funcionales? Tiene sentido tener un requisito de usuario que no deriva en funcionales verdad?}
             %\end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
@@ -378,6 +374,13 @@
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
+            \item Como analista de datos quiero un cuestionario contraste para validar la percepción general de la persona.
+            \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
+                \item Para cada cuestionario de contraste diario se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, y los siguientes niveles del usuario de ese día: apetito, energía, descanso, concentración, líbido y dolor físico. 
+                \item El servidor recogerá de cada usuario sus cuestionarios de contraste finalizados, agrupados por identificador de usuario.
+            \end{enumerate}
+        \end{enumerate}
+        \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item Como analista de datos, quiero poder consultar los datos de actividad física recogidos de todos los usuarios para correlacionarlos con los niveles de estrés, depresión, soledad y riesgo de suicidio.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
                 \item El servidor recogerá de cada usuario sus datos de actividad física, agrupados por identificador de usuario.
@@ -393,16 +396,14 @@
             \end{enumerate}
         \end{enumerate}
         
-        \todo[inline]{Tenemos el concepto de ronda de cuestionarios, que está en base de datos como resultado de diseño, tiene sentido omitirlo ahora y presentarlo solo en el diseño?}
     
     \subsection{Requisitos no funcionales}
         \label{req:especificos:no_funcionales}
         \subsubsection{Acurracy}
-            \todo[inline]{Tiene sentido hablar de precisión en esta app?}
+            \todo[inline]{Placeholder por si ves necesario añadir alguno.}
         \subsubsection{Availability}
-            \todo[inline]{Brindis al sol de la disponibilidad del servidor?}
+            \todo[inline]{Placeholder por si ves necesario añadir alguno.}
         \subsubsection{Eficiencia (Efficiency)}
-            \todo[inline]{Queda claro que el tener internet es necesario pero no suficiente?}
             \begin{enumerate}[label=\textbf{\texttt{RNF-\arabic*}}]
                 \item La aplicación sólo intentará enviar datos al servidor cuando se disponga de conexión a Internet.
                 \item Si en el momento de envío de datos el dispositivo no dispone de conexión a Internet, se aplazará la subida de los mismos para para realizarse en cuanto se disponga de conexión.
@@ -414,7 +415,7 @@
                 \item El diseño y la aplicación garantizarán, en la medida de lo posible, la incorporación y/o eliminación de tipos de datos de actividad física.
             \end{enumerate}
         \subsubsection{Interoperabilty}
-            \todo[inline]{Hablamos aqui de las unidades de medida de los datos?}
+            \todo[inline]{Placeholder por si ves necesario añadir alguno.}
         \subsubsection{Mantenibilidad (Maintainability)}
             \begin{enumerate}[resume, label=\textbf{\texttt{RNF-\arabic*}}]
                 \item Se desarrollará el código software siguiendo los principios S.O.L.I.D.
@@ -439,11 +440,11 @@
                 \item La aplicación deberá poder leer los datos de cualquier dispositivo \gls{wearable} que haya integrado el fabricante del mismo con \textit{Health Connect}.
             \end{enumerate}
         \subsubsection{Recoverability}
-            \todo[inline]{Tiene sentido en esta app?}
+            \todo[inline]{Placeholder por si ves necesario añadir alguno.}
         \subsubsection{Reusability}
-            \todo[inline]{Que podemos hablar aqui? Que los datos se mantendrán entre versiones de la app al definirse una migración? Tolerancia de errores? Tiene sentido en esta app?}
+            \todo[inline]{Placeholder por si ves necesario añadir alguno.}
         \subsubsection{Robustness}
-            \todo[inline]{Tolerancia de errores? Tiene sentido en esta app?}
+            \todo[inline]{Placeholder por si ves necesario añadir alguno.}
         \subsubsection{Seguridad (Safety)}
             \begin{enumerate}[resume, label=\textbf{\texttt{RNF-\arabic*}}]
                 \item El identificador de usuario será generado aleatoriamente por la aplicación para garantizar la anonimidad del mismo.  
@@ -454,7 +455,7 @@
                 \item El servidor que aloje los datos anonimizados deberá estar protegido antes ataques de denegación de servicio y accesos no autorizados.
             \end{enumerate}
         \subsubsection{Scalability}
-            \todo[inline]{Deberiamos hablar aqui de la api? Usar docker para permitir que sea escalable?}
+            \todo[inline]{Placeholder por si ves necesario añadir alguno.}
         \subsubsection{Security / Integrity}
             \begin{enumerate}[resume, label=\textbf{\texttt{RNF-\arabic*}}]
                 \item Las comunicaciones entre aplicación y servidor deberán estar cifradas.
