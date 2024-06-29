@@ -3,16 +3,16 @@
 
 \chapquote{Cada día me gusta levantarme porque hay otro reto.}{Roger Penske}
 
-\section{Introducción}
+%\section{Introducción}
 
-    \subsection{Propósito}
+   % \subsection{Propósito}
         El propósito de este capítulo consiste en la \gls{ers} correspondiente al proyecto desarrollado en este \gls{tfm}. Para la elaboración de la misma se ha tomado como base el estándar IEEE 830.
 
         Esta especificación recoge todas las características, objetivos, restricciones y suposiciones para el desarrollo del proyecto, definiendo claramente el sistema a desarrollar y sirviendo asimismo de referencia para la verificación y validación de la solución implementada. Para dicha definición en primer lugar serán documentadas qué restricciones, suposiciones y dependencias son asumidas para posteriormente determinar los requisitos de usuario, los requisitos no funcionales y por último los requisitos de interfaces externas.
 
         Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparente, en especial al tratar datos sensibles; el público objetivo de esta especificación de requisitos es cualquier persona que desee conocer las características del sistema y sobre qué criterios, restricciones o supuestos ha sido diseñado, incrementando la confianza social en el proyecto.
         
-    \subsection{Alcance}
+    \section{Alcance}
         \label{req:intro:alcance}
         Como ya se mencionó en la Sección \ref{sec:objetivos}, el objetivo principal de este \gls{tfm} es la creación de un prototipo de un sistema que permita la detección precoz y la mejora de los trastornos de salud mental en la comunidad universitaria. 
 
@@ -31,16 +31,17 @@
         Finalmente, tanto la información de los datos de las medidas del usuario como sus datos sanitarios, serán enviados a un servidor alojado en la universidad para su guardado únicamente en el caso de los datos sanitarios. En cuanto a las medidas de los usuarios, serán guardadas y procesadas para presentar al usuario las tendencias del resto de usuarios.
 
         
-    \subsection{Estructura de la sección}
-        \todo[inline]{No me gusta el nombre "estructura del documento", ya que es solo una parte...}
+   % \section{Documento de Especificación de Requisitos}
+      %  \todo[inline]{No me gusta el nombre "estructura del documento", ya que es solo una parte...}
 
-        Esta \gls{ers} se estructura de la siguiente forma:
+       \textcolor{red}{La} % Esta 
+       \gls{ers} \textcolor{red}{que se presenta a continuación} se estructura de la siguiente forma:
 
         \begin{enumerate}
             \item En la Sección \ref{req:descripcion} se especifica la descripción general del producto a desarrollar. Para ello, se pone al usuario en contexto (Sección \ref{req:descripcion:perspectiva}), para continuar especificando los usuarios del producto (Sección \ref{req:descripcion:usuarios}). Tras ello se detallarán las restricciones generales del producto, sus suposiciones y dependencias en las secciones 
-            \ref{req:descripcion:restricciones}, \ref{req:descripcion:suposiciones} y \ref{req:descripcion:dependencias} respectivamente.
+            \ref{req:descripcion:restricciones}, \ref{req:descripcion:suposiciones} y \ref{req:descripcion:dependencias}, respectivamente.
             \item Posteriormente, en la Sección \ref{req:especificos} se detalla la especificación formal de los requisitos del proyecto propiamente dicha. En la Sección \ref{req:especificos:funcionales} se definirán los requisitos de los usuarios finales que especifican las necesidades de los mismos. Cada requisito de usuario será descompuesto en uno o más requisitos funcionales, mientras que los no funcionales estarán desglosados por categorías en la Sección \ref{req:especificos:no_funcionales}.
-            \item Por último, en la Sección \ref{req:externas} se detallarán los requisitos de interfaces hardware y software que caracterizan las conexiones entre componentes (Secciones \ref{req:externas:hardware} y \ref{req:externas:software} respectivamente), y las restricciones de desarrollo en la Sección \ref{req:externas:restricciones}.
+            \item Por último, en la Sección \ref{req:externas} se detallarán los requisitos de interfaces hardware y software que caracterizan las conexiones entre componentes (Secciones \ref{req:externas:hardware} y \ref{req:externas:software}, respectivamente), y las restricciones de desarrollo en la Sección \ref{req:externas:restricciones}.
         \end{enumerate}
         
 \section{Descripción general del producto}
@@ -58,7 +59,7 @@
 
         En cuando al procesamiento de los datos, será utilizado un servidor puesto a disposición por la Universidad como prototipo, no contemplándose ningún trabajo de despliegue en un escenario real del mismo.
 
-        \todo[inline]{Hablamos aquí de que hemos tenido la colaboración/asesoría de dos psicólogas?}
+        \todo[inline]{Hablamos aquí de que hemos tenido la colaboración/asesoría de dos psicólogas? SIIIIIII}
         
         Por último, se busca que este sistema sea un marco para la investigación en el campo de la Psicología, permitiendo la realización de experimentos que necesiten acceso a datos de actividad física o cuestionarios.
 
@@ -91,7 +92,8 @@
             \item El usuario de la aplicación dispone de conexión a Internet de forma habitual.
             \item El usuario de la aplicación es el mismo que utiliza el dispositivo \gls{wearable}.
             \item Las respuestas del usuario a los cuestionarios son veraces y verídicas.
-            \item El usuario rellena frecuentemente los cuestionarios.
+            \item El usuario \textcolor{red}{rellenará} %rellena
+            frecuentemente los cuestionarios.
             \item El usuario utiliza con cierta asiduidad el dispositivo \gls{wearable}.
             \item El servidor donde se aloja el componente homónimo está disponible.
             \item El usuario desactiva el ahorro de batería relativo a la aplicación, para que la optimización de energía del sistema operativo no interfiera con la aplicación en determinados escenarios.
@@ -104,6 +106,8 @@
     
         \begin{enumerate}[label=\textbf{DEP-\arabic*}]
             \item \label{req:dependencias:integracion_correcta} Para la lectura de los datos del dispositivo \gls{wearable}, el fabricante debe integrar su aplicación móvil correcta y completamente con el \gls{framework} \textit{Salud Conectada}.
+
+            \todo[inline]{no entiendo esta redacción}
             \item En relación con \ref{req:dependencias:integracion_correcta}, el \gls{wearable} del usuario escribirá en \textit{Salud Conectada} los datos recogidos.
             \item \label{req:dependencias:planificacion} Para la ejecución de las tareas recurrentes, es necesario que el sistema operativo otorgue recursos de ejecución a la aplicación.
         \end{enumerate}
@@ -122,9 +126,12 @@
         \begin{enumerate}[series=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item Como usuario, quiero realizar un seguimiento del estrés para controlar mi evolución del mismo.
             \begin{enumerate}[series=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                \item El seguimiento del estrés se realizará mediante cuestionarios diarios y puntuales.
-                \item Se realizará un cuestionario matutino diario de estrés, diseñado a tal efecto.
+                \item El seguimiento del estrés se realizará mediante cuestionarios diarios ç%y puntuales 
+                \textcolor{red}{que recogerán la siguiente información: .....}.
+                \item \textcolor{red}{El sistema desplegará un} %Se realizará un 
+                cuestionario matutino diario de estrés \textcolor{red}{sobre las 6:00 a.m. hora local del usuario, con los siguientes datos:} %, diseñado a tal efecto.
                 \item Se realizará un cuestionario vespertino diario de estrés, diseñado a tal efecto.
+                \todo[inline]{rehacerlo como el anterior}
                 \item El cuestionario puntual para el seguimiento del estrés será el PSS-14.
                 \item La medida estrés estará calibrada en tres umbrales: baja, moderada y alta.
                 \item Para cada umbral de la medida estrés se dispondrá de al menos un mensaje o recomendación.

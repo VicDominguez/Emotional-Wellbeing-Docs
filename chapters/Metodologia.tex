@@ -5,7 +5,8 @@
 
 En primer lugar, se puede definir como metodología de desarrollo software al conjunto de técnicas, prácticas y métodos que se utilizan para diseñar e implementar un sistema basado en \textit{software}, con la finalidad de organizar de la mejor manera posible los equipos de trabajo involucrados en el desarrollo software \cite{santander_universidades_metodologias_2020}.
 
-La elección de la metodología para un proyecto de desarrollo software depende de factores como el tamaño del equipo de desarrollo del proyecto, los requisitos del mismo y su posible cambio, las restricciones de tiempo... Asimismo, dicha elección impacta notablemente en ámbitos como la gestión de los recursos, la planificación de las actividades, la comunicación entre los miembros del equipo o a la evaluación de la calidad del producto.
+La elección de la metodología para un proyecto de desarrollo software depende de factores como el tamaño del equipo de desarrollo del proyecto, los requisitos del mismo y su posible cambio, las restricciones de tiempo,  \textcolor{red}{entre otros}. %.. 
+Asimismo, dicha elección impacta notablemente en ámbitos como la gestión de los recursos, la planificación de las actividades, la comunicación entre los miembros del equipo o a la evaluación de la calidad del producto.
 
 \section{Metodologías de desarrollo del \textit{software} de Sistemas}
 
@@ -13,12 +14,13 @@ La elección de la metodología para un proyecto de desarrollo software depende 
 
     \subsection{Metodologías Tradicionales}
     
-        Estas metodologías se basan en una estructura lineal, donde se completan las fases del desarrollo en secuencia. El calificativo tradicional se debe a su creación en las primeras etapas de la Ingeniería del Software.
+        Estas metodologías se basan en una estructura lineal, donde se completan las fases del desarrollo en secuencia. El calificativo tradicional se debe a su creación en \textcolor{red}{los inicios de la Ingeniería del Software como área de la Informática}. %las primeras etapas de la Ingeniería del Software.
     
         \begin{itemize}
-        \item Cascada: este modelo, según  \cite{sommerville_software_2011}, separa las actividades fundamentales tales como la especificación, desarrollo, validación y evolución, en una secuencia de fases: definición de requerimientos, diseño del sistema software, implementación y prueba de unidad, integración y pruebas del sistema y, por último, operación y mantenimiento. El desarrollo se lleva a cabo completando cada una de estas fases de forma secuencial, pudiendo regresar a cualquiera de las fases anteriores solo tras haber completado previamente la secuencia completa.
+        \item \textbf{Cascada:} este modelo, según  \cite{sommerville_software_2011}, separa las actividades fundamentales tales como la especificación, desarrollo, validación y evolución, en una secuencia de fases: definición de requerimientos, diseño del sistema software, implementación y prueba de unidad, integración y pruebas del sistema y, por último, operación y mantenimiento. El desarrollo se lleva a cabo completando cada una de estas fases de forma secuencial, pudiendo regresar a cualquiera de las fases anteriores solo tras haber completado previamente la secuencia completa.
     
-        Por otra parte, existen modificaciones de esta metodología, como \textit{cascada con retroalimentación}, que añaden la posibilidad de volver a la fase anterior de desarrollo en caso de identificarse problemas, sin necesidad de finalizar todas las etapas; como puede verse en la figura \ref{fig:metodologia:cascada_retroalimentada}.
+        Por otra parte, existen modificaciones de esta metodología, como \textit{cascada con retroalimentación}, que añaden la posibilidad de \textcolor{red}{considerar} volver a la fase anterior de desarrollo en caso de identificarse problemas, sin necesidad de finalizar todas las etapas; como puede verse en la \textcolor{red}{Figura} %figura
+        \ref{fig:metodologia:cascada_retroalimentada}.
     
         \begin{figure}[h]
             \centering
@@ -27,7 +29,7 @@ La elección de la metodología para un proyecto de desarrollo software depende 
             \label{fig:metodologia:cascada_retroalimentada}
         \end{figure}
         
-        \item Modelo en V: considerado como una variante de la metodología en cascada, se representan las acciones a seguir en una V, como se puede ver en la Figura \ref{fig:metodologia:modelo_v}. Según \cite{pressman_software_2005}, a medida que el equipo de software avanza hacia abajo desde el lado izquierdo de la V, los requerimientos básicos del problema mejoran hacia representaciones técnicas cada vez más detalladas del problema y de su solución. 
+        \item \textbf{Modelo en V}: considerado como una variante de la metodología en cascada, se representan las acciones a seguir en una V, como se puede ver en la Figura \ref{fig:metodologia:modelo_v}. Según \cite{pressman_software_2005}, a medida que el equipo de software avanza hacia abajo desde el lado izquierdo de la V, los requerimientos básicos del problema mejoran hacia representaciones técnicas cada vez más detalladas del problema y de su solución. 
         
         Una vez que se ha generado el código, el equipo sube por el lado derecho de la V, y en esencia ejecuta una serie de pruebas (acciones para asegurar la calidad) que validan cada uno de los modelos creados cuando el equipo fue hacia abajo por el lado izquierdo donde se aprecia la relación entre las acciones para  el aseguramiento de la calidad y aquellas asociadas con la comunicación, modelado y construcción temprana. 
     
@@ -41,10 +43,12 @@ La elección de la metodología para un proyecto de desarrollo software depende 
 
     \subsection{Metodologías Ágiles}
 
-        Este conjunto de métodos deben su nombre al \textit{Manifiesto Ágil} \cite{varios_autores_manifiesto_2001}, donde se reivindica un enfoque que apueste por ``individuos e interacciones sobre procesos y herramientas, software funcionando sobre documentación extensiva, colaboración con el cliente sobre negociación contractual y respuesta ante el cambio sobre seguir un plan``. Algunas de las metodologías que implementan estos principios son:
+        Este conjunto de métodos deben su nombre al \textit{Manifiesto Ágil} \cite{varios_autores_manifiesto_2001}, donde se reivindica un enfoque que apueste por ``individuos e interacciones sobre procesos y herramientas, software funcionando sobre documentación extensiva, colaboración con el cliente sobre negociación contractual y respuesta ante el cambio sobre seguir un plan\textcolor{red}{''}. %``. 
+        Algunas de las metodologías que implementan estos principios son:
     
         \begin{itemize}
-            \item Scrum, si bien es previa al \textit{Manifiesto Ágil}, sus principios son congurentes con el manifiesto. En esta aproximación se utiliza un enfoque iterativo para el desarrollo, bajo el concepto de \textit{sprint}, tal y como se puede visualizar en la Figura \ref{fig:metodologia:scrum} . Un \textit{sprint} es una unidad de trabajo de duración fija (normalmente dos semanas) en la cual no se pueden introducir cambios, permitiendo cierta estabilidad a la vez que se abraza el cambio \cite{pressman_software_2005}. 
+            \item \textbf{Scrum}, si bien es previa al \textit{Manifiesto Ágil}, sus principios son \textcolor{red}{congruentes} %congurentes 
+            con el manifiesto. En esta aproximación se utiliza un enfoque iterativo para el desarrollo, bajo el concepto de \textit{sprint}, tal y como se puede visualizar en la Figura \ref{fig:metodologia:scrum}. Un \textit{sprint} es una unidad de trabajo de duración fija (normalmente dos semanas) en la cual no se pueden introducir cambios, permitiendo cierta estabilidad a la vez que se abraza el cambio \cite{pressman_software_2005}. 
     
             \begin{figure}[h]
                 \centering
@@ -57,7 +61,11 @@ La elección de la metodología para un proyecto de desarrollo software depende 
     
             Por otra parte, se definen roles en el equipo tales como \textit{Scrum Master}, el cual se encarga de la comunicación con otros equipos y clientes, modera las reuniones y registra las decisiones entre otras cuestiones, o el \textit{Product Owner}, siendo el responsable del proyecto en cuanto al desarrollo, mantenimiento y priorización de las tareas \cite{valtx_metodologias_2023}.
     
-            \item Kanban es una metodología ágil creada por Toyota, la cual tiene como elemento diferenciador el uso de tarjetas visuales (kanban en japonés) \cite{pzt_metodologias_nodate}, representadas en forma de un tablero donde se refleja el flujo de los procesos en un trabajo designado, permitiendo a cada responsable mover sus tareas libremente según los avances. Ese flujo de trabajo puede ser algo tan sencillo como ``Por hacer``, ``En curso`` y ``Terminado`` \cite{atlassian_que_nodate-1}, como se puede ver en la figura \ref{fig:metodologia:kanban}.
+            \item \textbf{Kanban} es una metodología ágil creada por Toyota, la cual tiene como elemento diferenciador el uso de tarjetas visuales (kanban en japonés) \cite{pzt_metodologias_nodate}, representadas en forma de un tablero donde se refleja el flujo de los procesos en un trabajo designado, permitiendo a cada responsable mover sus tareas libremente según los avances. Ese flujo de trabajo puede ser algo tan sencillo como ``Por hacer\textcolor{red}{''}, %``,
+            ``En curso\textcolor{red}{''} y %`` y 
+            ``Terminado\textcolor{red}{''} %``
+            \cite{atlassian_que_nodate-1}, como se puede ver en la \textcolor{red}{Figura} %figura
+            \ref{fig:metodologia:kanban}.
     
             \begin{figure}[h]
                 \centering
@@ -83,8 +91,8 @@ La elección de la metodología para un proyecto de desarrollo software depende 
     Para el desarrollo de este proyecto se ha elegido la metodología \textbf{en cascada con retroalimentación}, justificándose dicha elección con las siguientes razones:
     
     \begin{itemize}
-        \item Equipo reducido: el equipo de desarrollo de este proyecto se ha compuesto únicamente por el autor, con la supervisión de sus dos directoras. Como se describió anteriormente, metodologías como Scrum definen una serie de roles claramente diferenciados; por lo que no se adaptan a un equipo tan reducido.
-        \item Estabilidad de los requisitos: los requisitos que fundamentan este proyecto son definidos claramente desde el inicio, siendo poco propensos a ser modificados durante la ejecución del mismo. 
-        \item Definición clara y sencilla de las fases: se busca una metodología que permita trabajar eficientemente, con la menor sobrecarga posible mientras se garantice la calidad. Al asumirse un cambio inexistente o relativamente pequeño, se puede contemplar el uso de metodologías tradicionales en lugar de las ágiles, al no necesitarse la sobrecarga de roles y ceremonias. 
-        \item Retroalimentación periódica: si bien no se contemplan cambios significativos durante el desarrollo del proyecto, se desea cierta flexibilidad que permita descubrir y corregir errores de forma temprana. Metodologías tradicionales, como en cascada sin retroalimentación, muestran un enfoque muy rígido para la identificación y resolución de problemas durante el transcurso del proyecto.
+        \item \textbf{Equipo reducido}: el equipo de desarrollo de este proyecto se ha compuesto únicamente por el autor, con la supervisión de sus dos directoras. Como se describió anteriormente, metodologías como Scrum definen una serie de roles claramente diferenciados; por lo que no se adaptan a un equipo tan reducido.
+        \item \textbf{Estabilidad de los requisitos}: los requisitos que fundamentan este proyecto son definidos claramente desde el inicio, siendo poco propensos a ser modificados durante la ejecución del mismo. 
+        \item \textbf{Definición clara y sencilla de las fases}: se busca una metodología que permita trabajar eficientemente, con la menor sobrecarga posible mientras se garantice la calidad. Al asumirse un cambio inexistente o relativamente pequeño, se puede contemplar el uso de metodologías tradicionales en lugar de las ágiles, al no necesitarse la sobrecarga de roles y ceremonias. 
+        \item \textbf{Retroalimentación periódica}: si bien no se contemplan cambios significativos durante el desarrollo del proyecto, se desea cierta flexibilidad que permita descubrir y corregir errores de forma temprana. Metodologías tradicionales, como en cascada sin retroalimentación, muestran un enfoque muy rígido para la identificación y resolución de problemas durante el transcurso del proyecto.
     \end{itemize}
