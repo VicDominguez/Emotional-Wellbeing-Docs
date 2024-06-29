@@ -1,49 +1,39 @@
-\chapter{[Pendiente de revisión] Análisis del sistema propuesto}
+\chapter{[En revisión] Análisis del sistema propuesto}
 \label{chapter:analisis}
 
 \chapquote{Cada día me gusta levantarme porque hay otro reto.}{Roger Penske}
 
-%\section{Introducción}
+El propósito de este capítulo consiste en la \gls{ers} correspondiente al proyecto desarrollado en este \gls{tfm}. Para la elaboración de la misma se ha tomado como base el estándar IEEE 830.
 
-   % \subsection{Propósito}
-        El propósito de este capítulo consiste en la \gls{ers} correspondiente al proyecto desarrollado en este \gls{tfm}. Para la elaboración de la misma se ha tomado como base el estándar IEEE 830.
+Esta especificación recoge todas las características, objetivos, restricciones y suposiciones para el desarrollo del proyecto, definiendo claramente el sistema a desarrollar y sirviendo asimismo de referencia para la verificación y validación de la solución implementada. Para dicha definición en primer lugar serán documentadas qué restricciones, suposiciones y dependencias son asumidas para posteriormente determinar los requisitos de usuario, los requisitos no funcionales y por último los requisitos de interfaces externas.
 
-        Esta especificación recoge todas las características, objetivos, restricciones y suposiciones para el desarrollo del proyecto, definiendo claramente el sistema a desarrollar y sirviendo asimismo de referencia para la verificación y validación de la solución implementada. Para dicha definición en primer lugar serán documentadas qué restricciones, suposiciones y dependencias son asumidas para posteriormente determinar los requisitos de usuario, los requisitos no funcionales y por último los requisitos de interfaces externas.
-
-        Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparente, en especial al tratar datos sensibles; el público objetivo de esta especificación de requisitos es cualquier persona que desee conocer las características del sistema y sobre qué criterios, restricciones o supuestos ha sido diseñado, incrementando la confianza social en el proyecto.
+Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparente, en especial al tratar datos sensibles; el público objetivo de esta especificación de requisitos es cualquier persona que desee conocer las características del sistema y sobre qué criterios, restricciones o supuestos ha sido diseñado, incrementando la confianza social en el proyecto.
         
-    \section{Alcance}
-        \label{req:intro:alcance}
-        Como ya se mencionó en la Sección \ref{sec:objetivos}, el objetivo principal de este \gls{tfm} es la creación de un prototipo de un sistema que permita la detección precoz y la mejora de los trastornos de salud mental en la comunidad universitaria. 
+\section{Alcance}
+    \label{req:intro:alcance}
+    Como ya se mencionó en la Sección \ref{sec:objetivos}, el objetivo principal de este \gls{tfm} es la creación de un prototipo de un sistema que permita la detección precoz y la mejora de los trastornos de salud mental en la comunidad universitaria. 
 
-        Este proyecto se fundamenta en la alarmante situación psicológica que atraviesa nuestra sociedad, partiendo de la premisa de que en numerosas ocasiones las personas desconocen factores, conductas o síntomas relacionados con problemas de salud mental, pero que mejorando la conciencia de los mismos se podría reducir el número y la gravedad de los casos.
+    Este proyecto se fundamenta en la alarmante situación psicológica que atraviesa nuestra sociedad, partiendo de la premisa de que en numerosas ocasiones las personas desconocen factores, conductas o síntomas relacionados con problemas de salud mental, pero que mejorando la conciencia de los mismos se podría reducir el número y la gravedad de los casos.
 
-        Para ello, este sistema se encargará de monitorizar y visualizar las medidas de estrés, soledad, depresión y suicidio, en base a cuestionarios que la persona rellene diariamente; planteándose un complemento para mejorar la sensibilidad de los usuarios sobre la evolución de su salud mental. Para ello, aportará consejos y remitiendo a un profesional cuando la situación del usuario sea delicada; quedando fuera del proyecto cuestiones como el asesoramiento médico profesional o una atención psicológica personalizada.
+    Para ello, este sistema se encargará de monitorizar y visualizar las medidas de estrés, soledad, depresión y suicidio, en base a cuestionarios que la persona rellene diariamente; planteándose un complemento para mejorar la sensibilidad de los usuarios sobre la evolución de su salud mental. Para ello, aportará consejos y remitiendo a un profesional cuando la situación del usuario sea delicada; quedando fuera del proyecto cuestiones como el asesoramiento médico profesional o una atención psicológica personalizada.
 
-        Dichos consejos estarán personalizados para el nivel de gravedad (o ausencia de la misma) de cada medida, permitiendo además que el usuario pueda ver claramente cómo se ha sentido durante los últimos días, semanas o meses para cada variable.
-        
-        \todo[inline]{Revisar cómo hablamos de la comunidad}
+    Dichos consejos estarán personalizados para el nivel de gravedad (o ausencia de la misma) de cada medida, permitiendo además que el usuario pueda ver claramente cómo se ha sentido durante los últimos días, semanas o meses para cada variable.
 
-        Por otra parte, para reducir la estigmatización que aún hoy se percibe de la Salud Mental, el sistema presentará al usuario una visualización de una serie de datos sobre estrés, soledad y depresión del resto de usuarios.
+    Por otra parte, para reducir la estigmatización que aún hoy se percibe de la Salud Mental, el sistema presentará al usuario una visualización de una serie de datos sobre estrés, soledad y depresión del resto de usuarios.
 
-        Asimismo, la aplicación recopilará los datos de su dispositivo \gls{wearable} a los que el usuario haya dado acceso, con la finalidad de construir un conjunto de datos anonimizado con el que se pueda desarrollar un modelo predictivo de esas medidas, permitiendo un apoyo más integral al usuario. 
+    Asimismo, la aplicación recopilará los datos de su dispositivo \gls{wearable} a los que el usuario haya dado acceso, con la finalidad de construir un conjunto de datos anonimizado con el que se pueda desarrollar un modelo predictivo de esas medidas, permitiendo un apoyo más integral al usuario. 
 
-        Finalmente, tanto la información de los datos de las medidas del usuario como sus datos sanitarios, serán enviados a un servidor alojado en la universidad para su guardado únicamente en el caso de los datos sanitarios. En cuanto a las medidas de los usuarios, serán guardadas y procesadas para presentar al usuario las tendencias del resto de usuarios.
+    Finalmente, tanto la información de los datos de las medidas del usuario como sus datos sanitarios, serán enviados a un servidor alojado en la universidad para su guardado únicamente en el caso de los datos sanitarios. En cuanto a las medidas de los usuarios, serán guardadas y procesadas para presentar al usuario las tendencias del resto de usuarios.
 
-        
-   % \section{Documento de Especificación de Requisitos}
-      %  \todo[inline]{No me gusta el nombre "estructura del documento", ya que es solo una parte...}
+   La \gls{ers} que se presenta a continuación se estructura de la siguiente forma:
 
-       \textcolor{red}{La} % Esta 
-       \gls{ers} \textcolor{red}{que se presenta a continuación} se estructura de la siguiente forma:
-
-        \begin{enumerate}
-            \item En la Sección \ref{req:descripcion} se especifica la descripción general del producto a desarrollar. Para ello, se pone al usuario en contexto (Sección \ref{req:descripcion:perspectiva}), para continuar especificando los usuarios del producto (Sección \ref{req:descripcion:usuarios}). Tras ello se detallarán las restricciones generales del producto, sus suposiciones y dependencias en las secciones 
-            \ref{req:descripcion:restricciones}, \ref{req:descripcion:suposiciones} y \ref{req:descripcion:dependencias}, respectivamente.
-            \item Posteriormente, en la Sección \ref{req:especificos} se detalla la especificación formal de los requisitos del proyecto propiamente dicha. En la Sección \ref{req:especificos:funcionales} se definirán los requisitos de los usuarios finales que especifican las necesidades de los mismos. Cada requisito de usuario será descompuesto en uno o más requisitos funcionales, mientras que los no funcionales estarán desglosados por categorías en la Sección \ref{req:especificos:no_funcionales}.
-            \item Por último, en la Sección \ref{req:externas} se detallarán los requisitos de interfaces hardware y software que caracterizan las conexiones entre componentes (Secciones \ref{req:externas:hardware} y \ref{req:externas:software}, respectivamente), y las restricciones de desarrollo en la Sección \ref{req:externas:restricciones}.
-        \end{enumerate}
-        
+    \begin{enumerate}
+        \item En la Sección \ref{req:descripcion} se especifica la descripción general del producto a desarrollar. Para ello, se pone al usuario en contexto (Sección \ref{req:descripcion:perspectiva}), para continuar especificando los usuarios del producto (Sección \ref{req:descripcion:usuarios}). Tras ello se detallarán las restricciones generales del producto, sus suposiciones y dependencias en las secciones 
+        \ref{req:descripcion:restricciones}, \ref{req:descripcion:suposiciones} y \ref{req:descripcion:dependencias}, respectivamente.
+        \item Posteriormente, en la Sección \ref{req:especificos} se detalla la especificación formal de los requisitos del proyecto propiamente dicha. En la Sección \ref{req:especificos:funcionales} se definirán los requisitos de los usuarios finales que especifican las necesidades de los mismos. Cada requisito de usuario será descompuesto en uno o más requisitos funcionales, mientras que los no funcionales estarán desglosados por categorías en la Sección \ref{req:especificos:no_funcionales}.
+        \item Por último, en la Sección \ref{req:externas} se detallarán los requisitos de interfaces hardware y software que caracterizan las conexiones entre componentes (Secciones \ref{req:externas:hardware} y \ref{req:externas:software}, respectivamente), y las restricciones de desarrollo en la Sección \ref{req:externas:restricciones}.
+    \end{enumerate}
+    
 \section{Descripción general del producto}
     \label{req:descripcion}
 
@@ -55,11 +45,13 @@
 
         Este prototipo, a través de su aplicación móvil, se apoyará en el sistema operativo Android para su posible uso en una enorme variedad de dispositivos móviles. Asimismo, a través de su \gls{sdk}, se interactuará con el sistema operativo para ciertos escenarios, como la planificación de tareas.
 
-        Por otra parte, para la lectura de datos de los \glspl{wearable} nos apoyaremos en el nuevo componente de Android Salud Conectada (o Health Connect en inglés) Dicho componente nos permite la abstracción de los componentes hardware, delegando a los fabricantes la conexión de sus dispositivos con este sistema y unificando el acceso y uso de los datos de actividad física. La extracción de datos por otros canales queda fuera de este proyecto, ya que los cauces legales están fuertemente restringidos. 
+        Por otra parte, para la lectura de datos de los \glspl{wearable} nos apoyaremos en el nuevo componente de Android \textit{Salud Conectada} (o \textit{Health Connect} en inglés) Dicho componente nos permite la abstracción de los componentes hardware, delegando a los fabricantes la conexión de sus dispositivos con este sistema y unificando el acceso y uso de los datos de actividad física. La extracción de datos por otros canales queda fuera de este proyecto, ya que los cauces legales están fuertemente restringidos. 
 
         En cuando al procesamiento de los datos, será utilizado un servidor puesto a disposición por la Universidad como prototipo, no contemplándose ningún trabajo de despliegue en un escenario real del mismo.
 
-        \todo[inline]{Hablamos aquí de que hemos tenido la colaboración/asesoría de dos psicólogas? SIIIIIII}
+        Asimismo, para el diseño de las medidas de seguimiento y los consejos para los usuarios se ha contado con la colaboración de dos psicólogas investigadoras, las cuales han asesorado en la elección de los cuestionarios puntuales y han elaborado el contenido tanto de los cuestionarios diarios como de las recomendaciones. 
+
+        \todo[inline]{No damos nombres verdad?}
         
         Por último, se busca que este sistema sea un marco para la investigación en el campo de la Psicología, permitiendo la realización de experimentos que necesiten acceso a datos de actividad física o cuestionarios.
 
@@ -92,8 +84,7 @@
             \item El usuario de la aplicación dispone de conexión a Internet de forma habitual.
             \item El usuario de la aplicación es el mismo que utiliza el dispositivo \gls{wearable}.
             \item Las respuestas del usuario a los cuestionarios son veraces y verídicas.
-            \item El usuario \textcolor{red}{rellenará} %rellena
-            frecuentemente los cuestionarios.
+            \item El usuario rellenará frecuentemente los cuestionarios.
             \item El usuario utiliza con cierta asiduidad el dispositivo \gls{wearable}.
             \item El servidor donde se aloja el componente homónimo está disponible.
             \item El usuario desactiva el ahorro de batería relativo a la aplicación, para que la optimización de energía del sistema operativo no interfiera con la aplicación en determinados escenarios.
@@ -107,7 +98,7 @@
         \begin{enumerate}[label=\textbf{DEP-\arabic*}]
             \item \label{req:dependencias:integracion_correcta} Para la lectura de los datos del dispositivo \gls{wearable}, el fabricante debe integrar su aplicación móvil correcta y completamente con el \gls{framework} \textit{Salud Conectada}.
 
-            \todo[inline]{no entiendo esta redacción}
+            \todo[inline]{no entiendo esta redacción, Resp: El fabricante tiene que integrar su ecosistema con el SDK de Salud Conectada, es decir, facilitar la exportación de los datos en su aplicación de pulsera. Pero no es solo integrar esa capa, es que sus tipos de datos sean compatibles y se escriba regularme en el sdk.}
             \item En relación con \ref{req:dependencias:integracion_correcta}, el \gls{wearable} del usuario escribirá en \textit{Salud Conectada} los datos recogidos.
             \item \label{req:dependencias:planificacion} Para la ejecución de las tareas recurrentes, es necesario que el sistema operativo otorgue recursos de ejecución a la aplicación.
         \end{enumerate}
@@ -126,13 +117,11 @@
         \begin{enumerate}[series=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item Como usuario, quiero realizar un seguimiento del estrés para controlar mi evolución del mismo.
             \begin{enumerate}[series=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                \item El seguimiento del estrés se realizará mediante cuestionarios diarios ç%y puntuales 
-                \textcolor{red}{que recogerán la siguiente información: .....}.
-                \item \textcolor{red}{El sistema desplegará un} %Se realizará un 
-                cuestionario matutino diario de estrés \textcolor{red}{sobre las 6:00 a.m. hora local del usuario, con los siguientes datos:} %, diseñado a tal efecto.
-                \item Se realizará un cuestionario vespertino diario de estrés, diseñado a tal efecto.
-                \todo[inline]{rehacerlo como el anterior}
-                \item El cuestionario puntual para el seguimiento del estrés será el PSS-14.
+                \item \label{req:info_estres_diario} El seguimiento del estrés se realizará mediante cuestionarios diarios que recogerán la siguiente información del usuario: nerviosismo, angustia, sensación de actividad y preocupación.
+                \item El sistema desplegará un cuestionario matutino diario de estrés sobre las 9:00 hora local del usuario, recogiendo la información definida en \ref{req:info_estres_diario} relativa al momento correspondiente.
+                \item  El sistema desplegará un cuestionario vespertino diario de estrés sobre las 21:00 hora local del usuario, recogiendo la información definida en \ref{req:info_estres_diario} relativa al día en su totalidad.
+                \todo[inline]{V: Si quitamos la info de puntual en el primer requisito, como introducimos que tenemos puntuales? A modo de contraste o calibración? Que aporta otras cosas?}
+                \item El sistema desplegará un cuestionario puntual para el seguimiento del estrés sobre las 15:00 hora local del usuario, cada dos semanas. Dicho cuestionario será el PSS-14.
                 \item La medida estrés estará calibrada en tres umbrales: baja, moderada y alta.
                 \item Para cada umbral de la medida estrés se dispondrá de al menos un mensaje o recomendación.
                 \item La creación de cada cuestionario de estrés será notificada al usuario.
@@ -146,10 +135,10 @@
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item Como usuario, quiero realizar un seguimiento de la depresión para controlar mis niveles de la misma.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                \item El seguimiento del depresión se realizará mediante cuestionarios diarios y puntuales.
-                \item Se realizará un cuestionario matutino diario de depresión, diseñado a tal efecto.
-                \item Se realizará un cuestionario vespertino diario de depresión, diseñado a tal efecto.
-                \item El cuestionario puntual para el seguimiento del depresión será el PHQ-9.
+                \item \label{req:info_depresion_diario} El seguimiento de la depresión se realizará mediante cuestionarios diarios que recogerán la siguiente información del usuario: tristeza, apatía y sensación de vacío.
+                \item El sistema desplegará un cuestionario matutino diario de depresión sobre las 9:00, hora local del usuario, recogiendo la información definida en \ref{req:info_depresion_diario} relativa al momento correspondiente.
+                \item  El sistema desplegará un cuestionario vespertino diario de depresión sobre las 21:00, hora local del usuario, recogiendo la información definida en \ref{req:info_depresion_diario} relativa al día en su totalidad.
+                \item El sistema desplegará un cuestionario puntual para el seguimiento de la depresión sobre las 15:00, hora local del usuario, cada dos semanas. Dicho cuestionario será el PHQ-9.
                 \item La medida depresión estará calibrada en tres umbrales: baja, moderada y alta.
                 \item Para cada umbral de la medida depresión se dispondrá de al menos un mensaje o recomendación.
                 \item La creación de cada cuestionario de depresión será notificada al usuario.
@@ -164,10 +153,10 @@
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item Como usuario, quiero realizar un seguimiento de la soledad para controlar mis niveles de la misma.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                \item El seguimiento del soledad se realizará mediante cuestionarios diarios y puntuales.
-                \item Se realizará un cuestionario matutino diario de soledad, diseñado a tal efecto.
-                \item Se realizará un cuestionario vespertino diario de soledad, diseñado a tal efecto.
-                \item El cuestionario puntual para el seguimiento del soledad será el UCLA-20
+                \item \label{req:info_soledad_diario} El seguimiento de la soledad se realizará mediante cuestionarios diarios que recogerán la siguiente información del usuario: sensación de soledad, sentimiento de incomprensión y sensación de falta de apoyo.
+                \item El sistema desplegará un cuestionario matutino diario de soledad sobre las 9:00, hora local del usuario, recogiendo la información definida en \ref{req:info_soledad_diario} relativa al momento correspondiente.
+                \item  El sistema desplegará un cuestionario vespertino diario de soledad sobre las 21:00, hora local del usuario, recogiendo la información definida en \ref{req:info_soledad_diario} relativa al día en su totalidad.
+                \item El sistema desplegará un cuestionario puntual para el seguimiento de la soledad sobre las 15:00, hora local del usuario, cada dos semanas. Dicho cuestionario será el UCLA-20.
                 \item La medida soledad estará calibrada en tres umbrales: baja, moderada y alta.
                 \item Para cada umbral de la medida soledad se dispondrá de al menos un mensaje o recomendación.
                 \item La creación de cada cuestionario de soledad será notificada al usuario.
@@ -181,9 +170,9 @@
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item Como usuario, quiero realizar un seguimiento del riesgo de suicidio para controlar mi nivel del mismo.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                \item El seguimiento del riesgo de suicidio se realizará mediante cuestionarios diarios.
-                \item Se realizará un cuestionario matutino diario de riesgo de suicidio, diseñado a tal efecto.
-                \item Se realizará un cuestionario vespertino diario de riesgo de suicidio, diseñado a tal efecto.
+                \item \label{req:info_suicidio_diario} El seguimiento del depresión se realizará mediante cuestionarios diarios que recogerán la siguiente información del usuario: pensamientos suicidas y posibilidades de suicidio.
+                \item El sistema desplegará un cuestionario matutino diario de riesgo de suicidio sobre las 9:00, hora local del usuario, recogiendo la información definida en \ref{req:info_suicidio_diario} relativa al momento correspondiente.
+                \item  El sistema desplegará un cuestionario vespertino diario de riesgo de suicidio sobre las 21:00, hora local del usuario, recogiendo la información definida en \ref{req:info_suicidio_diario} relativa al día en su totalidad.
                 \item La medida de riesgo de suicidio estará calibrada en tres umbrales: bajo, moderado y alto.
                 \item Para cada umbral de la medida riesgo de suicidio se dispondrá de al menos un mensaje o recomendación.
                 \item La creación de cada cuestionario de riesgo de suicidio será notificada al usuario.
@@ -383,7 +372,9 @@
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item Como analista de datos quiero un cuestionario contraste para validar la percepción general de la persona.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                \item Para cada cuestionario de contraste diario se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, y los siguientes niveles del usuario de ese día: apetito, energía, descanso, concentración, líbido y dolor físico. 
+                \item \label{req:info_contraste_diario} Los cuestionarios contraste se realizarán diariamente y recogerán la siguiente información del usuario: apetito, energía, descanso, concentración, líbido y dolor físico. 
+                \item El sistema desplegará un cuestionario vespertino diario de contraste sobre las 21:00, hora local del usuario, recogiendo la información definida en \ref{req:info_contraste_diario} relativa al día en su totalidad.
+                \item Para cada cuestionario de contraste se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, y los niveles del usuario de ese día.
                 \item El servidor recogerá de cada usuario sus cuestionarios de contraste finalizados, agrupados por identificador de usuario.
             \end{enumerate}
         \end{enumerate}
@@ -433,9 +424,6 @@
                 \end{enumerate}
         \subsubsection{Rendimiento (Performance)}
             \begin{enumerate}[resume, label=\textbf{\texttt{RNF-\arabic*}}]
-                \item Los cuestionarios diarios de mañana serán creados a las 9:00 horas.
-                \item Los cuestionarios diarios de noche serán creados a las 21:00 horas.
-                \item Los cuestionarios puntuales serán creados a las 15:00 horas.
                 \item La aplicación subirá al servidor los datos de actividad física cada 8 horas.
                 \item La aplicación subirá al servidor los datos de los cuestionarios diarios terminados cada 8 horas.
                 \item La aplicación subirá al servidor los datos de los cuestionarios puntuales terminados cada 8 horas.
