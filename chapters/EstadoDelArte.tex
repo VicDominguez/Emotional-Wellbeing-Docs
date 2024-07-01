@@ -1,4 +1,4 @@
-\chapter{[En curso] Estado del arte}
+\chapter{[Por revisar] Estado del arte}
 \label{chapter:estado_arte}
 
 \chapquote{Solo sé que no se nada.}{Sócrates}
@@ -11,6 +11,7 @@ En este capítulo se introduce una revisión del estado del arte y del estado de
     En esta sección, se pone en valor y/o contraste la información introducida en las secciones anteriores, de tal forma que pueda realizarse un análisis del entorno en el que se desarrolla este proyecto, así como también se pueda poner de manifiesto la relevancia y la idoneidad del desarrollo propuesto. 
     
     \subsection{Monitorización mediante dispositivos biométricos}
+        \label{sec:estado_arte:biometricos}
 
         Durante los últimos años se han realizado numerosos experimentos en el ámbito científico con el objetivo de encontrar medidas biométricas que puedan servir de indicadores de algunos de los trastornos de salud mental con medidas biométricas, o bien patrones de comportamiento que también puedan servir de predictor.
 
@@ -24,21 +25,29 @@ En este capítulo se introduce una revisión del estado del arte y del estado de
 
         En una línea similar el artículo \textit{PASS} \cite{parent_pass_2020} del año 2020 también plantea la construcción de un \gls{dataset} para la detección de estrés con datos de 48 participantes. La principal diferencia con el estudio anterior es el establecimiento de un entorno controlados para provocar cambios en los niveles de estrés a través de videojuegos; mientras que los datos recolectados son fundamentalmente los mismos: \glspl{ecg}, \gls{eda}, respiración, temperatura corporal y \glspl{eeg}.
 
-        No obstante, los estudios anteriores construyeron \glspl{dataset} en condiciones de laboratorio, utilizando \glspl{invasiva} para la monitorización de las constantes de los voluntarios. En contraposición a estas mediciones, existen otros estudios que apuestan por un enfoque basados en \glspl{no-invasiva}, mediante \glspl{wearable} o con los propios teléfonos, siendo procedimientos más cercanos a los usuarios en su día a día. En este ámbito se puede encontrar los proyectos \textit{DemonicSalmon} \cite{boukhechba_demonicsalmon_2018} y \textit{StudentLife} \cite{rui_studentlife_2014}.
+    \subsection{Monitorización mediante datos de \glspl{smartphone}}
+        \label{sec:estado_arte:smartphone}
 
-        \textit{DemonicSalmon} es un proyecto realizado en 2018, en el cual se monitorizó la salud mental mediante \glspl{smartphone}
+        Los estudios anteriores construyeron \glspl{dataset} en condiciones de laboratorio, utilizando \glspl{invasiva} para la monitorización de las constantes de los voluntarios. En contraposición a estas mediciones, existen otros estudios que apuestan por un enfoque basados en \glspl{no-invasiva}, en este caso mediante \glspl{wearable} o con \glspl{smartphone}, siendo procedimientos más cercanos a los usuarios en su día a día. En este ámbito se puede encontrar los proyectos \textit{DemonicSalmon} \cite{boukhechba_demonicsalmon_2018} y \textit{StudentLife} \cite{rui_studentlife_2014}.
+
+        \textit{DemonicSalmon} es un proyecto realizado en 2018, en el cual se monitorizó la salud mental diariamente de 72 estudiantes en un intervalo de dos semanas. En particular, se estudió la ansiedad social y los síntomas de depresión, obteniéndose correlaciones significativas con patrones de movilidad (detectados mediante GPS), niveles de actividad (medidos mediante acelerómetros) y patrones de comunicación (obtenidos mediante registros de llamadas y SMS) \cite{boukhechba_demonicsalmon_2018}. Los datos obtenidos fueron recogidos en un \gls{dataset} para su uso en trabajos futuros.
+
+        El segundo de ellos, \textit{StudentLife}, se trata del más veterano de ellos, ya que data de 2014. Este artículo, entre otras cuestiones, estudia la salud mental en el marco de una clase de 48 estudiantes en un periodo de 10 semanas. Entre otras medidas, se estudiaron niveles de estrés, depresión y soledad, estando dichos niveles caracterizados por los cuestionarios PSS-10, PHQ-9 y UCLA-20 respectivamente; realizados antes y después del periodo de estudio.
         
-        
-        de 2018 de 72 universitarios entre 18 y 23 años. Datos no wearables: movilidad (que mejor la de la pulsera), actividad (aqui igual), patrones de comunicación. 
-    
-        
-        Student life es el mitico de 2014, el de las 10 semanas con cuestionarios. Aqui usaban datos como micro, sensor de luz, gps, bluetooth y acelerometro para determinar actividad, conversacion,sueño y localizacion. 
-        
-        Sus cuestionarios de contraste con PSS, PHQ9 y UCLA pero solo ANTES y DESPUES de acabar el estudio, no diarios. Tirar con las correlaciones desde aqui.
+        A partir de los \glspl{smartphone}, los investigadores realizaron un profundo trabajo de extracción de datos, recogiendo datos de llamadas y SMS, inferiendo perfiles de actividad física, duración de sueño y patrones de movilidad, entre otros. Asimismo, los estudiantes realizaron una serie de cuestionarios diarios durante el proceso.
+
+        Con estos datos, se obtuvieron entre otras las siguientes correlaciones y asociaciones, detalladas en \cite{rui_studentlife_2014}:
+
+        \begin{itemize}
+            \item Estrés con la duración de las conversaciones y la duración del sueño.
+            \item Depresión con la duración y frecuencia de las conversaciones, coubicación\footnote{El artículo lo define como \textit{el número de dispositivos Bluetooh co-ubicados}, lo que se podría entender como la cantidad de personas que están junto al usuario en cada momento.} y la duración de sueño.
+            \item Sentimiento de soledad con la actividad física y la movilidad del usuario.
+        \end{itemize}
     
     \subsection{Cuidado del bienestar emocional mediante aplicaciones móviles}
+        \label{sec:estado_arte:apps}
 
-        La creciente digitalización de la sociedad impulsada por las aplicaciones móviles también se ha reflejado en el campo de la salud mental en los últimos años, con una gran variedad de iniciativas por parte de numerosos actores.
+        Fuera del ámbito académico, la creciente digitalización de la sociedad impulsada por las aplicaciones móviles también se ha reflejado en el campo de la salud mental en los últimos años, con una gran variedad de iniciativas por parte de numerosos actores.
 
         Se puede considerar en primer lugar los esfuerzos \textit{oficiales} de Google y Apple para añadir nuevas funcionalidades a sus sistemas operativos, Android e iOS, respectivamente. En el caso de Google se trata de un componente nuevo \textit{Bienestar Digital} \cite{android_bienestar_nodate}, mientras que Apple decidió ampliar la funcionalidad de su aplicación \textit{Salud} \cite{noauthor_apple_2023}.
         
@@ -87,6 +96,45 @@ En este capítulo se introduce una revisión del estado del arte y del estado de
         En general, actualmente se pueden observar numerosas objeciones a estas aplicaciones tanto sobre su calidad como a la privacidad de los datos tratados, más teniendo en cuenta el impacto que pueden tener sobre la salud de las personas.
 
 \section{Contribución de la solución propuesta}
-    Usamos datos de wearables compatibles con varios fabricantes.
-        health connect? Ya lo hablas en el contexto
-    Cuestionarios diarios además de los de 12 semanas, tanto mañana y noche.
+
+    En este apartado se introducen las ideas principales que distinguen la solución propuesta en este \gls{tfm} con las de la literatura y las cuestiones que pretende mejorar.
+
+    Los resultados de los trabajos previos detallados en las Secciones 
+    \ref{sec:estado_arte:biometricos} y \ref{sec:estado_arte:smartphone} otorgan un fundamento científico para la monitorización de la salud mental a partir de datos, bien biométricos o bien generados mediante \glspl{smartphone}. 
+
+    En primer lugar, las propuestas vistas en la Sección \ref{sec:estado_arte:biometricos} presentan el hándicap del uso de \glspl{invasiva}. En la Figura \ref{figure:estado_arte:pecho_wesad} puede verse el dispositivo colocado en el pecho en el estudio \textit{WESAD}, mientras la Figura  \ref{figure:estado_arte:cabeza_pass} hace referencia al componente de cabeza del artículo \textit{PASS}. Como el lector puede observar, resulta muy complicado poner en marcha poner en marcha proyectos de monitorización de salud mental que impliquen este tipo de mediciones.
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.45\textwidth]{figures/Posicionamiento pecho wesad.JPG}
+        \caption[Posicionamiento de los sensores de pecho en el estudio \textit{WESAD}]
+        {Posicionamiento de los sensores de pecho en el estudio \textit{WESAD}. Imagen extraída de \cite{schmidt_introducing_2018}.}
+        \label{figure:estado_arte:pecho_wesad}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.33\textwidth]{figures/posiconamiento cabeza pass.JPG}
+        \caption[Posicionamiento del sensor de cabeza en el estudio \textit{PASS}]
+        {Posicionamiento del sensor de cabeza en el estudio \textit{PASS}. Imagen extraída de \cite{parent_pass_2020}.}
+        \label{figure:estado_arte:cabeza_pass}
+    \end{figure}
+
+    No obstante, con la publicación de los \glspl{dataset} la comunidad científica puede crear modelos que permitan extraer más información del paciente a partir de estas medidas, mientras que con la progresiva miniaturización y mejora del hardware es posible que en el futuro se puedan extraer datos similares con \glspl{no-invasiva}. Actualmente es posible encontrar \glspl{wearable}, que si bien de una manera mucho más simple y con precisión y fiabilidad limitadas, permiten realizar \glspl{ecg} \cite{garcia_electrocardiograma_2024}.
+
+    En segundo lugar, los significativos avances producidos en el ámbito de los \glspl{wearable} permiten mejorar el enfoque visto en la Sección \ref{sec:estado_arte:smartphone} incorporando los datos recogidos por estos sensores. Gracias al \gls{framework} de \textit{Salud Conectada}, es posible abstraerse de la complejidad del hardware, siendo viable leer datos de una gran variedad de dispositivos.
+    
+    Mientras en \textit{StudentLife} se inferían los ámbitos de sueño mediante la luz y los sonidos capturados por el \gls{smartphone}, con un \gls{wearable} se pueden obtener incluso las fases del sueño del usuario con mayor precisión. En el caso de la movilidad ya no es necesario estimarla mediante GPS o balizas WiFi, es posible obtener directamente la distancia recorrida o los pasos caminados. Análogamente, con el estado del arte actual es practicable el poder leer datos de actividad física más complejos, como las calorías quemadas del usuario o el tipo de ejercicio realizado.
+
+    Por otra parte, en la Sección \ref{sec:estado_arte:apps} se pudo comprobar que la sociedad está consumiendo aplicaciones de salud mental (especialmente, de estrés), estando dispuesta a abonar suscripciones para obtener recomendaciones y consejos. Sin embargo, también se pudo evidenciar que dependen notablemente de los datos suministrados por el usuario, a la vez de sus flaquezas en los ámbitos de privacidad y de rigor científico.
+
+    Por tanto, el valor de la solución propuesta en este \gls{tfm} y planteada en la Sección \ref{sec:objetivos} reside en los siguientes puntos:
+
+    \begin{enumerate}
+        \item Explorar las posibilidades de \textit{Salud Conectada} para la obtención de datos de \glspl{wearable}, logrando obtener datos más precisos y fiables con menores costes de desarrollo.
+        \item Disponer de cuestionarios y consejos con fundamento científico, los cuales puedan llegar a los usuarios finales. Asimismo, se crea el medio técnico para que investigadores de otras áreas, como la Psicología, puedan desplegar sus experimientos en la realización de pautas y cuestionarios.
+        \item A través de este documento y de la publicación del código fuente de todos los componentes del proyecto, aportar mayor transparencia y privacidad para los usuarios en el campo de las aplicaciones de salud mental.
+        \item Mediante el diseño del sistema, permitir que futuros proyectos puedan añadir el soporte para leer nuevos datos o conectar de forma sencilla módulos de aprendizaje automático que permitan una mejor estimación del estrés, depresión y/o soledad, o bien profundizar en la construcción de un \gls{dataset} con los datos recopilados que aporte valor a la comunidad científica.
+    \end{enumerate}
+
+    Por último se quiere recalcar que esta solución pretende ante todo, mediante el desarrollo de un sistema que pueda ser utilizado en un escenario real, asentar los conceptos teórico/prácticos aprendidos en el Máster. Si bien los aspectos relacionados con la Ingeniería del Software de Sistemas y el desarrollo de aplicaciones móviles juegan un papel predominante, también se pueden aplicar en menor medida algunos relacionados con otras materias, tales como las redes inalámbricas o los sistemas distribuidos.
