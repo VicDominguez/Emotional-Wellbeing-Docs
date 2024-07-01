@@ -50,8 +50,6 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
         En cuando al procesamiento de los datos, será utilizado un servidor puesto a disposición por la Universidad como prototipo, no contemplándose ningún trabajo de despliegue en un escenario real del mismo.
 
         Asimismo, para el diseño de las medidas de seguimiento y los consejos para los usuarios se ha contado con la colaboración de dos psicólogas investigadoras, las cuales han asesorado en la elección de los cuestionarios puntuales y han elaborado el contenido tanto de los cuestionarios diarios como de las recomendaciones. 
-
-        \todo[inline]{No damos nombres verdad?}
         
         Por último, se busca que este sistema sea un marco para la investigación en el campo de la Psicología, permitiendo la realización de experimentos que necesiten acceso a datos de actividad física o cuestionarios.
 
@@ -62,10 +60,10 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
         Los usuarios finales de este sistema serán los miembros de la comunidad universitaria que deseen monitorizar su salud mental, sin necesidad de conocimientos específicos. No obstante, deberán de cumplir con las siguientes pautas:
     
         \begin{enumerate}
-            \item Los usuarios dispondrán de un teléfono con sistema operativo Android, cuya versión cumpla la \ref{req:restriccion:android_minimo}.
+            \item Los usuarios dispondrán de un \gls{smartphone} con sistema operativo Android, cuya versión cumpla la \ref{req:restriccion:android_minimo}.
             \item El usuario realizará de forma habitual los cuestionarios ofrecidos por la aplicación.
             \item El usuario estará dispuesto a que sus respuestas a los cuestionarios sean subidas a un servidor de la universidad, con un identificador de usuario anónimo.
-            \item Opcionalmente, el usuario dispondrá de un dispositivo \gls{wearable} compatible con \textit{Salud Conectada}, con la aplicación del fabricante\footnote{A fecha de realización de este proyecto, los fabricantes que garantizan compatiblidad con este ecosistema son Fitbit o Samsung} correspondiente instalada y el dispositivo conectado a su teléfono.
+            \item Opcionalmente, el usuario dispondrá de un dispositivo \gls{wearable} compatible con \textit{Salud Conectada}, con la aplicación del fabricante\footnote{A fecha de realización de este proyecto, los fabricantes que garantizan compatiblidad con este ecosistema son Fitbit o Samsung} correspondiente instalada y el dispositivo conectado a su \gls{smartphone}.
             
         \end{enumerate}
         
@@ -89,16 +87,15 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
             \item El servidor donde se aloja el componente homónimo está disponible.
             \item El usuario desactiva el ahorro de batería relativo a la aplicación, para que la optimización de energía del sistema operativo no interfiera con la aplicación en determinados escenarios.
             \item Se supone que habrá más de un usuario utilizando la aplicación diariamente.
-            \item Se supone que el dispositivo móvil que ejecute la aplicación es un teléfono móvil o una tableta, no otros dispositivos Android como televisores o bajo emulación, los cuales teóricamente podrían ejecutar la aplicación.
+            \item Se supone que el dispositivo móvil que ejecute la aplicación es un \gls{smartphone} o una tableta, no otros dispositivos Android como televisores o bajo emulación, los cuales teóricamente podrían ejecutar la aplicación.
         \end{enumerate}
         
     \subsection{Dependencias}
         \label{req:descripcion:dependencias}
     
         \begin{enumerate}[label=\textbf{DEP-\arabic*}]
-            \item \label{req:dependencias:integracion_correcta} Para la lectura de los datos del dispositivo \gls{wearable}, el fabricante debe integrar su aplicación móvil correcta y completamente con el \gls{framework} \textit{Salud Conectada}.
-
-            \todo[inline]{no entiendo esta redacción, Resp: El fabricante tiene que integrar su ecosistema con el SDK de Salud Conectada, es decir, facilitar la exportación de los datos en su aplicación de pulsera. Pero no es solo integrar esa capa, es que sus tipos de datos sean compatibles y se escriba regularme en el sdk.}
+            \item \label{req:dependencias:integracion_correcta} Para garantizar la lectura de los datos del dispositivo \gls{wearable}, el fabricante debe integrar su sistema con el \gls{framework} de \textit{Salud Conectada}, escribiendo regularmente en este componente los datos recogidos por el \gls{wearable}.
+            \todo[inline]{Reescritura completada de esta dependencia}
             \item En relación con \ref{req:dependencias:integracion_correcta}, el \gls{wearable} del usuario escribirá en \textit{Salud Conectada} los datos recogidos.
             \item \label{req:dependencias:planificacion} Para la ejecución de las tareas recurrentes, es necesario que el sistema operativo otorgue recursos de ejecución a la aplicación.
         \end{enumerate}
@@ -118,10 +115,10 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
             \item Como usuario, quiero realizar un seguimiento del estrés para controlar mi evolución del mismo.
             \begin{enumerate}[series=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
                 \item \label{req:info_estres_diario} El seguimiento del estrés se realizará mediante cuestionarios diarios que recogerán la siguiente información del usuario: nerviosismo, angustia, sensación de actividad y preocupación.
+                \todo[inline]{V: Decimos aqui que ese cuestionario se encuentra en el Anexo X o ya en diseño?}
                 \item El sistema desplegará un cuestionario matutino diario de estrés sobre las 9:00 hora local del usuario, recogiendo la información definida en \ref{req:info_estres_diario} relativa al momento correspondiente.
-                \item  El sistema desplegará un cuestionario vespertino diario de estrés sobre las 21:00 hora local del usuario, recogiendo la información definida en \ref{req:info_estres_diario} relativa al día en su totalidad.
-                \todo[inline]{V: Si quitamos la info de puntual en el primer requisito, como introducimos que tenemos puntuales? A modo de contraste o calibración? Que aporta otras cosas?}
-                \item El sistema desplegará un cuestionario puntual para el seguimiento del estrés sobre las 15:00 hora local del usuario, cada dos semanas. Dicho cuestionario será el PSS-14.
+                \item  El sistema desplegará un cuestionario vespertino diario de estrés sobre las 21:00 hora local del usuario, recogiendo la información definida en \ref{req:info_estres_diario} relativa al día en su totalidad.                \todo[inline]{V: Si quitamos la info de puntual en el primer requisito, como introducimos que tenemos puntuales? A modo de contraste o calibración? Que aporta otras cosas?}
+                \item El sistema desplegará un cuestionario puntual para el seguimiento del estrés sobre las 15:00 hora local del usuario, cada dos semanas. Dicho cuestionario será el PSS-10, cuya definición se recoge en el Anexo \ref{cuestionarios:pss_10}.
                 \item La medida estrés estará calibrada en tres umbrales: baja, moderada y alta.
                 \item Para cada umbral de la medida estrés se dispondrá de al menos un mensaje o recomendación.
                 \item La creación de cada cuestionario de estrés será notificada al usuario.
@@ -138,7 +135,7 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
                 \item \label{req:info_depresion_diario} El seguimiento de la depresión se realizará mediante cuestionarios diarios que recogerán la siguiente información del usuario: tristeza, apatía y sensación de vacío.
                 \item El sistema desplegará un cuestionario matutino diario de depresión sobre las 9:00, hora local del usuario, recogiendo la información definida en \ref{req:info_depresion_diario} relativa al momento correspondiente.
                 \item  El sistema desplegará un cuestionario vespertino diario de depresión sobre las 21:00, hora local del usuario, recogiendo la información definida en \ref{req:info_depresion_diario} relativa al día en su totalidad.
-                \item El sistema desplegará un cuestionario puntual para el seguimiento de la depresión sobre las 15:00, hora local del usuario, cada dos semanas. Dicho cuestionario será el PHQ-9.
+                \item El sistema desplegará un cuestionario puntual para el seguimiento de la depresión sobre las 15:00, hora local del usuario, cada dos semanas. Dicho cuestionario será el PHQ-9, cuya definición se recoge en el Anexo \ref{cuestionarios:phq_9}.
                 \item La medida depresión estará calibrada en tres umbrales: baja, moderada y alta.
                 \item Para cada umbral de la medida depresión se dispondrá de al menos un mensaje o recomendación.
                 \item La creación de cada cuestionario de depresión será notificada al usuario.
@@ -156,7 +153,7 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
                 \item \label{req:info_soledad_diario} El seguimiento de la soledad se realizará mediante cuestionarios diarios que recogerán la siguiente información del usuario: sensación de soledad, sentimiento de incomprensión y sensación de falta de apoyo.
                 \item El sistema desplegará un cuestionario matutino diario de soledad sobre las 9:00, hora local del usuario, recogiendo la información definida en \ref{req:info_soledad_diario} relativa al momento correspondiente.
                 \item  El sistema desplegará un cuestionario vespertino diario de soledad sobre las 21:00, hora local del usuario, recogiendo la información definida en \ref{req:info_soledad_diario} relativa al día en su totalidad.
-                \item El sistema desplegará un cuestionario puntual para el seguimiento de la soledad sobre las 15:00, hora local del usuario, cada dos semanas. Dicho cuestionario será el UCLA-20.
+                \item El sistema desplegará un cuestionario puntual para el seguimiento de la soledad sobre las 15:00, hora local del usuario, cada dos semanas. Dicho cuestionario será el UCLA-20, cuya definición se recoge en el Anexo \ref{cuestionarios:ucla_20}.
                 \item La medida soledad estará calibrada en tres umbrales: baja, moderada y alta.
                 \item Para cada umbral de la medida soledad se dispondrá de al menos un mensaje o recomendación.
                 \item La creación de cada cuestionario de soledad será notificada al usuario.

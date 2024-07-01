@@ -393,28 +393,7 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
                 (nombre del fichero de la base de datos, cifrado..). Para dicha construcción de la instancia Room
                 implementa el patrón factoría.
             \end{itemize}
-            
-        \subsection{Dagger Hilt}
-            Dagger Hilt es una biblioteca que permite la automatización de la inyección de dependencias dentro de 
-            nuestra aplicación; la cual es la opción promovida por Google para esta tarea. El nombre
-            compuesto no es casual, ya que hace referencia a que en realidad son dos librerías: Dagger realiza el
-            trabajo de la inyección de dependencias, mientras que Hilt es la integración estándar de Dagger en Android 
-            \cite{noauthor_insercion_nodate}, simplificando el proceso y facilitando la curva de aprendizaje de Dagger
-            \cite{leiva_dagger_2020}.
-
-            Para poder utilizar esta librería, es obligatorio marcar un punto de arranque en la aplicación para que se
-            inicialice el sistema de dependencias. Asimismo, se debe indicar que Dagger Hilt debe inyectar dependencias 
-            en cada caso que corresponda. Por otra parte, se necesitan definir uno o más módulos, en los 
-            cuales se indica a Dagger Hilt cómo construir las dependencias, el alcance de las mismas y otras
-            características. 
-            
-            Esto nos permite que algunas dependencias sean construidas con una única instancia para
-            todo el proyecto, mientras que otras puedan ser instanciadas en múltiples ocasiones, o con un ciclo de vida 
-            asociado al de algunos componentes de Android (como los ViewModel).
-
-            En resumen se trata de una tecnología auxiliar que nos permite realizar una inyección de dependencias
-            eficaz sin demasiada complejidad de uso.
-
+        
         \subsection{Work Manager}
             Work Manager es el componente oficial de Android para la planificación de subtareas dentro de nuestra 
             aplicación. Esta librería está diseñada para simplificar el uso del amalgama de librerías para esta
@@ -434,36 +413,9 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
             \todo[inline]{Los problemas que da los comentamos de pasada referenciando a stackoverflow o ya al final?
             Por mi solo al final.}
 
-        \subsection{Retrofit}
-            Retrofit es una librería muy popular en el ecosistema Android, ya que nos proporciona una capa de alto nivel
-            para el consumo de API. En particular, nos permite interactuar con dichos recursos de una manera estructurada
-            y orientado a objetos (o a entidades). Además proporciona soporte nativo para el uso de corrutinas, por lo
-            que nos permite realizar llamadas remotas de forma concurrente, sin bloquear el hilo principal de nuestra
-            aplicación.
-
-            Esta biblioteca trabaja junto con otros componentes software conocidos como serializadores, los cuales se 
-            encargan de convertir nuestros objetos Kotlin a formato json, los cuales son necesarios para interactuar
-            con los recursos en red. Retrofit soporta una lista de ellos, pero en este proyecto utilizaremos el 
-            incorporado por defecto: gson, creado y mantenido por Google.
-
-            Sus elementos básicos son los siguientes \cite{noauthor_retrofit_nodate} \footnote{Es posible que te 
-            recuerde a los componentes de Room y 
-            no es casualidad, ya que ambas están diseñadas de una manera similar, utilizando los mismos patrones de
-            diseño software}:
-            \begin{itemize}
-                \item Entidades, las cuales mapean el formato json necesario (ya sea para enviar o recibir datos) con 
-                una clase en Kotlin.
-                \item Una interfaz donde se asocian las llamadas a la API (ruta y tipo) que utilizaremos junto a la 
-                cabecera de la función que implementará Retrofit automáticamente. Aquí le indicaremos, si procede, los
-                parámetros de la llamada y el resultado de la misma, los cuales serán normalmente entidades que habremos
-                definido previamente.
-                \item Una función que construya una instancia de la interfaz anterior, donde se le indica la url base de
-                la API en cuestión y configuración adicional, como el serializador a utilizar.
-            \end{itemize}
-            
         \subsection{Lottie}
             Lottie es una biblioteca creada por Airbnb que busca facilitar la creación y uso de animaciones en entornos
-            multiplataforma (web, iOS, Android..) \cite{rubianes_lottie_2021}. A diferencia de archivos como los GIF, 
+            multiplataforma (web, iOS, Android, \textcolor{red}{entre otros}) \cite{rubianes_lottie_2021}. A diferencia de archivos como los GIF, 
             esta librería permite que
             las animaciones puedan escalarse sin perder calidad (como en los ficheros SVG), haciendo hincapié en el
             rendimiento.
@@ -565,7 +517,7 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
 
 
         \subsection{MongoDB}
-            MongoDB es un sistema gestor de base de datos no relacional orientado a documentos, diseñado para manejar 
+            MongoDB es un \gls{sgbd} no relacional orientado a documentos, diseñado para manejar 
             grandes volúmenes de datos de manera eficiente y escalable. A diferencia de las bases de datos relacionales 
             tradicionales, no hay registros sino documentos, unos ficheros con una extensión muy similar a JSON: BSON 
             (JSON Binarios) \cite{noauthor_json_nodate}. 
@@ -583,29 +535,3 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
             Asimismo, posee otras dos grandes fortalezas: un núcleo distribuido, lo que permite una alta disponibilidad
             y escalabilidad; y una licencia de uso gratuito desde octubre de 2018, bajo la licencia AGPL 
             \cite{noauthor_que_nodate}.
-    \subsection{Git, GitHub y GitHub Actions}
-        Git es un extremadamente popular y utilizado sistema de control de versiones distribuido libre y gratuito,
-        creado por Linus Torvalds, creador de Linux. Es utilizado para guardar diferentes versiones
-        de un conjunto de archivos, conocido como repositorio; pudiéndose recuperar en cualquier momento
-        cualquier versión del mismo, a la vez que se guarda un registro de cuándo, quién y qué cambios se han 
-        realizado entre versiones \cite{atlassian_software_nodate}.
-
-        Asimismo, Git, como otros sistemas de control de versiones, dispone de herramientas para la integración de
-        cambios de varios usuarios, algo muy útil en el desarollo de software. Por otra parte, al ser distribuido,
-        se dispone una copia de todo el repositorio en cada máquina, por lo que no dependemos de un nodo central
-        para poder trabajar; si bien se define normalmente un nodo remoto que hace las veces de \textit{punto de
-        encuentro} entre los distintos nodos. 
-
-        Por otra parte, GitHub es una plataforma web, propiedad de Microsoft, donde los usuarios pueden alojar
-        repositorios Git tanto públicos como privados; facilitando los procesos de compartir código y de 
-        colaboración en proyectos de otros programadores. GitHub no es la única plataforma para este proceso: Gitlab
-        y Bitbucket son algunas de las alternativas \cite{noauthor_git_2021}. 
-
-        El potencial de GitHub no acaba ahí: gracias a su extensión Acciones (o Actions en inglés) permite que en
-        los repositorio se puedan automatizar y ejecutar flujos de trabajo, lo que abre las puertas a la ejecución
-        de flujos de integración y despliegue (o entrega) continuo, conocidos como CI/CD.
-
-        En este proyecto se ha elegido Git para la gestión del código software como el del presente documento,
-        mientras que el uso de GitHub se debe tanto para almancenar una copia de seguridad del código adicional, 
-        para la mejora de la visibilidad del proyecto y por último para poder configurar y ejecutar flujos de CI/CD
-        para nuestro software.

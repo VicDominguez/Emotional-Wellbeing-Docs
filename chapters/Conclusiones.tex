@@ -1,4 +1,43 @@
-\chapter{[En curso] Conclusiones}
+\chapter{[En curso] Conclusiones y líneas futuras}
 \label{chapter:conclusiones}
 
 \chapquote{El éxito es realmente la libertad de hacer lo que quieras.}{Cita atribuida a Magnus Walker}
+\chapquote{La victoria más bella es siempre la próxima.}{Enzo Ferrari}
+
+\section{Conclusiones}
+
+Suelen poner 2 caras, si nos ponemos bravos tira a 4
+
+\section{Lineas futuras}
+\todo[inline]{Comprobar si hemos hablado del sistema como prototipo}
+En primer lugar
+prioridad 0 leftovers
+En segundo lugar, resolver problemas
+En tercer lugar, nuevas features
+
+Al ser el sistema de este proyecto un prototipo, existen numerosas vías para ampliarlo y refinarlo. Algunas de dichas
+mejoras son:
+
+\begin{enumerate}
+    \item Cifrado de las comunicaciones entre la app y el servidor mediante un certificado SSL en el propio servidor.
+    \item Establecimiento de una política de privacidad detallada. Este punto es imprescindibile para poder publicar la aplicación (en tiendas virtuales como Play Store) y recoger datos con legalidad.
+    \item Desplegar la aplicación en el ámbito universitario. Realizándolo se podría obtener una retroalimentación más
+    amplia y profunda de la aplicación, y además se podrían recolectar datos para entrenar
+    modelos que predigan cada una de las variables de Salud Mental.
+    \item Comprobar la recolección de datos en otras pulseras, tanto de Fitbit como de otros fabricantes.
+    \item Elaboración de un conjunto de pruebas exahustivo para la aplicación móvil, incluyendo reportes de 
+    \textit{coverage} del código.
+    \item Establecer que al instalar la aplicación se realice un cuestionario diario. Según la hora del día se elegiría
+    si realizar el de mañana o el de noche, pero en cualquier momento del día uno de esos dos.
+    \item Dar más presencia a los cuestionarios puntuales, ya sea con gráficas, notificaciones...
+    \item Estudiar la imputación de datos nulos con otras técnicas, tales como: regresión, \textit{Last Observation 
+    Carried Forward}, \textit{Next Observation Carried Backward}... \cite{gupta_null_nodate}
+    \item Realizar agregación de datos para ciertas variables, como las pulsaciones, para aligerar el volumen de datos.
+    \item Diseñar e implementar una interfaz gráfica centrada en las pantallas \textit{expandidas}\footnote{Pantallas 
+    que disponen de más de 840dp de ancho o 900dp de alto}.
+    \item Localizar la aplicación a más idiomas.
+    \item Disponer de al menos dos pautas de recomendación a los usuarios para cada variable y estado.
+    \item Segmentar la comunidad de usuarios para mejorar la representatividad del conjunto.
+\end{enumerate}
+
+\todo[inline]{Añadir el uso de devcontainers para la parte de Python para facilitar la integración continua y demás}
