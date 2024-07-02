@@ -490,6 +490,10 @@
 % Multi fila y columna
 \usepackage{multirow}
 
+% Para pintar los grafos
+\usepackage{tikz}
+\usetikzlibrary{arrows, automata}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Estilos de Víctor
 %

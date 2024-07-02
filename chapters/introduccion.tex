@@ -3,9 +3,6 @@
 
 \chapquote{Si he logrado ver más lejos ha sido porque he subido a hombros de gigantes.}{Isaac Newton}
 
-\todo[inline]{Plantear dónde se habla de la introduccion a la salud mental y sus enfermedades}
-\todo[inline]{Temas puramente sociales en el contexto?}
-
 Según la \gls{oms}, se puede definir la salud mental como \textit{``un estado de bienestar mental que permite a las personas hacer frente a los momentos de estrés de la vida, desarrollar todas sus habilidades, poder aprender y trabajar adecuadamente y contribuir a la mejora de su comunidad''} \cite{oms_salud_2022}. Por tanto, es parte integral de la salud y el bienestar de una persona; tal y como queda reflejado en la definición de salud de la propia \gls{oms}: `\textit{`La salud es un estado de completo bienestar físico, mental y social, y no solamente la ausencia de afecciones o enfermedades''} \cite{feafes_galicia_que_nodate}.
 
 Asimismo, el bienestar emocional se puede concebir como \textit{``el conjunto de sensaciones positivas derivadas de un funcionamiento mental que nos capacita para hacer frente o adaptarnos a las situaciones y demandas ambientales''} \cite{morer_linan_que_2019}  \footnote{Como el lector quizá se haya dado cuenta, la salud mental y el bienestar emocional son conceptos relativamente similares, por lo que se usarán indistintamente a lo largo de esta sección si el contexto lo permite.}.
@@ -18,6 +15,35 @@ Por otra parte, existen numerosos trastornos o enfermedades mentales que afectan
 
 Otro problema de salud mental muy conocido es la depresión, la cual está muy relacionada con el estrés, la cual se puede describir como un estado de intensa tristeza, melancolía o desesperación, avanzada hasta perturbar el funcionamiento social o las actividades diarias de una persona \cite{van_neerven_rarrxr_2008}. 
 
+\section{Objetivos}
+    \label{sec:objetivos}
+
+    \subsection{Objetivo general}
+
+        El objetivo principal de este \gls{tfm} es la creación de un prototipo de un Sistema para el Bienestar Emocional, el cual se fundamenta en la detención precoz y mejora de los trastornos de salud mental en la comunidad universitaria (estudiantes, profesores y personal administrativo.  Además, este proyecto será planteado y desarrollado mediante las técnicas de la Ingeniería de Software de Sistemas.
+    
+        Para llevar a cabo este objetivo, el sistema a desarrollar constará de diversos módulos. En primer lugar, contará con una aplicación Android para dispositivos móviles la cual será utilizada por el usuario. Dicha aplicación se encargará de leer y/o recoger datos relativos a las condiciones física y psicológica del propio usuario, para ofrecer al usuario información de su estado de bienestar, sugerencias y consejos en relación a dicho estado.
+    
+        Por otra parte, el sistema podrá conectarse a dispositivos \glspl{wearable}, los cuales ofrecerán datos a la aplicación relativos al estado físico del usuario, tales como frecuencia cardíaca, hábitos de sueño, distancia recorrida, ejercicio físico realizado, entre otros. 
+        Debido a la naturaleza de los mismos, el usuario podrá regular en todo momento el uso de estos datos.
+    
+        Asimismo, el sistema constará de un tercer módulo, en este caso una base de datos alojada en un servidor de la Escuela Técnica Superior de Ingeniería de Sistemas - ETSISI. Este componente software se encargará de recoger los datos anonimizados de los usuarios para generar estadísticas que puedan visualizarse en la aplicación, a la vez que permita a futuros estudiantes de la Escuela realizar investigaciones que ahonden en la detención precoz y el impacto de los trastornos de salud mental en la comunidad universitaria.
+
+    \subsection{Objetivos específicos}
+        Para completar el objetivo general, los siguientes objetivos específicos han sido establecidos:
+        \begin{itemize}
+            \item Uso de metodologías y estándares propios de la Ingeniería de Sistemas para la realización del análisis y el diseño del sistema. En particular se utilizarán los estándares \gls{ieee} 830 y \gls{sysml}, respectivamente.
+            \item Estudio de sistemas y procedimientos utilizados en el campo de la psicología para la obtención del estado del Bienestar Emocional que permitan ser incorporados en un Sistema Informático.
+            \item Utilización de componentes software estándares en la industria para la lectura de los datos de los dispositivos \glspl{wearable} con el objetivo principal de garantizar el soporte, el mantenimiento y la extensibilidad en el acceso a dichos datos. Para ello se deberá estudiar qué posibilidades existen para la lectura de los datos y la compatibilidad con los \glspl{wearable} disponibles en el mercado español, que puedan ser utilizados por los usuarios.
+            \item Desarrollo de la aplicación de usuario con especial atención hacia la usabilidad y la calidad, detallados en los siguientes puntos:
+            \begin{itemize}
+                \item Estudio y uso de tecnologías vanguardistas y recomendadas para el desarrollo de nuevos proyectos en Android, las cuales sustenten un desarrollo ambicioso y eficiente.
+                \item Diseño e implementación de una interfaz gráfica agradable para el usuario con la finalidad de crear una experiencia de usuario cómoda y de calidad, especialmente en el uso de la aplicación y la visualización de los datos. Asimismo, la interfaz deberá ser \gls{responsive}, para que se adaptarte a las diferentes pantallas de los usuarios.
+                \item Localización de los textos tanto en castellano como en inglés para permitir el uso de la misma por parte de personal internacional.
+            \end{itemize}
+            \todo[inline]{Un pequeño triple aqui, tiene sentido o ya con los objetivos anteriores es suficiente?}
+            \item Diseño e implementación del componente del servidor que permita ser utilizado y extendido en futuros trabajos, como por ejemplo el desarrollo de un módulo de aprendizaje automático que permita mejorar el seguimiento del Bienestar Emocional.
+        \end{itemize}
 
 
 \section{[WIP] Justificación}
@@ -110,35 +136,6 @@ Otro problema de salud mental muy conocido es la depresión, la cual está muy r
     
     En definitiva, puede apreciarse que las enfermedades mentales son un problema muy relevante en nuestra sociedad, a la vez que transversal. Ante tales hechos y estadísticas, urge que las personas afectadas sean, en primer lugar, conscientes de su situación, para que posteriormente puedan acceder a un tratamiento de calidad sin sufrir más estigmas o prejuicios. Asimismo, existe espacio para que desde la Informática se pueda contribuir positivamente a la mitigación de este problema.
     
-\section{Objetivos}
-    \label{sec:objetivos}
-
-    \subsection{Objetivo general}
-
-        El objetivo principal de este \gls{tfm} es la creación de un prototipo de un Sistema para el Bienestar Emocional, el cual se fundamenta en la detención precoz y mejora de los trastornos de salud mental en la comunidad universitaria (estudiantes, profesores y personal administrativo.  Además, este proyecto será planteado y desarrollado mediante las técnicas de la Ingeniería de Software de Sistemas.
-    
-        Para llevar a cabo este objetivo, el sistema a desarrollar constará de diversos módulos. En primer lugar, contará con una aplicación Android para dispositivos móviles la cual será utilizada por el usuario. Dicha aplicación se encargará de leer y/o recoger datos relativos a las condiciones física y psicológica del propio usuario, para ofrecer al usuario información de su estado de bienestar, sugerencias y consejos en relación a dicho estado.
-    
-        Por otra parte, el sistema podrá conectarse a dispositivos \glspl{wearable}, los cuales ofrecerán datos a la aplicación relativos al estado físico del usuario, tales como frecuencia cardíaca, hábitos de sueño, distancia recorrida, ejercicio físico realizado, entre otros. 
-        Debido a la naturaleza de los mismos, el usuario podrá regular en todo momento el uso de estos datos.
-    
-        Asimismo, el sistema constará de un tercer módulo, en este caso una base de datos alojada en un servidor de la Escuela Técnica Superior de Ingeniería de Sistemas - ETSISI. Este componente software se encargará de recoger los datos anonimizados de los usuarios para generar estadísticas que puedan visualizarse en la aplicación, a la vez que permita a futuros estudiantes de la Escuela realizar investigaciones que ahonden en la detención precoz y el impacto de los trastornos de salud mental en la comunidad universitaria.
-
-    \subsection{Objetivos específicos}
-        Para completar el objetivo general, los siguientes objetivos específicos han sido establecidos:
-        \begin{itemize}
-            \item Uso de metodologías y estándares propios de la Ingeniería de Sistemas para la realización del análisis y el diseño del sistema. En particular se utilizarán los estándares \gls{ieee} 830 y \gls{sysml}, respectivamente.
-            \item Estudio de sistemas y procedimientos utilizados en el campo de la psicología para la obtención del estado del Bienestar Emocional que permitan ser incorporados en un Sistema Informático.
-            \item Utilización de componentes software estándares en la industria para la lectura de los datos de los dispositivos \glspl{wearable} con el objetivo principal de garantizar el soporte, el mantenimiento y la extensibilidad en el acceso a dichos datos. Para ello se deberá estudiar qué posibilidades existen para la lectura de los datos y la compatibilidad con los \glspl{wearable} disponibles en el mercado español, que puedan ser utilizados por los usuarios.
-            \item Desarrollo de la aplicación de usuario con especial atención hacia la usabilidad y la calidad, detallados en los siguientes puntos:
-            \begin{itemize}
-                \item Estudio y uso de tecnologías vanguardistas y recomendadas para el desarrollo de nuevos proyectos en Android, las cuales sustenten un desarrollo ambicioso y eficiente.
-                \item Diseño e implementación de una interfaz gráfica agradable para el usuario con la finalidad de crear una experiencia de usuario cómoda y de calidad, especialmente en el uso de la aplicación y la visualización de los datos. Asimismo, la interfaz deberá ser \gls{responsive}, para que se adaptarte a las diferentes pantallas de los usuarios.
-                \item Localización de los textos tanto en castellano como en inglés para permitir el uso de la misma por parte de personal internacional.
-            \end{itemize}
-            \todo[inline]{Un pequeño triple aqui, tiene sentido o ya con los objetivos anteriores es suficiente?}
-            \item Diseño e implementación del componente del servidor que permita ser utilizado y extendido en futuros trabajos, como por ejemplo el desarrollo de un módulo de Inteligencia Artificial que permita mejorar el seguimiento del Bienestar Emocional.
-        \end{itemize}
 
 \section{Estructura del documento}
 
