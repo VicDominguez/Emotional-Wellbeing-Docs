@@ -5,6 +5,348 @@
 
 En este capítulo se introducen los conceptos teóricos sobre los que se asienta el desarrollo de este proyecto. Con el contenido de este capítulo se espera crear un base de conocimiento sobre la que desarrollar el resto de este documento. Además, se realiza un análisis de las herramientas que se van a emplear para desarrollar el sistema y cómo estas se encuadran en el contexto tecnológico actual.
 
+\section{[Por realizar] Marco teórico}
+    
+    \subsection{Estrés}
+        Síntomas/Consecuencias para la persona
+        ¿Cómo se puede medir desde la psicología?
+    \subsection{Depresión}
+        Trastorno mayor?
+        Síntomas/Consecuencias para la persona
+        ¿Cómo se puede medir desde la psicología?
+    \subsection{Soledad}
+        Soledad NO deseada
+        Síntomas/Consecuencias para la persona
+        ¿Cómo se puede medir desde la psicología?
+    \subsection{Suicidio}
+        Decimos conducta?
+        Síntomas/Consecuencias para la persona
+        ¿Cómo se puede medir desde la psicología? Riesgo claro
+        
+\section{[En curso] Contexto tecnológico}
+
+    Esta sección recoge la información relativa a las tecnologías y herramientas más relevantes dentro del contexto de desarrollo de este proyecto.
+
+    \subsection{Dispositivos \textit{wearables}}
+        \label{section:contexto:wearables}
+
+        Este tipo de dispositivo electrónico hace referencia a aquellos que se llevan colocados o \textit{vestidos} en alguna parte del cuerpo (de ahí el nombre, ya que \textit{wearable} se puede traducir como \textit{vestible}), y que pueden interactuar con el usuario o con otros dispositivos electrónicos. Actualmente, los dispositivos \textit{wearables} más conocidos son las pulseras de actividad y los relojes inteligentes.
+
+        Si bien las funcionalidades varían entre dispositivos, las pulseras de actividad incorporan un amplio elenco de características relacionadas con la salud, tales como la monitorización de la actividad física y del sueño, mediciones de la \gls{vfc}, las calorías quemadas, etc \cite{luque_ordonez_dispositivos_2016}; junto con otras más relacionadas más con la informática, como la obtención de la previsión del tiempo o la posibilidad de recibir notificaciones \cite{banco_santander_wearables_2022}. Un dispositivo de este tipo es la Fitbit Inspire 2, mostrada en la Figura \ref{figure:wearables:inspire_2}.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.66\textwidth]{figures/Fitbit inspire 2.jpg}
+            \caption[Fitbit Inspire 2 colocada en una muñeca]
+            {Fitbit Inspire 2 colocada en una muñeca. Imagen extraída de \cite{delves_fitbit_2022}}
+            \label{figure:wearables:inspire_2}
+        \end{figure}
+
+        Los relojes inteligentes se pueden entender como una evolución de las pulseras de actividad en todos los sentidos. Visualmente, donde las pulseras incorporan una pequeña pantalla (en el caso de la Fitbit Inspire 2, de 0,72 pulgadas), relojes como el Samsung Galaxy Watch 6 (mostrado en la Figura \ref{figure:wearables:watch_6}) disponen de pantallas más grandes, siendo la de este reloj en específico de 1,5 pulgadas. 
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.66\textwidth]{figures/Samsung galaxy watch 6.jpeg}
+            \caption[Samsung Galaxy Watch 6 colocado en una muñeca.]
+            {Samsung Galaxy Watch 6 colocado en una muñeca. Imagen extraída de \cite{alcolea_samsung_2023}}
+            \label{figure:wearables:watch_6}
+        \end{figure}
+
+        En cuanto a las funciones relacionadas con la informática, toman las presentes en las pulseras como punto de inicio y añaden algunas más complejas, como la posibilidad de hacer pagos, responder a llamadas o de utilizar ciertas aplicaciones instaladas en el \gls{smartphone} (con limitaciones) \cite{alcolea_samsung_2023}. Lo mismo ocurre con las características de salud, incorporando funciones más avanzadas como el seguimiento de la presión arterial o del ciclo menstrual, la realización de \glspl{ecg}, o la medición de la temperatura corporal.
+
+        Si bien estos son los dispositivos más comunes, en el mercado se pueden otros tipos de dispositivos \glspl{wearable} de naturaleza muy variopinta. Algunos de ellos son rastreadores como el AirTag de Apple, los cuales se pueden colocar en objetos para conocer/rastrear su ubicación en cualquier momento \cite{raspall_airtag_2024}; mientras que otros, como el Oura Ring, son anillos que permiten cierta monitorización física, similar a las de las pulseras de actividad \cite{garcia_oura_2021}.
+
+        Por lo general, estos dispositivos se componen fundamental de un microprocesador, una batería y una serie de módulos hardware, tales como sensores o sistemas de comunicación inalámbrica \cite{luque_ordonez_dispositivos_2016}; los cuales permiten realizar las mediciones o interactuar con el exterior. Debido a las limitaciones de tamaño y especialmente de baterías de los dispositivos, normalmente suelen sincronizarse con un \gls{smartphone} la realización de ciertas tareas, o bien para procesar, almacenar o visualizar la información que recogen a través de aplicaciones específicas.
+
+        Por último, cabe destacar no se trata de un mercado pequeño. Según datos del \textit{Worldwide Quarterly Wearable Device Tracker} \cite{international_data_corporation_worldwide_nodate}, el cual incluye como \glspl{wearable} a otros dispositivos como auriculares, el mercado de estos dispositivos tuvo un crecimiento interanual del 8,4\% en el segundo cuatrimestre de 2023, con una comercialización estimada de 520 millones de \glspl{wearable} durante todo el 2023 \cite{ricca_resurreccion_2023}.
+        
+    \subsection{Android}
+        \label{section:contexto:Android}
+        
+        A grandes rasgos, Android es un Sistema Operativo orientado a dispositivos móviles basado en el núcleo Linux, diseñado para ser independiente de la arquitectura hardware de dichos dispositivos. Si bien fue planteado originalmente únicamente para teléfonos móviles, con el avance de la industria y el transcurso de las versiones ha adoptado un enfoque más amplio; siendo compatible con más dispositivos: tabletas, relojes inteligentes, televisores, pantallas de automóviles, etc. \footnote{No obstante, excepto en el caso de las tabletas, se trata de versiones \textbf{basadas} en Android con su propia 
+        idiosincrasia y limitaciones.}
+  
+        Normalmente cuando se hace referencia a Android no se hace referencia únicamente al sistema operativo, sino a todo el ecosistema o plataforma creada entorno al mismo; como se hará a lo largo de este \gls{tfm}. Dicha plataforma o 
+        \gls{framework} consta de numerosas capas, siendo el sistema operativo una parte de ellas, como se puede ver en la Figura \ref{figure:android:capas}. 
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.66\textwidth]{figures/Android capas.jpg}
+            \caption[Capas de Android]
+            {Capas de Android. Imagen extraída de \cite{perez_aosp_2019}}
+            \label{figure:android:capas}
+        \end{figure}
+        
+        El sistema operativo como tal es denominado como \gls{aosp}, siendo su código fuente público. Cualquier persona puede acceder a él, descargarlo y modificarlo \cite{collado_que_2022}, pero en la inmensa mayoría de los terminales comercializados el sistema operativo es complementado con, entre otros, los \gls{gms}, servicios de Google que solo están disponibles bajo licencia; otorgada a los fabricantes que cumplen con una serie de requisitos. 
+
+        Los \gls{gms} son utilizados para tareas como la gestión de notificaciones, servicios de geolocalización o para acceder a las herramientas de Google, tales como la tienda de aplicaciones Play Store. Asimismo, los fabricantes también pueden personalizar y añadir funciones al sistema operativo, lo que explica que dos terminales con la misma versión puedan verse tan diferentes entre sí. 
+        
+        Por otra parte, inicialmente Android fue desarrollado por la empresa homónima, si bien esta empresa fue comprada en 2005 por Google por 50 millones de dólares. La salida del sistema operativo se produciría dos años después, el 5 de noviembre de 2007, aunque el primer terminal que lo utilizaba (HTC Dream, también conocido como 
+        T-Mobile G1) fue comercializado el 23 de septiembre de 2008 \cite{adeva_android_2023} \cite{marquez_asi_2022}; el cual se puede ver en la Figura \ref{figure:android:htc_dream}.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.5\textwidth]{figures/HTC Dream.jpg}
+            \caption[HTC Dream en funcionamiento.]{HTC Dream en funcionamiento. Imagen extraída de \cite{oryl_t-mobile_2008}}
+            \label{figure:android:htc_dream}
+        \end{figure}
+
+        Desde entonces, numerosas versiones de Android han sido lanzadas, siendo la última versión estable a fecha de realización de este documento Android 14; estableciéndose por parte de Google la \textit{costumbre} de lanzar cada año una nueva versión principal. En cada una de ellas se introducen nuevas características, pero esto no significa que todos los dispositivos puedan actualizarse a la última. 
+        
+        Los fabricantes no están obligados a actualizar sus terminales, lo que en la práctica supone que las nuevas versiones no son utilizadas masivamente y que los programadores deben de tener en cuenta las versiones antiguas en sus aplicaciones. No obstante, a lo largo del último año, actores como la propia Google \cite{ricca_google_2023} y Samsung \cite{ramirez_samsung_2024} se han comprometido a proporcionar siete años de actualizaciones para algunos de sus nuevos dispositivos.
+        
+        Debido a que Google dejó de publicar oficialmente las estadísticas de uso de su sistema operativo, no es posible conocer con plena exactitud dichas cifras. La comunidad se ha encargado de estimar dicha información \cite{belinski_android_nodate}; relevando que a fecha de abril de 2024 sólo el 16,3\% de los dispositivos tienen la última versión, mientras que las versiones 13, 12 y 11 están presentes en el 26,2\%, 17\% y 16,2\%, respectivamente; permaneciendo el 24,3\% con versiones lanzadas previamente al año 2020.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.8\textwidth]{figures/Android usage.JPG}
+            \caption[Estadísticas acumulativas de las versiones de Android]
+            {Estadísticas acumulativas de las versiones de Android. Imagen extraída de \cite{belinski_android_nodate}}
+            \label{figure:android:usage}
+        \end{figure}
+
+        Por último, a fecha de junio de 2024, Android dispone de una cuota de mercado del 72,15\% en el segmento de sistemas operativos para dispositivos móviles, teniendo su mayor rival, el sistema operativo iOS (propiedad de Apple) un 27,19\% \cite{melo_infografi_2024}. Entre ambos acaparan el mercado, con un 99,34\% de cuota de mercado. En cuanto a España, según la \gls{cnmc} en una encuesta realizada en el segundo trimestre de 2023 a 9.095 individuos, la cuota de mercado Android es del 78,73\% por el 16,3 de iOS \cite{comision_nacional_de_los_mercados_y_la_competencia_android_2023}.
+
+    \subsection{Kotlin}
+
+        Kotlin es un lenguaje de programación desarrollado por JetBrains\footnote{JetBrains es una empresa muy reconocida dentro de la industria por crear una serie de entornos de desarrollo muy populares, como PHPStorm, CLion o Intellij IDEA. Sobre este último está construido Android Studio, el entorno de desarrollo oficial dentro de Android.} y publicada su primera versión estable el 15 de febrero de 2016. El objetivo de este lenguaje, basado en Java, fue tan sencillo como ambicioso: crear un lenguaje conciso (permitiendo reducir la cantidad de código \gls{boilerplate}), con soporte de nuevas funcionalidades; pero sin renunciar a la rapidez de compilación de Java ni al todo el código escrito en él \cite{rao_k_history_nodate}. 
+
+        Sus principales características son las siguientes \cite{kotlin_help_kotlin_nodate} \cite{android_developers_enfoque_nodate}:
+        \begin{itemize}
+            \item Interoperable en ambos al 100\% con Java, lo que facilita la reutilización de código ya existente.
+            \item Permite escribir código más seguro, al resolverse en el diseño del lenguaje problemas crónicos de Java como las \textit{Null Pointer Exception}. Según datos internos de Google, las aplicaciones escritas en Kotlin tienen un 20\% de probabilidades menos de fallar \cite{android_developers_enfoque_nodate}.
+            \item Soporte nativo y estructurado para la programación concurrente y asíncrona mediante construcciones como las corrutinas y los flujos.
+            \item Desarrollo multiplataforma, no solo para Android: aplicaciones web, \textit{backend} e iOS.
+            \item Permite desarrollos en varios paradigmas: orientada a objetos, funcional, imperativa, etc.
+        \end{itemize}
+
+        Cabe resaltar que durante el diseño de Android se estableció que el lenguaje principal para desarrollar aplicaciones sería Java, si bien incorpora soporte para utilizar código C y C++ \cite{android_developers_como_nodate}. No
+        obstante, al ser Java un lenguaje interpretado sobre la \gls{jvm}, cabía la posibilidad de soportar otros lenguajes que también utilizasen la \gls{jvm}.
+        
+        En la conferencia de Google \textit{I/O} de 2017, fue anunciado el soporte oficial y completo de Kotlin dentro de Android, para en 2019 convertirse en el lenguaje de referencia para el desarrollo de Android \cite{braun_celebrating_2022}, por lo que los desarrollos de librerías y herramientas relacionadas con Android están escritas en este lenguaje, aprovechando al máximo sus nuevas características. 
+        
+        Por tanto, si bien es interoperable con Java, se recomienda que los nuevos desarrollos lo utilicen \cite{lardinois_kotlin_2019}, como se ha realizado en este \gls{tfm}. Por último, según \cite{kotlin_help_kotlin_nodate}, aproximadamente el 95\% del top mil de aplicaciones Android usan en alguna medida Kotlin, por lo que su uso está plenamente justificado.
+        
+    \subsection{Salud Conectada}
+        \label{section:salud_conectada}
+        En la conferencia \textit{I/O}, de 2022 se anunció \textit{Health Connect} (o \textit{Salud Conectada} en castellano\footnote{A lo largo de este \gls{tfm} se utilizarán indistintamente los términos \textit{Health Connect} y \textit{Salud Conectada}.}), una plataforma creado por Google junto con Samsung \cite{wilk_introducing_2022} que aglutina todos los datos relacionados con salud dentro del ecosistema Android. 
+        
+        Este componente, lanzado en fase beta en noviembre de 2022, se puede encontrar preinstalado en algunos dispositivos Android a partir de la versión 14 \cite{ayuda_de_android_informacion_nodate} o como una aplicación para dispositivos Android 9 o superior \cite{pandey_health_2023} \footnote{Cabe destacar que esta aplicación es parte de los \gls{gms} y no del sistema operativo propiamente dicho o \gls{aosp}.}. A fecha de mayo de 2023, se estima que más de 100 aplicaciones han integrado \textit{Salud Conectada}, incluyendo las aplicaciones de las pulseras Fitbit y Samsung, Peloton o Oura, entre otros \cite{malik_googles_2023}.
+        
+        Esta herramienta proporciona una solución a una problemática muy relevante en el ámbito de los \glspl{wearable}. Como se describió en la Sección \ref{section:contexto:wearables}, los fabricantes procesan, almacenan y visualizan los datos recogidos en su aplicación; radicando el problema en el nulo reaprovechamiento de estos datos. La posición casi unánime dentro la 
+        industria hasta la aparición de este componente se basaba en aislar estos datos  dentro de su ecosistema \cite{ramirez_android_2022} \cite{rahman_android_2023}. 
+        
+        Por tanto, para utilizar dichos datos en otras aplicaciones las posibilidades residían en el uso de a sistemas propietarios como \textit{Google Fit}, cuyos datos se almacenaban en la nube, o a través de proyectos \gls{open-source} como \textit{Gadget Bridge}, que acceden a datos mediante ingeniería inversa \cite{freeyourgadget_gadgetbridge_nodate}. Estas opciones plantean claras desventajas, como desde los potenciales problemas de privacidad en el caso de \textit{Google Fit}; hasta cuestiones legales y dificultad de compatibilidad y uso en el caso de \textit{Gadget Bridge}.
+        
+        Como se visualiza en la Figura \ref{figure:health_connect:arquitectura} \textit{Salud Conectada} consta de varias capas. Para los usuarios finales se presenta mediante una aplicación, que entre otras cuestiones permite ver a los usuarios los datos recogidos por tipo de dato, o los accesos a sus datos; como recoge la Figura \ref{figure:health_connect:ejemplo}. Para los desarrolladores se muestra como un sistema de acceso a los datos, el cual define una serie de permisos y un acceso a través de una \gls{api}.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.33\textwidth]{figures/Arquitectura básica de Health Connect.png}
+            \caption[Arquitectura básica de \textit{Salud Conectada}.]
+            {Arquitectura básica de \textit{Salud Conectada}. Imagen extraída de \cite{wilk_introducing_2022}.}
+            \label{figure:health_connect:arquitectura}
+        \end{figure}
+
+        \begin{figure}[h]
+            \begin{subfigure}[b]{0.49\textwidth}
+                \includegraphics[width=1\linewidth]{figures/Health Connect lectura datos.jpg}
+            \end{subfigure}
+            \hfill
+            \begin{subfigure}[b]{0.49\textwidth}
+                \includegraphics[width=1\linewidth]{figures/Health Connect acceso reciente.jpg}
+            \end{subfigure}
+            \caption{Ejemplo de algunas de las funciones de \textit{Salud Conectada} para los usuarios, como la visualización de datos o de las aplicaciones que utilizan dichos datos.}
+            \label{figure:health_connect:ejemplo}
+        \end{figure}
+        
+        La plataforma puede gestionar datos como la actividad física, el sueño, la nutrición o incluso el ciclo menstrual\footnote{La lista completa de los datos que puede registrar \textit{Salud Conectada} se encuentra 
+        disponible en \cite{android_developers_lista_nodate}}, siendo un intermediario entre las aplicaciones que generan o escriben dichos datos y las que quieren acceder a esos datos. 
+        
+        Por tanto, esta \gls{api} estandariza el acceso a todas las fuentes de datos, independientemente de su procedencia; lo que simplifica enormemente tanto la lectura como escritura de los datos. Además, el sistema permite consultar
+        datos agregados, pudiendo ser una agregación acumulativa (como el total de distancia caminada en un intervalo de tiempo) o estadística (las pulsaciones mínimas, máximas o promedio en un intervalo de tiempo).
+
+        Por otra parte, este sistema rompe con el esquema de \textit{Google Fit}, almancenándose los datos localmente. Además, el acceso a los mismos esta fuertemente granularizado; estando en manos del usuario la decisión de qué aplicaciones tienen acceso (tanto lectura como escritura) a cada tipo de registro \cite{saez_google_2022}, como muestra la Figura \ref{figure:health_connect:granularidad_permisos}. 
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.5\textwidth]{figures/Health connect permisos fitbit.jpg}
+            \caption[Granularidad de los permisos de \textit{Salud Conectada}.]
+            {Granularidad de los permisos de \textit{Salud Conectada}.}
+            \label{figure:health_connect:granularidad_permisos}
+        \end{figure}
+
+        
+        Asimismo, las aplicaciones solo pueden leer datos con una antigüedad de hasta 30 días previos a su instalación \cite{android_developers_preguntas_nodate}, registrándose (como se pudo ver en la Figura \ref{figure:health_connect:ejemplo}) todas las lecturas y escrituras en el sistema.
+
+        En definitiva, si bien está aún en desarrollo y en vías de convertirse en estándar dentro de Android, esta plataforma permite a los desarrolladores la abstracción completa del hardware de recolección de datos biométricos, lo que permite reducir notablemente los costes de desarrollo de nuevos productos, permitiendo además un mayor control al usuario de sus datos sensibles, mejorando la transparencia de las aplicaciones.
+
+    \subsection{Jetpack Compose}
+
+        \textit{Jetpack Compose} es un \gls{sdk} de Android para el desarrollo de interfaces gráficas, lanzado en su primera versión estable el 28 de julio de 2021 por Google \cite{bellini_jetpack_2021}. Asimismo, Jetpack Compose es parte de un \gls{sdk} más grande conocido como \textit{Android Jetpack}, el cual es promovido por Google para mejorar el desarrollo dentro de Android \cite{huaman_que_2018} \cite{android_developers_recursos_nodate}. 
+        
+        \textit{Jetpack Compose} permite desarrollar en el ecosistema Android de forma nativa interfaces gráficas de manera declarativa como en los sistemas React, Flutter o SwiftUI; siguiendo las tendencias actuales de la industria en el desarrollo de aplicaciones móviles. 
+
+        Hasta la aparición de esta herramienta, el desarrollo interfaces gráficas nativas en Android se realizaba con el enfoque conocido como programación imperativa. En este tipo de desarrollo es necesario especificar exhaustivamente cómo se va a construir dicha interfaz gráfica. En dicho proceso (conocido en Android como sistema de vistas) se codificaba un fichero \gls{xml}, en el que se describían todos los elementos gráficos (botones, textos, etc.); para que la aplicación accediera a dichos elementos y le aplicara manualmente modificaciones y transformaciones \cite{deloitte_spain_programacion_2021}. 
+
+        En cambio, el enfoque declarativo permite describir cómo se desea que sea la interfaz gráfica. Las interfaces que se construyen mediante \textit{Jetpack Compose} pueden estar interconectadas a estados descritos por el programador, describiendo cómo es la interfaz para cada posible estado. Cuando dicho estado cambia, el sistema cambia automáticamente la interfaz gráfica mostrada, simplificando y reduciendo enormemente el proceso de desarrollo \cite{leiva_que_2021}. 
+
+        A diferencia del sistema anterior, los componentes gráficos están desacoplados 
+        del sistema operativo; por lo que ya no se depende de la versión del terminal para mostrar correctamente la interfaz gráfica. Como se vió en la Sección 
+        \ref{section:contexto:Android}. la fragmentación en Android es un 
+        problema endémico, lo que complicaba notablemente el diseño de las aplicaciones Asimismo, es compatible con los componentes \gls{xml} del sistema anterior, lo que facilita la migración de los proyectos antiguos a este nuevo paradigma. 
+
+        No obstante, está diseñado para ser utilizado casi exclusivamente desde Kotlin, por lo que en algunos casos puede resultar en un pico de dificultad relevante si el equipo de desarrolladores no domina el lenguaje.
+    
+    \subsection{Material Design 3}
+        \textit{Material Design 3} (también conocido como \textit{Material You}) es la tercera iteración del conjunto de principios y directrices de diseño de Google, como respuesta a la creciente ubiquidad de Android: móviles con pantallas plegables, \textit{smartwatch}, televisores \cite{ramirez_que_2022}, etc. Su primera implementación estable para \textit{Jetpack Compose} fue lanzada el 24 de octubre de 2022 \cite{singh_material_2022}.
+        
+        Al ser utilizado por Google para la creación de elementos gráficos tanto en sus aplicaciones como en el sistema operativo, se convirtió en la guía de diseño \textit{de facto} dentro del ecosistema Android.
+
+        Sus principales características son las siguientes \cite{material_design_material_nodate}:
+        \begin{itemize}
+            \item Apuesta por la personalización de la interfaz gráfica: los diseñadores pueden elaborar su paleta de colores mediante la herramienta 
+            \textit{Material Design Builder} \cite{material_design_material_nodate-1} (mostrada en la Figura \ref{figure:material_design_3:builder}), la cual garantiza el cumplimiento de la guía de accesibilidad \gls{wcag} 2.0 del consorcio \gls{w3c} \cite{w3c_web_2008}. Para ello se pueden definir hasta tres colores principales, los cuales serán utilizados para los elementos gráficos de forma totalmente transparente al programador.
+
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.85\textwidth]{figures/Material Design Builder example.png}
+                    \caption[Ejemplo de uso de la herramienta \textit{Material Design Builder}]
+                    {Ejemplo de uso de la herramienta \textit{Material Design Builder}. Imagen extraída de \cite{singh_material_2022}.}
+                    \label{figure:material_design_3:builder}
+                \end{figure}
+
+            Además, si el dispositivo dispone de Android 12 o superior, pueden tomarse dichos colores desde el fondo de pantalla del usuario, incrementando exponencialmente la personalización; si bien se permite establecer colores \textit{fijos} para ciertos contenidos.
+            \item Soporte nativo para categorizar el tamaño de la pantalla del dispositivo, tanto en altura como en anchura, como se muestra en las Figuras \ref{figure:material_design_3:height_classes} y \ref{figure:material_design_3:width_classes} respectivamente.
+
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.85\textwidth]{figures/Categorías de ventana según altura.png}
+                    \caption[Categorías de pantalla según altura]
+                    {Categorías de pantalla según altura. Imagen extraída de \cite{android_developers_window_nodate}}
+                    \label{figure:material_design_3:height_classes}
+                \end{figure}
+                
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.85\textwidth]{figures/Categorías de ventana según anchura.png}
+                    \caption[Categorías de pantalla según anchura]
+                    {Categorías de pantalla según anchura. Imagen extraída de \cite{android_developers_window_nodate}}
+                    \label{figure:material_design_3:width_classes}
+                \end{figure}
+
+            \item Sistema de fuentes basado en estilos principales para cada tipo de contenido: desde titulares hasta etiquetas, pasando por títulos, cuerpos de texto, etc.
+            \item Soporte nativo para animaciones, las cuales ya son utilizadas en los componentes gráficos nativos, como los \textit{switch}.
+            \item Evolución de muchos elementos gráficos, como las tarjetas, botones, selectores de fechas, etc. La Figura \ref{figure:material_design_3:elementos_graficos} muestra algunos de estos elementos.
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=0.75\textwidth]{figures/Elementos gráficos material design 3.png}
+                    \caption[Algunos elementos gráficos de \textit{Material Design 3}]
+                    {Algunos elementos gráficos de \textit{Material Design 3}. Imagen extraída de \cite{cerda_material_2022}}
+                    \label{figure:material_design_3:elementos_graficos}
+                \end{figure}
+            \item Sistema de formas o \textit{redondeo} multinivel para modernizar los elementos gráficos y hacerlos más distinguibles entre sí.
+            \item Mejoras en el concepto conocido como \textit{elevación}, basándose en colores y no en sombras. Este elemento permite superponer elementos y transmitir gráfica y visualmente la importancia de cada uno de ellos.
+            \item Soporte nativo para tema claro y oscuro, resolviendo la ausencia de dicho soporte.
+        \end{itemize}
+
+        Se trata en definitiva de una modernización del lenguaje de diseño, haciéndolo más 
+        atractivo y completo a la vez que se garantiza cierta accesibilidad para los usuarios. Se han alejado de lo puramente funcional para abrazar el mundo de la personalización para el usuario.
+
+    \subsection{Room}
+        Uno de los servicios que provee Android es SQLite, un \gls{sgbd} relacionales de bajo nivel, destinado para ser utilizado por las aplicaciones finales. No obstante, para muchas de ellas es un modelo demasiado rígido, por lo que Google creó en 2017 esta librería, la cual hace de intermediario entre SQLite y las aplicaciones \cite{leiva_room_2020}. 
+        
+        Técnicamente hablando se trata de una capa de abstracción sobre dicho sistema gestor, la cual permite reducir la complejidad de los usos comunes de la base de datos; sin perder el acceso a SQLite. Asimismo, esta librería brinda otras ventajas, como la verificación de las consultas
+        \gls{sql} en tiempo de compilación \cite{android_developers_como_nodate}.
+
+        Los elementos básicos para utilizar esta librería son los siguientes:
+        \begin{itemize}
+            \item \gls{dao}. En este elemento se crean todas las operaciones que se realizan sobre la base de datos: consultas, inserciones, etc.
+            \item Entidades, las cuales se corresponden con una clase en Kotlin y normalmente con una tabla de base de datos. Con esta estructura se crean las tablas bases de datos, realizándose un mapeo de dichas tablas a objetos. Sobre los atributos de los objetos se pueden realizar anotaciones para establecer claves, índices, etc.
+            \item Clase base de datos, donde se especificarán las entidades de la propia base de datos y cómo se instancia, reduciendo el código \gls{boilerplate}. Este procedimiento se detalla mediante una función que configura ciertos parámetros, como el nombre del fichero de la base de datos o características extra, como el uso de cifrado. Para la construcción de dicha instancia Room implementa el patrón factoría.
+        \end{itemize}
+    
+    \subsection{Work Manager}
+        \textit{Work Manager} es el componente oficial de Android para la planificación de subtareas, diseñada para simplificar el uso del amalgama de librerías para esta
+        funcionalidad presentes en Android. Hasta entonces, según la versión del sistema, debían utilizarse unas u otras, estableciendo \textit{Work Manager} una única interfaz para esta funcionalidad; encargándose internamente de utilizar la librería correcta a bajo nivel \cite{android_developers_workmanager_nodate}.
+        
+        Este componente admite dos tipos de tareas: puntuales y periódicas; las cuales se pueden planificar o cancelar. Además de la planificación temporal, permite el establecimiento de algunas restricciones, como que el dispositivo esté cargándose o disponga de conexión a internet, ejecutándose la tarea en cuestión solo cuando se cumplan todas las restricciones y directrices \cite{android_developers_arquitectura_nodate}.
+
+        Asimismo, permite establecer una política de reintentos si las tareas no se han ejecutado correctamente, por lo que es la solución recomendada para los casos de uso que necesiten realizar ciertas operaciones de manera fiable.
+
+    \subsection{Lottie}
+        \textit{Lottie} es una biblioteca creada por Airbnb, la cual que busca facilitar la creación y uso de animaciones en entornos multiplataforma (web, iOS, Android, entre otros) \cite{rubianes_lottie_2021}. A diferencia de archivos como los \gls{gif}, esta librería permite que las animaciones puedan escalarse sin perder calidad (como en los ficheros \gls{svg}), haciendo hincapié en el rendimiento.
+
+        Concretamente, la librería renderiza en tiempo real animaciones de \textit{Adobe After Effects}, las cuales son exportadas como ficheros \gls{json} que serializan dicha animación \cite{airbnb_design_lottie_nodate}, utilizando una extensión \gls{open-source} conocida como \textit{Bodymovin}. Por tanto, estas animaciones pueden ser personalizadas completamente, a la vez que se reducen las necesidades de cómputo para mostrarlas. 
+        
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.5\textwidth]{figures/Animacion de ejemplo.PNG}
+            \caption{Vista previa de una animación personalizada}
+            \label{figure:lottie:animacion_ejemplo}
+        \end{figure}
+
+        En este \gls{tfm} será abordada únicamente la personalización de animaciones gratuitas aportadas por la comunidad y su presentación en la aplicación; y no la creación de nuevas. Para conseguir dichas animaciones se ha utilizado el portal \href{https://lottiefiles.com/}{LottieFiles}.
+
+    \subsection{Vico}
+        
+        Vico es una biblioteca \gls{open-source} para la realización de gráficos, creada por Patryk Goworowski. Su particularidad reside en su compatibilidad tanto con el sistema de vistas tradicional como con \textit{Jetpack Compose}, algo único en el ecosistema de Android \cite{goworowski_vico_nodate}. Si bien no es tan potente como otras librerías como \textit{MPAndroid}, sus posibilidades son más que suficientes para este \gls{tfm}. 
+        
+        Gracias al soporte nativo de \textit{Jetpack Compose} y \textit{Material Design 3}, esta librería introduce algunas mejoras en las gráficas, como una interconexión directa con los colores que se utilizan en tiempo de ejecución, incrementando la coherencia visual de la aplicación.
+
+        Vico permite crear únicamente gráficos de barras y de líneas, ejemplificadas en las Figuras \ref{figure:vico:ejemplo_barras} y \ref{figure:vico:ejemplo_lineas}, respectivamente. Su humilde enfoque, si bien puede condicionar y limitar notablemente su uso, permite que contenga numerosos añadidos completamente personalizables, tales como: leyendas, marcadores (tanto fijos como temporales), \textit{líneas umbral}, personalización de los ejes, etc.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.55\textwidth]{figures/Gráfica de barras con vico.jpg}
+            \caption{Ejemplo de gráfica de barras realizada con Vico}
+            \label{figure:vico:ejemplo_barras}
+        \end{figure}
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.4\textwidth]{figures/Gráfica de líneas con vico.jpg}
+            \caption{Ejemplo de gráfica de líneas realizada con Vico}
+            \label{figure:vico:ejemplo_lineas}
+        \end{figure}
+        
+        
+        Asimismo, su mantenimiento y mejora es notable y constante. Nuevas versiones son lanzadas cada pocas semanas \cite{goworowski_vico_2023-1}, mientras que el soporte ofrecido en su repositorio es rápido y detallado \cite{goworowski_vico_2023}. Además, dispone de numerosa documentación para aprender a utilizarla rápidamente, si bien no cubre los casos de uso más avanzados. Por último, dispone de una aplicación de demostración que permite ver rápidamente las posibilidades que ofrece la librería.
+
+    \subsection{Python}
+        Python es un lenguaje de programación interpretado creado por Guido Van Rossum en 1991, con un marcado enfoque de construir código de la manera más clara y legible posible. Es uno de los lenguajes más populares de la escena, gracias a su facilidad de uso y a su enorme comunidad de desarrolladores. Estos últimos han creado un enorme ecosistema de librerías que facilita la creación de nuevos proyectos, especialmente para prototipos.
+
+        Actualmente es utilizado para todo tipo de tareas, tales como desarrollo web, aplicaciones científicas, inteligencia artificial o análisis de datos; casi siempre apoyándose en potentes librerías que mejoran notablemente el propio lenguaje. 
+
+        Sus principales características son las siguientes:
+        \begin{itemize}
+            \item Soporte mutiparadigma: como Kotlin, se puede utilizar programación imperativa, orientada a objetos o funcional en cualquier momento.
+            \item Gran biblioteca estándar, la cual facilita muchas operaciones mundanas, como la lectura de archivos \gls{json}.
+            \item Soporte multiplataforma, gracias a la compatibilidad de su intérprete con todos los sistemas operativos principales. Llega hasta tal punto que un subconjunto del lenguaje (\textit{MicroPython}) es compatible con algunos microcontroladores.
+            \item Sistema de tipos fuertemente tipado y dinámico, lo que permite que una variable pueda cambiar de tipo fácilmente.
+            \item Facilidad de instalación de librerías gracias a la herramienta pip.
+        \end{itemize}
+    
+    \subsection{Flask}
+
+        \textit{Flask} es un popular entorno ligero o \gls{microframework} de Python utilizado para construir aplicaciones web, tanto como páginas como \gls{api}. Diseñado para ser ligero y fácil de usar, \textit{Flask} proporciona las herramientas necesarias para crear dichas aplicaciones web de una manera minimalista, rápida y eficiente, en sintonía con la propia filosofía del lenguaje. 
+
+        A diferencia de otros \gls{framework} más completos como \textit{Django}, \textit{Flask} se enfoca en brindar solo lo esencial, permitiendo crear prototipos fácilmente; si bien puede quedarse corto para aplicaciones relativamente complejas \cite{rodriguez_flask_2014}. Su sistema de enrutamento \gls{http} es sencillo y claro, mientras que posee extensiones para autentificación de usuarios, integración con bases de datos, etc. 
+
+        Gracias a esta simplicidad será utilizado en este \gls{tfm} para realizar prototipos en el componente servidor. Asimismo, debido a su enfoque modular y a su sistema de plantillas permite expandir la funcionalidad con más elementos web sin necesidad de realizar profundas adaptaciones del código ya existente.
+
+
+    \subsection{MongoDB}
+        MongoDB es un \gls{sgbd} no relacional orientado a documentos, diseñado para manejar grandes volúmenes de datos de manera eficiente y escalable. A diferencia de las bases de datos relacionales tradicionales, no cuenta con registros; sino documentos, unos ficheros con una extensión \gls{bson} \cite{mongodb_json_nodate}. 
+
+        Este enfoque no relacional le permite ofrecer un modelo de datos flexible, sin un esquema predefinido o rígido. Esto se traduce en una mayor libertad para almacenar datos y cambiar el modelo de los mismos, ya que para cambiar cualquier atributo no es necesario reconstruir el modelo; algo especialmente útil para prototipos o modelos de datos dinámicos.
+        
+        Por otra parte, el modelo de consultas ofrece posibilidades similares a las de \gls{sql}, por lo que no supone una desventaja. También implementa conceptos presentes en las base de datos relacionales, como los índices. Además, al disponer de una gran comunidad detrás, existen numerosos módulos que lo permiten integrar con lenguajes de programación, como \textit{pymongo} para Python. 
+
+        Asimismo, posee otras dos grandes fortalezas: un núcleo distribuido, lo que permite una alta disponibilidad y escalabilidad; y una licencia de uso gratuito desde octubre de 2018, bajo la licencia \gls{agpl} \cite{mongodb_que_nodate}.
+
+\section{Buffer}
+
 \todo[inline]{Añadir una sección que aglutine a las medidas psicológicas o asi está bien?}
 \todo[inline]{Enlazar aqui que ya se habló de pasada sobre ellas pero ahora en serio}
 
@@ -17,525 +359,3 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
 Por otra parte, existen numerosos trastornos o enfermedades mentales que afectan a la salud mental. En la propia definición de salud mental se menciona el estrés, el cual se puede entiende como  \textit{``un estado de preocupación o tensión mental generado por una situación difícil''}  \cite{oms_estres_2023}. La presencia de estrés puede provocar, entre otros, dolor de cabeza, dificultades para dormir, alternaciones del apetito u otros problemas de salud mental, como ansiedad \cite{oms_estres_2023}. Se estima que nueve de cada diez personas han sentido estrés en el último año y un 40\% de la población lo sufre de forma continua \cite{nogera_mas_estres_2024}.
 
 Otro problema de salud mental muy conocido es la depresión, la cual está muy relacionada con el estrés, la cual se puede describir como un estado de intensa tristeza, melancolía o desesperación, avanzada hasta perturbar el funcionamiento social o las actividades diarias de una persona \cite{van_neerven_rarrxr_2008}. 
-    
-\section{Estrés}
-    
-    Síntomas/Consecuencias para la persona
-    ¿Cómo se puede medir desde la psicología?
-\section{Depresión}
-    Trastorno mayor?
-    Síntomas/Consecuencias para la persona
-    ¿Cómo se puede medir desde la psicología?
-\section{Soledad}
-    Soledad NO deseada
-    Síntomas/Consecuencias para la persona
-    ¿Cómo se puede medir desde la psicología?
-\section{Suicidio}
-    Decimos conducta?
-    Síntomas/Consecuencias para la persona
-    ¿Cómo se puede medir desde la psicología? Riesgo claro
-        
-
-%
-%\section{Sistemas IoT}
-%
-%Tal y como se introdujo de manera informal en el capítulo anterior, \textit{IoT} se define como un sistema global e inteligente
-%sistema con conciencia global, transmisión fiable
-%y procesamiento inteligente de datos %\cite{noauthor_8_2020}.
-%
-%En este sentido una arquitectura de alto nivel, basada en el conjunto de capas de todos estos objetos interconectados puede verse representada gráficamente en la Figura \ref{fig:IoT_General}.
-%
-%\begin{figure}[H]
-%  \centering
-%  \includegraphics[width=0.7\linewidth]{figures/IoT-Architecture-Layers-and-Components.png}
-%  \caption{Diagrama general de un sistema IoT}
-%  \label{fig:IoT_General}
-%\end{figure}
-
-
-
-
-\section{Contexto tecnológico}
-
-    En esta sección se describirán las tecnologías y herramientas más relevantes que se utilizarán a lo
-    largo del desarrollo proyecto. El uso de las mismas se describirá en la Sección \ref{chapter:desarrollo}.
-    \todo[inline]{referenciar seccion correspondiente}
-       
-    \subsection{Android}
-
-        A grandes rasgos, Android es un Sistema Operativo orientado a dispositivos móviles basado en el núcleo 
-        Linux, diseñado para ser independiente de la arquitectura hardware de dichos dispositivos. 
-        Si bien originalmente fue planteado para teléfonos móviles, con el avance de la industria ha adopado 
-        un enfoque más amplio y es compatible con más dispositivos: tabletas, relojes inteligentes, televisores, 
-        pantallas de automóviles, \textcolor{red}{etc.} %... 
-        aunque, excepto en el caso de las tabletas, se trata de versiones basadas en
-        Android con su propia %idionsincrasia
-        \textcolor{red}{idiosincrasia}. 
-
-        Normalmente cuando \textcolor{red}{se hace referencia a} %nos referimos a 
-        Android \textcolor{red}{no se hace referencia} %, no nos referimos
-        únicamente al sistema operativo, sino a la
-        plataforma creada entorno al mismo; como \textcolor{red}{se hará} %haremos 
-        a lo largo de este proyecto. Dicha plataforma o 
-        \gls{framework} consta de numerosas capas, siendo el sistema operativo una parte de ellas. El sistema 
-        operativo como tal es denominado AOSP o \textit{Android Open Source Project}, siendo su código fuente 
-        público. Cualquier persona puede acceder a él, descargarlo y \textcolor{red}{modificarlo} %modificiarlo
-        \cite{collado_que_2022}.
-
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=0.66\textwidth]{figures/Android capas.jpg}
-            \caption[Capas de Android.]
-            {Capas de Android. Imagen extraída de \cite{perez_aosp_2019}}
-            \label{figure:android:capas}
-        \end{figure}
-
-        No obstante, en la inmensa mayoría de los teléfonos móviles el sistema operativo es complementado con,
-        entre otros, los GMS (\textit{Google Mobile Services}, o servicios de Google), los cuales solo están 
-        disponibles bajo licencia; otorgada a los fabricantes que cumplen con una serie de requisitos. Los GMS 
-        se utilizan para tareas como la gestión de notificaciones, servicios de geolocalización, ... además de para 
-        acceder a las herramientas de Google, como la tienda de aplicaciones Play Store. Los fabricantes también 
-        pueden personalizar y añadir funciones al sistema operativo, lo que explica que dos terminales con la misma 
-        versión puedan verse tan diferentes entre sí. 
-        
-
-        Por otra parte, Android fue inicialmente desarrollado por la empresa homónima, si bien fue comprada en 2005
-        por Google por 50 millones de dólares. La salida del sistema operativo se produciría dos años después, el 5 
-        de noviembre de 2007, si bien el primer terminal que lo utilizaba (HTC Dream, también conocido como 
-        T-Mobile G1) fue comercializado el 23 de septiembre de 2008 \cite{adeva_android_2023} \cite{marquez_asi_2022}.
-
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=0.5\textwidth]{figures/HTC Dream.jpg}
-            \caption[HTC Dream en funcionamiento.]{HTC Dream en funcionamiento. Imagen extraída de \cite{oryl_t-mobile_2008}}
-            \label{figure:android:htc_dream}
-        \end{figure}
-
-        Desde entonces, numerosas versiones de Android han sido lanzadas, siendo la última versión estable Android 
-        13; estableciéndose por parte de Google la \textit{costumbre} de lanzar cada año una nueva versión principal. 
-        En cada una de ellas se introducen nuevas características, pero esto no significa que todos los dispositivos 
-        puedan actualizar. Los fabricantes no están obligados a actualizar sus terminales, lo que en la práctica 
-        supone que las nuevas versiones no son utilizadas masivamente y que los programadores deben de tener en 
-        cuenta las versiones antiguas en sus aplicaciones. 
-        
-
-        Debido a que Google dejó de publicar oficialmente las estadísticas de uso de su sistema operativo, no es
-        posible conocer con plena exactitud dichas cifras. La comunidad se ha encargado de estimar dicha 
-        información \cite{belinski_android_nodate}; relevando que a fecha de mayo de 2023 sólo el 20\% de los 
-        dispositivos tienen la última versión, mientras que las versiones 12,11 y 10 están presentes en el 
-        20,8\%, 21,1\% y 16,6\%, respectivamente. 
-
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=1\textwidth]{figures/Android usage.PNG}
-            \caption[Estadísiticas acumulativas de las versiones de Android]
-            {Estadísiticas acumulativas de las versiones de Android. Imagen extraída de \cite{belinski_android_nodate}}
-            \label{figure:android:usage}
-        \end{figure}
-
-        Por último, a fecha de marzo de 2023, Android dispone de una cuota de mercado del 71\% en el segmento de sistemas 
-        operativos para dispositivos móviles, teniendo su mayor rival,el sistema operativo iOS (propiedad de Apple) 
-        un 28\%. Entre ambos acaparan el mercado, con un 99\% de cuota de mercado. En cuanto a España, el 
-        porcentaje de Android asciende hasta el 77,73\% por el 21,81 de iOS \cite{press_asi_2023}.
-
-    \subsection{Kotlin}
-
-            Durante el diseño de Android se estableció que el lenguaje principal para desarrollar aplicaciones sería 
-            Java, si bien incorpora soporte para utilizar código C y C++ \cite{android_developers_como_nodate}. No
-            obstante, al ser Java un lenguaje interpretrado sobre una máquina virtual (JVM o \textit{Java Virtual
-            Machine}) se abrió la puerta para  utilizar otros lenguajes que utilizasen la JVM. En la conferencia de 
-            Google \textit{I/O} de 2017 fue anunciado el soporte oficial y completo 
-            de Kotlin dentro de Android. 
-
-            Kotlin es un lenguaje de programación desarrollado por JetBrains\footnote{JetBrains es una
-            empresa muy reconocida dentro de la industria por crear una serie de entornos de desarrollo muy populares,
-            como PHPStorm, CLion o Intellij IDEA. Sobre este último está construido Android Studio, el entorno de 
-            desarrollo oficial dentro de Android.} y publicada su primera versión estable el 15 de febrero de 2016.
-            El objetivo de este lenguaje fue tan sencillo como ambicioso: crear un lenguaje conciso (permitiendo reducir
-            la cantidad de código \textit{boilerplate}), con soporte de nuevas funcionalidades; pero sin renunciar a la rapidez de
-            compilación de Java ni al todo el código escrito en él 
-            \cite{rao_k_history_nodate}. 
-
-            Sus principales características son las siguientes \cite{noauthor_kotlin_nodate} \cite{noauthor_enfoque_nodate}:
-            \begin{itemize}
-                \item Interoperable al 100\% con Java, lo que facilita la reutilización de código ya existentes. 
-                Es interoperable en ambos sentidos.
-                \item Permite escribir código más seguro, ya que en el diseño del lenguaje se solucionaron problemas
-                crónicos de Java como las \textit{Null Pointer Exception}. Según datos internos de Google, las 
-                aplicaciones escritas en Kotlin tienen un 20\% de probabilidades menos de fallar.
-                \item Soporte nativo y estructurado para la programación concurrente y asíncrona mediante 
-                construcciones como las corrutinas y los flujos.
-                \item Desarrollo multiplataforma, no solo para Android: aplicaciones web, \textit{backend} e iOS.
-                \item Permite desarrollos en varios paradigmas: orientada a objetos, funcional, imperativa...
-            \end{itemize}
-            
-            Asimismo, al convertirse en la \textit{I/O} de 2019 en el lenguaje de referencia para el desarrollo 
-            de Android \cite{braun_celebrating_2022}, los desarrollos de librerías y herramientas relacionadas con 
-            Android están escritas en este lenguaje, aprovechando al máximo sus nuevas características. Por tanto, si
-            bien es interoperable con Java, está recomendado que los nuevos desarrollos lo utilicen 
-            \cite{lardinois_kotlin_2019}, como se ha realizado en este proyecto.
-            
-        \subsection{Salud Conectada}
-            \label{section:salud_conectada}
-            En la conferencia \textit{I/O} (sí, otra vez) de 2022 se anunció \textit{Health Connect} (o Salud Conectada
-            en castellano), una aplicación creada por Google (junto con Samsung \cite{wilk_introducing_2022}) 
-            que aglutinará todos los datos relacionados con salud dentro del ecosistema
-            Android. La aplicación (en beta desde noviembre de 2022) es compatible con Android 9 o 
-            superior, mientras que está previsto que para Android 14 venga
-            incorporada aplicación de fábrica o preinstalada\footnote{Recordar aquí que esta aplicación es
-            parte de los servicios de Google y no del sistema operativo propiamente dicho o AOSP.} 
-            \cite{pandey_health_2023}. 
-
-            Esta herramienta viene a solucionar una probelmática importante y es la ausencia del reaprovechamiento de 
-            los datos relacionados con la salud. Hasta ese momento, la posición casi unánime dentro la 
-            industria se basaba en aislar los datos recoletados por sus dispositivos \textit{\glspl{wearable}} o aplicación 
-            dentro de su ecosistema \cite{ramirez_android_2022} \cite{rahman_android_2023}. 
-            
-            La única manera utilizar dichos datos 
-            en otras aplicaciones estaba restringuida a sistemas propietarios como Google Fit, cuyos datos se 
-            almacenaban enla nube con los problemas de privacidad asociados, o proyectos \textit{open source} como 
-            Gadget Bridge \cite{freeyourgadget_gadgetbridge_nodate}; que accedían a datos mediante ingeniería inversa.
-            
-
-            A fecha de mayo de 2023, se estima que más de 100 aplicaciones han integrado Salud Conectada, incluyendo
-            las aplicaciones de las pulseras Fitbit y Samsung, Peloton, Oura \cite{malik_googles_2023}... 
-
-            Centrándonos en Salud Conectada, se trata tanto de una plataforma como una API para los desarrolladores.
-            La plataforma puede registrar datos como la actividad física, el sueño, la nutrición o incluso el ciclo
-            menstrual\footnote{La lista completa de los datos que puede registrar Salud Conectada se encuentra 
-            disponible en \cite{noauthor_lista_nodate}}, siendo un intermediario entre las aplicaciones que generan 
-            o escriben dichos datos y las que quieren acceder a esos datos. 
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.33\textwidth]{figures/Arquitectura básica de Health Connect.png}
-                \caption[Arquitectura básica de Salud Conectada.]
-                {Arquitectura básica de  Salud Conectada. Imagen extraída de \cite{wilk_introducing_2022}}
-                \label{figure:health_connect:arquitectura}
-            \end{figure}
-
-            Esta API estandariza el acceso a todas las fuentes de datos, independientemente de su procedencia; lo que
-            simplifica enormemente tanto la lectura como escritura de los datos. Además, el sistema permite consultar
-            datos agregados, pudiendo ser una agregación acumulativa (como el total de distancia caminada en un 
-            intervalo de tiempo) o estadística (las pulsaciones mínimas, máximas o promedio en un intervalo de tiempo).
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.33\textwidth]{figures/Health Connect lectura datos.jpg}
-                \caption[Visualización de datos de distancia.]
-                {Visualización de datos de distancia.}
-                \label{figure:health_connect:visualizacion_datos}
-            \end{figure}
-            
-            Por otra parte, está diseñada con la privacidad en mente: los datos se almacenan localmente, mientras que el 
-            acceso a los mismos esta fuertemente granularizado: en la que el usuario puede
-            decidir qué aplicaciones tienen acceso (tanto lectura como escritura) a cada tipo de registro 
-            \cite{saez_google_2022}.  
-            
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.33\textwidth]{figures/Health Connect acceso reciente.jpg}
-                \caption[Visualización del acceso a los datos.]
-                {Visualización del acceso a los datos. Elaboración propia.}
-                \label{figure:health_connect:acceso_reciente}
-            \end{figure}
-
-            
-            Asimismo, las aplicaciones solo pueden leer datos con una antigüedad de 
-            hasta 30 días previos a su instalación. \cite{noauthor_preguntas_nodate}, registrándose además todas las 
-            lecturas y escrituras en el sistema, las cuales puede visualizar el usuario. 
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.33\textwidth]{figures/Health connect permisos fitbit.jpg}
-                \caption[Granularidad de los permisos.]
-                {Granularidad de los permisos. Elaboración propia.}
-                \label{figure:health_connect:granularidad_permisos}
-            \end{figure}
-
-            En definitiva, si bien está aún en desarrollo, esta plataforma nos permite abstraernos del hardware de
-            recolección de datos biométricos, reduciendo la complejidad de nuestro desarrollo; y además permite al 
-            usuario un mayor control sobre sus datos sensibles.
-
-        \subsection{Jetpack Compose}
-
-            Jetpack Compose es un conjunto de herramientas \textit{modernas} de Android para el desarrollo de 
-            interfaces gráficas, lanzado en su primera versión estable el 28 de julio de 2021 por Google
-            \cite{bellini_jetpack_2021}. Este kit de librerías permite desarrollar en el ecosistema Android de 
-            forma nativa interfaces gráficas de manera declarativa como en los sistemas React, Flutter o SwiftUI;
-            siguiendo las tendencias actuales de la industria en el desarrollo de aplicaciones móviles. 
-
-            Este enfoque declarativo nos permite describir cómo queremos que sea nuestra interfaz gráfica. 
-            Asimismo, las interfaces que construimos con este sistema pueden estar interconectadas a un estado 
-            que definamos; describiendo cómo será nuestra interfaz para cada posible estado. Cuando ese estado cambie, 
-            nuestra interfaz gráfica cambiará automáticamente para mostrar el nuevo estado, simplificando enormemente 
-            el desarrollo y reduciendo el código necesario \cite{leiva_que_2021}. 
-
-            Hasta la aparición de Jetpack Compose, el desarrollo interfaces gráficas nativas en Android se realizaba 
-            con el enfoque conocido como programación imperativa. En este tipo de desarrollo es necesario especificar 
-            paso por paso cómo se va a construir dicha interfaz gráfica exahustivamente. En dicho proceso (conocido 
-            en Android como sistema de vistas) se codificaba un fichero XML, en el que se describían todos los 
-            elementos gráficos (botones, textos...); para en el código Java/Kotlin de la aplicación se accediera 
-            a dichos elementos y se le aplicaran manualmente modificaciones y transformaciones 
-            \cite{noauthor_programacion_2021}. 
-
-            Además, en Jetpack Compose, a diferencia del sistema anterior, los componentes gráficos están desacoplados 
-            del sistema operativo; por lo que no dependemos de la versión del terminal para mostrar correctamente 
-            nuestra interfaz gráfica. Eso ocurría anteriormente y como ya vimos, la fragmentación en Android es un 
-            problema endémico, lo que complicaba bastante el desarrollo. Asimismo, es compatible con los componentes XML 
-            del sistema anterior, lo que facilita la migración de los proyectos antiguos a este nuevo paradigma. 
-
-            No obstante, como ya vimos en el apartado anterior, está diseñado para ser utilizado desde Kotlin, por lo 
-            que en la práctica obliga a usar dicho lenguaje; lo que en algunos casos puede resultar en un pico de 
-            dificultad hasta que se domina el lenguaje.
-
-            Por último, esclarecer que Jetpack Compose es parte de un conjunto de librerías más grande conocido como 
-            Android Jetpack, el cual es promovido por Google para mejorar el desarrollo dentro de Android 
-            \cite{huaman_que_2018} \cite{noauthor_recursos_nodate}. Por otra
-            parte, estas librerías no tienen ninguna relación entre sí; por lo que en la literatura especializada se 
-            abusa de la notación. Al resto de las librerías de Jetpack se les conoce
-            por su nombre, sin el prefijo Jetpack; siendo la única que lo incorpora Compose. En este documento 
-            seguiremos ese enfoque para mejorar la legibilidad.
-        
-        \subsection{Material Design 3}
-            Material Design 3 (también conocido como \textit{Material You}) es la tercera iteración del 
-            conjunto de principios y directrices de diseño de Google, 
-            como respuesta a la creciente ubiquidad de Android: móviles con pantallas
-            plegables, \textit{smartwatch}, televisores \cite{ramirez_que_2022}... 
-            Su primera implementación estable para Jetpack Compose fue lanzada el 
-            24 de octubre de 2022 \cite{singh_material_2022}.
-            
-            Al ser utilizado por Google para la creación de elementos 
-            gráficos tanto en sus aplicaciones como en el sistema operativo, es la guía de diseño de facto dentro del
-            ecosistema Android.
-
-            Sus principales características son las siguientes \cite{noauthor_material_nodate}:
-            \begin{itemize}
-                \item Centrado en la personalización de la interfaz gráfica. Los diseñadores definirán tres colores
-                principales, los cuales serán utilizados para los elementos gráficos de forma totalmente transparente
-                al programador. A partir de dichos colores, se elaborará mediante la herramienta 
-                \textit{Material Design Builder} \cite{noauthor_material_nodate-1} una paleta de colores con 
-                variantes de los mismos, 
-                diseñada para cumplir estándares de accesibilidad\footnote{Describir dichos
-                estándares está fuera del alcance del proyecto, pero es un proceso basado en proporciones de 
-                luminitancia}, garantizando el nivel de contraste correcto.
-
-                    \begin{figure}[h]
-                        \centering
-                        \includegraphics[width=0.75\textwidth]{figures/Material Design Builder example.png}
-                        \caption[Ejemplo de uso de la herramienta \textit{Material Design Builder}]
-                        {Ejemplo de uso de la herramienta \textit{Material Design Builder}. Imagen extraída de \cite{singh_material_2022}}
-                        \label{figure:material_design_3:builder}
-                    \end{figure}
-
-                Además, si el dispositivo dispone de Android 12 o superior, pueden tomarse dichos
-                colores desde el fondo de pantalla del usuario, incrementando exponencialmente la personalización;
-                si bien se permite establecer colores \textit{fijos} para ciertos contenidos.
-                \item Soporte nativo para categorizar el tamaño de la pantalla del dispositivo, tanto en altura como
-                en anchura.
-                    \begin{figure}[h]
-                        \centering
-                        \includegraphics[width=0.75\textwidth]{figures/Tamaños de ventana.png}
-                        \caption[Categorías de pantalla según anchura]
-                        {Categorías de pantalla según anchura. Imagen extraída de \cite{singh_material_2022}}
-                        \label{figure:material_design_3:width_classes}
-                    \end{figure}
-                \item Sistema de fuentes basado en estilos principales para cada tipo de contenido: desde titulares 
-                hasta etiquetas, pasando por títulos, cuerpos de texto...
-                \item Soporte nativo para animaciones, las cuales ya son utilizadas en los componentes gráficos nativos,
-                como los \textit{switch}.
-                \item Evolución de muchos elementos gráficos, como las tarjetas, botones, selectores de fechas...
-                    \begin{figure}[h]
-                        \centering
-                        \includegraphics[width=0.75\textwidth]{figures/Elementos gráficos material design 3.png}
-                        \caption[Algunos elementos gráficos de Material Design 3]
-                        {Algunos elementos gráficos de Material Design 3. Imagen extraída de \cite{cerda_material_2022}}
-                        \label{figure:material_design_3:elementos_graficos}
-                    \end{figure}
-                \item Sistema de formas o \textit{redondeo} multinivel para modernizar nuestros elementos y hacerlos
-                más distingubles entre sí.
-        
-                \item Mejora el concepto conocido como \textit{elevación}, basándose en colores y no en sombras. Este
-                elemento permite superponer elementos y transmitir gráfica y visualmente la importancia de cada 
-                uno de ellos.
-                \item Soporte nativo para tema claro y oscuro, ya que en los últimos años los temas oscuros 
-                se han hecho cada vez más populares en las aplicaciones y no estaba presente previamente de forma nativa.
-            \end{itemize}
-
-            En pocas palabras, en esta versión se han dedicado a modernizar el lenguaje de diseño, haciéndolo más 
-            atractivo y completo; alejándose de lo puramente funcional, mejorando la accesibilidad y explorando 
-            el mundo de la personalización para el usuario.
-
-        
-        \subsection{Room}
-            Uno de los servicios que provee Android es SQLite, un sistema de gestión de base de datos relacionales de 
-            bajo nivel. Este sistema es usado por la aplicación que lo utiliza, ahorrando configuración y complejidad
-            \cite{recio_persistencia_2019}. 
-            
-            No obstante para muchas aplicaciones es un modelo demasiado rígido. Para simplificar el uso de SQLite
-            Google creó en 2017 esta librería, la cual hace de intermediario entre el propio SQLite y nuestra 
-            aplicación \cite{leiva_room_2020}. Técnicamente hablando se trata de una capa de abstracción sobre dicho
-            sistema gestor, la cual permite reducir la complejidad de los usos comunes de la base de datos; sin perder
-            el acceso a SQLite. Asimismo, esta librería brinda otras ventajas, como la verificación de las consultas
-            SQL en tiempo de compilación \cite{noauthor_como_nodate}.
-
-            Los elementos básicos de esta plataforma son los siguientes:
-            \begin{itemize}
-                \item \textit{Data Access Objects}, también conocido como DAO. En este elemento (implementado como
-                una interfaz con la anotación @Dao) creamos nuestras
-                operaciones sobre la base de datos: consultas, inserciones...
-                \item Entidades, las cuales se corresponden con una clase en Kotlin (anotada como @Entity)
-                y normalmente con una tabla de base de datos.
-                Con esta estructura creamos las tablas de la base de datos, mientras que en nuestra aplicación 
-                disponemos de objetos que mapean dichos registros. Los atributos de dicha clase serán los campos de
-                la tabla en cuestión, sobre los cuales podemos utilizar anotaciones para establecer claves, índices, etc
-                \item Clase base de datos, donde especificamos las entidades a utilizar y cómo se instancia dicha base
-                de datos (aquí podemos ajustar si estará cifrada o no por ejemplo). Se corresponde con una clase 
-                abstracta que hereda de \textit{RoomDatabase} y que usa ciertas anotaciones para que se genere 
-                automáticamente el código \textit{boilerplate}.
-                \item Una función que construya la instancia de dicha base de datos con la configuración deseada
-                (nombre del fichero de la base de datos, cifrado..). Para dicha construcción de la instancia Room
-                implementa el patrón factoría.
-            \end{itemize}
-        
-        \subsection{Work Manager}
-            Work Manager es el componente oficial de Android para la planificación de subtareas dentro de nuestra 
-            aplicación. Esta librería está diseñada para simplificar el uso del amalgama de librerías para esta
-            funcionalidad, ya que, según la versión del sistema, debían utilizarse unas u otras. Work Manager establece
-            una única interfaz para esta funcionalidad, encargándose internamente de utilizar la librería correcta a
-            bajo nivel \cite{noauthor_workmanager_nodate}.
-            
-            Este componente admite dos tipos de tareas: puntuales y periódicas; las cuales se pueden planificar o 
-            cancelar. Asimismo, además de la planificación temporal, permite el establecimiento de algunas restricciones,
-            como que el dispositivo esté cargándose o disponga de conexión a internet, ejecutándose la tarea en cuestión
-            cuando se cumplan al mismo las directrices temporales y las adicionales (si las hay) 
-            \cite{noauthor_arquitectura_nodate}.
-
-            Asimismo, nos permite establecer una política de reintentos si nuestras tareas no se ejecutan correctamente,
-            por lo que es la solución recomendada para cuando necesitamos realizar cierta funcionalidad de manera fiable.
-            
-            \todo[inline]{Los problemas que da los comentamos de pasada referenciando a stackoverflow o ya al final?
-            Por mi solo al final.}
-
-        \subsection{Lottie}
-            Lottie es una biblioteca creada por Airbnb que busca facilitar la creación y uso de animaciones en entornos
-            multiplataforma (web, iOS, Android, \textcolor{red}{entre otros}) \cite{rubianes_lottie_2021}. A diferencia de archivos como los GIF, 
-            esta librería permite que
-            las animaciones puedan escalarse sin perder calidad (como en los ficheros SVG), haciendo hincapié en el
-            rendimiento.
-
-            Concretamente, la librería renderiza en tiempo real animaciones de Adobe After Effects, las cuales
-            son exportadas como ficheros JSON que serializan dicha animación \cite{noauthor_lottie_nodate}, a través de
-            una extensión de código abierto conocida como Bodymovin. Por tanto, 
-            estas animaciones pueden
-            ser personalizadas completamente, a la vez que se reducen las necesidades de cómputo para mostrarlas. 
-            
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.33\textwidth]{figures/Animacion de ejemplo.PNG}
-                \caption{Vista previa de una animación personalizada}
-                \label{figure:lottie:animacion_ejemplo}
-            \end{figure}
-
-            En este proyecto abordaremos únicamente la personalización de animaciones gratuitas aportadas por la 
-            comunidad y su presentación en la aplicación; y no la creación de nuevas. Para conseguir dichas animaciones
-            se ha utilizado el portal \href{https://lottiefiles.com/}{LottieFiles}.
-
-        \subsection{Vico}
-            
-            Vico es una biblioteca open-source para la realización de gráficos, creada pòr Patryk Goworowski. Su 
-            particularidad reside en su compatibilidad tanto con el sistema de vistas tradicional como con Jetpack
-            Compose, algo único en el ecosistema de Android \cite{goworowski_vico_nodate}.
-
-            Si bien no es tan potente como otras librerías como \textit{MPAndroid}, sus posibilidades son más que 
-            suficientes para este proyecto, aligerando el desarrollo. Además su soporte nativo de Jetpack
-            Compose reduce la complejidad del desarrollo e introduce algunas mejoras, como una interconexión
-            directa con los colores que usará Jetpack Compose para los elementos gráficos, mejorando la calidad visual
-            de la aplicación.
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.33\textwidth]{figures/Gráfica de líneas con vico.jpg}
-                \caption{Ejemplo de gráfica de líneas con Vico}
-                \label{figure:vico:ejemplo_lineas}
-            \end{figure}
-
-            Vico nos permite crear únicamente gráficos de barras y de líneas. Su humilde enfoque, si bien puede
-            condicionar su uso, permite que contenga numerosos añadidos completamente personalizables, tales como
-            leyendas, marcadores (tanto fijos como temporales), \textit{líneas umbral}, personalización programática 
-            de los ejes...
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.5\textwidth]{figures/Gráfica de barras con vico.jpg}
-                \caption{Ejemplo de gráfica de barras con Vico}
-                \label{figure:vico:ejemplo_barras}
-            \end{figure}
-            
-            Asimismo, su mantenimiento y mejora es notable y constante. Nuevas versiones son lanzadas
-            cada pocas semanas \cite{goworowski_vico_2023-1}, mientras que el soporte ofrecido en su repositorio 
-            es rápido y detallado \cite{goworowski_vico_2023}. Además, dispone de numerosa documentación para
-            aprenderla rápidamente, si bien no cubre los casos de uso más avanzados.
-
-            Por último, dispone de una aplicación demo que permite ver rápidamente las posibilidades que ofrece la 
-            librería.
-    
-        \subsection{Python}
-            Python es un lenguaje de programación interpretado creado por Guido Van Rossum en 1991, con un marcado enfoque 
-            de construir código de la manera más clara y legible posible. Es uno de los lenguajes más populares de la 
-            escena, gracias a su facilidad de uso y a su enorme comunidad de desarrolladores. Estos últimos han creado un 
-            enorme ecosistema de librerías que facilita la creación de nuevos proyectos, especialmente para prototipos.
-
-            Actualmente es utilizado para todo tipo de tareas, tales como desarrollo web, aplicaciones científicas… 
-            pasando por inteligencia artificial o análisis de datos; casi siempre apoyándose en potentes librerías 
-            que mejoran notablemente el propio lenguaje. 
-
-            Sus principales características son las siguientes:
-            \begin{itemize}
-                \item Soporte mutiparadigma: como Kotlin, se puede utilizar programación imperativa, orientada a objetos o 
-                funcional en cualquier momento.
-                \item Gran biblioteca estándar que facilita muchas operaciones mundanas, como la lectura de archivos JSON.
-                \item Soporte multiplataforma gracias a la compatibilidad de su intérprete con todos los sistemas 
-                operativos principales. Llega hasta tal punto que un subconjunto del lenguaje (MicroPython) es compatible 
-                con algunos microcontroladores.
-                \item Sistema de tipos fuertemente tipado y dinámico, lo que permite que una variable pueda cambiar de 
-                tipo fácilmente.
-                \item Facilidad de instalación de librerías gracias a la herramienta pip.
-            \end{itemize}
-        
-        \subsection{Flask}
-
-            Flask es un popular entorno ligero o \textit{microframework} de Python utilizado para construir aplicaciones 
-            web, tanto como páginas como API. Diseñado para ser ligero y fácil de usar, Flask proporciona las herramientas 
-            necesarias para crear dichas aplicaciones web de una manera minimalista, rápida y eficiente, en sintonía con 
-            la propia filosofía del lenguaje. 
-
-            A diferencia de otros entornos más completos como Django, Flask se enfoca en brindar solo lo esencial, lo que 
-            permite crear prototipos lo más fácilmente posible, si bien puede quedarse corto para aplicaciones 
-            relativamente complejas \cite{rodriguez_flask_2014}. Su sistema de enrutamento HTTP es sencillo y claro, mientras que posee extensiones 
-            para autentificación de usuarios, manejo de base de datos, etc. 
-
-            Gracias a esta simplicidad se usará en este proyecto para prototipar la parte del servidor. Asimismo, debido a 
-            su enfoque modular y a su sistema de plantillas podría expandirse su funcionalidad con más elementos web sin 
-            ninguna adaptación del código ya existente.
-
-
-        \subsection{MongoDB}
-            MongoDB es un \gls{sgbd} no relacional orientado a documentos, diseñado para manejar 
-            grandes volúmenes de datos de manera eficiente y escalable. A diferencia de las bases de datos relacionales 
-            tradicionales, no hay registros sino documentos, unos ficheros con una extensión muy similar a JSON: BSON 
-            (JSON Binarios) \cite{noauthor_json_nodate}. 
-
-            Este enfoque no relacional le permite ofrecer un modelo de datos flexible, sin un esquema. Esto se traduce
-            en una mayor libertad para almacenar datos y cambiar el modelo de los mismos, ya que para cambiar cualquier
-            atributo no es necesario reconstruir el modelo; muy útil para prototipos o modelos de datos dinámicos.
-            
-
-            Por otra parte, el modelo de consultas ofrece posibilidades similares a las de SQL, por lo que no supone
-            una desventaja. También implementa conceptos presentes en las base de datos relacionales, como los índices. 
-            Además, al disponer de una gran comunidad detrás, existen numerosos módulos que lo permiten
-            intregrar con lenguajes de programación, como pymongo para Python. 
-
-            Asimismo, posee otras dos grandes fortalezas: un núcleo distribuido, lo que permite una alta disponibilidad
-            y escalabilidad; y una licencia de uso gratuito desde octubre de 2018, bajo la licencia AGPL 
-            \cite{noauthor_que_nodate}.
