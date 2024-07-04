@@ -1,29 +1,234 @@
-\chapter{[En curso] Marco teórico y contexto tecnológico}
+\chapter{[Por revisar] Marco teórico y contexto tecnológico}
 \label{chapter:marco_teorico}
 
 \chapquote{Una vez que algo es una pasión, hay motivación.}{Michael Schumacher}
 
 En este capítulo se introducen los conceptos teóricos sobre los que se asienta el desarrollo de este proyecto. Con el contenido de este capítulo se espera crear un base de conocimiento sobre la que desarrollar el resto de este documento. Además, se realiza un análisis de las herramientas que se van a emplear para desarrollar el sistema y cómo estas se encuadran en el contexto tecnológico actual.
 
-\section{[Por realizar] Marco teórico}
-    
+\section{[Marco teórico}
+    \label{section:marco_teorico}
+
+    En el capítulo anterior se realizó una introducción a la salud mental y a su impacto actual en la sociedad, tomando esta sección el testigo para introducir al lector en los trastornos concretos que serán tratados a lo largo de todo el proyecto: estrés, depresión y soledad, junto a la relación de estas con el suicidio.
+
+    No obstante, antes de comenzar con las enfermedades\footnote{A lo largo del documento se utilizarán los términos enfermedad, trastorno o desorden indistintamente para aliviar la notación.} concretas, conviene especificar previamente lo que se entiende por desorden mental. Según \cite{ortega_gonzalez_enfermedades_2021}, \textit{``desde el punto de vista clínico, la enfermedad mental debe de poseer una serie de características que permita identificarla para su posterior diagnóstico''}. Asimismo, \textit{``una enfermedad mental o trastorno mental debe afectar al individuo de forma parcial o íntegra con respecto a diferentes capacidades y funciones cuyo desarrollo se fundamenta en el cerebro y la mente. Este tipo de enfermedades conllevan una respuesta anómala que trasciende las respuestas culturales normalizadas, como puede ser desarrollar un trastorno depresivo a raíz de una ruptura''}.
+
+    Por tanto, para cada trastorno se detallarán las características que permiten identificarlas y cómo se manifiestan en los individuos, si bien estas respuestas pueden variar notablemente entre individuos. Asimismo, para profundizar en estas cuestiones se anima al lector a acudir a la bibliografía que será citada, o bien a la \textit{Clasificación Internacional de Enfermedades} de la \gls{oms} \cite{oms_clasificacion_nodate} o al \textit{Manual Diagnóstico y Estadístico de los Trastornos Mentales} de la \gls{apa} \cite{american_psychological_association_manual_2014}, dos publicaciones de referencia que ahondan profundamente en los criterios de diagnóstico de salud mental.
+
     \subsection{Estrés}
-        Síntomas/Consecuencias para la persona
-        ¿Cómo se puede medir desde la psicología?
-    \subsection{Depresión}
-        Trastorno mayor?
-        Síntomas/Consecuencias para la persona
-        ¿Cómo se puede medir desde la psicología?
-    \subsection{Soledad}
-        Soledad NO deseada
-        Síntomas/Consecuencias para la persona
-        ¿Cómo se puede medir desde la psicología?
-    \subsection{Suicidio}
-        Decimos conducta?
-        Síntomas/Consecuencias para la persona
-        ¿Cómo se puede medir desde la psicología? Riesgo claro
+        La \gls{oms} define el estrés como \textit{``el conjunto de reacciones fisiológicas que prepara el organismo para la acción''} \cite{torrades_estres_2007}, tratándose en primera instancia de un sistema de alerta ante situaciones desafiantes o amenazantes necesario para la supervivencia. La presencia del estrés depende del estado físico y psíquico de cada persona, pero algunas situaciones que lo pueden provocar son, entre otras: cambiar de trabajo, hablar en público, o mudarse de vivienda. Se estima que nueve de cada diez personas han sentido estrés en el último año y un 40\% de la población lo sufre de forma continua \cite{nogera_mas_estres_2024}.
         
-\section{[En curso] Contexto tecnológico}
+        Este mecanismo cual estimula el organismo para que éste alcance su objetivo. Debido a esta caracterización, este momento es conocido como fase de alerta, y es la primera etapa del estrés. Una vez que el estímulo ha cesado, el organismo vuelve a su estado habitual (también conocido como basal).
+        
+        No obstante, el problema radica esa presión no desaparece y el individuo entra en una segunda fase, conocida como estado de resistencia. \textit{``Cuando ciertas circunstancias, como la sobrecarga de trabajo, las presiones económicas o sociales, o un ambiente competitivo, se perciben inconscientemente como una «amenaza», se empieza a tener una sensación de incomodidad. Cuando esta sensación se mantiene en el tiempo, se puede llegar a un estado de agotamiento, con posibles alteraciones funcionales y orgánicas''} \cite{torrades_estres_2007}.
+
+        Sin profundizar en cuestiones biológicas, en estas situaciones el organismo libera ciertas hormonas, las cuales se encargan de regular, excitar o inhibir la actividad de los diferentes órganos. Algunas de ellas son el cortisol (también conocida como ``la hormona del estrés''), o la adrenalina y la noradrenalina. 
+        
+        Los niveles de cortisol están asociados con \textit{``euforia y propiedades similares a la recompensa relacionadas con el comportamiento de búsqueda de sensaciones''} \cite{currid_efectos_2019}; mientras que la adrenalina y la noradrenalina se encargan de poner el cuerpo en estado de alerta y prepararlo para luchar o huir \cite{torrades_estres_2007}.
+
+        Si el individuo está expuesto de forma prolongada a amenazas, acaban disminuyendo paulatinamente sus capacidades de respuesta; si bien puede resistir durante más tiempo. Si aún así se mantiene la situación, se llega a la última etapa, conocida fase de agotamiento, la cual consiste en \textit{`` un estado de gran deterioro, con pérdida importante de las capacidades fisiológicas, en la que el sujeto experimenta un retroceso muy considerable en sus habilidades sociales, así como en sus capacidades de adaptación e interrelación con el medio''} \cite{torrades_estres_2007}. En la Figura \ref{figure:marco_teorico:fases_estres} se representan las tres fases descritas.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.66\textwidth]{figures/fases estres.JPG}
+            \caption[Las tres fases del estrés]
+            {Las tres fases del estrés. Imagen extraída de \cite{currid_efectos_2019}.}
+            \label{figure:marco_teorico:fases_estres}
+        \end{figure}
+
+        En cuanto a las consecuencias del estrés, se pueden clasificar en tres grandes áreas: síntomas físicos, alteraciones de la conducta y alternaciones emocionales.
+
+        Algunos de los posibles síntomas físicos son: \textit{``fatiga crónica; cefaleas y migraña; alteraciones gastrointestinales; dolores musculares; alteraciones respiratorias; alteraciones del sueño; alteraciones dermatológicas; alteraciones menstruales y disfunciones sexuales''} \cite{torrades_estres_2007}.
+
+        En el campo de las alteraciones conductuales se puede halla: \textit{``una irregular conducta alimentaria y el abuso de drogas, fármacos y alcohol. Las conductas violentas suelen ser muy frecuentes, como la agresión, la actitud defensiva y el cinismo''} \cite{torrades_estres_2007}, mientras que a nivel emocional las más comunes son: ansiedad, irritabilidad, baja autoestima, distanciamiento emocional, falta de motivación y dificultades de concentración.
+
+        En cuanto al diagnóstico del mismo, la \gls{pss} (o en español \textit{``Escala de Estrés Percibido''}) es el instrumento psicológico más comúnmente utilizado para medir la percepción del estrés. \textit{``Es una medida del grado en que las situaciones en la vida de una persona son valoradas como estresantes. Los artículos fueron diseñados para aprovechar la forma en que los encuestados impredecibles, incontrolables y sobrecargados encuentran sus vidas''} \cite{currid_efectos_2019}. 
+        
+        Por otra parte, \textit{``los elementos son fáciles de entender y las alternativas de respuesta son fáciles de entender. Además, las preguntas son de carácter general y, por lo tanto, están relativamente exentas de contenido específico para cualquier grupo de subpoblación''} \cite{cohen_global_1983}. La versión de diez preguntas de este cuestionario puede encontrarse en el Anexo \ref{cuestionarios:pss_10}.
+
+        Por último, se pueden nombrar algunas acciones para paliar el estrés, si bien la acción recomendada en casos graves es acudir a un psicólogo.\footnote{En el transcurso de este proyecto, como se verá en secciones posteriores, se ha contado con la asesoría de dos psicólogas. Las pautas propuestas que se mostrarán a los usuarios se pueden encontrar en el Anexo \ref{chapter:recomendaciones:estres}} Según la \gls{oms} \cite{oms_estres_2023}, algunas de ellas son: 
+        \begin{itemize}
+            \item Seguir una rutina diaria.
+            \item Dormir mucho, en particular de forma regular y limitando el uso de aparatos electrónicos antes de dormir, entre otros buenos hábitos.
+            \item Realizar ejercicio con regularidad.
+            \item Mantener una dieta saludable.
+            \item Permanecer en contacto con los demás.
+        \end{itemize}
+
+
+    \subsection{Depresión}
+
+        La depresión, también conocida como ``trastorno depresivo mayor'' o ``depresión clínica'' es una enfermedad mental que se puede describir como un estado de intensa tristeza, melancolía o desesperación, avanzada hasta perturbar el funcionamiento social o las actividades diarias de una persona \cite{van_neerven_rarrxr_2008}. Es diferente de los cambios del estado de ánimo, pudiendo afectar a todos los ámbitos de la vida, incluidas las relaciones familiares y/o de amistad \cite{oms_depresion_2023}
+        
+        Según la \gls{oms}, el 3,8\% de la población experimenta depresión, incluido el 5\% de los adultos (4\% entre los hombres y el 6\% entre las mujeres) y el 5,7\% de los adultos mayores de 60 años; elevándose el número de personas con depresión a aproximadamente 280 millones de personas en todo el mundo \cite{oms_depresion_2023}.
+
+        Por otra parte, esta enfermedad se confunde comúnmente con la tristeza. La tristeza es una emoción primaria, mientras que en la depresión, \textit{``hay una disminución significativa de la funcionalidad de la persona, mientras que en la tristeza no se evidencia una alteración de la funcionalidad y de las diferentes esferas de la vida cotidiana de la persona. También en la tristeza el sentimiento displacentero es provocado por un motivo puntual y definido, mientras que la depresión no siempre tiene una causa específica para su sufrimiento, por lo que la persona deprimida no siempre sabe cuál es la razón de su depresión''} \cite{ospina_perez_entendiendo_2018}.
+
+        Actualmente, se desconocen las causas exactas que causan la depresión, si bien, según la \gls{oms} \textit{``es el resultado de interacciones complejas entre factores sociales, psicológicos y biológicos''} \cite{oms_depresion_2023}. Se cree que pueden existir ciertos desencadenantes que incentiven la aparición de este trastorno, conocidos como factores de riesgo. Algunos de ellos son \cite{karamchandani_batra_sistema_2021}:
+
+        \begin{itemize}
+            \item Eventos estresantes, como, por ejemplo, problemas económicos, discusiones familiares o la pérdida de un ser querido \cite{tennant_life_2002}.
+            \item Presencia de otras enfermedades, tanto mentales como el trastorno de Ansiedad o el \gls{tdah}; como físicas, como por ejemplo, enfermedades cardiovasculares y diabetes; o de enfermedades crónicas. 
+            \item Ciertos medicamentos utilizados para tratar afecciones comunes como el asma o el acné. En particular, los que mayor riesgo representan son la \textit{Isotretinoína}, \textit{Rimonabant} y el \textit{Alpha Interferon}.
+        \end{itemize}
+
+        En cuanto a las consecuencias en los pacientes, se puede plantear la misma división que en el caso del estrés:  síntomas físicos, alteraciones de la conducta y alternaciones emocionales.
+        
+        Como síntomas físicos se pueden hallar, entre otros \cite{sawchuk_depresion_nodate} \cite{oms_depresion_2023}: 
+
+        \begin{itemize}
+            \item Alteraciones del sueño.
+            \item Cansancio y falta de energía.    
+            \item Falta de apetito y adelgazamiento.
+            \item Lentitud para razonar, hablar y hacer movimientos corporales.
+            \item Problemas físicos inexplicables, como dolor de espalda o de cabeza.
+        \end{itemize}
+
+        En el campo de las alteraciones conductuales se pueden encontrar  \cite{sawchuk_depresion_nodate} \cite{oms_depresion_2023}: 
+
+        \begin{itemize}
+            \item Arrebatos de enojo, irritabilidad o frustración.
+            \item Pérdida de interés o placer por la mayoría o todas de las actividades habituales.
+            \item Dificultad para pensar, concentrarse, tomar decisiones y recordar cosas.
+        \end{itemize}
+        
+        Por otra parte, en cuanto a las alternaciones emocionales se pueden hallar las siguientes \cite{sawchuk_depresion_nodate} \cite{oms_depresion_2023}:
+
+        \begin{itemize}
+            \item Sentimientos de tristeza, ganas de llorar, vacío o desesperanza.
+            \item Sentimientos de inutilidad o culpa excesiva, fijación en fracasos del pasado.
+            \item Baja autoestima.
+            \item Ansiedad, agitación o inquietud.
+            \item Pensamientos frecuentes o recurrentes sobre la muerte, pensamientos suicidas, intentos suicidas o suicidio.
+        \end{itemize}
+
+        Para el diagnóstico de la depresión, \gls{apa} establece los siguientes criterios, suficientes pero no necesarios \cite{american_psychological_association_manual_2014}:
+        \begin{enumerate}[label={\alph*.}]
+            \item Cinco (o más) de los síntomas siguientes han estado presentes durante el mismo periodo de dos semanas y representan un cambio del funcionamiento previo; al menos uno de los síntomas es \ref{criterio_depresion:animo_deprimido} o \ref{criterio_depresion:perdida_interes}. 
+                \begin{enumerate}[label={\arabic*.}]
+                    \item \label{criterio_depresion:animo_deprimido} Estado de ánimo depresivo la mayor parte del día, cada día según lo indica el propio sujeto (p.e. sentirse triste, vacío, sin esperanza) o de la observación por otros (p.e. se le ve lloroso).
+                    \item \label{criterio_depresion:perdida_interes} Disminución importante del interés o el placer por todas o casi todas las actividades, la mayor parte del día, casi todos los días (como se desprende de la información subjetiva o de la observación).
+                    \item Pérdida importante de peso sin hacer dieta o aumento de peso (p.e. modificación de más del 5\% del peso corporal en 1 mes) o disminución o aumento del apetito casi todos los días. 
+                    \item Insomnio o hipersomnia casi todos los días.
+                    \item Agitación o retraso psicomotor casi todos los días (observable por parte de los otros; ni simplemente la sensación subjetiva de inquietud o de enlentecimiento).
+                    \item Fatiga o perdida de energía casi todos los días.
+                    \item Sentimiento de inutilidad o culpabilidad excesiva o inapropiada (que puede ser delirante), casi todos los días (no simplemente autorreproche o culpa por estar enfermo).
+                    \item Disminución de la capacidad para pensar o concentrarse o para tomar decisiones, casi todos los días (a partir de la información subjetiva o de la observación por parte de otras personas).
+                    \item Pensamientos de muerte recurrentes (no solo miedo a morir), ideas suicidas recurrentes sin un plan determinado, intento de suicidio o un plan específico para llevarlo a cabo.
+                \end{enumerate}
+            \item Los síntomas causan malestar clínicamente significativo o deterioro social, laboral u otras áreas importantes del funcionamiento.
+            \item El episodio no se puede atribuir a los efectos fisiológicos de una sustancia o de otra afección médica.
+        \end{enumerate}
+        Otro de los criterios ampliamente utilizados, esta vez en forma de cuestionario, es el \gls{phq} \cite{kroenke_phq-9_2001}. La versión de nueve preguntas se puede encontrar en el Anexo \ref{cuestionarios:phq_9}. Si el lector observa las preguntas, podrá encontrar muchas similitudes con los síntomas descritos en el apartado A de los criterios de la \gls{apa}.
+
+        En cuanto a las medidas paliativas\footnote{Las pautas propuestas que se mostrarán a los usuarios se pueden encontrar en el Anexo \ref{chapter:recomendaciones:depresion}} , si bien se recomienda enormemente acudir a un profesional de la Psicología, según la \gls{oms} \cite{oms_depresion_2023}, algunas de ellas son: 
+
+        \begin{itemize}
+            \item Continuar realizando actividades que solían ser placenteras.
+            \item Comunicar a alguien de confianza sus sentimientos.
+            \item Mantener el contacto con amigos y familia.
+            \item Realizar ejercicio físico a menudo, aunque solo sea dar un paseo.
+            \item Mantener en la medida de lo posible hábitos alimenticios y de sueño regulares.
+            \item Evitar o reducir el consumo de alcohol.
+        \end{itemize}
+
+    \subsection{Suicidio}
+
+        Como ya se introdujo en la Sección \ref{sec:justificacion}, el suicidio es un problema de salud pública importante y sus estadísticas, preocupantes. Se puede entender por suicidio el propio acto suicida, descrito \textit{``como acto autolesivo intencionado con resultado de muerte''} \cite{moutier_conducta_2023}, o la conducta suicida en su conjunto, la cual además incluye la ideación suicida (realización de actos y planes preparatorios para el suicidio) y el intento de suicidio (\textit{``acto autolesivo con intención de provocar la muerte, pero que finalmente no resulta mortal''} \cite{moutier_conducta_2023}).
+
+        En este ámbito, trabajos como \cite{baca_garcia_factores_2014} hallaron que el factor de riesgo más importante para la conducta suicida es la \gls{comorbilidad} depresión-ansiedad, si bien existen otros factores como la historia familiar de conducta suicida, la ausencia de hijos o la edad menor a 35 años \cite{baca_garcia_factores_2014}.
+        
+        La depresión por sí sola puede llegar a aumentar el riesgo en hasta 20 veces \cite{gonzalez_depresion_2020}, oscilando el porcentaje de mortalidad por suicidio en depresión entre el 5\%, si se cuentan todos los casos de trastorno depresivo, y el 15\% si se ciñe únicamente al trastorno de depresión mayor. 
+        
+        En otros desórdenes, como en el trastorno bipolar, oscila entre un 10-15\%, mientras otros factores, como las adicciones a múltiples sustancias o la esquizofrenia, el riesgo se multiplica en 20 y 8,5; respectivamente \cite{gonzalez_depresion_2020}. 
+
+        La \gls{oms} definió en \cite{oms_suicidio_2023} una serie de signos de alerta y cambios de humor:
+        \begin{itemize}
+            \item Signos de alerta
+                \begin{itemize}
+                    \item Cambios drásticos de humor.
+                    \item Retraimiento social.
+                    \item Búsqueda de formas de suicidarse, o expresar pensamientos, sentimientos o planes de terminar con su vida.
+                    \item Despedida de familiares y amigos cercanos.
+                    \item Regalo de posesiones valiosas.
+                \end{itemize}
+            \item Grupos de riesgo
+                \begin{itemize}
+                    \item Personas que ya han tratado de quitarse la vida en el pasado.
+                    \item Pacientes de depresión o malestar psíquico grave.
+                    \item Personas socialmente aisladas.
+                    \item Individuos con problemas de alcohol o de drogas.
+                    \item Víctimas de violencia, abuso u otro trauma.
+                    \item Pacientes de enfermedades o dolor crónicos.
+                    \item Individuos pertenecientes a grupos sociales marginados o discriminados.
+                \end{itemize}
+        \end{itemize}
+       
+        En cuanto a las medidas atenuantes para las personas con pensamientos suicidas\footnote{Las pautas propuestas que se mostrarán a los usuarios se pueden encontrar en el Anexo \ref{chapter:recomendaciones:suicidio}} , según la \gls{oms}, algunas de ellas son \cite{oms_depresion_2023} \cite{oms_suicidio_2023}: 
+        \begin{itemize}
+            \item Comunicar a alguien de confianza sus sentimientos, momento apropiado y un lugar tranquilo.
+            \item Hablar con un trabajador de la salud, como un médico o un profesional de la salud mental, o un consejero o un trabajador social.
+            \item Unirse a un grupo de apoyo. 
+            \item Recordar que el paciente no se encuentra solo, muchas personas pasaron por etapas similares y encontraron ayuda.
+            \item Restringir el acceso en el hogar a medios con los que pueda infligirse lesiones.
+        \end{itemize}
+        
+        
+    \subsection{Soledad}
+
+        Se puede entender como soledad no deseada\footnote{Donde el contexto lo permita se la nombrará únicamente como soledad por economía del lenguaje}, al sentimiento de sentirse solo o aislado en contra de la voluntad de la persona, o de sentir una profunda sensación de desconexión social que no es buscada. Conviene distinguirla de la soledad convencional, ya que \textit{``una persona puede decidir aislarse voluntariamente del resto de la sociedad, pero a diferencia de la soledad no deseada, en estos casos se busca activamente este aislamiento, y no genera malestar''} \cite{psicologos_soledad_2019}.
+        
+        Es diferente del aislamiento social y puede ocurrir en presencia o ausencia de este \cite{cazzola_soledad_2024}, ya que de estar en contacto (o no) con otras personas, no se sienten arropados por estas \cite{psicologos_soledad_2019}. Asimismo, la soledad no deseada está estrechamente relacionada \textit{``con los estilos de vida en las grandes ciudades que pueden favorecer el anonimato, dificultar la creación o mantenimiento de vínculos interpersonales y la relación con las personas de nuestro entorno''} \cite{ayuntamiento_de_madrid_que_nodate}.
+
+        La \gls{oms} declaró en 2023 a la soledad como una prioridad sanitaria mundial, ya que según la propia institución, \textit{``El aislamiento y la soledad están presentes en todas las personas de todo el mundo, independientemente de su edad, y afectan a la salud y el bienestar de estas. Una de cada cuatro personas mayores sufre aislamiento social, tasa muy similar en todas las regiones''}, mientras que \textit{``entre un 5\% y un 15\% de los adolescentes padecen soledad''} \cite{oms_oms_2023}.
+
+        Por otra parte, este problema radica en que justamente, los seres humanos son seres sociales por naturaleza. La vida en sociedad es algo inherente al ser humano, ya que ofrece una serie de recursos que permiten alcanzar un buen nivel de bienestar social, facilita la satisfacción de necesidades y la supervivencia \cite{caballero_tribino_soledad_2019}.
+
+        Las consecuencias sobre las personas que la padecen se pueden clasificar en tres tipos: físicas y psicológicas, y dentro de estas últimas, cognitivos, emocionales y comportamentales \cite{lorente_martinez_soledad_2017}: 
+
+        \begin{itemize}
+            \item Consecuencias físicas
+                \begin{itemize}
+                    \item Empeora el funcionamiento vascular, favoreciendo la posibilidad de sufrir accidentes vasculares.
+                    \item Debilita el sistema inmunológico, favoreciendo la aparición de enfermedades.
+                    \item Empeora la nutrición y aumenta la posibilidad de padecer obesidad.
+                    \item Favorece la reducción de la actividad física y capacidad funcional.
+                    \item Aumenta los problemas de sueño.
+                    \item Aumento de la mortalidad: en última instancia la soledad produce una disminución de la calidad de vida de las personas, lo que acaba repercutiendo en la mortalidad.
+                \end{itemize}
+            \item Efectos cognitivos
+                \begin{itemize}
+                    \item Disminuye el funcionamiento de la atención y la memoria
+                    \item Reducción de la velocidad de procesamiento de la información.
+                    \item Disminución del funcionamiento cognitivo general.
+                    \item Mayor riesgo de sufrir otras de enfermedades mentales, como la depresión, u otras más relacionadas con el ámbito cognitivo como la demencia y el Alzheimer.
+                \end{itemize}
+            \item Efectos emocionales
+                \begin{itemize}
+                    \item Reducción de la autoestima.
+                    \item Disminución de la resiliencia.
+                \end{itemize}
+            \item Efectos comportamentales
+                \begin{itemize}
+                    \item Minimización de las dificultades asociadas a la soledad
+                    \item Disminución del nivel de participación social por miedo al rechazo.
+                    \item Ausencia de interés en buscar interacciones sociales que reduzcan el sentimiento de soledad.
+                \end{itemize}
+        \end{itemize}
+    
+        
+        A diferencia de los trastornos anteriores, según la \gls{apa} \cite{american_psychological_association_manual_2014} la soledad no deseada no dispone de un diagnóstico definido al no ser categorizado como trastorno mental, y si como un problema objeto de atención clínica \cite{montejano_martin_soledad_2019}. No obstante, quizá el cuestionario más utilizado para la evaluación de la misma sea el \gls{ucla}-20 \cite{russell_revised_1980}, cuyas preguntas se disponen en el Anexo \ref{cuestionarios:ucla_20}.
+
+        Por último, algunas de las medidas paliativas son las siguientes\footnote{Las pautas propuestas que se mostrarán a los usuarios se pueden encontrar en el Anexo \ref{chapter:recomendaciones:soledad}} \cite{cruz_roja_como_nodate}:
+
+        \begin{itemize}
+            \item Cuidado de las relaciones de amistad o familiares, o de las personas del entorno.
+            \item Búsqueda de oportunidades para ampliar o mejorar las conexiones sociales; aunque en ocasiones sea necesario tomar distancia con alguna de las relaciones ya existentes, o aprovechando los espacios y comercios de proximidad.
+            \item Prestar atención a la empatía, la reciprocidad y el agradecimiento.
+            \item Promoción espacios amigables en el entorno.
+            \item Aprendizaje en la gestión emocional y en la resolución de conflictos.
+        \end{itemize}
+        
+\section{Contexto tecnológico}
 
     Esta sección recoge la información relativa a las tecnologías y herramientas más relevantes dentro del contexto de desarrollo de este proyecto.
 
@@ -47,7 +252,7 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
         \begin{figure}[h]
             \centering
             \includegraphics[width=0.66\textwidth]{figures/Samsung galaxy watch 6.jpeg}
-            \caption[Samsung Galaxy Watch 6 colocado en una muñeca.]
+            \caption[Samsung Galaxy Watch 6 colocado en una muñeca]
             {Samsung Galaxy Watch 6 colocado en una muñeca. Imagen extraída de \cite{alcolea_samsung_2023}}
             \label{figure:wearables:watch_6}
         \end{figure}
@@ -87,7 +292,7 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
         \begin{figure}[h]
             \centering
             \includegraphics[width=0.5\textwidth]{figures/HTC Dream.jpg}
-            \caption[HTC Dream en funcionamiento.]{HTC Dream en funcionamiento. Imagen extraída de \cite{oryl_t-mobile_2008}}
+            \caption[HTC Dream en funcionamiento]{HTC Dream en funcionamiento. Imagen extraída de \cite{oryl_t-mobile_2008}}
             \label{figure:android:htc_dream}
         \end{figure}
 
@@ -143,7 +348,7 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
         \begin{figure}[h]
             \centering
             \includegraphics[width=0.33\textwidth]{figures/Arquitectura básica de Health Connect.png}
-            \caption[Arquitectura básica de \textit{Salud Conectada}.]
+            \caption[Arquitectura básica de \textit{Salud Conectada}]
             {Arquitectura básica de \textit{Salud Conectada}. Imagen extraída de \cite{wilk_introducing_2022}.}
             \label{figure:health_connect:arquitectura}
         \end{figure}
@@ -156,7 +361,7 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
             \begin{subfigure}[b]{0.49\textwidth}
                 \includegraphics[width=1\linewidth]{figures/Health Connect acceso reciente.jpg}
             \end{subfigure}
-            \caption{Ejemplo de algunas de las funciones de \textit{Salud Conectada} para los usuarios, como la visualización de datos o de las aplicaciones que utilizan dichos datos.}
+            \caption{Ejemplo de algunas de las funciones de \textit{Salud Conectada} para los usuarios, como la visualización de datos o el acceso de aplicaciones a datos}
             \label{figure:health_connect:ejemplo}
         \end{figure}
         
@@ -171,7 +376,7 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
         \begin{figure}[h]
             \centering
             \includegraphics[width=0.5\textwidth]{figures/Health connect permisos fitbit.jpg}
-            \caption[Granularidad de los permisos de \textit{Salud Conectada}.]
+            \caption[Granularidad de los permisos de \textit{Salud Conectada}]
             {Granularidad de los permisos de \textit{Salud Conectada}.}
             \label{figure:health_connect:granularidad_permisos}
         \end{figure}
@@ -344,18 +549,3 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
         Por otra parte, el modelo de consultas ofrece posibilidades similares a las de \gls{sql}, por lo que no supone una desventaja. También implementa conceptos presentes en las base de datos relacionales, como los índices. Además, al disponer de una gran comunidad detrás, existen numerosos módulos que lo permiten integrar con lenguajes de programación, como \textit{pymongo} para Python. 
 
         Asimismo, posee otras dos grandes fortalezas: un núcleo distribuido, lo que permite una alta disponibilidad y escalabilidad; y una licencia de uso gratuito desde octubre de 2018, bajo la licencia \gls{agpl} \cite{mongodb_que_nodate}.
-
-\section{Buffer}
-
-\todo[inline]{Añadir una sección que aglutine a las medidas psicológicas o asi está bien?}
-\todo[inline]{Enlazar aqui que ya se habló de pasada sobre ellas pero ahora en serio}
-
-%OMS CIE-10 y 11, la 11 es la actual
-% La 10 habla de episodio depresivo y trastorno depresivo recurrente, estrés como trastorno de su propia categoria (añadiendo la ansiedad), de la soledad ni rastro, suicidio como consecuencia
-%La 11 estrés igual, depresión poco más o menos, soledad nada, suicidio en los codigos de extension
-%
-\todo[inline]{OMS CIE-10 y 11}
-
-Por otra parte, existen numerosos trastornos o enfermedades mentales que afectan a la salud mental. En la propia definición de salud mental se menciona el estrés, el cual se puede entiende como  \textit{``un estado de preocupación o tensión mental generado por una situación difícil''}  \cite{oms_estres_2023}. La presencia de estrés puede provocar, entre otros, dolor de cabeza, dificultades para dormir, alternaciones del apetito u otros problemas de salud mental, como ansiedad \cite{oms_estres_2023}. Se estima que nueve de cada diez personas han sentido estrés en el último año y un 40\% de la población lo sufre de forma continua \cite{nogera_mas_estres_2024}.
-
-Otro problema de salud mental muy conocido es la depresión, la cual está muy relacionada con el estrés, la cual se puede describir como un estado de intensa tristeza, melancolía o desesperación, avanzada hasta perturbar el funcionamiento social o las actividades diarias de una persona \cite{van_neerven_rarrxr_2008}. 
