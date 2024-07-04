@@ -1,51 +1,44 @@
-\chapter{[En curso] Impacto social y medioambiental}
+\chapter{[Por revisar] Impacto social y medioambiental}
 \label{chapter:aspectos}
 
 \chapquote{Si tienes tanto miedo al fracaso, nunca tendrás éxito.}{Mario Andretti}
 
-
-\todo[inline]{Hablar aqui de la privacidad de los datos antes de health connect (usa, gpd)}
-\todo[inline]{Estamos en la cresta de la ola al venir todo para Android 14}
-
-\todo[inline]{Hablar de la protección de datos tan sensibles}
-\todo[inline]{Hablar de las TIC para la parte psicológica BIEN, como decía Sandra, etico vamos}
-
-En este capítulo se recogen los beneficios que la implantación del proyecto desarrollado podría generar tanto a nivel medioambiental como su impacto social.
-
-
-
+En este capítulo se recogen los beneficios que la implantación del proyecto desarrollado podría generar tanto a nivel social como medioambiental.
 
 \section{Aspectos éticos, sociales y económicos}
+    El sistema propuesto tiene un impacto considerable en estas cuestiones, al buscar contribuir en la mejora de la salud mental de las personas. En primer lugar, se puede observar el impacto de este proyecto en base a los \gls{ods} respecto a los siguientes objetivos globales:
 
-Cuestiones de privacidad
+    \begin{itemize}
+        \item \textbf{Salud y bienestar}: el sistema contribuye claramente a la visibilización y concienciación acerca de la salud mental, a través de la detección de trastornos en personas que posiblemente lo desconozcan y comunicando recomendaciones para evitar en la medida que dichos trastornos se agraven\footnote{Recordar una vez más que el sistema no pretende desplazar a los profesionales de la psicología, sino ser un apoyo para los mismos. En casos graves la solución pasa necesariamente por especialistas.}. No obstante, este tipo de iniciativas deben ir acompañadas de políticas públicas que permitan resolver cuestiones como las listas de espera o de la ausencia de profesionales, ya que un diagnóstico precoz de un trastorno grave es poco útil si no va acompañado de un tratamiento de calidad por parte de profesionales.
+        \item \textbf{Educación de calidad}: al proporcionar consejos y pautas avaladas por profesionales de la psicología, los usuarios pueden acceder a información respaldada científicamente; la cual puede mejorar su calidad de vida. No obstante, como se mencionó en el punto anterior, estos consejos son una parte de la solución a estos problemas, pero no pueden resolverlos por sí solos.
+        \item \textbf{Reducción de las desigualdades}: como se vió en la Sección \ref{sec:justificacion}, existen numerosas desigualdades en el acceso a la atención psicolópgica. En este ámbito, los requisitos técnicos del sistema son alcanzables por \glspl{smartphone} baratos, facilitando el acceso a la información psicológica independientemente del contexto socio-económico.
+        \item \textbf{Producción y consumo responsable}: el sistema no requiere hardware específico, limitándose a hacer uso de los recursos que disponga el usuario. Asimismo, el sistema no marca restricciones adicionales a las ya impuestas por sus dependencias, evitando en general promover el consumo nuevos productos.
+    \end{itemize}
 
-GDPR, AEPED, Ley española proteccion datos
-
-\subsection{Aspectos éticos}
-
-Datos que no se usen para recomendar publicidad, etc
-
-\subsection{Aspectos sociales}
-
-Mejor acceso a información de calidad, saturación sanidad
-
-OMS principales causas de discapacidad
-
-
-ODS 3 salud y de refilon el 4, educacion de calidad
-
-\subsection{Aspectos económicos}
-
-Menos productividad si tienes problemas
-
-%En primer lugar, mi motivación principal es el deseo de querer hacer algo para ayudar, aunque sea modestamente, a la mejora de la salud mental dentro de nuestra sociedad. Para bien o para mal, en mi vida he estado expuesto a la importancia de la salud mental. En ocasiones he podido ver a personas que se sienten realizadas y felices con situaciones que, a los ojos de terceras personas, quizás no sean precisamente ideales; pero por otra parte he sentido impotencia y dolor al ver cómo la depresión u otras enfermedades destruyen la vida de un ser querido. También he vivido incertidumbre y pánico cuando ves que hay algo dentro de ti que no está bien y que no sabes ni por qué, ni cómo resolver. Son situaciones cuanto menos, impactantes.
+    En cuanto a las cuestiones de privacidad, cabe destacar que el uso de componentes como \textit{Salud Conectada} y el uso de un servidor de la \gls{etsisi}. Estas circunstancias permiten mejorar la privacidad de los usuarios frente a otras soluciones como \textit{Google Fit}, ya que los datos únicamente están o bien en el dispositivo del usuario o anonimizados dentro de la Escuela. 
     
-%Esa impotencia que sientes cuando ves a alguien cercano sufrir y no tener idea de cómo ayudar. También esa  Esas fuerzas son suficientes para motivarte de, cuando sea posible, intentar tomar cartas en este asunto. Quizás no ya para ayudar a alguien próximo, sino para intentar reducir el número de personas que puedan sentirlo alguna vez.    
+    Con esto se logra evitar el trasvase de información a servidores alojados en países fuera de la Unión Europea, donde las normativas de protección de datos son más laxas; como es el caso de los Estados Unidos. 
+
+    Por otra parte, a nivel ético existen numerosas preocupaciones en el ámbito de las \gls{tic}, ya que las prácticas deshonestas expuestas en la Sección \ref{sec:estado_arte:apps} no se limitan a las aplicaciones de salud mental.
     
-%sino de un conjunto de vivencias personalmente. La Salud Mental es algo que, a pesar de que gran parte de la sociedad no quiera ver, está ahí, tanto para lo bueno o para lo malo. Ver de primera mano cómo una depresión puede condicionar la vida de un ser querido y sentir impotencia por no poder ayudar, sentir en tus propias carnes como a veces no te encuentras bien y no sabes por qué... es motivación suficiente como para interesarte por este tema.
+    Algunas plataformas digitales muy conocidas están diseñadas específicamente para explotar ciertos resortes psicológicos del ser humano. Redes sociales como \textit{Instagram} o \textit{TikTok} utilizan fenómenos como la gratificación instantánea o los mecanismos de recompensa \cite{noauthor_dopamina_2022} para espolear la liberación de dopamina\footnote{Se trata de un neurotransmisor asociado con funciones cerebrales, tales como la motivación, el aprendizaje y la recompensa, entre otras \cite{gil_que_2023}.}, pudiendo provocar desde la adicción a las mismas redes, hasta problemas de ansiedad o de autoestima cuando no se reciben dichas recompensas \cite{ina_impacto_2023}.
+    
+    Por otra parte, este mecanismo de gratificación instantánea también es explotado por algunos videojuegos a través de las \textit{lootboxes} (o \textit{cajas botín} en castellano), las cuales provocan grandes réditos económicos al provocar graves problemas de adicción, especialmente entre los menores. Debido a este contexto, las instituciones están tomando medidas para limitar técnicas como el \textit{scroll infinito} \cite{alconchel_prohibir_2023} o de limitar el acceso a las \textit{lootboxes} \cite{ministerio_de_derechos_sociales_consumo_y_agenda_2030_ministerio_2024} \cite{garcia_espanda_2024}. 
+    
+    En este marco cabe recalcar la apuesta firme de este proyecto por la psicología que permita ayudar a las personas a afrontar sus problemas de salud mental, sin fines ocultos o funcionalidades perversas. Como ya se reflejó a lo largo de este documento, la transparencia y la privacidad de los usuarios son baluartes fundamentales de esta iniciativa.
 
 \section{Contexto medioambiental}
 
-Los Objetivos de Desarrollo Sostenible \textit{(ODS)}....
+    Antes de comenzar con esta sección, cabe destacar que este proyecto no está diseñado para interactuar directamente con el medioambiente, por lo que el impacto del mismo en el entorno se puede considerar como indirecto.
 
-Consumo de baterías, consumo de energía de los datacenter y compañía...
+    Al tratarse de un sistema que busca ante todo un diagnóstico precoz de las enfermedades de salud mental, existen potenciales beneficios en esa línea. De finalizarse este prototipo e implementarse en la comunidad universitaria, podrían detectarse estos estos trastornos en etapas más tempranas, lo cual podría reducir la gravedad de los mismos, redundando en tratamientos médicos más cortos.
+
+    Para lograr este cometido, el sistema necesita realizar una serie de tareas, las cuales tienen cierto impacto en el medio ambiente. Una de estas actuaciones es la extracción de datos de los \glspl{wearable}. El sistema propuesto únicamente consume, de existir, los datos ya leídos por el fabricante del dispositivo; los cuales se alojan únicamente en el dispositivo del usuario. Por tanto, el impacto de estas lecturas es muy pequeño, ya que no se obliga al usuario a comprar un \gls{wearable} ni se realiza comunicación redudante con el aparato.
+
+    Por otra parte, en cuanto a la comunicación con el servidor, al utilizarse un servidor de la \gls{etsisi}, el envío de los datos a través de la red es relativamente ligero. Asimismo, en la implementación se realizaron una serie de optimizaciones para enviar únicamente los datos necesarios cada 8 horas; por lo que no se trata de un sistema que realice un elevado consumo de la red y de energía.
+
+    No obstante, el principal escollo en cuanto al medio ambiente sería la adición de un modelo para mejorar sensiblemente la detección de los niveles de salud mental; que si bien está fuera de la implementación actual, su incoporación futura podría ser muy útil. 
+    
+    La popularización de modelos de Inteligencia Artificial, como \textit{ChatGPT}, ha provocado que hasta la \gls{iea} haya convocado una conferencia sobre este tema \cite{perez_demanda_2024}, ya que se estima que el consumo de energía de los centros de datos oscile entre el 3 y el 4\% del consumo global \cite{gijon_inteligencia_2024}; mientras que para 2027, el consumo de electricidad de estos sistemas a nivel mundial podría aumentar entre 85 y 134 TWh anuales, cantidad comparable al consumo anual de electricidad de países como los Países Bajos, Argentina y Suecia \cite{redaccion_inteligencia_2023}.
+    
+    En ese sentido, para paliar el potencial impacto medioambiental se podría continuar con el enfoque de localizar estos servidores en la \gls{etsisi}; y apostar por el uso de energías limpias, como la solar; para alinearse con los \gls{ods} y en particular, con el número 7: \textit{Energía asequible y no contaminante}. El objetivo de estos movimientos sería reducir el consumo energético en la medida de lo posible, y basar ese consumo en fuentes de energía que tengan un impacto lo más reducido posible en el medioambiente.
