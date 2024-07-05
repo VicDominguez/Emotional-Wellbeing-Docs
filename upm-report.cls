@@ -477,6 +477,7 @@
 \setlist[itemize]{topsep=-0.2cm}
 % Para poder tener tablas multipagina
 \usepackage{ltablex}
+\usepackage{xltabular}
 % Espacios entre titulos y tablas
 \usepackage{setspace}
 \newcommand{\chapquote}[2]{\begin{center} \textit{#1} \\  #2 \end{center} }

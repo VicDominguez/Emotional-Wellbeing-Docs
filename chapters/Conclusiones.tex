@@ -1,42 +1,62 @@
 \chapter{[En curso] Conclusiones y líneas futuras}
 \label{chapter:conclusiones}
 
-\chapquote{Realiza cada una de tus acciones como si fuera la última de tu vida.}{ Marco Aurelio}
+\chapquote{Realiza cada una de tus acciones como si fuera la última de tu vida.}{Marco Aurelio}
 
 \section{Conclusiones}
 
 Suelen poner 2 caras, si nos ponemos bravos tira a 4
 
 \section{Lineas futuras}
-\todo[inline]{Comprobar si hemos hablado del sistema como prototipo}
-En primer lugar
-prioridad 0 leftovers
-En segundo lugar, resolver problemas
-En tercer lugar, nuevas features
+    \label{section:lineas_futuras}
+    
+    En primer lugar, el trabajo futuro más prioritario es la implementación de los requisitos que no han sido cubiertos en este primer desarrollo. Dichos requisitos, junto con sus líneas de actuación propuestas, son:
 
-Al ser el sistema de este proyecto un prototipo, existen numerosas vías para ampliarlo y refinarlo. Algunas de dichas
-mejoras son:
+    \begin{itemize}
+        \item \ref{req:no_funcionales:datos_solo_cientificos} \textit{El acceso a los datos anonimizados de los usuarios solo estará permitido para propósitos científicos.}
+        
+        Para ello se necesita definir una política de acceso a los datos, la cual debe aceptarse por los analistas de datos. En este aspecto es recomendable contar con asesoría legal.
+        Posteriormente se debería diseñar e implementar un sistema de acceso que permita la administración de los diferentes usuarios.
+        
+        \item \ref{req:no_funcionales:ddos} \textit{El servidor que aloje los datos anonimizados deberá estar protegido antes ataques de denegación de servicio y accesos no autorizados.}
 
-\begin{enumerate}
-    \item Cifrado de las comunicaciones entre la app y el servidor mediante un certificado SSL en el propio servidor.
-    \item Establecimiento de una política de privacidad detallada. Este punto es imprescindibile para poder publicar la aplicación (en tiendas virtuales como Play Store) y recoger datos con legalidad.
-    \item Desplegar la aplicación en el ámbito universitario. Realizándolo se podría obtener una retroalimentación más
-    amplia y profunda de la aplicación, y además se podrían recolectar datos para entrenar
-    modelos que predigan cada una de las variables de Salud Mental.
-    \item Comprobar la recolección de datos en otras pulseras, tanto de Fitbit como de otros fabricantes.
-    \item Elaboración de un conjunto de pruebas exahustivo para la aplicación móvil, incluyendo reportes de 
-    \textit{coverage} del código.
-    \item Establecer que al instalar la aplicación se realice un cuestionario diario. Según la hora del día se elegiría
-    si realizar el de mañana o el de noche, pero en cualquier momento del día uno de esos dos.
-    \item Dar más presencia a los cuestionarios puntuales, ya sea con gráficas, notificaciones...
-    \item Estudiar la imputación de datos nulos con otras técnicas, tales como: regresión, \textit{Last Observation 
-    Carried Forward}, \textit{Next Observation Carried Backward}... \cite{gupta_null_nodate}
-    \item Realizar agregación de datos para ciertas variables, como las pulsaciones, para aligerar el volumen de datos.
-    \item Diseñar e implementar una interfaz gráfica centrada en las pantallas \textit{expandidas}\footnote{Pantallas 
-    que disponen de más de 840dp de ancho o 900dp de alto}.
-    \item Localizar la aplicación a más idiomas.
-    \item Disponer de al menos dos pautas de recomendación a los usuarios para cada variable y estado.
-    \item Segmentar la comunidad de usuarios para mejorar la representatividad del conjunto.
-\end{enumerate}
+        Para cumplir con este requisito, se deberá definir e implementar un conjunto de medidas que permitan proteger a dicho servidor, en consonancia con los recursos disponibles en la \gls{etsisi}.
+        
+        \item \ref{req:no_funcionales:cifrado_comunicaciones} \textit{Las comunicaciones entre aplicación y servidor deberán estar cifradas.}
 
-\todo[inline]{Añadir el uso de devcontainers para la parte de Python para facilitar la integración continua y demás}
+        La implementación de este requisito consta de las siguientes fases:
+        \begin{enumerate}
+            \item Generar un certificado \gls{ssl} por parte de una autoridad de certificación reconocida.
+            \item Modificar la \gls{api} para usar \gls{https} con el certificado anterior.
+            \item Restringir la aplicación para que únicamente acepte conexiones \gls{https}.
+        \end{enumerate}
+        
+        \item \ref{req:no_funcionales:politica_privacidad} \textit{Se deberá definir una política de privacidad de acuerdo al \gls{rgpd} \cite{publications_office_of_the_european_union_reglamento_nodate} y a las directrices de \textit{Salud Conectada} \cite{google_preguntas_nodate}.}
+
+        Se recomienda nuevamente contar con asesoría legal para la conformidad de dicha política. Por otra parte, dicha política debe ser accesible desde fuera de la aplicación, para garantizar que los usuarios puedan leerla antes de comenzar el uso o descarga de la aplicación. 
+    \end{itemize}
+
+    Una vez todos los requisitos planteados hayan sido satisfechos, se podría desplegar la aplicación en tiendas virtuales como \textit{Play Store}, dotando al proyecto de mucho mayor alcance y de una retroalimentación mucho más amplia y profuda.
+    
+    Asimismo, otra línea de trabajo propuesta es la realización de ciertas mejoras en el marco de los requisitos de usuario ya implementados. En el caso de los requisitos de seguimiento (\ref{req:usuario:seguimiento_estres}, \ref{req:usuario:seguimiento_depresion}, \ref{req:usuario:seguimiento_soledad} y \ref{req:usuario:seguimiento_suicidio}), la principal mejora sería la incorporación de un modelo basado en Inteligencia Artificial que permita mejorar el diagnóstico precoz. 
+    
+    Para ello se podría realizar un estudio científico que explore esta posibilidad en el que se recojan datos de los usuarios, algo que ya permite el estado actual del proyecto. Este estudio podría experimentar con los datos recogidos y/o con los datos de los estudios detallados en las Secciones \ref{sec:estado_arte:biometricos} y \ref{sec:estado_arte:smartphone}. Asimismo, la arquitectura planteada permite un despliegue sencillo, con el cual se podría evaluar la eficacia del mismo.
+
+    En cuanto a los requisitos de consejos (\ref{req:usuario:consejo_estres}, \ref{req:usuario:consejo_depresion}, \ref{req:usuario:consejo_soledad} y \ref{req:usuario:consejo_suicidio}) se anima al resto de estudiantes y a la \gls{etsisi} a ahondar en la colaboración con profesionales de la Psicología para la elaboración de nuevas pautas. El estado actual del proyecto permite a dichos profesionales desplegarlos con muy poco coste, por lo que se podrían realizar trabajos de investigación que exploren el impacto de dichos consejos.
+
+    Finalmente, se enumeran otras líneas de trabajo que son factibles de realizar a largo
+    plazo para ampliar y refinar el proyecto:
+    
+    \begin{enumerate}
+        \item Elaboración de un conjunto de pruebas automáticas exahustivas para la aplicación móvil, incluyendo reportes de \textit{coverage} del código.
+        \item Comprobar la recolección de datos en otras pulseras, tanto de Fitbit como de otros fabricantes.
+        \item Realizar agregación de datos para ciertas variables, como las pulsaciones, para aligerar el volumen de datos.
+        \item Explorar cuestiones relacionadas con la infraestructura, como el despliegue de la funcionalidad del servidor mediante contenedores, lo que permitiría una mejor escalabilidad del mismo.
+        \item Segmentar la comunidad de usuarios para mejorar la representatividad del conjunto.
+        \item Estudiar la imputación de datos nulos con otras técnicas, tales como: regresión, \textit{Last Observation 
+        Carried Forward}, \textit{Next Observation Carried Backward}... \cite{gupta_null_nodate}
+        \item Añadir \textit{features} relacionadas con los cuestionarios puntuales: gráficas, notificaciones...
+        \item Diseñar e implementar una interfaz gráfica centrada en las pantallas \textit{expandidas}\footnote{Pantallas 
+        que disponen de más de 840dp de ancho o 900dp de alto}.
+        \item Localizar la aplicación a más idiomas.
+    \end{enumerate}

@@ -3,11 +3,488 @@
 
 \chapquote{¡Los números Mason! ¿Qué significan?}{Jason Hudson}
 
-\section{Resultados del caso de estudio}
+\section{Verificación y validación de los requisitos}
 
-    En este apartado se muestran algunos ejemplos de los utilización y resultados que podrían obtenerse.
+    En esta Sección se detalla la verificación y validación de los requisitos planteados en el Capítulo \ref{chapter:analisis}. En particular, las Tablas \ref{tabla:verificacion:requisitos_usuario}, \ref{tabla:verificacion:requisitos_funcionales} y \ref{tabla:verificacion:requisitos_no_funcionales} recogerán la verificación y validación de los requisitos de usuario, funcionales y no funcionales, respectivamente.
+
+    \begin{xltabular}{\textwidth}{|c|c|X|c|}
+
+        \hline
+        \textbf{Requisito} & \textbf{Componente} & \textbf{Comentarios} & \textbf{¿OK?} \\
+        \hline
+        \endfirsthead
+        
+        \hline
+        \textbf{Requisito} & \textbf{Componente} & \textbf{Comentarios} & \textbf{¿OK?} \\
+        \hline
+        \endhead
+        
+        \multicolumn{4}{|r|}{\textit{Continúa en la siguiente página}} \\
+        \hline
+        \endfoot
+
+        \hline
+        \caption{Verificación y validación de los requisitos de usuario}
+        \label{tabla:verificacion:requisitos_usuario} \\
+        \endlastfoot
+        
+        \ref{req:usuario:seguimiento_estres} & Aplicación & Implementado, mejoras planteadas & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:seguimiento_depresion} & Aplicación & Implementado, mejoras planteadas & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:seguimiento_soledad} & Aplicación & Implementado, mejoras planteadas & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:seguimiento_suicidio} & Aplicación & Implementado, mejoras planteadas & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:visualizar_estres} & Aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:visualizar_depresion} & Aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:visualizar_soledad} & Aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:consejo_estres} & Aplicación & Implementado, mejoras planteadas & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:consejo_depresion} & Aplicación & Implementado, mejoras planteadas & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:consejo_soledad} & Aplicación & Implementado, mejoras planteadas & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:consejo_suicidio} & Aplicación & Implementado, mejoras planteadas & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:evolucion_estres} & Aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:evolucion_depresion} & Aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:evolucion_soledad} & Aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:comunidad_estres} & Aplicación y servidor & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:comunidad_depresion} & Aplicación y servidor & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:comunidad_soledad} & Aplicación y servidor & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:visualizar_actividad_fisica} & Aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:app_sin_internet} & Aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:interfaz_grafica} & Aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:analista_estres} & Servidor y aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:analista_depresion} & Servidor y aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:analista_soledad} & Servidor y aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:analista_suicidio} & Servidor y aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:analista_contraste} & Servidor y aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:usuario:analista_actividad_fisica} & Servidor y aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
+    \end{xltabular}
+
+    \begin{xltabular}{\textwidth}{|c|c|X|c|}
+
+        \hline
+        \textbf{Requisito} & \textbf{Componente} & \textbf{Comentarios} & \textbf{¿OK?} \\
+        \hline
+        \endfirsthead
+        
+        \hline
+        \textbf{Requisito} & \textbf{Componente} & \textbf{Comentarios} & \textbf{¿OK?} \\
+        \hline
+        \endhead
+        
+        \multicolumn{4}{|r|}{\textit{Continúa en la siguiente página}} \\
+        \hline
+        \endfoot
+
+        \hline
+        \caption{Verificación y validación de los requisitos funcionales}
+        \label{tabla:verificacion:requisitos_funcionales} \\
+        \endlastfoot
+
+        \ref{req:funcionales:estres_diario_info} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:estres_diario_manana} & Aplicación & Implementado junto a \ref{req:funcionales:depresion_diario_manana}, \ref{req:funcionales:soledad_diario_manana} y \ref{req:funcionales:suicidio_diario_manana}; fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}, Sección \ref{section:problemas}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:estres_diario_noche} & Aplicación & Implementado junto a \ref{req:funcionales:depresion_diario_noche}, \ref{req:funcionales:soledad_diario_noche},  \ref{req:funcionales:suicidio_diario_noche} y \ref{req:funcionales:contraste_diario_noche}; fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}, Sección \ref{section:problemas}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:estres_puntual} & Aplicación & Implementado junto a \ref{req:funcionales:depresion_puntual} y \ref{req:funcionales:soledad_puntual}; fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}, Sección \ref{section:problemas}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:estres_umbrales} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:estres_umbrales_consejo} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:estres_notificacion} & Aplicación & Implementado junto a \ref{req:funcionales:depresion_notificacion}, \ref{req:funcionales:soledad_notificacion}, \ref{req:funcionales:suicidio_notificacion} y \ref{req:funcionales:contraste_notificacion}; visibilidad según el permiso del usuario & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:estres_cuestionario_aplazar} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:estres_cuestionario_pendientes} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:estres_cuestionario_numero} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:estres_cuestionario_categoria} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:estres_cuestionario_consejo} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_diario_info} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_diario_manana} & Aplicación & Implementado junto a \ref{req:funcionales:estres_diario_manana}, \ref{req:funcionales:soledad_diario_manana} y \ref{req:funcionales:suicidio_diario_manana}; fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}, Sección \ref{section:problemas}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_diario_noche} & Aplicación & Implementado junto a \ref{req:funcionales:estres_diario_noche}, \ref{req:funcionales:soledad_diario_noche}, \ref{req:funcionales:suicidio_diario_noche} y \ref{req:funcionales:contraste_diario_noche}; fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}, Sección \ref{section:problemas}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_puntual} & Aplicación & Implementado junto a \ref{req:funcionales:estres_puntual} y \ref{req:funcionales:soledad_puntual}; fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}, Sección \ref{section:problemas}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_umbrales} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_umbrales_consejo} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_notificacion} & Aplicación & Implementado junto a \ref{req:funcionales:estres_notificacion}, \ref{req:funcionales:soledad_notificacion}, \ref{req:funcionales:suicidio_notificacion} y \ref{req:funcionales:contraste_notificacion}; visibilidad según el permiso del usuario & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_cuestionario_aplazar} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_cuestionario_pendientes} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_cuestionario_numero} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_cuestionario_categoria} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_cuestionario_consejo} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_diario_info} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_diario_manana} & Aplicación & Implementado junto a \ref{req:funcionales:estres_diario_manana}, \ref{req:funcionales:depresion_diario_manana} y \ref{req:funcionales:suicidio_diario_manana}; fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}, Sección \ref{section:problemas}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_diario_noche} & Aplicación & Implementado junto a \ref{req:funcionales:estres_diario_noche}, \ref{req:funcionales:depresion_diario_noche},  \ref{req:funcionales:suicidio_diario_noche} y \ref{req:funcionales:contraste_diario_noche}; fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}, Sección \ref{section:problemas}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_puntual} & Aplicación & Implementado junto a \ref{req:funcionales:estres_puntual}, y \ref{req:funcionales:depresion_puntual}; fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}, Sección \ref{section:problemas}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_umbrales} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_umbrales_consejo} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_notificacion} & Aplicación & Implementado junto a \ref{req:funcionales:estres_notificacion}, \ref{req:funcionales:depresion_notificacion}, \ref{req:funcionales:suicidio_notificacion} y \ref{req:funcionales:contraste_notificacion}; visibilidad según el permiso del usuario & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_cuestionario_aplazar} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_cuestionario_pendientes} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_cuestionario_numero} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_cuestionario_categoria} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_cuestionario_consejo} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:suicidio_diario_info} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:suicidio_diario_manana} & Aplicación & Implementado junto a \ref{req:funcionales:estres_diario_manana}, \ref{req:funcionales:depresion_diario_manana} y \ref{req:funcionales:soledad_diario_manana}; fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}, Sección \ref{section:problemas}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:suicidio_diario_noche} & Aplicación & Implementado junto a \ref{req:funcionales:estres_diario_noche}, \ref{req:funcionales:depresion_diario_noche},  \ref{req:funcionales:soledad_diario_noche} y \ref{req:funcionales:contraste_diario_noche}; fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}, Sección \ref{section:problemas}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:suicidio_umbrales} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:suicidio_consejo} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:suicidio_notificacion} & Aplicación & Implementado junto a \ref{req:funcionales:estres_notificacion}, \ref{req:funcionales:depresion_notificacion}, \ref{req:funcionales:soledad_notificacion} y \ref{req:funcionales:contraste_notificacion}; visibilidad según el permiso del usuario & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:suicidio_cuestionario_aplazar} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:suicidio_cuestionario_pendientes} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:suicidio_cuestionario_consejo} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_estres_numero} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_estres_categoria} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_depresion_numero} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_depresion_categoria} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_soledad_numero} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_soledad_categoria} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:consejo_cuestionario_estres} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:consejo_visualizacion_estres} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:consejo_cuestionario_depresion} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:consejo_visualizacion_depresion} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:consejo_cuestionario_soledad} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:consejo_visualizacion_soledad} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:consejo_cuestionario_suicidio} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:evolucion_estres_dia} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:evolucion_estres_semana} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:evolucion_estres_mes} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:evolucion_estres_elegir} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:evolucion_depresion_dia} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:evolucion_depresion_semana} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:evolucion_depresion_mes} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:evolucion_depresion_elegir} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:evolucion_soledad_dia} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:evolucion_soledad_semana} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:evolucion_soledad_mes} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:evolucion_soledad_elegir} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_estres_dia_anterior_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_estres_dia_anterior_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_estres_siete_dias_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_estres_siete_dias_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_estres_semana_actual_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_estres_semana_actual_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_depresion_dia_anterior_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_depresion_dia_anterior_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_depresion_siete_dias_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_depresion_siete_dias_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_depresion_semana_actual_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_depresion_semana_actual_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_soledad_dia_anterior_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_soledad_dia_anterior_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_soledad_siete_dias_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_soledad_siete_dias_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_soledad_semana_actual_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:comunidad_soledad_semana_actual_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:permiso_distancia} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:permiso_desnivel} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:permiso_ejercicio} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:permiso_plantas} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:permiso_pulsaciones} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:permiso_sueno} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:permiso_pasos} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:permiso_calorias} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:permiso_peso} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:extraer_distancia} & Aplicación, \gls{wearable} & Implementado indirectamente, a través de la lectura de los datos extraídos por \textit{Salud Conectada} & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:extraer_desnivel} & Aplicación, \gls{wearable} & Implementado indirectamente, a través de la lectura de los datos extraídos por \textit{Salud Conectada} & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:extraer_ejercicio} & Aplicación, \gls{wearable} & Implementado indirectamente, a través de la lectura de los datos extraídos por \textit{Salud Conectada} & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:extraer_plantas} & Aplicación, \gls{wearable} & Implementado indirectamente, a través de la lectura de los datos extraídos por \textit{Salud Conectada} & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:extraer_pulsaciones} & Aplicación, \gls{wearable} & Implementado indirectamente, a través de la lectura de los datos extraídos por \textit{Salud Conectada} & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:extraer_sueno} & Aplicación, \gls{wearable} & Implementado indirectamente, a través de la lectura de los datos extraídos por \textit{Salud Conectada} & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:extraer_pasos} & Aplicación, \gls{wearable} & Implementado indirectamente, a través de la lectura de los datos extraídos por \textit{Salud Conectada} & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:extraer_calorias} & Aplicación, \gls{wearable} & Implementado indirectamente, a través de la lectura de los datos extraídos por \textit{Salud Conectada} & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:extraer_peso} & Aplicación, \gls{wearable} & Implementado indirectamente, a través de la lectura de los datos extraídos por \textit{Salud Conectada} & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_distancia} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_desnivel} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_ejercicio} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_plantas} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_frecuencia} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_sueno} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_pasos} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_calorias} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:visualizar_peso} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:estres_diario_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:estres_puntual_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:estres_finalizado_servidor} & Servidor, aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_diario_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_puntual_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:depresion_finalizado_servidor} & Servidor, aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_diario_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_puntual_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:soledad_finalizado_servidor} & Servidor, aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:suicidio_diario_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:suicidio_finalizado_servidor} & Servidor, aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:contraste_diario_info} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:contraste_diario_noche} & Aplicación & Implementado junto a \ref{req:funcionales:estres_diario_noche},
+        \ref{req:funcionales:depresion_diario_noche}, \ref{req:funcionales:soledad_diario_noche} y   \ref{req:funcionales:suicidio_diario_noche}; fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}, Sección \ref{section:problemas}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:contraste_notificacion} & Aplicación & Implementado junto a \ref{req:funcionales:estres_notificacion}, \ref{req:funcionales:depresion_notificacion}, \ref{req:funcionales:soledad_notificacion} y \ref{req:funcionales:suicidio_notificacion}; visibilidad según el permiso del usuario & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:contraste_cuestionario_aplazar} & Aplicación, aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:contraste_cuestionario_pendientes} & Aplicación, aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:contraste_diario_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:contraste_finalizado_servidor} & Servidor, aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:actividad_fisica_recoger} & Servidor, aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:distancia_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:desnivel_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:ejercicio_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:plantas_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:frecuencia_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:sueno_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:pasos_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:calorias_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:funcionales:peso_formato} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
+    \end{xltabular}
+
+    \begin{xltabular}{\textwidth}{|c|c|X|c|}
+
+        \hline
+        \textbf{Requisito} & \textbf{Componente} & \textbf{Comentarios} & \textbf{¿OK?} \\
+        \hline
+        \endfirsthead
+        
+        \hline
+        \textbf{Requisito} & \textbf{Componente} & \textbf{Comentarios} & \textbf{¿OK?} \\
+        \hline
+        \endhead
+        
+        \multicolumn{4}{|r|}{\textit{Continúa en la siguiente página}} \\
+        \hline
+        \endfoot
+
+        \hline
+        \caption{Verificación y validación de los requisitos no funcionales}
+        \label{tabla:verificacion:requisitos_no_funcionales} \\
+        \endlastfoot
+        
+        \ref{req:no_funcionales:envio_internet} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:envio_aplazar} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:envio_solo_ultimos} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:nuevas_versiones_android} & Aplicación & Considerado en diseño e implementación; no implementable directamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:nuevas_categorias_fisicas} & Aplicación & Considerado en diseño e implementación; no implementable directamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:solid} & Transversal & Principios seguidos en la implementación, no implementable directamente & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:notificacion_salud_conectada} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:frecuencia_subida_fisica} & Aplicación & Implementado, fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:frecuencia_subida_diarios} & Aplicación & Implementado, fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:frecuencia_subida_puntuales} & Aplicación & Implementado, fiabilidad variable según dispositivo (ver problema \ref{resultados:problemas:planificador}) & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:guardar_ultima_subida} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:version_android} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:soporte_wearable} & Aplicación, \gls{wearable} & Garantizado por \textit{Salud Conectada} & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:id_anonimo} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:cifrado_bd} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:inmutabilidad} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:datos_solo_cientificos} & Servidor & Planteado como línea futura & \textcolor{red}{\textbf{NO}} \\
+        \hline
+        \ref{req:no_funcionales:ddos} & Servidor & Planteado como línea futura & \textcolor{red}{\textbf{NO}} \\
+        \hline
+        \ref{req:no_funcionales:cifrado_comunicaciones} & Aplicación, servidor & Planteado como línea futura & \textcolor{red}{\textbf{NO}} \\
+        \hline
+        \ref{req:no_funcionales:politica_privacidad} & Transversal & Planteado como línea futura & \textcolor{red}{\textbf{NO}} \\
+        \hline
+        \ref{req:no_funcionales:ui_responsive} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:ui_tamanio_pantalla} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:ui_orientacion_soporte} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:ui_orientacion_dinamica} & Aplicación & Garantizado por defecto por Android & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:bienvenida} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:bienvenida_demanda} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:contraste} & Aplicación & Garantizado por \textit{Material Design Builder} \cite{material_design_material_nodate-1} & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:colores_tranquilidad} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:modo_claro_oscuro} & Aplicación & Garantizado por \textit{Material Design Builder} \cite{material_design_material_nodate-1} & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:modo_defecto} & Aplicación & Garantizado por defecto por Android & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:modo_demanda} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:colores_dinamico} & Aplicación & Garantizado por defecto por Android & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:idioma_espanol} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:idioma_ingles} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
+        \hline
+        \ref{req:no_funcionales:idioma_defecto} & Aplicación & Garantizado por defecto por Android & \textcolor{green}{\textbf{SI}} \\
+        \hline
+    \end{xltabular}
 
 \section{Problemas encontrados}
+    \label{section:problemas}
 
     A lo largo de esta sección serán detallados los problemas encontrados durante este \gls{tfm}.
     
@@ -20,7 +497,7 @@
     
         Esta circunstancia ha supuesto numerosos retos para el autor, tales como el aprendizaje de nuevos lenguajes de programación, el uso de patrones de diseño como inyección de dependencias o factoría o la realización de diseños \gls{responsive}. Como en el caso anterior, ha frenado el ritmo de desarrollo, pero a cambio ha supuesto una incalculable experiencia que ha permitido el aprendizaje de numerosos conceptos y/o técnicas.
     
-        \item \textbf{Agresivas optimizaciones de batería en algunos dispositivos}: este problema fue descubierto realizando pruebas en dispositivos reales al componente \textit{Work Manager}. En dichas comprobaciones se constató en que algunos dispositivos, como el \textit{Pocophone F1} del autor, el sistema operativo nunca ejecutaba en segundo plano las tareas planificadas, realizándose todas ellas de golpe únicamente cuando el usuario abría la aplicación.
+        \item \label{resultados:problemas:planificador} \textbf{Agresivas optimizaciones de batería en algunos dispositivos}: este problema fue descubierto realizando pruebas en dispositivos reales al componente \textit{Work Manager}. En dichas comprobaciones se constató en que algunos dispositivos, como el \textit{Pocophone F1} del autor, el sistema operativo nunca ejecutaba en segundo plano las tareas planificadas, realizándose todas ellas de golpe únicamente cuando el usuario abría la aplicación.
     
         Dado que este comportamiento no está documentado oficialmente, una investigación fue realizada para tratar de descubrir el problema de fondo y buscar una solución. Al parecer se trata de un problema reportado desde al menos el año 2017 \cite{mathew_why_2017}, en el cual ciertos fabricantes de \glspl{smartphone}, tales como Xiaomi, Samsung, Oppo o Redmi, realizan modificaciones en sus versiones de Android que rompen con el cumplimiento de las \gls{api} \cite{android_public_tracker_chinese_nodate} \cite{android_public_tracker_request_nodate}, levantando polémica ya que según las políticas de Android no está permitido \cite{cylon999_workmanager_2018}.
     
