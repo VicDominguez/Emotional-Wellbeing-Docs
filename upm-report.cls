@@ -482,7 +482,8 @@
 \usepackage{setspace}
 \newcommand{\chapquote}[2]{\begin{center} \textit{#1} \\  #2 \end{center} }
 
-\usepackage{todonotes}
+% Desactivado en la version final para evitar problemas
+% \usepackage{todonotes}
 \addbibresource{references.bib}
 
 % Para rotar fotos
@@ -635,7 +636,7 @@
         {\large \MakeUppercase{\reporttype}}\\*[1em]
         {\large \MakeUppercase{\textbf{\degreename}}}
         \vfill
-        {\HUGE \@title}\\*[0.3cm]
+        {\Huge \@title}\\*[0.3cm]
         \vfill
         \parbox[b]{\linewidth}{%
             \normalsize

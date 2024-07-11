@@ -1,4 +1,4 @@
-\chapter{[Por revisar] Conclusiones y líneas futuras}
+\chapter{Conclusiones y líneas futuras}
 \label{chapter:conclusiones}
 
 \chapquote{Realiza cada una de tus acciones como si fuera la última de tu vida.}{Marco Aurelio}
@@ -7,9 +7,9 @@ En este capítulo se reúnen las conclusiones obtenidas durante el desarrollo de
 
 \section{Conclusiones}
 
-    En primer lugar, se ha podido constatar en la realización de este \gls{tfm} la existencia de un marco téorico-práctico sólido para contribuir a la mejora de la salud mental de nuestra sociedad mediante soluciones informáticas. Si bien la labor de los profesionales de la Psicología es insustituible en el tratamiento de enfermedades como la depresión y se necesita a su vez una solución integral para resolver cuestiones como las listas de espera; se ha evidenciado que la Informática puede proveer soluciones para ahondar en la detección precoz de estos trastornos.
+    En primer lugar, se ha podido constatar en la realización de este \gls{tfm} la existencia de un marco téorico-práctico sólido para contribuir a la mejora de la salud mental de nuestra sociedad mediante soluciones informáticas. Si bien la labor de los profesionales de la Psicología es insustituible en el tratamiento de enfermedades como la depresión y se necesita a su vez una solución integral para resolver cuestiones como las listas de espera, se ha evidenciado que la Informática puede proveer soluciones ,que permiten apoyar y ahondar en la detección precoz de estos trastornos.
 
-    Aunque durante la realización de este \gls{tfm} no se han producido avances teóricos significativos, el marco práctico si los ha experimentado. Actualmente, los \glspl{wearable} son un elemento cada vez más presente en nuestras vidas, democratizando el acceso a datos como la \gls{vfc}; o la realización de pruebas cada vez más complejas, como los \glspl{ecg}. 
+    Aunque durante la realización de este \gls{tfm} no se han producido avances teóricos significativos, el marco práctico si los ha experimentado. Actualmente, los \glspl{wearable} son un elemento cada vez más presente en nuestras vidas, democratizando el acceso a datos como la \gls{vfc}, o la realización de pruebas cada vez más complejas, como los \glspl{ecg}. 
     
     Estos dispositivos permitirían resolver el gran escollo mostrado por los trabajos previos: la recolección sistemática de datos mediante \glspl{no-invasiva}. Iniciativas como \textit{Salud Conectada}, a pesar de sus limitaciones; reducen sensiblemente la barrera técnica para desarrollar nuevos proyectos y amplían la potencial base de usuarios; mientras se garantiza la privacidad de los mismos.
 
@@ -21,7 +21,7 @@ En este capítulo se reúnen las conclusiones obtenidas durante el desarrollo de
     
     En particular, la detección precoz solo ha podido implementarse mediante la realización de cuestionarios. Si bien se han implementado cuestionarios diseñados expresamente por psicólogas, ha quedado pendiente de explotar el enorme potencial de los datos recolectados; o la puesta en marcha de proyectos que permitieran evaluar la efectividad de la solución propuesta. En la Sección \ref{section:lineas_futuras} serán planteadas una serie de mejoras para su implantación en futuros trabajos.
 
-    Paralelamente, el esfuerzo dedicado a la construcción, pruebas y despliegue del componente servidor en general y de la \gls{api} en particular ha sido satisfactorio. Se ha constatado una vez más el excepcional trabajo realizado por los diversos actores en el ecosistema de Python, permitiendo implementar con sencillez y elegancia componentes que aportan un gran valor añadido.
+    Paralelamente, el esfuerzo dedicado a la construcción, pruebas y despliegue del componente servidor en general,  y de la \gls{api} en particular, ha sido satisfactorio. Se ha constatado una vez más el excepcional trabajo realizado por los diversos actores en el ecosistema de Python permitiendo implementar con sencillez y elegancia componentes que aportan un gran valor añadido.
 
     Asimismo, en una capa más personal, este proyecto ha servido para que el autor pudiera experimentar y comprender definitivamente numerosos conceptos relacionados con la \gls{iss} y el desarrollo móvil. Si bien se han sufrido numerosos contratiempos, proyectos de esta envergadura permiten poner en práctica conocimientos o planteamientos que resultan imposibles de realizar en el marco de las asignaturas de grado o de máster. Donde las clases ponen las bases del conocimiento, estos proyectos permiten dar un salto cualitativo que beneficia al conjunto de la sociedad. 
 
@@ -37,8 +37,7 @@ En este capítulo se reúnen las conclusiones obtenidas durante el desarrollo de
     \begin{itemize}
         \item \ref{req:no_funcionales:datos_solo_cientificos} \textit{El acceso a los datos anonimizados de los usuarios solo estará permitido para propósitos científicos.}
         
-        Para ello se necesita definir una política de acceso a los datos, la cual debe aceptarse por los analistas de datos. En este aspecto es recomendable contar con asesoría legal.
-        Posteriormente se debería diseñar e implementar un sistema de acceso que permita la administración de los diferentes usuarios.
+        Para ello se necesita definir una política de acceso a los datos, la cual debe aceptarse por los analistas de datos. En este aspecto es recomendable contar con asesoría legal. Posteriormente, se debería diseñar e implementar un sistema de acceso que permita la administración de los diferentes usuarios.
         
         \item \ref{req:no_funcionales:ddos} \textit{El servidor que aloje los datos anonimizados deberá estar protegido antes ataques de denegación de servicio y accesos no autorizados.}
 
@@ -75,10 +74,9 @@ En este capítulo se reúnen las conclusiones obtenidas durante el desarrollo de
         \item Realizar agregación de datos para ciertas variables, como las pulsaciones, para aligerar el volumen de datos.
         \item Explorar cuestiones relacionadas con la infraestructura, como el despliegue de la funcionalidad del servidor mediante contenedores, lo que permitiría una mejor escalabilidad del mismo.
         \item Segmentar la comunidad de usuarios para mejorar la representatividad del conjunto.
-        \item Estudiar la imputación de datos nulos con otras técnicas, tales como: regresión, \textit{Last Observation 
-        Carried Forward}, \textit{Next Observation Carried Backward}... \cite{gupta_null_nodate}
-        \item Añadir \textit{features} relacionadas con los cuestionarios puntuales: gráficas, notificaciones...
+        \item Estudiar la imputación de datos nulos con otras técnicas, tales como: regresión, \textit{Last Observation Carried Forward}, \textit{Next Observation Carried Backward}, etc. \cite{gupta_null_nodate}
+        \item Añadir \textit{features} relacionadas con los cuestionarios puntuales: gráficas, notificaciones, entre otras.
         \item Diseñar e implementar una interfaz gráfica centrada en las pantallas \textit{expandidas}\footnote{Pantallas 
         que disponen de más de 840dp de ancho o 900dp de alto}.
-        \item Localizar la aplicación a más idiomas.
+        \item Trasladar la aplicación a más idiomas.
     \end{enumerate}

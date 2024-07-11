@@ -1,9 +1,9 @@
-\chapter{[Por revisar] Marco teórico y contexto tecnológico}
+\chapter{Marco teórico y contexto tecnológico}
 \label{chapter:marco_teorico}
 
 \chapquote{Una vez que algo es una pasión, hay motivación.}{Michael Schumacher}
 
-En este capítulo se introducen los conceptos teóricos sobre los que se asienta el desarrollo de este proyecto. Con el contenido de este capítulo se espera crear un base de conocimiento sobre la que desarrollar el resto de este documento. Además, se realiza un análisis de las herramientas que se van a emplear para desarrollar el sistema y cómo estas se encuadran en el contexto tecnológico actual.
+En este capítulo se introducen los conceptos teóricos sobre los que se asienta el desarrollo de este proyecto. Con el contenido de este capítulo se espera crear un base de conocimiento sobre la que sustentar el resto de este documento. Además, se realiza un análisis de las herramientas que se van a emplear para desarrollar el sistema y cómo estas se encuadran en el contexto tecnológico actual.
 
 \section{Marco teórico}
     \label{section:marco_teorico}
@@ -15,23 +15,25 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
     Por tanto, para cada trastorno se detallarán las características que permiten identificarlas y cómo se manifiestan en los individuos, si bien estas respuestas pueden variar notablemente entre individuos. Asimismo, para profundizar en estas cuestiones se anima al lector a acudir a la bibliografía que será citada, o bien a la \textit{Clasificación Internacional de Enfermedades} de la \gls{oms} \cite{oms_clasificacion_nodate} o al \textit{Manual Diagnóstico y Estadístico de los Trastornos Mentales} de la \gls{apa} \cite{american_psychological_association_manual_2014}, dos publicaciones de referencia que ahondan profundamente en los criterios de diagnóstico de salud mental.
 
     \subsection{Estrés}
-        La \gls{oms} define el estrés como \textit{``el conjunto de reacciones fisiológicas que prepara el organismo para la acción''} \cite{torrades_estres_2007}, tratándose en primera instancia de un sistema de alerta ante situaciones desafiantes o amenazantes necesario para la supervivencia. La presencia del estrés depende del estado físico y psíquico de cada persona, pero algunas situaciones que lo pueden provocar son, entre otras: cambiar de trabajo, hablar en público, o mudarse de vivienda. Se estima que nueve de cada diez personas han sentido estrés en el último año y un 40\% de la población lo sufre de forma continua \cite{nogera_mas_estres_2024}.
+        La \gls{oms} define el estrés como \textit{``el conjunto de reacciones fisiológicas que prepara el organismo para la acción''} \cite{torrades_estres_2007}, tratándose en primera instancia de un sistema de alerta ante situaciones desafiantes o amenazantes necesario para la supervivencia. La presencia del estrés depende del estado físico y psíquico de cada persona, pero algunas situaciones que lo pueden provocar son, entre otras, cambiar de trabajo, hablar en público, o mudarse de vivienda. Se estima que nueve de cada diez personas han sentido estrés en el último año y un $40\%$ de la población lo sufre de forma continua \cite{nogera_mas_estres_2024}.
         
-        Este mecanismo cual estimula el organismo para que éste alcance su objetivo. Debido a esta caracterización, este momento es conocido como fase de alerta, y es la primera etapa del estrés. Una vez que el estímulo ha cesado, el organismo vuelve a su estado habitual (también conocido como basal).
+        El estrés es considerado como un mecanismo el cual estimula el organismo para que éste alcance su objetivo. Debido a esta caracterización, este momento es conocido como \textbf{fase de alerta} y es la primera etapa del estrés. Una vez que el estímulo ha cesado, el organismo vuelve a su estado habitual (también conocido como basal).
         
-        No obstante, el problema radica esa presión no desaparece y el individuo entra en una segunda fase, conocida como estado de resistencia. \textit{``Cuando ciertas circunstancias, como la sobrecarga de trabajo, las presiones económicas o sociales, o un ambiente competitivo, se perciben inconscientemente como una «amenaza», se empieza a tener una sensación de incomodidad. Cuando esta sensación se mantiene en el tiempo, se puede llegar a un estado de agotamiento, con posibles alteraciones funcionales y orgánicas''} \cite{torrades_estres_2007}.
+        No obstante, el problema radica en que esa presión no desaparece y el individuo entra en una segunda fase, conocida como \textbf{estado de resistencia}. \textit{``Cuando ciertas circunstancias, como la sobrecarga de trabajo, las presiones económicas o sociales, o un ambiente competitivo, se perciben inconscientemente como una «amenaza», se empieza a tener una sensación de incomodidad. Cuando esta sensación se mantiene en el tiempo, se puede llegar a un estado de agotamiento, con posibles alteraciones funcionales y orgánicas''} \cite{torrades_estres_2007}.
 
-        Sin profundizar en cuestiones biológicas, en estas situaciones el organismo libera ciertas hormonas, las cuales se encargan de regular, excitar o inhibir la actividad de los diferentes órganos. Algunas de ellas son el cortisol (también conocida como ``la hormona del estrés''), o la adrenalina y la noradrenalina. 
+        Sin profundizar en cuestiones biológicas, en estas situaciones el organismo libera ciertas hormonas las cuales se encargan de regular, excitar o inhibir la actividad de los diferentes órganos. Algunas de ellas son el cortisol (también conocida como ``la hormona del estrés''), o la adrenalina y la noradrenalina. 
         
         Los niveles de cortisol están asociados con \textit{``euforia y propiedades similares a la recompensa relacionadas con el comportamiento de búsqueda de sensaciones''} \cite{currid_efectos_2019}; mientras que la adrenalina y la noradrenalina se encargan de poner el cuerpo en estado de alerta y prepararlo para luchar o huir \cite{torrades_estres_2007}.
 
-        Si el individuo está expuesto de forma prolongada a amenazas, acaban disminuyendo paulatinamente sus capacidades de respuesta; si bien puede resistir durante más tiempo. Si aún así se mantiene la situación, se llega a la última etapa, conocida fase de agotamiento, la cual consiste en \textit{`` un estado de gran deterioro, con pérdida importante de las capacidades fisiológicas, en la que el sujeto experimenta un retroceso muy considerable en sus habilidades sociales, así como en sus capacidades de adaptación e interrelación con el medio''} \cite{torrades_estres_2007}. En la Figura \ref{figure:marco_teorico:fases_estres} se representan las tres fases descritas.
+        Si el individuo está expuesto de forma prolongada a amenazas, acaban disminuyendo paulatinamente sus capacidades de respuesta; si bien puede resistir durante más tiempo. Si aún así se mantiene la situación, se llega a la última etapa, conocida como \textbf{fase de agotamiento}, la cual consiste en \textit{``un estado de gran deterioro, con pérdida importante de las capacidades fisiológicas, en la que el sujeto experimenta un retroceso muy considerable en sus habilidades sociales, así como en sus capacidades de adaptación e interrelación con el medio''} \cite{torrades_estres_2007}. 
+        
+        En la Figura \ref{figure:marco_teorico:fases_estres} se representan las tres fases descritas.
 
         \begin{figure}[h]
             \centering
-            \includegraphics[width=0.66\textwidth]{figures/fases estres.JPG}
+            \includegraphics[width=0.66\textwidth]{figures/fases_estres.png}
             \caption[Las tres fases del estrés]
-            {Las tres fases del estrés. Imagen extraída de \cite{currid_efectos_2019}.}
+            {Las tres fases del estrés. Imagen extraída de \cite{nutricionprofesional_fases_2014}.}
             \label{figure:marco_teorico:fases_estres}
         \end{figure}
 
@@ -39,7 +41,8 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
 
         Algunos de los posibles síntomas físicos son: \textit{``fatiga crónica; cefaleas y migraña; alteraciones gastrointestinales; dolores musculares; alteraciones respiratorias; alteraciones del sueño; alteraciones dermatológicas; alteraciones menstruales y disfunciones sexuales''} \cite{torrades_estres_2007}.
 
-        En el campo de las alteraciones conductuales se puede halla: \textit{``una irregular conducta alimentaria y el abuso de drogas, fármacos y alcohol. Las conductas violentas suelen ser muy frecuentes, como la agresión, la actitud defensiva y el cinismo''} \cite{torrades_estres_2007}, mientras que a nivel emocional las más comunes son: ansiedad, irritabilidad, baja autoestima, distanciamiento emocional, falta de motivación y dificultades de concentración.
+        En el campo de las alteraciones conductuales se pueden hallar las siguientes:
+        \textit{``una irregular conducta alimentaria y el abuso de drogas, fármacos y alcohol. Las conductas violentas suelen ser muy frecuentes, como la agresión, la actitud defensiva y el cinismo''} \cite{torrades_estres_2007}, mientras que a nivel emocional las más comunes son la ansiedad, la irritabilidad, la baja autoestima, el distanciamiento emocional, la falta de motivación y las dificultades de concentración.
 
         En cuanto al diagnóstico del mismo, la \gls{pss} (o en español \textit{``Escala de Estrés Percibido''}) es el instrumento psicológico más comúnmente utilizado para medir la percepción del estrés. \textit{``Es una medida del grado en que las situaciones en la vida de una persona son valoradas como estresantes. Los artículos fueron diseñados para aprovechar la forma en que los encuestados impredecibles, incontrolables y sobrecargados encuentran sus vidas''} \cite{currid_efectos_2019}. 
         
@@ -59,7 +62,7 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
 
         La depresión, también conocida como ``trastorno depresivo mayor'' o ``depresión clínica'' es una enfermedad mental que se puede describir como un estado de intensa tristeza, melancolía o desesperación, avanzada hasta perturbar el funcionamiento social o las actividades diarias de una persona \cite{van_neerven_rarrxr_2008}. Es diferente de los cambios del estado de ánimo, pudiendo afectar a todos los ámbitos de la vida, incluidas las relaciones familiares y/o de amistad \cite{oms_depresion_2023}
         
-        Según la \gls{oms}, el 3,8\% de la población experimenta depresión, incluido el 5\% de los adultos (4\% entre los hombres y el 6\% entre las mujeres) y el 5,7\% de los adultos mayores de 60 años; elevándose el número de personas con depresión a aproximadamente 280 millones de personas en todo el mundo \cite{oms_depresion_2023}.
+        Según la \gls{oms}, el $3,8\%$ de la población experimenta depresión, incluido el $5\%$ de los adultos ($4\%$ entre los hombres y el $6\%$ entre las mujeres) y el $5,7\%$ de los adultos mayores de $60$ años; elevándose el número de personas con depresión a aproximadamente 280 millones de personas en todo el mundo \cite{oms_depresion_2023}.
 
         Por otra parte, esta enfermedad se confunde comúnmente con la tristeza. La tristeza es una emoción primaria, mientras que en la depresión, \textit{``hay una disminución significativa de la funcionalidad de la persona, mientras que en la tristeza no se evidencia una alteración de la funcionalidad y de las diferentes esferas de la vida cotidiana de la persona. También en la tristeza el sentimiento displacentero es provocado por un motivo puntual y definido, mientras que la depresión no siempre tiene una causa específica para su sufrimiento, por lo que la persona deprimida no siempre sabe cuál es la razón de su depresión''} \cite{ospina_perez_entendiendo_2018}.
 
@@ -105,12 +108,12 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
         \begin{enumerate}[label={\alph*.}]
             \item Cinco (o más) de los síntomas siguientes han estado presentes durante el mismo periodo de dos semanas y representan un cambio del funcionamiento previo; al menos uno de los síntomas es \ref{criterio_depresion:animo_deprimido} o \ref{criterio_depresion:perdida_interes}. 
                 \begin{enumerate}[label={\arabic*.}]
-                    \item \label{criterio_depresion:animo_deprimido} Estado de ánimo depresivo la mayor parte del día, cada día según lo indica el propio sujeto (p.e. sentirse triste, vacío, sin esperanza) o de la observación por otros (p.e. se le ve lloroso).
+                    \item \label{criterio_depresion:animo_deprimido} Estado de ánimo depresivo la mayor parte del día, cada día según lo indica el propio sujeto (por ejemplo, sentirse triste, vacío, sin esperanza) o de la observación por otros (por ejemplo, se le ve lloroso).
                     \item \label{criterio_depresion:perdida_interes} Disminución importante del interés o el placer por todas o casi todas las actividades, la mayor parte del día, casi todos los días (como se desprende de la información subjetiva o de la observación).
-                    \item Pérdida importante de peso sin hacer dieta o aumento de peso (p.e. modificación de más del 5\% del peso corporal en 1 mes) o disminución o aumento del apetito casi todos los días. 
+                    \item Pérdida importante de peso sin hacer dieta o aumento de peso (por ejemplo, modificación de más del $5\%$ del peso corporal en un mes) o disminución o aumento del apetito casi todos los días. 
                     \item Insomnio o hipersomnia casi todos los días.
                     \item Agitación o retraso psicomotor casi todos los días (observable por parte de los otros; ni simplemente la sensación subjetiva de inquietud o de enlentecimiento).
-                    \item Fatiga o perdida de energía casi todos los días.
+                    \item Fatiga o pérdida de energía casi todos los días.
                     \item Sentimiento de inutilidad o culpabilidad excesiva o inapropiada (que puede ser delirante), casi todos los días (no simplemente autorreproche o culpa por estar enfermo).
                     \item Disminución de la capacidad para pensar o concentrarse o para tomar decisiones, casi todos los días (a partir de la información subjetiva o de la observación por parte de otras personas).
                     \item Pensamientos de muerte recurrentes (no solo miedo a morir), ideas suicidas recurrentes sin un plan determinado, intento de suicidio o un plan específico para llevarlo a cabo.
@@ -133,15 +136,15 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
 
     \subsection{Suicidio}
 
-        Como ya se introdujo en la Sección \ref{sec:justificacion}, el suicidio es un problema de salud pública importante y sus estadísticas, preocupantes. Se puede entender por suicidio el propio acto suicida, descrito \textit{``como acto autolesivo intencionado con resultado de muerte''} \cite{moutier_conducta_2023}, o la conducta suicida en su conjunto, la cual además incluye la ideación suicida (realización de actos y planes preparatorios para el suicidio) y el intento de suicidio (\textit{``acto autolesivo con intención de provocar la muerte, pero que finalmente no resulta mortal''} \cite{moutier_conducta_2023}).
+        Como ya se introdujo en la Sección \ref{sec:justificacion}, el suicidio es un problema de salud pública importante y sus estadísticas son preocupantes. Se puede entender por suicidio el propio acto suicida, descrito \textit{``como acto autolesivo intencionado con resultado de muerte''} \cite{moutier_conducta_2023}, o la conducta suicida en su conjunto, la cual además incluye la ideación suicida (realización de actos y planes preparatorios para el suicidio) y el intento de suicidio (\textit{``acto autolesivo con intención de provocar la muerte, pero que finalmente no resulta mortal''} \cite{moutier_conducta_2023}).
 
-        En este ámbito, trabajos como \cite{baca_garcia_factores_2014} hallaron que el factor de riesgo más importante para la conducta suicida es la \gls{comorbilidad} depresión-ansiedad, si bien existen otros factores como la historia familiar de conducta suicida, la ausencia de hijos o la edad menor a 35 años \cite{baca_garcia_factores_2014}.
+        En este ámbito, trabajos como el publicado en \cite{baca_garcia_factores_2014} hallaron que el factor de riesgo más importante para la conducta suicida es la \gls{comorbilidad} depresión-ansiedad, si bien existen otros factores como la historia familiar de conducta suicida, la ausencia de hijos o la edad menor a 35 años \cite{baca_garcia_factores_2014}.
         
-        La depresión por sí sola puede llegar a aumentar el riesgo en hasta 20 veces \cite{gonzalez_depresion_2020}, oscilando el porcentaje de mortalidad por suicidio en depresión entre el 5\%, si se cuentan todos los casos de trastorno depresivo, y el 15\% si se ciñe únicamente al trastorno de depresión mayor. 
+        La depresión por sí sola puede llegar a aumentar el riesgo en hasta $20$ veces \cite{gonzalez_depresion_2020}, oscilando el porcentaje de mortalidad por suicidio en depresión entre el $5\%$, si se cuentan todos los casos de trastorno depresivo, y el $15\%$ si se ciñe únicamente al trastorno de depresión mayor. 
         
-        En otros desórdenes, como en el trastorno bipolar, oscila entre un 10-15\%, mientras otros factores, como las adicciones a múltiples sustancias o la esquizofrenia, el riesgo se multiplica en 20 y 8,5; respectivamente \cite{gonzalez_depresion_2020}. 
+        En otros desórdenes, como en el trastorno bipolar, oscila entre un $10-15\%$, mientras otros factores, como las adicciones a múltiples sustancias o la esquizofrenia, el riesgo se multiplica en $20$ y $8,5$, respectivamente \cite{gonzalez_depresion_2020}. 
 
-        La \gls{oms} definió en \cite{oms_suicidio_2023} una serie de signos de alerta y cambios de humor:
+        La \gls{oms} definió en \cite{oms_suicidio_2023} una serie de signos de alerta y cambios de humor, a saber:
         \begin{itemize}
             \item Signos de alerta
                 \begin{itemize}
@@ -197,7 +200,7 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
                 \end{itemize}
             \item Efectos cognitivos
                 \begin{itemize}
-                    \item Disminuye el funcionamiento de la atención y la memoria
+                    \item Disminuye el funcionamiento de la atención y la memoria.
                     \item Reducción de la velocidad de procesamiento de la información.
                     \item Disminución del funcionamiento cognitivo general.
                     \item Mayor riesgo de sufrir otras de enfermedades mentales, como la depresión, u otras más relacionadas con el ámbito cognitivo como la demencia y el Alzheimer.
@@ -209,14 +212,14 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
                 \end{itemize}
             \item Efectos comportamentales
                 \begin{itemize}
-                    \item Minimización de las dificultades asociadas a la soledad
+                    \item Minimización de las dificultades asociadas a la soledad.
                     \item Disminución del nivel de participación social por miedo al rechazo.
                     \item Ausencia de interés en buscar interacciones sociales que reduzcan el sentimiento de soledad.
                 \end{itemize}
         \end{itemize}
     
         
-        A diferencia de los trastornos anteriores, según la \gls{apa} \cite{american_psychological_association_manual_2014} la soledad no deseada no dispone de un diagnóstico definido al no ser categorizado como trastorno mental, y si como un problema objeto de atención clínica \cite{montejano_martin_soledad_2019}. No obstante, quizá el cuestionario más utilizado para la evaluación de la misma sea el \gls{ucla}-20 \cite{russell_revised_1980}, cuyas preguntas se disponen en el Anexo \ref{cuestionarios:ucla_20}.
+        A diferencia de los trastornos anteriores, según la \gls{apa} \cite{american_psychological_association_manual_2014} la soledad no deseada no dispone de un diagnóstico definido al no ser categorizado como trastorno mental, y sí como un problema objeto de atención clínica \cite{montejano_martin_soledad_2019}. No obstante, quizá el cuestionario más utilizado para la evaluación de la misma sea el \gls{ucla}-20 \cite{russell_revised_1980}, cuyas preguntas se disponen en el Anexo \ref{cuestionarios:ucla_20}.
 
         Por último, algunas de las medidas paliativas son las siguientes\footnote{Las pautas propuestas que se mostrarán a los usuarios se pueden encontrar en el Anexo \ref{chapter:recomendaciones:soledad}} \cite{cruz_roja_como_nodate}:
 
@@ -229,6 +232,7 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
         \end{itemize}
         
 \section{Contexto tecnológico}
+    \label{section:contexto}
 
     Esta sección recoge la información relativa a las tecnologías y herramientas más relevantes dentro del contexto de desarrollo de este proyecto.
 
@@ -268,11 +272,9 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
     \subsection{Android}
         \label{section:contexto:Android}
         
-        A grandes rasgos, Android es un Sistema Operativo orientado a dispositivos móviles basado en el núcleo Linux, diseñado para ser independiente de la arquitectura hardware de dichos dispositivos. Si bien fue planteado originalmente únicamente para teléfonos móviles, con el avance de la industria y el transcurso de las versiones ha adoptado un enfoque más amplio; siendo compatible con más dispositivos: tabletas, relojes inteligentes, televisores, pantallas de automóviles, etc. \footnote{No obstante, excepto en el caso de las tabletas, se trata de versiones \textbf{basadas} en Android con su propia 
-        idiosincrasia y limitaciones.}
+        A grandes rasgos, Android es un Sistema Operativo orientado a dispositivos móviles basado en el núcleo Linux, diseñado para ser independiente de la arquitectura hardware de dichos dispositivos. Si bien fue planteado originalmente únicamente para teléfonos móviles, con el avance de la industria y el transcurso de las versiones ha adoptado un enfoque más amplio; siendo compatible con más dispositivos: tabletas, relojes inteligentes, televisores, pantallas de automóviles, etc. \footnote{No obstante, excepto en el caso de las tabletas, se trata de versiones \textbf{basadas} en Android con su propia idiosincrasia y limitaciones.}
   
-        Normalmente cuando se hace referencia a Android no se hace referencia únicamente al sistema operativo, sino a todo el ecosistema o plataforma creada entorno al mismo; como se hará a lo largo de este \gls{tfm}. Dicha plataforma o 
-        \gls{framework} consta de numerosas capas, siendo el sistema operativo una parte de ellas, como se puede ver en la Figura \ref{figure:android:capas}. 
+        Normalmente, cuando se hace referencia a Android no se hace referencia únicamente al sistema operativo, sino a todo el ecosistema o plataforma creada entorno al mismo; como se hará a lo largo de este \gls{tfm}. Dicha plataforma o \gls{framework} consta de numerosas capas, siendo el sistema operativo una parte de ellas, como se puede ver en la Figura \ref{figure:android:capas}. 
 
         \begin{figure}[h]
             \centering
@@ -286,7 +288,7 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
 
         Los \gls{gms} son utilizados para tareas como la gestión de notificaciones, servicios de geolocalización o para acceder a las herramientas de Google, tales como la tienda de aplicaciones Play Store. Asimismo, los fabricantes también pueden personalizar y añadir funciones al sistema operativo, lo que explica que dos terminales con la misma versión puedan verse tan diferentes entre sí. 
         
-        Por otra parte, inicialmente Android fue desarrollado por la empresa homónima, si bien esta empresa fue comprada en 2005 por Google por 50 millones de dólares. La salida del sistema operativo se produciría dos años después, el 5 de noviembre de 2007, aunque el primer terminal que lo utilizaba (HTC Dream, también conocido como 
+        Por otra parte, inicialmente Android fue desarrollado por la empresa homónima, si bien esta empresa fue comprada en 2005 por Google por $50$ millones de dólares. La salida del sistema operativo se produciría dos años después, el 5 de noviembre de 2007, aunque el primer terminal que lo utilizaba (HTC Dream, también conocido como 
         T-Mobile G1) fue comercializado el 23 de septiembre de 2008 \cite{adeva_android_2023} \cite{marquez_asi_2022}; el cual se puede ver en la Figura \ref{figure:android:htc_dream}.
 
         \begin{figure}[h]
@@ -330,20 +332,20 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
         
         En la conferencia de Google \textit{I/O} de 2017, fue anunciado el soporte oficial y completo de Kotlin dentro de Android, para en 2019 convertirse en el lenguaje de referencia para el desarrollo de Android \cite{braun_celebrating_2022}, por lo que los desarrollos de librerías y herramientas relacionadas con Android están escritas en este lenguaje, aprovechando al máximo sus nuevas características. 
         
-        Por tanto, si bien es interoperable con Java, se recomienda que los nuevos desarrollos lo utilicen \cite{lardinois_kotlin_2019}, como se ha realizado en este \gls{tfm}. Por último, según \cite{kotlin_help_kotlin_nodate}, aproximadamente el 95\% del top mil de aplicaciones Android usan en alguna medida Kotlin, por lo que su uso está plenamente justificado.
+        Por tanto, si bien es interoperable con Java, se recomienda que los nuevos desarrollos lo utilicen \cite{lardinois_kotlin_2019} como se llevará a cabo en este \gls{tfm}. Por último, según \cite{kotlin_help_kotlin_nodate}, aproximadamente el $95\%$ del top mil de aplicaciones Android usan en alguna medida Kotlin, por lo que su uso está plenamente justificado.
         
     \subsection{Salud Conectada}
         \label{section:salud_conectada}
         En la conferencia \textit{I/O}, de 2022 se anunció \textit{Health Connect} (o \textit{Salud Conectada} en castellano\footnote{A lo largo de este \gls{tfm} se utilizarán indistintamente los términos \textit{Health Connect} y \textit{Salud Conectada}.}), una plataforma creado por Google junto con Samsung \cite{wilk_introducing_2022} que aglutina todos los datos relacionados con salud dentro del ecosistema Android. 
         
-        Este componente, lanzado en fase beta en noviembre de 2022, se puede encontrar preinstalado en algunos dispositivos Android a partir de la versión 14 \cite{ayuda_de_android_informacion_nodate} o como una aplicación para dispositivos Android 9 o superior \cite{pandey_health_2023} \footnote{Cabe destacar que esta aplicación es parte de los \gls{gms} y no del sistema operativo propiamente dicho o \gls{aosp}.}. A fecha de mayo de 2023, se estima que más de 100 aplicaciones han integrado \textit{Salud Conectada}, incluyendo las aplicaciones de las pulseras Fitbit y Samsung, Peloton o Oura, entre otros \cite{malik_googles_2023}.
+        Este componente, lanzado en fase beta en noviembre de 2022, se puede encontrar preinstalado en algunos dispositivos Android a partir de la versión 14 \cite{ayuda_de_android_informacion_nodate} o como una aplicación para dispositivos Android 9 o superior \cite{pandey_health_2023} \footnote{Cabe destacar que esta aplicación es parte de los \gls{gms} y no del sistema operativo propiamente dicho o \gls{aosp}.}. A fecha de mayo de 2023, se estima que más de $100$ aplicaciones han integrado \textit{Salud Conectada}, incluyendo las aplicaciones de las pulseras Fitbit y Samsung, Peloton o Oura, entre otros \cite{malik_googles_2023}.
         
-        Esta herramienta proporciona una solución a una problemática muy relevante en el ámbito de los \glspl{wearable}. Como se describió en la Sección \ref{section:contexto:wearables}, los fabricantes procesan, almacenan y visualizan los datos recogidos en su aplicación; radicando el problema en el nulo reaprovechamiento de estos datos. La posición casi unánime dentro la 
+        Esta herramienta proporciona una solución a una problemática muy relevante en el ámbito de los \glspl{wearable}. Como se describió en la Sección \ref{section:contexto:wearables}, los fabricantes procesan, almacenan y visualizan los datos recogidos en su aplicación, radicando el problema en el nulo reaprovechamiento de estos datos. La posición casi unánime dentro la 
         industria hasta la aparición de este componente se basaba en aislar estos datos  dentro de su ecosistema \cite{ramirez_android_2022} \cite{rahman_android_2023}. 
         
-        Por tanto, para utilizar dichos datos en otras aplicaciones las posibilidades residían en el uso de a sistemas propietarios como \textit{Google Fit}, cuyos datos se almacenaban en la nube, o a través de proyectos \gls{open-source} como \textit{Gadget Bridge}, que acceden a datos mediante ingeniería inversa \cite{freeyourgadget_gadgetbridge_nodate}. Estas opciones plantean claras desventajas, como desde los potenciales problemas de privacidad en el caso de \textit{Google Fit}; hasta cuestiones legales y dificultad de compatibilidad y uso en el caso de \textit{Gadget Bridge}.
+        Por tanto, para utilizar dichos datos en otras aplicaciones las posibilidades residían en el uso de a sistemas propietarios como \textit{Google Fit}, cuyos datos se almacenaban en la nube, o a través de proyectos \gls{open-source} como \textit{Gadget Bridge}, que acceden a datos mediante ingeniería inversa \cite{freeyourgadget_gadgetbridge_nodate}. Estas opciones plantean claras desventajas como los potenciales problemas de privacidad en el caso de \textit{Google Fit} hasta cuestiones legales y dificultad de compatibilidad y uso en el caso de \textit{Gadget Bridge}.
         
-        Como se visualiza en la Figura \ref{figure:health_connect:arquitectura} \textit{Salud Conectada} consta de varias capas. Para los usuarios finales se presenta mediante una aplicación, que entre otras cuestiones permite ver a los usuarios los datos recogidos por tipo de dato, o los accesos a sus datos; como recoge la Figura \ref{figure:health_connect:ejemplo}. Para los desarrolladores se muestra como un sistema de acceso a los datos, el cual define una serie de permisos y un acceso a través de una \gls{api}.
+        Como se visualiza en la Figura \ref{figure:health_connect:arquitectura}, \textit{Salud Conectada} consta de varias capas. Para los usuarios finales se presenta mediante una aplicación que, entre otras cuestiones, permite ver a los usuarios los datos recogidos por tipo de dato, o los accesos a sus datos, tal y como recoge la Figura \ref{figure:health_connect:ejemplo}. Para los desarrolladores, se muestra como un sistema de acceso a los datos, el cual define una serie de permisos y un acceso a través de una \gls{api}.
 
         \begin{figure}[h]
             \centering
@@ -371,7 +373,7 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
         Por tanto, esta \gls{api} estandariza el acceso a todas las fuentes de datos, independientemente de su procedencia; lo que simplifica enormemente tanto la lectura como escritura de los datos. Además, el sistema permite consultar
         datos agregados, pudiendo ser una agregación acumulativa (como el total de distancia caminada en un intervalo de tiempo) o estadística (las pulsaciones mínimas, máximas o promedio en un intervalo de tiempo).
 
-        Por otra parte, este sistema rompe con el esquema de \textit{Google Fit}, almancenándose los datos localmente. Además, el acceso a los mismos esta fuertemente granularizado; estando en manos del usuario la decisión de qué aplicaciones tienen acceso (tanto lectura como escritura) a cada tipo de registro \cite{saez_google_2022}, como muestra la Figura \ref{figure:health_connect:granularidad_permisos}. 
+        Por otra parte, este sistema rompe con el esquema de \textit{Google Fit}, almancenándose los datos localmente. Además, el acceso a los mismos esta fuertemente granularizado estando en manos del usuario la decisión de qué aplicaciones tienen acceso (tanto lectura como escritura) a cada tipo de registro \cite{saez_google_2022} tal y como muestra la Figura \ref{figure:health_connect:granularidad_permisos}. 
 
         \begin{figure}[h]
             \centering
@@ -388,18 +390,16 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
 
     \subsection{Jetpack Compose}
 
-        \textit{Jetpack Compose} es un \gls{sdk} de Android para el desarrollo de interfaces gráficas, lanzado en su primera versión estable el 28 de julio de 2021 por Google \cite{bellini_jetpack_2021}. Asimismo, Jetpack Compose es parte de un \gls{sdk} más grande conocido como \textit{Android Jetpack}, el cual es promovido por Google para mejorar el desarrollo dentro de Android \cite{huaman_que_2018} \cite{android_developers_recursos_nodate}. 
+        \textit{Jetpack Compose} es un \gls{sdk} de Android para el desarrollo de interfaces gráficas, lanzado en su primera versión estable el 28 de julio de 2021 por Google \cite{bellini_jetpack_2021}. Asimismo, Jetpack Compose es parte de un \gls{sdk} más grande conocido como \textit{Android Jetpack} el cual es promovido por Google para mejorar el desarrollo dentro de Android \cite{huaman_que_2018} \cite{android_developers_recursos_nodate}. 
         
-        \textit{Jetpack Compose} permite desarrollar en el ecosistema Android de forma nativa interfaces gráficas de manera declarativa como en los sistemas React, Flutter o SwiftUI; siguiendo las tendencias actuales de la industria en el desarrollo de aplicaciones móviles. 
+        \textit{Jetpack Compose} permite desarrollar en el ecosistema Android de forma nativa interfaces gráficas de manera declarativa como en los sistemas React, Flutter o SwiftUI, siguiendo las tendencias actuales de la industria en el desarrollo de aplicaciones móviles. 
 
-        Hasta la aparición de esta herramienta, el desarrollo interfaces gráficas nativas en Android se realizaba con el enfoque conocido como programación imperativa. En este tipo de desarrollo es necesario especificar exhaustivamente cómo se va a construir dicha interfaz gráfica. En dicho proceso (conocido en Android como sistema de vistas) se codificaba un fichero \gls{xml}, en el que se describían todos los elementos gráficos (botones, textos, etc.); para que la aplicación accediera a dichos elementos y le aplicara manualmente modificaciones y transformaciones \cite{deloitte_spain_programacion_2021}. 
+        Hasta la aparición de esta herramienta, el desarrollo interfaces gráficas nativas en Android se realizaba con el enfoque conocido como \textbf{programación imperativa}. En este tipo de desarrollo es necesario especificar exhaustivamente cómo se va a construir dicha interfaz gráfica. En dicho proceso (conocido en Android como sistema de vistas) se codificaba un fichero \gls{xml}, en el que se describían todos los elementos gráficos (botones, textos, etc.) para que la aplicación accediera a dichos elementos y le aplicara manualmente modificaciones y transformaciones \cite{deloitte_spain_programacion_2021}. 
 
-        En cambio, el enfoque declarativo permite describir cómo se desea que sea la interfaz gráfica. Las interfaces que se construyen mediante \textit{Jetpack Compose} pueden estar interconectadas a estados descritos por el programador, describiendo cómo es la interfaz para cada posible estado. Cuando dicho estado cambia, el sistema cambia automáticamente la interfaz gráfica mostrada, simplificando y reduciendo enormemente el proceso de desarrollo \cite{leiva_que_2021}. 
+        En cambio, el \textbf{enfoque declarativo} permite describir cómo se desea que sea la interfaz gráfica. Las interfaces que se construyen mediante \textit{Jetpack Compose} pueden estar interconectadas a estados descritos por el programador, describiendo cómo es la interfaz para cada posible estado. Cuando dicho estado cambia, el sistema cambia automáticamente la interfaz gráfica mostrada, simplificando y reduciendo enormemente el proceso de desarrollo \cite{leiva_que_2021}. 
 
         A diferencia del sistema anterior, los componentes gráficos están desacoplados 
-        del sistema operativo; por lo que ya no se depende de la versión del terminal para mostrar correctamente la interfaz gráfica. Como se vió en la Sección 
-        \ref{section:contexto:Android}. la fragmentación en Android es un 
-        problema endémico, lo que complicaba notablemente el diseño de las aplicaciones Asimismo, es compatible con los componentes \gls{xml} del sistema anterior, lo que facilita la migración de los proyectos antiguos a este nuevo paradigma. 
+        del sistema operativo; por lo que ya no se depende de la versión del terminal para mostrar correctamente la interfaz gráfica. Como se vio en la Sección \ref{section:contexto:Android}. la fragmentación en Android es un problema endémico, lo que complicaba notablemente el diseño de las aplicaciones Asimismo, es compatible con los componentes \gls{xml} del sistema anterior, lo que facilita la migración de los proyectos antiguos a este nuevo paradigma. 
 
         No obstante, está diseñado para ser utilizado casi exclusivamente desde Kotlin, por lo que en algunos casos puede resultar en un pico de dificultad relevante si el equipo de desarrolladores no domina el lenguaje.
     
@@ -455,18 +455,17 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
             \item Soporte nativo para tema claro y oscuro, resolviendo la ausencia de dicho soporte.
         \end{itemize}
 
-        Se trata en definitiva de una modernización del lenguaje de diseño, haciéndolo más 
-        atractivo y completo a la vez que se garantiza cierta accesibilidad para los usuarios. Se han alejado de lo puramente funcional para abrazar el mundo de la personalización para el usuario.
+        Se trata en definitiva de una modernización del lenguaje de diseño haciéndolo más atractivo y completo a la vez que se garantiza cierta accesibilidad para los usuarios. Se han alejado de lo puramente funcional para abrazar el mundo de la personalización para el usuario.
 
     \subsection{Room}
-        Uno de los servicios que provee Android es SQLite, un \gls{sgbd} relacionales de bajo nivel, destinado para ser utilizado por las aplicaciones finales. No obstante, para muchas de ellas es un modelo demasiado rígido, por lo que Google creó en 2017 esta librería, la cual hace de intermediario entre SQLite y las aplicaciones \cite{leiva_room_2020}. 
+        Uno de los servicios que provee Android es SQLite, un \gls{sgbd} relacionales de bajo nivel destinado para ser utilizado por las aplicaciones finales. No obstante, para muchas de ellas es un modelo demasiado rígido, por lo que Google creó en 2017 esta librería, la cual hace de intermediario entre SQLite y las aplicaciones \cite{leiva_room_2020}. 
         
-        Técnicamente hablando se trata de una capa de abstracción sobre dicho sistema gestor, la cual permite reducir la complejidad de los usos comunes de la base de datos; sin perder el acceso a SQLite. Asimismo, esta librería brinda otras ventajas, como la verificación de las consultas
+        Técnicamente hablando, se trata de una capa de abstracción sobre dicho sistema gestor, la cual permite reducir la complejidad de los usos comunes de la base de datos; sin perder el acceso a SQLite. Asimismo, esta librería brinda otras ventajas, como la verificación de las consultas
         \gls{sql} en tiempo de compilación \cite{android_developers_como_nodate}.
 
         Los elementos básicos para utilizar esta librería son los siguientes:
         \begin{itemize}
-            \item \gls{dao}. En este elemento se crean todas las operaciones que se realizan sobre la base de datos: consultas, inserciones, etc.
+            \item \gls{dao}: en este elemento se crean todas las operaciones que se realizan sobre la base de datos: consultas, inserciones, etc.
             \item Entidades, las cuales se corresponden con una clase en Kotlin y normalmente con una tabla de base de datos. Con esta estructura se crean las tablas bases de datos, realizándose un mapeo de dichas tablas a objetos. Sobre los atributos de los objetos se pueden realizar anotaciones para establecer claves, índices, etc.
             \item Clase base de datos, donde se especificarán las entidades de la propia base de datos y cómo se instancia, reduciendo el código \gls{boilerplate}. Este procedimiento se detalla mediante una función que configura ciertos parámetros, como el nombre del fichero de la base de datos o características extra, como el uso de cifrado. Para la construcción de dicha instancia Room implementa el patrón factoría.
         \end{itemize}
@@ -475,14 +474,15 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
         \textit{Work Manager} es el componente oficial de Android para la planificación de subtareas, diseñada para simplificar el uso del amalgama de librerías para esta
         funcionalidad presentes en Android. Hasta entonces, según la versión del sistema, debían utilizarse unas u otras, estableciendo \textit{Work Manager} una única interfaz para esta funcionalidad; encargándose internamente de utilizar la librería correcta a bajo nivel \cite{android_developers_workmanager_nodate}.
         
-        Este componente admite dos tipos de tareas: puntuales y periódicas; las cuales se pueden planificar o cancelar. Además de la planificación temporal, permite el establecimiento de algunas restricciones, como que el dispositivo esté cargándose o disponga de conexión a internet, ejecutándose la tarea en cuestión solo cuando se cumplan todas las restricciones y directrices \cite{android_developers_arquitectura_nodate}.
+        Este componente admite dos tipos de tareas las \textbf{puntuales} y las \textbf{periódicas} las cuales se pueden planificar o cancelar. Además de la planificación temporal, permite el establecimiento de algunas restricciones
+        como que el dispositivo esté cargándose o disponga de conexión a internet, ejecutándose la tarea en cuestión solo cuando se cumplan todas las restricciones y directrices \cite{android_developers_arquitectura_nodate}.
 
         Asimismo, permite establecer una política de reintentos si las tareas no se han ejecutado correctamente, por lo que es la solución recomendada para los casos de uso que necesiten realizar ciertas operaciones de manera fiable.
 
     \subsection{Lottie}
         \textit{Lottie} es una biblioteca creada por Airbnb, la cual que busca facilitar la creación y uso de animaciones en entornos multiplataforma (web, iOS, Android, entre otros) \cite{rubianes_lottie_2021}. A diferencia de archivos como los \gls{gif}, esta librería permite que las animaciones puedan escalarse sin perder calidad (como en los ficheros \gls{svg}), haciendo hincapié en el rendimiento.
 
-        Concretamente, la librería renderiza en tiempo real animaciones de \textit{Adobe After Effects}, las cuales son exportadas como ficheros \gls{json} que serializan dicha animación \cite{airbnb_design_lottie_nodate}, utilizando una extensión \gls{open-source} conocida como \textit{Bodymovin}. Por tanto, estas animaciones pueden ser personalizadas completamente, a la vez que se reducen las necesidades de cómputo para mostrarlas. 
+        Concretamente, la librería renderiza en tiempo real animaciones de \textit{Adobe After Effects}, las cuales son exportadas como ficheros \gls{json} que serializan dicha animación \cite{airbnb_design_lottie_nodate} utilizando una extensión \gls{open-source} conocida como \textit{Bodymovin}. Por tanto, estas animaciones pueden ser personalizadas completamente, a la vez que se reducen las necesidades de cómputo para mostrarlas. 
         
         \begin{figure}[h]
             \centering
@@ -495,9 +495,9 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
 
     \subsection{Vico}
         
-        Vico es una biblioteca \gls{open-source} para la realización de gráficos, creada por Patryk Goworowski. Su particularidad reside en su compatibilidad tanto con el sistema de vistas tradicional como con \textit{Jetpack Compose}, algo único en el ecosistema de Android \cite{goworowski_vico_nodate}. Si bien no es tan potente como otras librerías como \textit{MPAndroid}, sus posibilidades son más que suficientes para este \gls{tfm}. 
+        Vico es una biblioteca \gls{open-source} para la realización de gráficos creada por Patryk Goworowski. Su particularidad reside en su compatibilidad tanto con el sistema de vistas tradicional como con \textit{Jetpack Compose}, algo único en el ecosistema de Android \cite{goworowski_vico_nodate}. Si bien no es tan potente como otras librerías como \textit{MPAndroid}, sus posibilidades son más que suficientes para este \gls{tfm}. 
         
-        Gracias al soporte nativo de \textit{Jetpack Compose} y \textit{Material Design 3}, esta librería introduce algunas mejoras en las gráficas, como una interconexión directa con los colores que se utilizan en tiempo de ejecución, incrementando la coherencia visual de la aplicación.
+        Gracias al soporte nativo de \textit{Jetpack Compose} y \textit{Material Design 3}, esta librería introduce algunas mejoras en las gráficas como una interconexión directa con los colores que se utilizan en tiempo de ejecución, incrementando la coherencia visual de la aplicación.
 
         Vico permite crear únicamente gráficos de barras y de líneas, ejemplificadas en las Figuras \ref{figure:vico:ejemplo_barras} y \ref{figure:vico:ejemplo_lineas}, respectivamente. Su humilde enfoque, si bien puede condicionar y limitar notablemente su uso, permite que contenga numerosos añadidos completamente personalizables, tales como: leyendas, marcadores (tanto fijos como temporales), \textit{líneas umbral}, personalización de los ejes, etc.
 
@@ -521,7 +521,7 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
     \subsection{Python}
         Python es un lenguaje de programación interpretado creado por Guido Van Rossum en 1991, con un marcado enfoque de construir código de la manera más clara y legible posible. Es uno de los lenguajes más populares de la escena, gracias a su facilidad de uso y a su enorme comunidad de desarrolladores. Estos últimos han creado un enorme ecosistema de librerías que facilita la creación de nuevos proyectos, especialmente para prototipos.
 
-        Actualmente es utilizado para todo tipo de tareas, tales como desarrollo web, aplicaciones científicas, inteligencia artificial o análisis de datos; casi siempre apoyándose en potentes librerías que mejoran notablemente el propio lenguaje. 
+        Actualmente, este es utilizado para todo tipo de tareas, tales como desarrollo web, aplicaciones científicas, inteligencia artificial o análisis de datos casi siempre apoyándose en potentes librerías que mejoran notablemente el propio lenguaje. 
 
         Sus principales características son las siguientes:
         \begin{itemize}
@@ -544,8 +544,8 @@ En este capítulo se introducen los conceptos teóricos sobre los que se asienta
     \subsection{MongoDB}
         MongoDB es un \gls{sgbd} no relacional orientado a documentos, diseñado para manejar grandes volúmenes de datos de manera eficiente y escalable. A diferencia de las bases de datos relacionales tradicionales, no cuenta con registros; sino documentos, unos ficheros con una extensión \gls{bson} \cite{mongodb_json_nodate}. 
 
-        Este enfoque no relacional le permite ofrecer un modelo de datos flexible, sin un esquema predefinido o rígido. Esto se traduce en una mayor libertad para almacenar datos y cambiar el modelo de los mismos, ya que para cambiar cualquier atributo no es necesario reconstruir el modelo; algo especialmente útil para prototipos o modelos de datos dinámicos.
+        Este enfoque no relacional le permite ofrecer un modelo de datos flexible, sin un esquema predefinido o rígido. Esto se traduce en una mayor libertad para almacenar datos y cambiar el modelo de los mismos, ya que para cambiar cualquier atributo no es necesario reconstruir el modelo, algo especialmente útil para prototipos o modelos de datos dinámicos.
         
-        Por otra parte, el modelo de consultas ofrece posibilidades similares a las de \gls{sql}, por lo que no supone una desventaja. También implementa conceptos presentes en las base de datos relacionales, como los índices. Además, al disponer de una gran comunidad detrás, existen numerosos módulos que lo permiten integrar con lenguajes de programación, como \textit{pymongo} para Python. 
+        Por otra parte, el modelo de consultas ofrece posibilidades similares a las de \gls{sql} lo que no supone una desventaja. También implementa conceptos presentes en las base de datos relacionales, como los índices. Además, al disponer de una gran comunidad detrás, existen numerosos módulos que lo permiten integrar con lenguajes de programación, como \textit{pymongo} para Python. 
 
-        Asimismo, posee otras dos grandes fortalezas: un núcleo distribuido, lo que permite una alta disponibilidad y escalabilidad; y una licencia de uso gratuito desde octubre de 2018, bajo la licencia \gls{agpl} \cite{mongodb_que_nodate}.
+        Asimismo, posee otras dos grandes fortalezas, a saber: un núcleo distribuido, lo que permite una alta disponibilidad y escalabilidad; y una licencia de uso gratuito desde octubre de 2018, bajo la licencia \gls{agpl} \cite{mongodb_que_nodate}.

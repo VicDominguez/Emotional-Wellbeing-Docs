@@ -1,7 +1,9 @@
-\chapter{[Por revisar] Resultados}
+\chapter{Resultados}
 \label{chapter:resultados}
 
 \chapquote{¡Los números Mason! ¿Qué significan?}{Jason Hudson}
+
+En este capítulo se muestran y detallan tanto los resultados obtenidos como los obstáculos identificado tras la implementación del sistema propuesto.
 
 \section{Verificación y validación de los requisitos}
 
@@ -63,10 +65,6 @@
         \ref{req:usuario:comunidad_soledad} & Aplicación y servidor & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
         \hline
         \ref{req:usuario:visualizar_actividad_fisica} & Aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
-        \hline
-        \ref{req:usuario:app_sin_internet} & Aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
-        \hline
-        \ref{req:usuario:interfaz_grafica} & Aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
         \hline
         \ref{req:usuario:analista_estres} & Servidor y aplicación & Implementado completamente & \textcolor{green}{\textbf{SI}} \\
         \hline
@@ -244,39 +242,21 @@
         \hline
         \ref{req:funcionales:comunidad_estres_dia_anterior_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
         \hline
-        \ref{req:funcionales:comunidad_estres_dia_anterior_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
-        \hline
         \ref{req:funcionales:comunidad_estres_siete_dias_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
-        \hline
-        \ref{req:funcionales:comunidad_estres_siete_dias_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
         \hline
         \ref{req:funcionales:comunidad_estres_semana_actual_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
         \hline
-        \ref{req:funcionales:comunidad_estres_semana_actual_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
-        \hline
         \ref{req:funcionales:comunidad_depresion_dia_anterior_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
-        \hline
-        \ref{req:funcionales:comunidad_depresion_dia_anterior_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
         \hline
         \ref{req:funcionales:comunidad_depresion_siete_dias_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
         \hline
-        \ref{req:funcionales:comunidad_depresion_siete_dias_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
-        \hline
         \ref{req:funcionales:comunidad_depresion_semana_actual_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
-        \hline
-        \ref{req:funcionales:comunidad_depresion_semana_actual_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
         \hline
         \ref{req:funcionales:comunidad_soledad_dia_anterior_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
         \hline
-        \ref{req:funcionales:comunidad_soledad_dia_anterior_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
-        \hline
         \ref{req:funcionales:comunidad_soledad_siete_dias_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
         \hline
-        \ref{req:funcionales:comunidad_soledad_siete_dias_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
-        \hline
         \ref{req:funcionales:comunidad_soledad_semana_actual_ver} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
-        \hline
-        \ref{req:funcionales:comunidad_soledad_semana_actual_criterio} & Servidor & Implementado & \textcolor{green}{\textbf{SI}} \\
         \hline
         \ref{req:funcionales:permiso_distancia} & Aplicación & Implementado & \textcolor{green}{\textbf{SI}} \\
         \hline
@@ -486,20 +466,21 @@
 \section{Problemas encontrados}
     \label{section:problemas}
 
-    A lo largo de esta sección serán detallados los problemas encontrados durante este \gls{tfm}.
+    A lo largo de esta sección serán detallados los problemas encontrados durante el desarrollo de este \gls{tfm}. A continuación, se listarán y describirán cada uno de ellos.
     
     \begin{enumerate}
         \item \textbf{Falta de experiencia del autor en la \gls{iss}}: el autor es plenamente consciente de la dificultad de la elaboración de los planes de estudios para cubrir todas las áreas relevantes de conocimiento, pero quiere poner de manifiesto que la \gls{iss} solo se ha cubierto mediante dos asignaturas, una de ellas en el \textit{Doble Grado en Ingeniería de Computadores y Tecnologías para la Sociedad de la Información} y la otra en este máster.
         
         Para interiorizar plenamente los conceptos de la \gls{iss}, el autor considera que es necesaria cierta experiencia práctica; por lo que se introdujo como un objetivo fundamental de este \gls{tfm} desde el inicio. Esta casuística ha ralentizado el ritmo de realización de este proyecto, si bien ha supuesto un enorme aprendizaje para el autor.
         
-        \item \textbf{Falta de experiencia del autor en el desarrollo de aplicaciones móviles}: se trata de un problema muy similar al anterior. Si bien el autor había desarrollado dos aplicaciones pequeñas en sendas asignaturas, se ha tratado del primer desarrollo a mayor escala; especialmente en cuanto al diseño e implementación de interfaces gráficas.
+        \item \textbf{Falta de experiencia del autor en el desarrollo de aplicaciones móviles}: se trata de un problema muy similar al anterior. Si bien el autor había desarrollado dos aplicaciones pequeñas en sendas asignaturas, se ha tratado del primer desarrollo a mayor escala; especialmente, en cuanto al diseño e implementación de interfaces gráficas.
     
         Esta circunstancia ha supuesto numerosos retos para el autor, tales como el aprendizaje de nuevos lenguajes de programación, el uso de patrones de diseño como inyección de dependencias o factoría o la realización de diseños \gls{responsive}. Como en el caso anterior, ha frenado el ritmo de desarrollo, pero a cambio ha supuesto una incalculable experiencia que ha permitido el aprendizaje de numerosos conceptos y/o técnicas.
     
         \item \label{resultados:problemas:planificador} \textbf{Agresivas optimizaciones de batería en algunos dispositivos}: este problema fue descubierto realizando pruebas en dispositivos reales al componente \textit{Work Manager}. En dichas comprobaciones se constató en que algunos dispositivos, como el \textit{Pocophone F1} del autor, el sistema operativo nunca ejecutaba en segundo plano las tareas planificadas, realizándose todas ellas de golpe únicamente cuando el usuario abría la aplicación.
     
-        Dado que este comportamiento no está documentado oficialmente, una investigación fue realizada para tratar de descubrir el problema de fondo y buscar una solución. Al parecer se trata de un problema reportado desde al menos el año 2017 \cite{mathew_why_2017}, en el cual ciertos fabricantes de \glspl{smartphone}, tales como Xiaomi, Samsung, Oppo o Redmi, realizan modificaciones en sus versiones de Android que rompen con el cumplimiento de las \gls{api} \cite{android_public_tracker_chinese_nodate} \cite{android_public_tracker_request_nodate}, levantando polémica ya que según las políticas de Android no está permitido \cite{cylon999_workmanager_2018}.
+        Dado que este comportamiento no está documentado oficialmente, una investigación fue realizada para tratar de descubrir el problema de fondo y buscar una solución. Al parecer se trata de un problema reportado desde al menos el año 2017 \cite{mathew_why_2017}, en el cual ciertos fabricantes de \glspl{smartphone}, tales como Xiaomi, Samsung, Oppo o Redmi, realizan modificaciones en sus versiones de Android que rompen con el cumplimiento de las \gls{api} \cite{android_public_tracker_chinese_nodate} \cite{android_public_tracker_request_nodate}
+        levantando polémica ya que según las políticas de Android no está permitido \cite{cylon999_workmanager_2018}.
     
         Con la finalidad de ahorrar batería, en estas versiones el sistema cierra forzosamente ciertas aplicaciones, cancelando todas las tareas en segundo plano \cite{manohar_is_2020}. Las aplicaciones más utilizadas por los usuarios, como \textit{WhatsApp}, parecen estar en una \textit{lista blanca}, lo que genera un enorme agravio comparativo; ya que el usuario debe desactivar manualmente esta optimización de batería \cite{shukla_work_2021}.
     
@@ -520,17 +501,17 @@
     
         Para resolver estas cuestiones, se apostó por utilizar únicamente pulseras Fitbit para el desarrollo, pero en cualquier caso estos problemas tienen un impacto directo en el uso de otras pulseras por parte de los usuarios.
         
-        \item \textbf{Inestabilidad del ecosistema \textit{Salud Conectada}}. A fecha de julio de 2024, el \gls{sdk} ofrecido por Google continúa aún en fase \textit{alpha}. Durante la realización de este \gls{tfm} se han producido numerosos cambios en dicho componente, tales como las modificaciones en las \gls{api} ofrecidas para los desarrolladores, o la necesidad de realizar una migración detallada para soportar Android 14 \cite{android_developers_migrate_nodate}; lo que ha supuesto un consumo adicional de recursos mantener la aplicación actualizada.
+        \item \textbf{Inestabilidad del ecosistema \textit{Salud Conectada}}. A fecha de julio de 2024, el \gls{sdk} ofrecido por Google continúa aún en fase \textit{alpha}. Durante la realización de este \gls{tfm} se han producido numerosos cambios en dicho componente, tales como las modificaciones en las \gls{api} ofrecidas para los desarrolladores, o la necesidad de realizar una migración detallada para soportar Android 14 \cite{android_developers_migrate_nodate}, lo que ha supuesto un consumo adicional de recursos mantener la aplicación actualizada.
     
-        \item \textbf{Falta de madurez y adopción de \textit{Jetpack Compose} y \textit{Material Design 3}}: se ha tratado de un problema sistemático y persistente a lo largo de todo el proyecto, que ha supuesto un sinfín de retos y de dificultades técnicas.
+        \item \textbf{Falta de madurez y adopción de \textit{Jetpack Compose} y \textit{Material Design 3}}: se ha tratado de un problema sistemático y persistente a lo largo de todo el proyecto, que ha supuesto un sinfín de retos y de dificultades técnicas. Algunos de ellos fueron resueltos mediante el uso de librerías, como se especificó en la Sección \ref{section:implementacion:librerias_app}.
     
-        En el caso de \textit{Jetpack Compose} lleva aproximadamente tres años en el mercado; aún presenta deficiencias a resolver. El caso más paradigmático encontrado en este proyecto ha sido el procedimiento de paso de parámetros en la navegación entre ventanas, el cual ha tenido que \textit{resolver} la comunidad mediante librerías \cite{costa_overview_nodate}.  
+        En el caso de \textit{Jetpack Compose} lleva aproximadamente tres años en el mercado; aún presenta deficiencias a resolver. El caso más paradigmático encontrado en este proyecto ha sido el procedimiento de paso de parámetros en la navegación entre ventanas, el cual ha tenido que \textit{resolver} la comunidad mediante librerías como \href{https://github.com/raamcosta/compose-destinations}{\textit{Compose Destinations}}.  
         
         Por otra parte, la aún escasa adopción de este \gls{framework} ha supuesto una clara desventaja en el acceso a documentación y recursos actualizados; provocando un incremento de dificultad más que notable de tareas tan habituales como la automatización de pruebas.
     
         Un caso similar ha sucedido con \textit{Material Design 3}, con la salvedad que su primera versión estable fue lanzada en octubre de 2022; pocas semanas después del comienzo de este proyecto. La ausencia de adopción masiva es comprensible, pero no la falta de madurez de la misma. 
         
-        Un caso paradigmático es el componente \textit{date picker}, utilizado para que el usuario pueda seleccionar fechas. Siete mes después de la primera versión estable se introdujo dicho componente en un estado experimental o inestable, el cual sigue sin haber abandonado casi dos años después de su especificación, como se puede ver en la Figura \ref{figure:problemas:date_picker}. Para resolver estos problemas, nuevamente la comunidad ha tomado la alternativa y ha propuesto implementaciones de acuerdo a esta especificación. \cite{keppeler_sheets-compose-dialogs_nodate}.
+        Un caso paradigmático es el componente \textit{date picker}, utilizado para que el usuario pueda seleccionar fechas. Siete mes después de la primera versión estable se introdujo dicho componente en un estado experimental o inestable, el cual sigue sin haber abandonado casi dos años después de su especificación, como se puede ver en la Figura \ref{figure:problemas:date_picker}. Para resolver estos problemas, nuevamente la comunidad ha tomado la alternativa y ha propuesto implementaciones de acuerdo a esta especificación, como \href{https://github.com/maxkeppeler/sheets-compose-dialogs}{\textit{Sheets-Compose-Dialogs}} o añadiendo nuevos componentes, como en \href{https://github.com/alorma/Compose-Settings}{\textit{Compose Settings}}.
     
         \begin{figure}[h]
             \centering
@@ -550,11 +531,19 @@
     
         \item \textbf{Ausencia de soporte para numerosas cuestiones}: las siguientes características implementadas en este proyecto disponen de un soporte muy limitado o inexistente, teniendo que acudir a librerías de terceros o afrontando numerosas dificultades técnicas:
             \begin{itemize}
-                \item Cambio de idioma manual por parte del usuario \cite{berezanskyi_how_2020}.
-                \item Menú y diálogos de ajustes \cite{borras_paronella_alormacompose-settings_nodate}.
+                \item Cambio de idioma manual, detallado en la Sección \ref{section:implementacion:librerias_app}.
+                \item Menús y diálogos de ajustes, detallado en la Sección \ref{section:implementacion:librerias_app}.
                 \item Diseño de nuevos componentes gráficos, como el elemento de progreso circular.
                 \item Elaboración de gráficas \gls{responsive} para móviles en posición apaisada.
                 \item Modificación del eje X de las gráficas para mostrar el día de la semana y/o el día del año.
             \end{itemize}
         \item \textbf{Implementación de los cuestionarios}: debido a la naturaleza de los cuestionarios de la aplicación, fue particularmente complejo diseñar e implementar una arquitectura que permitiera implementar cuestionarios con diferentes tipos de preguntas (categóricas y numéricas), presencia o ausencia de mecanismos de puntuación, terminación temprana en el caso del cuestionario de suicidio, etc.
     \end{enumerate}
+
+    % \section{Resultado: aplicación de Bienestar Emocional}
+
+    % \todo[inline]{V: Cancelado por falta de tiempo.}
+
+    % \todo[inline]{Falta en este capítulo una sección donde hagas un mini manual o una navegación por todas las pantallas de la app mostrando el resultado final}
+
+    % \todo[inline]{Modo marketing, estilo libre}

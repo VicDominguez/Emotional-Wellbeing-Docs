@@ -1,4 +1,4 @@
-\chapter{[Por revisar] Introducción}
+\chapter{Introducción}
 \label{chapter:introduccion}
 
 \chapquote{Si he logrado ver más lejos ha sido porque he subido a hombros de gigantes.}{Isaac Newton}
@@ -9,30 +9,29 @@ Paralelamente, se puede entender el bienestar emocional como \textit{``el conjun
 
 Las estadísticas sobre la salud mental arrojan una preocupante tendencia de cara al futuro, tanto a nivel nacional como internacional. Según el informe \textit{``La situación de la Salud Mental en España 2023''} \cite{confederacion_salud_mental_espana_cuatro_2023}, realizado con la colaboración de más de 2.000 personas, el 39,3\% de las personas valoraban de forma negativa su salud mental actual. Asimismo, el 42,1\% han sufrido una depresión a lo largo de su vida, mientras que un 36,9\%, ansiedad prolongada en el tiempo. 
 
-Asimismo, se estima que a nivel mundial una de cada cuatro personas tendrán un trastorno mental a lo largo de su vida. En España, casi la mitad de los y las jóvenes de entre 15 y 29 años (48,9\%) considera que ha tenido algún problema de salud mental \cite{confederacion_salud_mental_espana_salud_nodate}.
+Similarmente, se estima que a nivel mundial una de cada cuatro personas tendrán un trastorno mental a lo largo de su vida. En España, casi la mitad de los y las jóvenes de entre 15 y 29 años (48,9\%) considera que ha tenido algún problema de salud mental \cite{confederacion_salud_mental_espana_salud_nodate}.
 
-Como será explorado a lo largo del capítulo \ref{chapter:marco_teorico}, las consecuencias del deterioro de la salud mental dependen de cada trastorno e individuo, pero a modo ilustrativo se pueden nombrar las siguientes: dolor de cabeza, dificultades para dormir o alteraciones del apetito en el caso del estrés \cite{oms_estres_2023}, y en el caso de la depresión aislamiento social, dificultad para concentrarse, preocupación constante, fatiga crónica; o en los casos más graves el suicidio \cite{mayo_clinic_depresion_2022}.
+Como será explorado a lo largo del Capítulo \ref{chapter:marco_teorico}, las consecuencias del deterioro de la salud mental dependen de cada trastorno e individuo, pero a modo ilustrativo se pueden nombrar las siguientes: dolor de cabeza, dificultades para dormir o alteraciones del apetito en el caso del estrés \cite{oms_estres_2023}, y en el caso de la depresión aislamiento social, dificultad para concentrarse, preocupación constante, fatiga crónica; o en los casos más graves el suicidio \cite{mayo_clinic_depresion_2022}.
 
-Por tanto, en un contexto donde la salud mental adquiere una relevancia significativa, este \gls{tfm} se centrará en aportar una solución, desde un punto de vista informático; que permita a la sociedad combatir este acuciante problema, mediante el uso de tecnología innovadora y accesible.
+Por tanto, en un contexto donde la salud mental adquiere una relevancia significativa, este \gls{tfm} se centrará en aportar una solución, desde un punto de vista informático
+que permita a la sociedad combatir y prevenir este acuciante problema, mediante el uso de tecnología innovadora y accesible.
 
 \section{Objetivos}
     \label{sec:objetivos}
 
-    \subsection{Objetivo general}
+    El objetivo principal de este \gls{tfm} es la creación de un prototipo de un Sistema para el Bienestar Emocional, el cual se fundamenta en la detención precoz y mejora de los trastornos de salud mental en la comunidad universitaria (estudiantes, profesores y personal administrativo).  Además, este proyecto será planteado y desarrollado mediante las técnicas de la \gls{iss}.
 
-        El objetivo principal de este \gls{tfm} es la creación de un prototipo de un Sistema para el Bienestar Emocional, el cual se fundamenta en la detención precoz y mejora de los trastornos de salud mental en la comunidad universitaria (estudiantes, profesores y personal administrativo.  Además, este proyecto será planteado y desarrollado mediante las técnicas de la \gls{iss}.
-    
-        Para llevar a cabo este objetivo, el sistema a desarrollar constará de diversos módulos. En primer lugar, contará con una aplicación Android para dispositivos móviles la cual será utilizada por el usuario. Dicha aplicación se encargará de leer y/o recoger datos relativos a las condiciones física y psicológica del propio usuario, para ofrecer al usuario información de su estado de bienestar, sugerencias y consejos en relación a dicho estado.
-    
-        Por otra parte, el sistema podrá conectarse a dispositivos \glspl{wearable}, los cuales ofrecerán datos a la aplicación relativos al estado físico del usuario, tales como frecuencia cardíaca, hábitos de sueño, distancia recorrida, ejercicio físico realizado, entre otros. 
-        Debido a la naturaleza de los mismos, el usuario podrá regular en todo momento el uso de estos datos.
-    
-        Asimismo, el sistema constará de un tercer módulo, en este caso una base de datos alojada en un servidor de la \gls{etsisi}. Este componente software se encargará de recoger los datos anonimizados de los usuarios para generar estadísticas que puedan visualizarse en la aplicación, a la vez que permita a futuros estudiantes de la Escuela realizar investigaciones que ahonden en la detención precoz y el impacto de los trastornos de salud mental en la comunidad universitaria.
+    Para llevar a cabo este objetivo, el sistema a desarrollar constará de diversos módulos. En primer lugar, contará con una aplicación Android para dispositivos móviles la cual será utilizada por el usuario. Dicha aplicación se encargará de leer y/o recoger datos relativos a las condiciones física y psicológica del propio usuario para ofrecer al usuario información de su estado de bienestar, sugerencias y consejos en relación a dicho estado.
 
-    \subsection{Objetivos específicos}
-        Para completar el objetivo general, los siguientes objetivos específicos han sido establecidos:
+    Por otra parte, el sistema podrá conectarse a dispositivos \glspl{wearable}, los cuales ofrecerán datos a la aplicación relativos al estado físico del usuario, tales como frecuencia cardíaca, hábitos de sueño, distancia recorrida, ejercicio físico realizado, entre otros. 
+    Debido a la naturaleza de los mismos, el usuario podrá regular en todo momento el uso de estos datos.
+
+    Asimismo, el sistema constará de un tercer módulo, en este caso una base de datos alojada en un servidor de la \gls{etsisi}. Este componente software se encargará de recoger los datos anonimizados de los usuarios para generar estadísticas que puedan visualizarse en la aplicación, a la vez que permita a futuros estudiantes de la Escuela realizar investigaciones que ahonden en la detención precoz y el impacto de los trastornos de salud mental en la comunidad universitaria.
+
+    \subsection*{Objetivos específicos}
+       Para concretizar el objetivo general, los siguientes objetivos específicos han sido establecidos:
         \begin{itemize}
-            \item Uso de metodologías y estándares propios de la \gls{iss} para la realización del análisis y el diseño del sistema. En particular se utilizarán los estándares \gls{ieee} 830 y \gls{sysml}, respectivamente.
+            \item Uso de metodologías y estándares propios de la \gls{iss} para la realización del análisis y el diseño del sistema. En particular, se utilizarán los estándares \gls{ieee} 830 y \gls{sysml}, respectivamente.
             \item Estudio de sistemas y procedimientos utilizados en el campo de la psicología para la obtención del estado del Bienestar Emocional, los cuales puedan ser incorporados en un Sistema Informático.
             \item Utilización de componentes software estándares en la industria para la lectura de los datos de los dispositivos \glspl{wearable} con el objetivo principal de garantizar el soporte, el mantenimiento y la extensibilidad en el acceso a dichos datos. Para ello se deberá estudiar qué posibilidades existen para la lectura de los datos y la compatibilidad con los \glspl{wearable} disponibles en el mercado español, que puedan ser utilizados por los usuarios.
             \item Desarrollo de la aplicación de usuario con especial atención hacia la usabilidad y la calidad, detallados en los siguientes puntos:
@@ -41,7 +40,7 @@ Por tanto, en un contexto donde la salud mental adquiere una relevancia signific
                 \item Diseño e implementación de una interfaz gráfica agradable para el usuario con la finalidad de crear una experiencia de usuario cómoda y de calidad, especialmente en el uso de la aplicación y la visualización de los datos. Asimismo, la interfaz deberá ser \gls{responsive}, para que se adaptarte a las diferentes pantallas de los usuarios.
                 \item Localización de los textos tanto en castellano como en inglés para permitir el uso de la misma por parte de personal internacional.
             \end{itemize}
-            \item Diseño e implementación del componente del servidor que permita ser utilizado y extendido en futuros trabajos, como por ejemplo el desarrollo de un módulo de aprendizaje automático que permita mejorar el seguimiento del Bienestar Emocional.
+            \item Diseño e implementación del componente del servidor que permita ser utilizado y extendido en futuros trabajos, como por ejemplo, el desarrollo de un módulo de aprendizaje automático que permita mejorar el seguimiento del Bienestar Emocional.
         \end{itemize}
 
 
@@ -50,9 +49,9 @@ Por tanto, en un contexto donde la salud mental adquiere una relevancia signific
     
     Desafortunadamente, no se puede entender la salud mental sin la gran estigmatización que ha sufrido y sin los prejuicios hacia las enfermedades y los pacientes que las sufren \cite{delgado_rompiendo_2021} \cite{andres_tallarda_combatir_2020}. Según la Fundación de Salud Mental de Inglaterra, nueve de cada diez personas que sufren algún problema de Salud Mental se han visto afectadas negativamente por el estigma o la discriminación \cite{mental_health_foundation_stigma_nodate}.
 
-    Si bien en los últimos años la salud mental ha ganado visibilidad y atención, gracias a iniciativas como la creación del Observatorio Estatal de Salud Mental, Derechos e Igualdad \cite{confederacion_salud_mental_espana_nace_2022} o la concienciación por parte de individuos particulares; continúa siendo un problema relativamente oculto que afecta profundamente a nuestra sociedad y que no se está resolviendo correctamente. 
+    Si bien en los últimos años la salud mental ha ganado visibilidad y atención, gracias a iniciativas como la creación del Observatorio Estatal de Salud Mental, Derechos e Igualdad \cite{confederacion_salud_mental_espana_nace_2022} o la concienciación por parte de individuos particulares ésta continúa siendo un problema relativamente oculto que afecta profundamente a nuestra sociedad y que no se está resolviendo correctamente. 
     
-    Según estadísticas de la Confederación Salud Mental España \cite{confederacion_salud_mental_espana_salud_nodate} \cite{aguilar_laura_2022}, en nuestro pais más de la mitad de las de las personas con trastorno mental que necesitan tratamiento no lo reciben, y un porcentaje significativo no recibe el adecuado. Más de la mitad (58,5\%) de las personas diagnosticadas con un problema de salud mental ha sentido rechazo social por ello en algún momento de su vida, mientras que un 11\%, no ha comunicado a nadie su problema.
+    Según estadísticas de la Confederación Salud Mental España \cite{confederacion_salud_mental_espana_salud_nodate} \cite{aguilar_laura_2022}, en nuestro pais más de la mitad de las de las personas con trastorno mental que necesitan tratamiento no lo reciben, y un porcentaje significativo no recibe el adecuado. Adicionalmente, más de la mitad (58,5\%) de las personas diagnosticadas con un problema de salud mental ha sentido rechazo social por ello en algún momento de su vida, mientras que un 11\%, no ha comunicado a nadie su problema.
     
     En el caso de que el paciente busque ayuda, no se vislumbra un entorno muy halagüeño. Las listas de espera dentro de la Sanidad Pública, reflejadas en la Figura \ref{fig:intro:dias_espera}, provocan que la salud mental se perciba como poco menos que un lujo. 
 
@@ -63,7 +62,7 @@ Por tanto, en un contexto donde la salud mental adquiere una relevancia signific
         \label{fig:intro:dias_espera}
     \end{figure}
     
-    Para el 57,3\% de la población \cite{confederacion_salud_mental_espana_cuatro_2023}, acudir a un profesional de la salud mental privado es económicamente inaccesible, mientras que en nuestro país solo se disponen en la Sanidad Pública de seis psicólogos por cada 100.000 habitantes \cite{antolin_listas_2023}; muy por debajo de países de nuestro entorno como Alemania (41) o Francia (15), entre otros. 
+    Para el 57,3\% de la población \cite{confederacion_salud_mental_espana_cuatro_2023}, acudir a un profesional de la salud mental privado es económicamente inaccesible, mientras que en nuestro país solo se disponen en la Sanidad Pública de $6$ psicólogos por cada $100.000$ habitantes \cite{antolin_listas_2023}; muy por debajo de países de nuestro entorno como Alemania ($41$) o Francia ($15$), entre otros. 
     
     Por otra parte, las enfermedades mentales afectan a todo tipo de personas. Algunas personas que la sociedad percibe como exitosas han sufrido problemas de salud mental, desde \textit{``pequeños''} brotes como Alejandro Sanz \cite{lopez_chicon_que_2023} \cite{riano_alejandro_2023}, hasta casos de suicidio, como el del cantante Chester Bennington, el cual experimentó depresión durante largas fases de su vida \cite{el_universal_nada_2020} \cite{gambin_historia_2022}.
 
@@ -81,7 +80,7 @@ Por tanto, en un contexto donde la salud mental adquiere una relevancia signific
         \label{fig:intro_testimonio_madre}
     \end{figure}
 
-    No obstante, si se acude a las estadísticas oficiales, en España, durante 2022 se suicidaron 4.227 personas. En otras palabras, once vidas perdidas cada día. Una estadística absolutamente demoledora que desde 2018, no para de aumentar, como se puede visualizar en la Figura \ref{fig:intro:muertes_suicidio}. A nivel global, la cifra asciende a cerca de 800.000 personas se suicidan \textbf{cada año}, siendo la segunda causa de muerte entre los jóvenes de 16 a 29 años \cite{confederacion_salud_mental_espana_salud_nodate}.
+    No obstante, si se acude a las estadísticas oficiales, en España, durante 2022 se suicidaron $4.227$ personas. En otras palabras, once vidas perdidas cada día. Una estadística absolutamente demoledora que desde 2018, no para de aumentar, como se puede visualizar en la Figura \ref{fig:intro:muertes_suicidio}. A nivel global, la cifra asciende a cerca de $800.000$ personas que se suicidan \textbf{cada año}, siendo la segunda causa de muerte entre los jóvenes de $16$ a $29$ años \cite{confederacion_salud_mental_espana_salud_nodate}.
     
     \begin{figure}[h]
         \centering
@@ -90,7 +89,7 @@ Por tanto, en un contexto donde la salud mental adquiere una relevancia signific
         \label{fig:intro:muertes_suicidio}
     \end{figure}
 
-    El suicidio se mantiene como primera causa no natural de muerte en nuestro país desde 2008, por encima de otras quizá más presentes en el imaginario colectivo, como los accidentes de tráfico o los ahogamientos; como se puede ver en la Figura \ref{fig:intro:causas_no_naturales}.
+    El suicidio se mantiene como primera causa no natural de muerte en nuestro país desde 2008 por encima de otras quizá más presentes en el imaginario colectivo como los accidentes de tráfico o los ahogamientos, tal y como se puede ver en la Figura \ref{fig:intro:causas_no_naturales}.
     
     \begin{figure}[h]
         \centering
@@ -101,11 +100,11 @@ Por tanto, en un contexto donde la salud mental adquiere una relevancia signific
 
      Sin embargo, estas funestas métricas solo muestran a las personas que desgraciadamente decidieron acabar con su vida, sin mostrar los casos de personas que sufren en vida. Según el catedrático en Psiquiatría Jose Luis Ayuso Mateos \textit{``por cada persona que fallece, hay 25 que lo han intentado''}  \cite{sanchez_once_2023}.  Por otra parte el 14,5\% de la población ha tenido ideas suicidas o lo ha intentado \cite{confederacion_salud_mental_espana_cuatro_2023}.
 
-    Sus consecuencias son demoledoras; y en muchas ocasiones continua siendo un tema tabú. Transciende mucho más allá de \textit{simples} pensamientos de angustia o tristeza, siendo una cuestión que el conjunto de la sociedad no está siendo capaz de controlar y solucionar.
+    Sus consecuencias son demoledoras, en muchas ocasiones continua siendo un tema tabú. Transciende mucho más allá de \textit{simples} pensamientos de angustia o tristeza, siendo una cuestión que el conjunto de la sociedad no está siendo capaz de controlar y solucionar.
     
 \section{Motivación}
 
-    Si se ahonda en el bienestar emocional dentro de la comunidad universitaria, se puede tomar como punto de partida el informe realizado por el Ministerio de Universidades en colaboración con el Ministerio de Sanidad titulado \textit{``La salud mental en el estudiantado de las universidades españoles''} \cite{galache_gobierno_2023} \cite{ministerio_de_universidades_salud_2023} el cual es de recomendada lectura. El nombrado estudio fue realizado en dos fases en su parte cuantitativa, correspondiendo las fases respectivas al final de los cuatrimestres primero y segundo del curso 2022-23. 
+    Si se ahonda en el bienestar emocional dentro de la comunidad universitaria se puede tomar como punto de partida el informe realizado por el Ministerio de Universidades en colaboración con el Ministerio de Sanidad titulado \textit{``La salud mental en el estudiantado de las universidades españoles''} \cite{galache_gobierno_2023} \cite{ministerio_de_universidades_salud_2023} el cual es de recomendada lectura. El nombrado estudio fue realizado en dos fases en su parte cuantitativa, correspondiendo las fases respectivas al final de los cuatrimestres primero y segundo del curso 2022-23. 
     
     En él, se detalla que en las últimas dos semanas, aproximadamente la mitad de los estudiantes presentaron síntomas depresivos, mientras que la ideación suicida estaba presente en aproximadamente uno de cada cinco, como se puede ver en la Figura \ref{fig:intro:sintomas_depresivos_suicida}. 
     
@@ -125,7 +124,7 @@ Por tanto, en un contexto donde la salud mental adquiere una relevancia signific
         \label{fig:intro:sintomas_ansiedad_insomnio}
     \end{figure}
     
-    La sección cualitativa muestra una vez más los problemas que\textit{disponen} los estudiantes para acceder al apoyo psicológico, nombrando barreras como las listas de espera o el número limitado de sesiones, o la soledad en la realización del doctorado.
+    La sección cualitativa muestra una vez más los problemas que \textit{disponen} los estudiantes para acceder al apoyo psicológico, nombrando barreras como las listas de espera o el número limitado de sesiones, o la soledad en la realización del doctorado.
     
     Estos datos ponen de manifiesto, tanto dentro como fuera de la comunidad universitaria la necesidad crítica de trabajar tanto en la prevención, en el diagnóstico precoz y en la atención a las personas que sufren un trastorno mental que, bien por desconocimiento o por estigma, no reciben el tratamiento que necesitan.
     

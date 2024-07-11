@@ -1,11 +1,11 @@
-\chapter{[En revisión] Análisis del sistema propuesto}
+\chapter{Análisis del sistema propuesto}
 \label{chapter:analisis}
 
 \chapquote{Cada día me gusta levantarme porque hay otro reto.}{Roger Penske}
 
-El propósito de este capítulo consiste en la \gls{ers} correspondiente al proyecto desarrollado en este \gls{tfm}. Para la elaboración de la misma se ha tomado como base el estándar IEEE 830.
+El propósito de este capítulo consiste en la \gls{ers} correspondiente al proyecto desarrollado en este \gls{tfm}. Para la elaboración de la misma se ha tomado como base el estándar IEEE 830 \cite{noauthor_ieee_1998}.
 
-Esta especificación recoge todas las características, objetivos, restricciones y suposiciones para el desarrollo del proyecto, definiendo claramente el sistema a desarrollar y sirviendo asimismo de referencia para la verificación y validación de la solución implementada. Para dicha definición en primer lugar serán documentadas qué restricciones, suposiciones y dependencias son asumidas para posteriormente determinar los requisitos de usuario, los requisitos no funcionales y por último los requisitos de interfaces externas.
+Esta especificación recoge todas las características, objetivos, restricciones y suposiciones para el desarrollo del proyecto, definiendo claramente el sistema a desarrollar y sirviendo asimismo de referencia para la verificación y validación de la solución implementada. Para dicha definición en primer lugar serán documentadas qué restricciones, suposiciones y dependencias son asumidas para posteriormente determinar los requisitos de usuario, los requisitos no funcionales y por último, los requisitos de interfaces externas.
 
 Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparente, en especial al tratar datos sensibles; el público objetivo de esta especificación de requisitos es cualquier persona que desee conocer las características del sistema y sobre qué criterios, restricciones o supuestos ha sido diseñado, incrementando la confianza social en el proyecto.
         
@@ -17,15 +17,15 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
 
     Para ello, este sistema se encargará de monitorizar y visualizar las medidas de estrés, soledad, depresión y suicidio, en base a cuestionarios que la persona rellene diariamente; planteándose un complemento para mejorar la sensibilidad de los usuarios sobre la evolución de su salud mental. Para ello, aportará consejos y remitiendo a un profesional cuando la situación del usuario sea delicada; quedando fuera del proyecto cuestiones como el asesoramiento médico profesional o una atención psicológica personalizada.
 
-    Dichos consejos estarán personalizados para el nivel de gravedad (o ausencia de la misma) de cada medida, permitiendo además que el usuario pueda ver claramente cómo se ha sentido durante los últimos días, semanas o meses para cada variable.
+    Dichos consejos estarán personalizados para el nivel de gravedad (o ausencia de la misma) de cada medida permitiendo además, que el usuario pueda ver claramente cómo se ha sentido durante los últimos días, semanas o meses para cada variable.
 
     Por otra parte, para reducir la estigmatización que aún hoy se percibe de la Salud Mental, el sistema presentará al usuario una visualización de una serie de datos sobre estrés, soledad y depresión del resto de usuarios.
 
-    Asimismo, la aplicación recopilará los datos de su dispositivo \gls{wearable} a los que el usuario haya dado acceso, con la finalidad de construir un conjunto de datos anonimizado con el que se pueda desarrollar un modelo predictivo de esas medidas, permitiendo un apoyo más integral al usuario. 
+    Asimismo, la aplicación recopilará los datos de su dispositivo \gls{wearable} a los que el usuario haya dado acceso con la finalidad de construir un conjunto de datos anonimizado con el que se pueda desarrollar un modelo predictivo de esas medidas, permitiendo un apoyo más integral al usuario. 
 
     Finalmente, tanto la información de los datos de las medidas del usuario como sus datos sanitarios, serán enviados a un servidor alojado en la universidad para su guardado únicamente en el caso de los datos sanitarios. En cuanto a las medidas de los usuarios, serán guardadas y procesadas para presentar al usuario las tendencias del resto de usuarios.
-
-   La \gls{ers} que se presenta a continuación se estructura de la siguiente forma:
+    
+    La \gls{ers} que se presenta a continuación se estructura de la siguiente forma:
 
     \begin{enumerate}
         \item En la Sección \ref{req:descripcion} se especifica la descripción general del producto a desarrollar. Para ello, se pone al usuario en contexto (Sección \ref{req:descripcion:perspectiva}), para continuar especificando los usuarios del producto (Sección \ref{req:descripcion:usuarios}). Tras ello se detallarán las restricciones generales del producto, sus suposiciones y dependencias en las secciones 
@@ -40,18 +40,17 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
     \subsection{Perspectiva del producto}
         \label{req:descripcion:perspectiva}
 
-        Como se detalló en las secciones \ref{sec:objetivos} y 
-        \ref{req:intro:alcance}, el objetivo principal de este \gls{tfm} es la creación de un prototipo de un Sistema para el Bienestar Emocional, sobre el cual pueda servir como punto de partida para proyectos de futuros alumnos, incorporando más funcionalidades y profundidad en las mismas sin necesidad de rehacer gran parte del trabajo. 
+        Como se detalló en las secciones \ref{sec:objetivos} y \ref{req:intro:alcance}, el objetivo principal de este \gls{tfm} es la creación de un prototipo de un Sistema para el Bienestar Emocional, sobre el cual pueda servir como punto de partida para proyectos de futuros alumnos, incorporando más funcionalidades y profundidad en las mismas sin necesidad de rehacer gran parte del trabajo. 
 
         Este prototipo, a través de su aplicación móvil, se apoyará en el sistema operativo Android para su posible uso en una enorme variedad de dispositivos móviles. Asimismo, a través de su \gls{sdk}, se interactuará con el sistema operativo para ciertos escenarios, como la planificación de tareas.
 
-        Por otra parte, para la lectura de datos de los \glspl{wearable} nos apoyaremos en el nuevo componente de Android \textit{Salud Conectada} (o \textit{Health Connect} en inglés) Dicho componente nos permite la abstracción de los componentes hardware, delegando a los fabricantes la conexión de sus dispositivos con este sistema y unificando el acceso y uso de los datos de actividad física. La extracción de datos por otros canales queda fuera de este proyecto, ya que los cauces legales están fuertemente restringidos. 
+        Por otra parte, para la lectura de datos de los \glspl{wearable} se contará con en el nuevo componente de Android \textit{Salud Conectada} (o \textit{Health Connect} en inglés). Dicho componente permitirá la abstracción de los componentes hardware delegando a los fabricantes la conexión de sus dispositivos con este sistema y unificando el acceso y uso de los datos de actividad física. La extracción de datos por otros canales queda fuera de este proyecto, ya que los cauces legales están fuertemente restringidos. 
 
-        En cuando al procesamiento de los datos, será utilizado un servidor puesto a disposición por la Universidad como prototipo, no contemplándose ningún trabajo de despliegue en un escenario real del mismo.
+        En cuanto al procesamiento de los datos será utilizado un servidor puesto a disposición por la Universidad como prototipo, no contemplándose ningún trabajo de despliegue en un escenario real del mismo.
 
         Asimismo, para el diseño de las medidas de seguimiento y los consejos para los usuarios se ha contado con la colaboración de dos psicólogas investigadoras, las cuales han asesorado en la elección de los cuestionarios puntuales y han elaborado el contenido tanto de los cuestionarios diarios como de las recomendaciones. 
         
-        Por último, se busca que este sistema sea un marco para la investigación en el campo de la Psicología, permitiendo la realización de experimentos que necesiten acceso a datos de actividad física o cuestionarios.
+        Por último, se busca que este sistema sea un marco para la investigación en el campo de la Psicología permitiendo la realización de experimentos que necesiten acceso a datos de actividad física o cuestionarios.
 
 
     \subsection{Características de los usuarios finales}
@@ -63,13 +62,13 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
             \item Los usuarios dispondrán de un \gls{smartphone} con sistema operativo Android, cuya versión cumpla la \ref{req:restriccion:android_minimo}.
             \item El usuario realizará de forma habitual los cuestionarios ofrecidos por la aplicación.
             \item El usuario estará dispuesto a que sus respuestas a los cuestionarios sean subidas a un servidor de la universidad, con un identificador de usuario anónimo.
-            \item Opcionalmente, el usuario dispondrá de un dispositivo \gls{wearable} compatible con \textit{Salud Conectada}, con la aplicación del fabricante\footnote{A fecha de realización de este proyecto, los fabricantes que garantizan compatiblidad con este ecosistema son Fitbit o Samsung} correspondiente instalada y el dispositivo conectado a su \gls{smartphone}.
+            \item Opcionalmente, el usuario dispondrá de un dispositivo \gls{wearable} compatible con \textit{Salud Conectada}, con la aplicación del fabricante\footnote{A fecha de realización de este proyecto, los fabricantes que garantizan compatibilidad con este ecosistema son Fitbit o Samsung} correspondiente instalada y el dispositivo conectado a su \gls{smartphone}.
             
         \end{enumerate}
         
     \subsection{Restricciones generales}
         \label{req:descripcion:restricciones}
-        Debido funcionalmente a los componentes en los que se apoya el proyecto para ser implementable, es necesario definir ciertas restricciones generales.
+        Debido funcionalmente a los componentes en los que se apoya el proyecto para ser implementable, es necesario definir ciertas restricciones generales, a saber:
         \begin{enumerate}[label=\textbf{RG-\arabic*}]
             \item \label{req:restriccion:android_referencia} La aplicación se ejecutará sobre el sistema operativo Android. Concretamente, se tomará Android 14 como referencia.
             \item \label{req:restriccion:android_minimo} La aplicación especificará Android 9 como versión mínima, pudiéndose ejecutar la aplicación en cualquier versión entre la mínima y la referente.
@@ -81,9 +80,9 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
         \begin{enumerate}[label=\textbf{SUP-\arabic*}]
             \item El usuario de la aplicación dispone de conexión a Internet de forma habitual.
             \item El usuario de la aplicación es el mismo que utiliza el dispositivo \gls{wearable}.
-            \item Las respuestas del usuario a los cuestionarios son veraces y verídicas.
+            \item Las respuestas del usuario a los cuestionarios serán veraces y verídicas.
             \item El usuario rellenará frecuentemente los cuestionarios.
-            \item El usuario utiliza con cierta asiduidad el dispositivo \gls{wearable}.
+            \item El usuario utilizará con cierta asiduidad el dispositivo \gls{wearable}.
             \item El servidor donde se aloja el componente homónimo está disponible.
             \item El usuario desactiva el ahorro de batería relativo a la aplicación, para que la optimización de energía del sistema operativo no interfiera con la aplicación en determinados escenarios.
             \item Se supone que habrá más de un usuario utilizando la aplicación diariamente.
@@ -95,9 +94,8 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
     
         \begin{enumerate}[label=\textbf{DEP-\arabic*}]
             \item \label{req:dependencias:integracion_correcta} Para garantizar la lectura de los datos del dispositivo \gls{wearable}, el fabricante debe integrar su sistema con el \gls{framework} de \textit{Salud Conectada}, escribiendo regularmente en este componente los datos recogidos por el \gls{wearable}.
-            \todo[inline]{Reescritura completada de esta dependencia}
             \item En relación con \ref{req:dependencias:integracion_correcta}, el \gls{wearable} del usuario escribirá en \textit{Salud Conectada} los datos recogidos.
-            \item \label{req:dependencias:planificacion} Para la ejecución de las tareas recurrentes, es necesario que el sistema operativo otorgue recursos de ejecución a la aplicación.
+            \item \label{req:dependencias:planificacion} Para la ejecución de las tareas recurrentes es necesario que el sistema operativo otorgue recursos de ejecución a la aplicación.
         \end{enumerate}
 
 \section{Requisitos específicos}
@@ -106,7 +104,7 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
     \subsection{Requisitos funcionales}
         \label{req:especificos:funcionales}
 
-        \todo[inline]{El permiso de notificaciones solo se ha detallado una vez, ya que se reusa por toda la app}
+        Siguiendo las pautas de algunas metodologías tradicionales o híbridas dentro de la Ingeniería de Requisitos, aquellas que, como por ejemplo tienen descritas sus prácticas en el libro \textit{Software Requirements} \cite{wiegers_software_2013}, en esta sección de se definirán los requisitos funcionales del sistema a desarrollar agrupados por sus correspondientes requisitos de usuario. En este contexto, los requisitos de usuario tiene como finalidad describir las necesidades de usuario de las que se derivan dichos requisitos funcionales. 
 
         \newlist{req-usuario}{enumerate}{1}
         \newlist{req-funcionales}{enumerate}{1}
@@ -115,35 +113,33 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
             \item \label{req:usuario:seguimiento_estres} Como usuario, quiero realizar un seguimiento del estrés para controlar mi evolución del mismo.
             \begin{enumerate}[series=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
                 \item \label{req:funcionales:estres_diario_info} El seguimiento del estrés se realizará mediante cuestionarios diarios que recogerán la siguiente información del usuario: nerviosismo, angustia, sensación de actividad y preocupación.
-                \todo[inline]{V: Decimos aqui que ese cuestionario se encuentra en el Anexo X o ya en diseño?}
-                \item \label{req:funcionales:estres_diario_manana} El sistema desplegará un cuestionario matutino diario de estrés sobre las 9:00 hora local del usuario, recogiendo la información definida en \ref{req:funcionales:estres_diario_info} relativa al momento correspondiente.
-                \item \label{req:funcionales:estres_diario_noche}  El sistema desplegará un cuestionario vespertino diario de estrés sobre las 21:00 hora local del usuario, recogiendo la información definida en \ref{req:funcionales:estres_diario_info} relativa al día en su totalidad.      
-                \todo[inline]{V: Si quitamos la info de puntual en el primer requisito, como introducimos que tenemos puntuales? A modo de contraste o calibración? Que aporta otras cosas?}
-                \item \label{req:funcionales:estres_puntual} El sistema desplegará un cuestionario puntual para el seguimiento del estrés sobre las 15:00 hora local del usuario, cada dos semanas. Dicho cuestionario será el PSS-10, cuya definición se recoge en el Anexo \ref{cuestionarios:pss_10}.
-                \item \label{req:funcionales:estres_umbrales} La medida estrés estará calibrada en tres umbrales: baja, moderada y alta.
-                \item \label{req:funcionales:estres_umbrales_consejo} Para cada umbral de la medida estrés se dispondrá de al menos un mensaje o recomendación.
+                \item \label{req:funcionales:estres_diario_manana} La aplicación desplegará un cuestionario matutino diario de estrés sobre las 9:00 hora local del usuario, recogiendo la siguiente información del nerviosismo, angustia, sensación de actividad y preocupación relativa al momento correspondiente. La definición de este cuestionario se recoge en el Anexo \ref{cuestionarios:estres_manana}.
+                \item \label{req:funcionales:estres_diario_noche}  La aplicación desplegará un cuestionario vespertino diario de estrés sobre las 21:00 hora local del usuario, recogiendo la siguiente información del nerviosismo, angustia, sensación de actividad y preocupación relativa al día en su totalidad. La definición de este cuestionario se recoge en el Anexo \ref{cuestionarios:estres_noche}.
+                \item \label{req:funcionales:estres_puntual} La aplicación desplegará un cuestionario puntual para el seguimiento del estrés sobre las 15:00 hora local del usuario, cada dos semanas. Dicho cuestionario será el PSS-10, cuya definición se recoge en el Anexo \ref{cuestionarios:pss_10}.
+                \item \label{req:funcionales:estres_umbrales} La medida estrés estará calibrada en tres umbrales, a saber: baja, moderada y alta.
+                \item \label{req:funcionales:estres_umbrales_consejo} Para cada umbral de la medida de estrés se dispondrá de al menos un mensaje o recomendación.
                 \item \label{req:funcionales:estres_notificacion} La creación de cada cuestionario de estrés será notificada al usuario.
-                \item \label{req:funcionales:estres_cuestionario_aplazar} El usuario podrá terminar un cuestionario de estrés en curso en otro momento.
+                \item \label{req:funcionales:estres_cuestionario_aplazar} La aplicación permitirá ir guardando parcialmente las respuestas que un usuario realice de un cuestionario de estrés.
                 \item \label{req:funcionales:estres_cuestionario_pendientes} La aplicación mostrará al usuario si dispone de cuestionarios de estrés por completar para su finalización.
                 \item \label{req:funcionales:estres_cuestionario_numero} Al finalizar un cuestionario de estrés, se le presentará al usuario el resultado numérico del mismo.
-                \item \label{req:funcionales:estres_cuestionario_categoria} Al finalizar un cuestionario de estrés, se le presentará al usuario el resultado categórico del mismo.
+                \item \label{req:funcionales:estres_cuestionario_categoria} Al finalizar un cuestionario de estrés, se le presentará al usuario el resultado cualitativo del mismo.
                 \item \label{req:funcionales:estres_cuestionario_consejo} Al finalizar un cuestionario de estrés, se le presentará al usuario un consejo o recomendación según su nivel de estrés.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
-            \item \label{req:usuario:seguimiento_depresion} Como usuario, quiero realizar un seguimiento de la depresión para controlar mis niveles de la misma.
+            \item \label{req:usuario:seguimiento_depresion} Como usuario quiero realizar un seguimiento de la depresión para controlar mis niveles de la misma.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
                 \item \label{req:funcionales:depresion_diario_info} El seguimiento de la depresión se realizará mediante cuestionarios diarios que recogerán la siguiente información del usuario: tristeza, apatía y sensación de vacío.
-                \item \label{req:funcionales:depresion_diario_manana} El sistema desplegará un cuestionario matutino diario de depresión sobre las 9:00, hora local del usuario, recogiendo la información definida en \ref{req:funcionales:depresion_diario_info} relativa al momento correspondiente.
-                \item \label{req:funcionales:depresion_diario_noche}  El sistema desplegará un cuestionario vespertino diario de depresión sobre las 21:00, hora local del usuario, recogiendo la información definida en \ref{req:funcionales:depresion_diario_info} relativa al día en su totalidad.
-                \item \label{req:funcionales:depresion_puntual} El sistema desplegará un cuestionario puntual para el seguimiento de la depresión sobre las 15:00, hora local del usuario, cada dos semanas. Dicho cuestionario será el PHQ-9, cuya definición se recoge en el Anexo \ref{cuestionarios:phq_9}.
-                \item \label{req:funcionales:depresion_umbrales} La medida depresión estará calibrada en tres umbrales: baja, moderada y alta.
+                \item \label{req:funcionales:depresion_diario_manana} La aplicación desplegará un cuestionario matutino diario de depresión sobre las 9:00, hora local del usuario, recogiendo la siguiente información de la tristeza, apatía y sensación de vacío relativa al momento correspondiente. La definición de este cuestionario se recoge en el Anexo \ref{cuestionarios:depresion_manana}.
+                \item \label{req:funcionales:depresion_diario_noche}  La aplicación desplegará un cuestionario vespertino diario de depresión sobre las 21:00, hora local del usuario, recogiendo la siguiente información de la tristeza, apatía y sensación de vacío relativa al día en su totalidad. La definición de este cuestionario se recoge en el Anexo \ref{cuestionarios:depresion_noche}.
+                \item \label{req:funcionales:depresion_puntual} La aplicación desplegará un cuestionario puntual para el seguimiento de la depresión sobre las 15:00, hora local del usuario, cada dos semanas. Dicho cuestionario será el PHQ-9, cuya definición se recoge en el Anexo \ref{cuestionarios:phq_9}.
+                \item \label{req:funcionales:depresion_umbrales} La medida depresión estará calibrada en tres umbrales, a saber: baja, moderada y alta.
                 \item \label{req:funcionales:depresion_umbrales_consejo} Para cada umbral de la medida depresión se dispondrá de al menos un mensaje o recomendación.
                 \item \label{req:funcionales:depresion_notificacion} La creación de cada cuestionario de depresión será notificada al usuario.
-                \item \label{req:funcionales:depresion_cuestionario_aplazar} El usuario podrá terminar un cuestionario de depresión en curso en otro momento.
-                \item \label{req:funcionales:depresion_cuestionario_pendientes} La aplicación mostrará al usuario si dispone de cuestionarios de depresión por completar para su finalización.
+                \item \label{req:funcionales:depresion_cuestionario_aplazar} La aplicación permitirá ir guardando parcialmente las respuestas que un usuario realice de un cuestionario de depresión.
+                \item \label{req:funcionales:depresion_cuestionario_pendientes} La aplicación mostrará al usuario si dispone de cuestionarios de depresión por completar.
                 \item \label{req:funcionales:depresion_cuestionario_numero} Al finalizar un cuestionario de depresión, se le presentará al usuario el resultado numérico del mismo.
-                \item \label{req:funcionales:depresion_cuestionario_categoria} Al finalizar un cuestionario de depresión, se le presentará al usuario el resultado categórico del mismo.
+                \item \label{req:funcionales:depresion_cuestionario_categoria} Al finalizar un cuestionario de depresión, se le presentará al usuario el resultado cualitativo del mismo.
                 \item \label{req:funcionales:depresion_cuestionario_consejo} Al finalizar un cuestionario de depresión, se le presentará al usuario un consejo o recomendación según su nivel de depresión.
             \end{enumerate}
         \end{enumerate}
@@ -151,16 +147,16 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
             \item \label{req:usuario:seguimiento_soledad} Como usuario, quiero realizar un seguimiento de la soledad para controlar mis niveles de la misma.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
                 \item \label{req:funcionales:soledad_diario_info} El seguimiento de la soledad se realizará mediante cuestionarios diarios que recogerán la siguiente información del usuario: sensación de soledad, sentimiento de incomprensión y sensación de falta de apoyo.
-                \item \label{req:funcionales:soledad_diario_manana} El sistema desplegará un cuestionario matutino diario de soledad sobre las 9:00, hora local del usuario, recogiendo la información definida en \ref{req:funcionales:soledad_diario_info} relativa al momento correspondiente.
-                \item \label{req:funcionales:soledad_diario_noche}  El sistema desplegará un cuestionario vespertino diario de soledad sobre las 21:00, hora local del usuario, recogiendo la información definida en \ref{req:funcionales:soledad_diario_info} relativa al día en su totalidad.
-                \item \label{req:funcionales:soledad_puntual} El sistema desplegará un cuestionario puntual para el seguimiento de la soledad sobre las 15:00, hora local del usuario, cada dos semanas. Dicho cuestionario será el UCLA-20, cuya definición se recoge en el Anexo \ref{cuestionarios:ucla_20}.
-                \item \label{req:funcionales:soledad_umbrales} La medida soledad estará calibrada en tres umbrales: baja, moderada y alta.
+                \item \label{req:funcionales:soledad_diario_manana} La aplicación desplegará un cuestionario matutino diario de soledad sobre las 9:00, hora local del usuario, recogiendo la siguiente información de la sensación de soledad, sentimiento de incomprensión y sensación de falta de apoyo relativa al momento correspondiente. La definición de este cuestionario se recoge en el Anexo \ref{cuestionarios:soledad_manana}.
+                \item \label{req:funcionales:soledad_diario_noche}  La aplicación desplegará un cuestionario vespertino diario de soledad sobre las 21:00, hora local del usuario, recogiendo la siguiente información de la sensación de soledad, sentimiento de incomprensión y sensación de falta de apoyo relativa al día en su totalidad. La definición de este cuestionario se recoge en el Anexo \ref{cuestionarios:soledad_noche}.
+                \item \label{req:funcionales:soledad_puntual} La aplicación desplegará un cuestionario puntual para el seguimiento de la soledad sobre las 15:00, hora local del usuario, cada dos semanas. Dicho cuestionario será el UCLA-20, cuya definición se recoge en el Anexo \ref{cuestionarios:ucla_20}.
+                \item \label{req:funcionales:soledad_umbrales} La medida soledad estará calibrada en tres umbrales, a saber: baja, moderada y alta.
                 \item \label{req:funcionales:soledad_umbrales_consejo} Para cada umbral de la medida soledad se dispondrá de al menos un mensaje o recomendación.
                 \item \label{req:funcionales:soledad_notificacion} La creación de cada cuestionario de soledad será notificada al usuario.
-                \item \label{req:funcionales:soledad_cuestionario_aplazar} El usuario podrá terminar un cuestionario en curso de soledad en otro momento.
+                \item \label{req:funcionales:soledad_cuestionario_aplazar} La aplicación permitirá ir guardando parcialmente las respuestas que un usuario realice de un cuestionario de soledad.
                 \item \label{req:funcionales:soledad_cuestionario_pendientes} La aplicación mostrará al usuario si dispone de cuestionarios de soledad por completar para su finalización.
                 \item \label{req:funcionales:soledad_cuestionario_numero} Al finalizar un cuestionario de soledad, se le presentará al usuario el resultado numérico del mismo.
-                \item \label{req:funcionales:soledad_cuestionario_categoria} Al finalizar un cuestionario de soledad, se le presentará al usuario el resultado categórico del mismo.
+                \item \label{req:funcionales:soledad_cuestionario_categoria} Al finalizar un cuestionario de soledad, se le presentará al usuario el resultado cualitativo del mismo.
                 \item \label{req:funcionales:soledad_cuestionario_consejo} Al finalizar un cuestionario de soledad, se le presentará al usuario un consejo o recomendación según su nivel de soledad.
             \end{enumerate}
         \end{enumerate}
@@ -168,40 +164,40 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
             \item \label{req:usuario:seguimiento_suicidio}  Como usuario, quiero realizar un seguimiento del riesgo de suicidio para controlar mi nivel del mismo.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
                 \item \label{req:funcionales:suicidio_diario_info} El seguimiento del riesgo de suicidio se realizará mediante cuestionarios diarios que recogerán la siguiente información del usuario: pensamientos suicidas y posibilidades de suicidio.
-                \item \label{req:funcionales:suicidio_diario_manana} El sistema desplegará un cuestionario matutino diario de riesgo de suicidio sobre las 9:00, hora local del usuario, recogiendo la información definida en \ref{req:funcionales:suicidio_diario_info} relativa al momento correspondiente.
-                \item \label{req:funcionales:suicidio_diario_noche}  El sistema desplegará un cuestionario vespertino diario de riesgo de suicidio sobre las 21:00, hora local del usuario, recogiendo la información definida en \ref{req:funcionales:suicidio_diario_info} relativa al día en su totalidad.
-                \item \label{req:funcionales:suicidio_umbrales} La medida de riesgo de suicidio estará calibrada en tres umbrales: bajo, moderado y alto.
+                \item \label{req:funcionales:suicidio_diario_manana} La aplicación desplegará un cuestionario matutino diario de riesgo de suicidio sobre las 9:00, hora local del usuario, recogiendo la siguiente información de los pensamientos suicidas y posibilidades de suicidio relativa al momento correspondiente. La definición de este cuestionario se recoge en el Anexo \ref{cuestionarios:suicidio_manana}.
+                \item \label{req:funcionales:suicidio_diario_noche}  La aplicación desplegará un cuestionario vespertino diario de riesgo de suicidio sobre las 21:00, hora local del usuario, recogiendo la siguiente información de los pensamientos suicidas y posibilidades de suicidio relativa al día en su totalidad. La definición de este cuestionario se recoge en el Anexo \ref{cuestionarios:suicidio_noche}.
+                \item \label{req:funcionales:suicidio_umbrales} La medida de riesgo de suicidio estará calibrada en tres umbrales, a saber: bajo, moderado y alto.
                 \item \label{req:funcionales:suicidio_consejo} Para cada umbral de la medida riesgo de suicidio se dispondrá de al menos un mensaje o recomendación.
                 \item \label{req:funcionales:suicidio_notificacion} La creación de cada cuestionario de riesgo de suicidio será notificada al usuario.
-                \item \label{req:funcionales:suicidio_cuestionario_aplazar} El usuario podrá terminar un cuestionario de riesgo de suicidio en curso en otro momento.
-                \item \label{req:funcionales:suicidio_cuestionario_pendientes} La aplicación mostrará al usuario si dispone de cuestionarios de riesgo de suicidio por completar para su finalización.
-                \item \label{req:funcionales:suicidio_cuestionario_consejo} Al finalizar un cuestionario de riesgo de suicido, se le presentará al usuario un consejo o recomendación según su nivel de riesgo de suicido.
+                \item \label{req:funcionales:suicidio_cuestionario_aplazar} La aplicación permitirá ir guardando parcialmente las respuestas que un usuario realice de un cuestionario de suicidio.
+                \item \label{req:funcionales:suicidio_cuestionario_pendientes} La aplicación mostrará al usuario si dispone de cuestionarios de riesgo de suicidio por completar.
+                \item \label{req:funcionales:suicidio_cuestionario_consejo} Al finalizar un cuestionario de riesgo de suicidio, se le presentará al usuario un consejo o recomendación según su nivel de riesgo de suicidio.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
-            \item \label{req:usuario:visualizar_estres} Como usuario, quiero visualizar el nivel más reciente del estrés fácilmente para recordarlo.
+            \item \label{req:usuario:visualizar_estres} Como usuario, quiero visualizar mi nivel más reciente de estrés de forma fácil para que pueda tomar conciencia de mi estado y recordarlo.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
                 \item \label{req:funcionales:visualizar_estres_numero} La aplicación mostrará al usuario el resultado numérico del último cuestionario de estrés.
-                \item \label{req:funcionales:visualizar_estres_categoria} La aplicación mostrará al usuario el nivel categórico del último cuestionario de estrés.
+                \item \label{req:funcionales:visualizar_estres_categoria} La aplicación mostrará al usuario el nivel cualitativo del último cuestionario de estrés.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
-            \item \label{req:usuario:visualizar_depresion} Como usuario, quiero visualizar el nivel más reciente de la depresión fácilmente para recordarlo.
+            \item \label{req:usuario:visualizar_depresion} Como usuario, quiero visualizar mi nivel más reciente de la depresión de forma fácil para que pueda tomar conciencia de mi estado y recordarlo.
+            
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
                 \item \label{req:funcionales:visualizar_depresion_numero} La aplicación mostrará al usuario el resultado numérico del último cuestionario de depresión.
-                \item \label{req:funcionales:visualizar_depresion_categoria} La aplicación mostrará al usuario el nivel categórico del último cuestionario de depresión.
+                \item \label{req:funcionales:visualizar_depresion_categoria} La aplicación mostrará al usuario el nivel cualitativo del último cuestionario de depresión.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
-            \item \label{req:usuario:visualizar_soledad} Como usuario, quiero visualizar el nivel más reciente de soledad fácilmente para recordarlo.
+            \item \label{req:usuario:visualizar_soledad} Como usuario, quiero visualizar mi nivel más reciente de soledad de forma fácil para que pueda tomar conciencia de mi estado y recordarlo.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
                 \item \label{req:funcionales:visualizar_soledad_numero} La aplicación mostrará al usuario el resultado numérico del último cuestionario de soledad.
-                \item \label{req:funcionales:visualizar_soledad_categoria} La aplicación mostrará al usuario el nivel categórico del último cuestionario de soledad.
+                \item \label{req:funcionales:visualizar_soledad_categoria} La aplicación mostrará al usuario el nivel cualitativo del último cuestionario de soledad.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item \label{req:usuario:consejo_estres} Como usuario, quiero disponer de al menos un consejo para cada nivel de estrés para saber cómo reducirlo en cada momento.
-            \todo[inline]{Estos niveles serían categóricos, no numéricos, queda claro o hay que matizar?}
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
                 \item \label{req:funcionales:consejo_cuestionario_estres} La aplicación mostrará un consejo sobre el nivel de estrés registrado al terminar un cuestionario.
                 \item \label{req:funcionales:consejo_visualizacion_estres} En la visualización de la última medición de estrés se podrá consultar un consejo sobre el mismo. 
@@ -257,63 +253,51 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item \label{req:usuario:comunidad_estres} Como usuario, deseo consultar estadísticas de estrés de la comunidad de usuarios para poner en contexto mis niveles y apreciar la evolución de la comunidad.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                \item \label{req:funcionales:comunidad_estres_dia_anterior_ver} El usuario podrá visualizar la media de estrés de los usuarios del día anterior.
-                \item \label{req:funcionales:comunidad_estres_dia_anterior_criterio} La media de los cuestionarios de estrés del día anterior se realizará a partir de todos los cuestionarios completados que haya recibido el servido de los usuarios.
-                \item \label{req:funcionales:comunidad_estres_siete_dias_ver} El usuario podrá visualizar la media de estrés de los usuarios de los últimos siete días.
-                \item \label{req:funcionales:comunidad_estres_siete_dias_criterio} La media de los cuestionarios de estrés de los últimos siete días se realizará a partir de todos los cuestionarios completados que haya recibido el servido de los usuarios.
-                \item \label{req:funcionales:comunidad_estres_semana_actual_ver} El usuario podrá visualizar la media de estrés de los usuarios de la semana actual.
-                \item \label{req:funcionales:comunidad_estres_semana_actual_criterio} La media de los cuestionarios de estrés de la semana actual se realizará a partir de todos los cuestionarios completados que haya recibido el servido de los usuarios.
+                \item \label{req:funcionales:comunidad_estres_dia_anterior_ver} El usuario podrá visualizar la media de estrés que han exhibido los usuarios de la comunidad durante el día anterior.
+                \item \label{req:funcionales:comunidad_estres_siete_dias_ver} El usuario podrá visualizar la media de estrés de los usuarios de la comunidad que se ha observado en los últimos siete días.
+                \item \label{req:funcionales:comunidad_estres_semana_actual_ver} El usuario podrá visualizar la media de estrés de los usuarios de la comunidad sobre los datos de la semana actual.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item \label{req:usuario:comunidad_depresion} Como usuario, deseo consultar estadísticas de depresión de la comunidad de usuarios para poner en contexto mis niveles y apreciar la evolución de la comunidad.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                \item \label{req:funcionales:comunidad_depresion_dia_anterior_ver} El usuario podrá visualizar la media de depresión de los usuarios del día anterior.
-                \item \label{req:funcionales:comunidad_depresion_dia_anterior_criterio} La media de los cuestionarios de depresión del día anterior se realizará a partir de todos los cuestionarios completados que haya recibido el servido de los usuarios.
-                \item \label{req:funcionales:comunidad_depresion_siete_dias_ver} El usuario podrá visualizar la media de depresión de los usuarios de los últimos siete días.
-                \item \label{req:funcionales:comunidad_depresion_siete_dias_criterio} La media de los cuestionarios de depresión de los últimos siete días se realizará a partir de todos los cuestionarios completados que haya recibido el servido de los usuarios.
-                \item \label{req:funcionales:comunidad_depresion_semana_actual_ver} El usuario podrá visualizar la media de depresión de los usuarios de la semana actual.
-                \item \label{req:funcionales:comunidad_depresion_semana_actual_criterio} La media de los cuestionarios de depresión de la semana actual se realizará a partir de todos los cuestionarios completados que haya recibido el servido de los usuarios.
+                \item \label{req:funcionales:comunidad_depresion_dia_anterior_ver} El usuario podrá visualizar la media de depresión que han exhibido los usuarios de la comunidad durante el día anterior.
+                \item \label{req:funcionales:comunidad_depresion_siete_dias_ver} El usuario podrá visualizar la media de depresión de los usuarios de la comunidad que se ha observado en los últimos siete días.
+                \item \label{req:funcionales:comunidad_depresion_semana_actual_ver} El usuario podrá visualizar la media de depresión de los usuarios de la comunidad sobre los datos de la semana actual.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
             \item \label{req:usuario:comunidad_soledad}  Como usuario, deseo consultar estadísticas de soledad de la comunidad de usuarios para poner en contexto mis niveles y apreciar la evolución de la comunidad.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                \item \label{req:funcionales:comunidad_soledad_dia_anterior_ver} El usuario podrá visualizar la media de soledad de los usuarios del día anterior.
-                \item \label{req:funcionales:comunidad_soledad_dia_anterior_criterio} La media de los cuestionarios de soledad del día anterior se realizará a partir de todos los cuestionarios completados que haya recibido el servido de los usuarios.
-                \item \label{req:funcionales:comunidad_soledad_siete_dias_ver} El usuario podrá visualizar la media de soledad de los usuarios de los últimos siete días.
-                \item \label{req:funcionales:comunidad_soledad_siete_dias_criterio} La media de los cuestionarios de soledad de los últimos siete días se realizará a partir de todos los cuestionarios completados que haya recibido el servido de los usuarios.
-                \item \label{req:funcionales:comunidad_soledad_semana_actual_ver} El usuario podrá visualizar la media de soledad de los usuarios de la semana actual.
-                \item \label{req:funcionales:comunidad_soledad_semana_actual_criterio} La media de los cuestionarios de soledad de la semana actual se realizará a partir de todos los cuestionarios completados que haya recibido el servido de los usuarios.
+                \item \label{req:funcionales:comunidad_soledad_dia_anterior_ver} El usuario podrá visualizar la media de soledad que han exhibido los usuarios de la comunidad durante el día anterior.
+                \item \label{req:funcionales:comunidad_soledad_siete_dias_ver} El usuario podrá visualizar la media de soledad de los usuarios de la comunidad que se ha observado en los últimos siete días.
+                \item \label{req:funcionales:comunidad_soledad_semana_actual_ver} El usuario podrá visualizar la media de soledad de los usuarios de la comunidad sobre los datos de la semana actual.
             \end{enumerate}
         \end{enumerate}
-        
-        \todo[inline]{Desnivel ganado es la traducción oficial de elevation gained pero suena horrible, mejor traducción?}
-        \todo[inline]{Plantas subidas es la traducción oficial de floors climbed pero suena horrible, mejor traducción?} 
             
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
-            \item \label{req:usuario:visualizar_actividad_fisica} Como usuario, quiero visualizar mis los datos de actividad física recogidos por la aplicación.
+            \item \label{req:usuario:visualizar_actividad_fisica} Como usuario, quiero visualizar mis datos de actividad física recogidos por la aplicación.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                \item \label{req:funcionales:permiso_distancia} La aplicación solicitará al usuario explícitamente el permiso de lectura de datos de distancia recorrida.
-                \item \label{req:funcionales:permiso_desnivel} La aplicación solicitará al usuario explícitamente el permiso de lectura de datos de desnivel ganado.
-                \item \label{req:funcionales:permiso_ejercicio} La aplicación solicitará al usuario explícitamente el permiso de lectura de datos de sesiones de ejercicio.
-                \item \label{req:funcionales:permiso_plantas} La aplicación solicitará al usuario explícitamente el permiso de lectura de datos de plantas subidas.
-                \item \label{req:funcionales:permiso_pulsaciones} La aplicación solicitará al usuario explícitamente el permiso de lectura de datos de frecuencia cardíaca.
-                \item \label{req:funcionales:permiso_sueno} La aplicación solicitará al usuario explícitamente el permiso de lectura de datos de sueño.
-                \item \label{req:funcionales:permiso_pasos} La aplicación solicitará al usuario explícitamente el permiso de lectura de datos de pasos realizados.
-                \item \label{req:funcionales:permiso_calorias} La aplicación solicitará al usuario explícitamente el permiso de lectura de datos de calorías quemadas.
-                \item \label{req:funcionales:permiso_peso} La aplicación solicitará al usuario explícitamente el permiso de lectura de datos de peso corporal.
-                \item \label{req:funcionales:extraer_distancia} La aplicación extraerá del dispositivo \gls{wearable} datos de distancia recorrida por el usuario.
-                \item \label{req:funcionales:extraer_desnivel} La aplicación extraerá del dispositivo \gls{wearable} datos de desnivel ganado por el usuario.
-                \item \label{req:funcionales:extraer_ejercicio} La aplicación extraerá del dispositivo \gls{wearable} datos de las sesiones de ejercicio realizadas por el usuario.
-                \item \label{req:funcionales:extraer_plantas} La aplicación extraerá del dispositivo \gls{wearable} datos de las plantas subidas por el usuario.
-                \item \label{req:funcionales:extraer_pulsaciones} La aplicación extraerá del dispositivo \gls{wearable} datos de la frecuencia cardíaca del usuario.
-                \item \label{req:funcionales:extraer_sueno} La aplicación extraerá del dispositivo \gls{wearable} datos de sueño del usuario.
-                \item \label{req:funcionales:extraer_pasos} La aplicación extraerá del dispositivo \gls{wearable} datos de los pasos realizados por el usuario.
+                \item \label{req:funcionales:permiso_distancia} La aplicación solicitará al usuario explícitamente el permiso de lectura de los datos de la distancia recorrida recogidos desde el dispositivo \gls{wearable}.
+                \item \label{req:funcionales:permiso_desnivel} La aplicación solicitará al usuario explícitamente el permiso de lectura de los datos del desnivel obtenido recogidos desde el dispositivo \gls{wearable}. 
+                \item \label{req:funcionales:permiso_ejercicio} La aplicación solicitará al usuario explícitamente el permiso de lectura de los datos de las sesiones de ejercicio realizadas recogidos desde el dispositivo \gls{wearable}.
+                \item \label{req:funcionales:permiso_plantas} La aplicación solicitará al usuario explícitamente el permiso de lectura de los datos de los pisos subidos durante la actividad física recogidos desde el dispositivo \gls{wearable}.
+                \item \label{req:funcionales:permiso_pulsaciones} La aplicación solicitará al usuario explícitamente el permiso de lectura de los datos de la frecuencia cardíaca recogidos desde el dispositivo \gls{wearable}.
+                \item \label{req:funcionales:permiso_sueno} La aplicación solicitará al usuario explícitamente el permiso de lectura de los datos de sueño recogidos desde el dispositivo \gls{wearable}.
+                \item \label{req:funcionales:permiso_pasos} La aplicación solicitará al usuario explícitamente el permiso de lectura de los datos de los pasos realizados recogidos desde el dispositivo \gls{wearable}.
+                \item \label{req:funcionales:permiso_calorias} La aplicación solicitará al usuario explícitamente el permiso de lectura de los datos de las calorías quemadas recogidos desde el dispositivo \gls{wearable}.
+                \item \label{req:funcionales:permiso_peso} La aplicación solicitará al usuario explícitamente el permiso de lectura de los datos del peso corporal recogidos desde el dispositivo \gls{wearable}.
+                \item \label{req:funcionales:extraer_distancia} La aplicación extraerá del dispositivo \gls{wearable} los datos de la distancia recorrida por el usuario.
+                \item \label{req:funcionales:extraer_desnivel} La aplicación extraerá del dispositivo \gls{wearable} los datos de desnivel ganado por el usuario.
+                \item \label{req:funcionales:extraer_ejercicio} La aplicación extraerá del dispositivo \gls{wearable} los datos de las sesiones de ejercicio realizadas por el usuario.
+                \item \label{req:funcionales:extraer_plantas} La aplicación extraerá del dispositivo \gls{wearable} los datos de las plantas subidas por el usuario.
+                \item \label{req:funcionales:extraer_pulsaciones} La aplicación extraerá del dispositivo \gls{wearable} los datos de la frecuencia cardíaca del usuario.
+                \item \label{req:funcionales:extraer_sueno} La aplicación extraerá del dispositivo \gls{wearable} los datos de sueño del usuario.
+                \item \label{req:funcionales:extraer_pasos} La aplicación extraerá del dispositivo \gls{wearable} los datos de los pasos realizados por el usuario.
                 \item \label{req:funcionales:extraer_calorias} La aplicación extraerá del dispositivo \gls{wearable} datos de las calorías quemadas por el usuario.
-                \item \label{req:funcionales:extraer_peso} La aplicación extraerá del dispositivo \gls{wearable} datos de peso del usuario.
+                \item \label{req:funcionales:extraer_peso} La aplicación extraerá del dispositivo \gls{wearable} los datos de peso del usuario.
                 \item \label{req:funcionales:visualizar_distancia} La aplicación dispondrá de un panel para visualizar los datos recogidos de distancia recorrida.
-                \item \label{req:funcionales:visualizar_desnivel} La aplicación dispondrá de un panel para visualizar los datos recogidos de desnivel ganado.
+                \item \label{req:funcionales:visualizar_desnivel} La aplicación dispondrá de un panel para visualizar los datos recogidos del desnivel obtenido.
                 \item \label{req:funcionales:visualizar_ejercicio} La aplicación dispondrá de un panel para visualizar los datos recogidos de sesiones de ejercicio.
                 \item \label{req:funcionales:visualizar_plantas} La aplicación dispondrá de un panel para visualizar los datos recogidos de plantas subidas.
                 \item \label{req:funcionales:visualizar_frecuencia} La aplicación dispondrá de un panel para visualizar los datos recogidos de frecuencia cardíaca.
@@ -324,53 +308,41 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
-            \item \label{req:usuario:app_sin_internet} Como usuario, me gustaría utilizar la aplicación sin necesidad de disponer de Internet para garantizar el uso de la misma en todo momento.
-            %\begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                \todo[inline]{Deriva únicamente en requisitos no funcionales? Tiene sentido tener un requisito de usuario que no deriva en funcionales verdad?}
-            %\end{enumerate}
-        \end{enumerate}
-        \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
-            \item \label{req:usuario:interfaz_grafica} Como usuario, me gustaría disponer de una interfaz gráfica que me permita usar fácilmente la aplicación en cualquier dispositivo.
-            %\begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                 \todo[inline]{Deriva únicamente en requisitos no funcionales? Tiene sentido tener un requisito de usuario que no deriva en funcionales verdad?}
-            %\end{enumerate}
-        \end{enumerate}
-        \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
-            \item \label{req:usuario:analista_estres} Como analista de datos, quiero poder consultar los datos de estrés recogidos de todos los usuarios para utilizarlos en investigación.
+            \item \label{req:usuario:analista_estres} Como analista de datos quiero poder consultar los datos de estrés recogidos de todos los usuarios para utilizarlos en mi investigación.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                 \item \label{req:funcionales:estres_diario_formato} Para cada cuestionario de estrés diario se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, la puntuación numérica, el nivel categórico y la opción marcada para cada pregunta.
-                \item \label{req:funcionales:estres_puntual_formato} Para cada cuestionario de estrés puntual se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, la puntuación numérica, el nivel categórico y la opción marcada para cada pregunta.
+                 \item \label{req:funcionales:estres_diario_formato} Para cada cuestionario de estrés diario se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, la puntuación numérica, el nivel cualitativo y la opción marcada para cada pregunta.
+                \item \label{req:funcionales:estres_puntual_formato} Para cada cuestionario de estrés puntual se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, la puntuación numérica, el nivel cualitativo y la opción marcada para cada pregunta.
                 \item \label{req:funcionales:estres_finalizado_servidor} El servidor recogerá de cada usuario sus cuestionarios de estrés finalizados, agrupados por identificador de usuario.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
-            \item \label{req:usuario:analista_depresion} Como analista de datos, quiero poder consultar los datos de depresión recogidos de todos los usuarios para utilizarlos en investigación.
+            \item \label{req:usuario:analista_depresion} Como analista de datos quiero poder consultar los datos de depresión recogidos de todos los usuarios para utilizarlos en investigación.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                 \item \label{req:funcionales:depresion_diario_formato} Para cada cuestionario de depresión diario se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, la puntuación numérica, el nivel categórico y la opción marcada para cada pregunta.
-                \item \label{req:funcionales:depresion_puntual_formato} Para cada cuestionario de depresión puntual se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, la puntuación numérica, el nivel categórico y la opción marcada para cada pregunta.
+                 \item \label{req:funcionales:depresion_diario_formato} Para cada cuestionario de depresión diario se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, la puntuación numérica, el nivel cualitativo y la opción marcada para cada pregunta.
+                \item \label{req:funcionales:depresion_puntual_formato} Para cada cuestionario de depresión puntual se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, la puntuación numérica, el nivel cualitativo y la opción marcada para cada pregunta.
                 \item \label{req:funcionales:depresion_finalizado_servidor} El servidor recogerá de cada usuario sus cuestionarios de depresión finalizados, agrupados por identificador de usuario.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
-            \item \label{req:usuario:analista_soledad} Como analista de datos, quiero poder consultar los datos de soledad recogidos de todos los usuarios para utilizarlos en investigación.
+            \item \label{req:usuario:analista_soledad} Como analista de datos quiero poder consultar los datos de soledad recogidos de todos los usuarios para utilizarlos en mi investigación.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
-                \item \label{req:funcionales:soledad_diario_formato} Para cada cuestionario de soledad diario se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, la puntuación numérica, el nivel categórico y la opción marcada para cada pregunta.
-                \item \label{req:funcionales:soledad_puntual_formato} Para cada cuestionario de soledad puntual se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, la puntuación numérica, el nivel categórico y la opción marcada para cada pregunta.
+                \item \label{req:funcionales:soledad_diario_formato} Para cada cuestionario de soledad diario se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, la puntuación numérica, el nivel cualitativo y la opción marcada para cada pregunta.
+                \item \label{req:funcionales:soledad_puntual_formato} Para cada cuestionario de soledad puntual se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no, la puntuación numérica, el nivel cualitativo y la opción marcada para cada pregunta.
                 \item \label{req:funcionales:soledad_finalizado_servidor} El servidor recogerá de cada usuario sus cuestionarios de soledad finalizados, agrupados por identificador de usuario.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
-            \item \label{req:usuario:analista_suicidio} Como analista de datos, quiero poder consultar los datos de riesgo de suicidio de todos los usuarios recogidos para utilizarlos en investigación.
+            \item \label{req:usuario:analista_suicidio} Como analista de datos quiero poder consultar los datos de riesgo de suicidio de todos los usuarios recogidos para utilizarlos en mi investigación.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
                 \item \label{req:funcionales:suicidio_diario_formato} Para cada cuestionario de riesgo de suicidio se guardará un identificador del mismo, el instante de creación, el instante de la última modificación, si está completado o no y la opción marcada para cada pregunta.
                 \item \label{req:funcionales:suicidio_finalizado_servidor} El servidor recogerá de cada usuario sus cuestionarios de riesgo de suicidio finalizados, agrupados por identificador de usuario.
             \end{enumerate}
         \end{enumerate}
         \begin{enumerate}[resume=req-usuario,label=\textbf{\texttt{RU-\arabic*}}]
-            \item \label{req:usuario:analista_contraste} Como analista de datos quiero un cuestionario contraste para validar la percepción general de la persona.
+            \item \label{req:usuario:analista_contraste} Como analista de datos quiero un cuestionario de contraste para validar la percepción general de la persona.
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
                 \item \label{req:funcionales:contraste_diario_info} Los cuestionarios contraste se realizarán diariamente y recogerán la siguiente información del usuario: apetito, energía, descanso, concentración, líbido y dolor físico. 
-                \item \label{req:funcionales:contraste_diario_noche} El sistema desplegará un cuestionario vespertino diario de contraste sobre las 21:00, hora local del usuario, recogiendo la información definida en \ref{req:funcionales:contraste_diario_info} relativa al día en su totalidad.
+                \item \label{req:funcionales:contraste_diario_noche} La aplicación desplegará un cuestionario vespertino diario de contraste sobre las 21:00, hora local del usuario, recogiendo la siguiente información del apetito, energía, descanso, concentración, líbido y dolor físico relativa al día en su totalidad. La definición de este cuestionario se recoge en el Anexo \ref{cuestionarios:contraste}.
                 \item \label{req:funcionales:contraste_notificacion} La creación de cada cuestionario de contraste será notificada al usuario.
                 \item \label{req:funcionales:contraste_cuestionario_aplazar} El usuario podrá terminar un cuestionario de contraste en curso en otro momento.
                 \item \label{req:funcionales:contraste_cuestionario_pendientes} La aplicación mostrará al usuario si dispone de cuestionarios de contraste por completar para su finalización.
@@ -383,7 +355,7 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
             \begin{enumerate}[resume=req-funcionales,label=\textbf{\texttt{RF-\arabic*}}]
                 \item \label{req:funcionales:actividad_fisica_recoger} El servidor recogerá de cada usuario sus datos de actividad física, agrupados por identificador de usuario.
                 \item \label{req:funcionales:distancia_formato} Para cada dato de distancia recorrida se guardará la medida en metros y el intervalo de tiempo donde se efectuó la medida.
-                \item \label{req:funcionales:desnivel_formato} Para cada dato de desnivel ganado se guardará la medida en metros y el intervalo de tiempo donde se efectuó la medida.
+                \item \label{req:funcionales:desnivel_formato} Para cada dato de desnivel obtenido se guardará la medida en metros y el intervalo de tiempo donde se efectuó la medida.
                 \item \label{req:funcionales:ejercicio_formato} Para cada dato de las sesiones de ejercicio realizadas se guardará el tipo de ejercicio realizado y el intervalo de tiempo donde se realizó dicho ejercicio.
                 \item \label{req:funcionales:plantas_formato} Para cada dato de las plantas subidas se guardará la medida y el intervalo de tiempo donde se efectuó dicha medición.
                 \item \label{req:funcionales:frecuencia_formato} Para cada dato de la frecuencia cardíaca se guardará una lista de mediciones en formato instante, pulsaciones; y el intervalo de tiempo al que pertenecen las mediciones.
@@ -397,14 +369,10 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
     
     \subsection{Requisitos no funcionales}
         \label{req:especificos:no_funcionales}
-        \subsubsection{Acurracy}
-            \todo[inline]{Placeholder por si ves necesario añadir alguno.}
-        \subsubsection{Availability}
-            \todo[inline]{Placeholder por si ves necesario añadir alguno.}
         \subsubsection{Eficiencia (Efficiency)}
             \begin{enumerate}[label=\textbf{\texttt{RNF-\arabic*}}]
                 \item \label{req:no_funcionales:envio_internet} La aplicación sólo intentará enviar datos al servidor cuando se disponga de conexión a Internet.
-                \item \label{req:no_funcionales:envio_aplazar} Si en el momento de envío de datos el dispositivo no dispone de conexión a Internet, se aplazará la subida de los mismos para para realizarse en cuanto se disponga de conexión.
+                \item \label{req:no_funcionales:envio_aplazar} Si en el momento de envío de datos el dispositivo no dispone de conexión a Internet se aplazará la subida de los mismos para para realizarse en cuanto se disponga de conexión.
                 \item \label{req:no_funcionales:envio_solo_ultimos} En cada envío de datos la aplicación sólo enviará los datos recogidos desde el último envío.
             \end{enumerate}
         \subsubsection{Extensibilidad (Extensibility)}
@@ -412,8 +380,6 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
                 \item \label{req:no_funcionales:nuevas_versiones_android} El diseño y la aplicación garantizarán, en la medida de lo posible, el soporte a nuevas versiones de Android.
                 \item \label{req:no_funcionales:nuevas_categorias_fisicas} El diseño y la aplicación garantizarán, en la medida de lo posible, la incorporación y/o eliminación de tipos de datos de actividad física.
             \end{enumerate}
-        \subsubsection{Interoperabilty}
-            \todo[inline]{Placeholder por si ves necesario añadir alguno.}
         \subsubsection{Mantenibilidad (Maintainability)}
             \begin{enumerate}[resume, label=\textbf{\texttt{RNF-\arabic*}}]
                 \item \label{req:no_funcionales:solid} Se desarrollará el código software siguiendo los principios S.O.L.I.D.
@@ -434,23 +400,14 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
                 \item \label{req:no_funcionales:version_android} La aplicación deberá funcionar en cualquier dispositivo móvil o tableta Android, que cumpla las restricciones \ref{req:restriccion:android_referencia} y \ref{req:restriccion:android_minimo}.
                 \item \label{req:no_funcionales:soporte_wearable} La aplicación deberá poder leer los datos de cualquier dispositivo \gls{wearable} que haya integrado el fabricante del mismo con \textit{Health Connect}.
             \end{enumerate}
-        \subsubsection{Recoverability}
-            \todo[inline]{Placeholder por si ves necesario añadir alguno.}
-        \subsubsection{Reusability}
-            \todo[inline]{Placeholder por si ves necesario añadir alguno.}
-        \subsubsection{Robustness}
-            \todo[inline]{Placeholder por si ves necesario añadir alguno.}
         \subsubsection{Seguridad (Safety)}
             \begin{enumerate}[resume, label=\textbf{\texttt{RNF-\arabic*}}]
                 \item \label{req:no_funcionales:id_anonimo} El identificador de usuario será generado aleatoriamente por la aplicación para garantizar la anonimidad del mismo.  
                 \item \label{req:no_funcionales:cifrado_bd} La base de datos de la aplicación estará cifrada con el algoritmo \gls{aes}, usando el modo de cifrado \gls{gcm}.
                 \item \label{req:no_funcionales:inmutabilidad} La aplicación garantizará la inmutabilidad de los datos de los cuestionarios completados.
-                \todo[inline]{Los siguientes son un brindis al sol?}
                 \item \label{req:no_funcionales:datos_solo_cientificos} El acceso a los datos anonimizados de los usuarios solo estará permitido para propósitos científicos.
                 \item \label{req:no_funcionales:ddos} El servidor que aloje los datos anonimizados deberá estar protegido antes ataques de denegación de servicio y accesos no autorizados.
             \end{enumerate}
-        \subsubsection{Scalability}
-            \todo[inline]{Placeholder por si ves necesario añadir alguno.}
         \subsubsection{Security / Integrity}
             \begin{enumerate}[resume, label=\textbf{\texttt{RNF-\arabic*}}]
                 \item \label{req:no_funcionales:cifrado_comunicaciones} Las comunicaciones entre aplicación y servidor deberán estar cifradas.
@@ -470,6 +427,7 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
                 \begin{enumerate}[resume, label=\textbf{\texttt{RNF-\arabic*}}]
                     \item \label{req:no_funcionales:contraste} Se deberá garantizar un contraste entre los elementos gráficos de 3:1 $\frac{cd}{m^{2}}$ o nits, en concordancia con la guía de accesibilidad \gls{wcag} 2.0 del consorcio \gls{w3c}\cite{w3c_web_2008}.
                     \item \label{req:no_funcionales:colores_tranquilidad} La paleta de colores de la aplicación deberá transmitir tranquilidad al usuario.
+                    %\todo[inline]{busca en la trasnparencia de requisitos no funcionales que te pasé o que vimos en la asigantura algún KPI para tranquilidad o busca algo de esto en la literatura}
                     \item \label{req:no_funcionales:modo_claro_oscuro} El diseño de la interfaz de usuario contemplará dos ajustes de colores principales: modo claro y oscuro.
                     \item \label{req:no_funcionales:modo_defecto} La aplicación tomará por defecto el modo de colores general del sistema.
                     \item \label{req:no_funcionales:modo_demanda} El usuario podrá cambiar el modo de colores de la aplicación en todo momento. 
@@ -489,7 +447,7 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
         \label{req:externas:hardware}
 
         \begin{enumerate}[label=\textbf{\texttt{RIS-\arabic*}}]
-            \item El sistema podrá utilizar como dispositivo \gls{wearable} cualquiera que sea compatible con el \gls{framework} de Android \textit{Salud Conectada}.
+            \item La aplicación podrá utilizar como dispositivo \gls{wearable} cualquiera que sea compatible con el \gls{framework} de Android \textit{Salud Conectada}.
         \end{enumerate}
     
     \subsection{Interfaces Software}
@@ -502,7 +460,7 @@ Por otra parte, dado que este proyecto tiene una naturaleza abierta y transparen
     \subsection{Restricciones de desarrollo}
         \label{req:externas:restricciones}
         \begin{enumerate}[label=\textbf{\texttt{RD-\arabic*}}]
-            \item Para la realización de pruebas, se utilizará como \gls{wearable} la pulsera Fitbit Inspire 2.
+            \item Para la realización de pruebas, se utilizará como \gls{wearable} la pulsera \textit{Fitbit Inspire 2}\footnote{La compra de este dispositivo ha sido realizada por la \gls{etsisi} a través de su programa de ayudas para trabajos final de grado o de máster.}.
             \item La aplicación será implementada utilizando el lenguaje de programación Kotlin.
             \item El componente servidor será implementado mediante el lenguaje de programación Python.
             \item Para el diseño de interfaces de usuario, se utilizará el sistema \textit{Material Design 3}.
