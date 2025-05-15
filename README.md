@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="figures/diseno/logo app.png" width="75" height="75" />
+  <img src="figures/diseno/logo.png" width="75" height="75" />
   <h3 align="center">Emotional Wellbeing</h3>
     <p>Final Masters Project to design and implement an application to detect stress, depression, loneliness and suicide risk, giving custom advices to users.</p>
 </div>
